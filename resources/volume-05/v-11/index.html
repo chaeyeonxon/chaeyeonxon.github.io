@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Set-Valued Demand and Coherent Counterfactuals · Chae-Yeon Xon</title>
+  <meta name="description" content="Channel bundles can be valued by solving a viewing-time problem for each set. Replacing those set values with increments calculated at a reference bundle is exact only under modularity or a corresponding structural restriction. Bargaining and welfare then require the same set-value function and consumer shock law used for demand.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-11/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Set-Valued Demand and Coherent Counterfactuals · Chae-Yeon Xon">
+  <meta property="og:description" content="Channel bundles can be valued by solving a viewing-time problem for each set. Replacing those set values with increments calculated at a reference bundle is exact only under modularity or a corresponding structural restriction. Bargaining and welfare then require the same set-value function and consumer shock law used for demand.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-11/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Set-Valued Demand and Coherent Counterfactuals · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Channel bundles can be valued by solving a viewing-time problem for each set. Replacing those set values with increments calculated at a reference bundle is exact only under modularity or a corresponding structural restriction. Bargaining and welfare then require the same set-value function and consumer shock law used for demand.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-11</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Six Applied Audit Case Studies · Chapter V-11</div>
+        <h1>Set-Valued Demand and Coherent Counterfactuals</h1>
+        <p>Channel bundles can be valued by solving a viewing-time problem for each set. Replacing those set values with increments calculated at a reference bundle is exact only under modularity or a corresponding structural restriction. Bargaining and welfare then require the same set-value function and consumer shock law used for demand.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-11.01</span><strong>Printed set values</strong></li>
+              <li><span>V-11.02</span><strong>Reference calculations</strong></li>
+              <li><span>V-11.03</span><strong>The modularity condition</strong></li>
+              <li><span>V-11.04</span><strong>Choice-kernel variation</strong></li>
+              <li><span>V-11.05</span><strong>Coherent repairs</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="set-value">
+            <h2>1. A bundle is a set-valued economic object</h2>
+            <p class="chapter-lede">When consumption time or another shared resource is reoptimized for every bundle, the value function is defined on sets. Context-specific marginal values are not fixed item utilities.</p>
+            <p>Let <span class="math-inline">\(N\)</span> be a finite item set and <span class="math-inline">\(W:2^{N}\to \mathbb{R}\)</span> the optimized value of each available set. For two items with attention weights three and four under the quadratic allocation example, <span class="math-inline">\(W(\varnothing)=0\)</span>, <span class="math-inline">\(W({a})=3\)</span>, <span class="math-inline">\(W({b})=4\)</span>, and <span class="math-inline">\(W({a,b})=5\)</span>. The interaction is <span class="math-inline">\(5-3-4+0=-2\)</span>.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Modularity</span><p>A set function is modular when <span class="math-inline">\(W(S)=W(\varnothing)+\sum _{j\in S}w_{j}\)</span> for fixed coefficients independent of the surrounding set.</p></div>
+          </section>
+
+          <section class="chapter-section" id="modularity-test">
+            <h2>2. Zero cross-differences characterize fixed item increments</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Finite modularity criterion</span><p>A set function on a finite universe is modular if and only if every cross-difference <span class="math-inline">\(\Delta _{i}\Delta _{j}W(S)\)</span> is zero for all distinct <span class="math-inline">\(i,j\)</span> outside <span class="math-inline">\(S\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> A modular sum has context-independent first differences, so all cross-differences vanish. Conversely, zero cross-differences make the marginal contribution of each item unchanged as other items are added. Starting from the empty set and adding items in any order then gives <span class="math-inline">\(W(S)=W(\varnothing)+\sum _{j\in S}[W({j})-W(\varnothing)]\)</span>. ∎</p></div>
+            <p>The example fails because its only pair cross-difference is <span class="math-inline">\(-2\)</span>. Marginal additions at the full bundle are <span class="math-inline">\(W({a,b})-W({b})=1\)</span> and <span class="math-inline">\(W({a,b})-W({a})=2\)</span>. Treating one and two as fixed singleton utilities predicts pair value three and empty value two when subtracted from the full anchor. Both disagree with the original set function.</p>
+          </section>
+
+          <section class="chapter-section" id="choice-kernel">
+            <h2>3. Demand and welfare must use one coherent value map</h2>
+            <p>With a zero-valued outside option and a standard logistic shock difference, purchase probability for set <span class="math-inline">\(S\)</span> is Λ(<span class="math-inline">\(W(S)-p_{S}\)</span>). At zero prices, exact probabilities for {<span class="math-inline">\(a\)</span>}, {<span class="math-inline">\(b\)</span>}, and {<span class="math-inline">\(a,b\)</span>} are approximately 0.952574, 0.982014, and 0.993307.</p>
+            <p>The modularized values one, two, and three give approximately 0.731059, 0.880797, and 0.952574. If demand uses one value function while bargaining or welfare uses another, the same counterfactual menu has inconsistent take-up and surplus. A coherent implementation calls a single set-value routine, or documents an approximation and propagates it through every downstream object.</p>
+          </section>
+
+          <section class="chapter-section" id="set-boundaries">
+            <h2>4. Support and approximation boundaries are part of the audit</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Reference marginals transported to unseen bundles</span><p>Marginal values computed at the full bundle identify local deletions there. They determine every bundle only under modularity or another stated structural restriction.</p></div>
+            <p>An empty set needs a normalized value. Zero attention weights create items with no direct contribution but possible interactions under richer technologies. Time allocation at a boundary can make <span class="math-inline">\(W\)</span> nondifferentiable in parameters. Unobserved bundles leave set values unidentified without shape restrictions. Menu-dependent shock distributions change the choice kernel even when deterministic set values agree. Capacity, prices, and bargaining alter availability and must use the same bundle identifiers. For large <span class="math-inline">\(N\)</span>, evaluating all <span class="math-inline">\(2^{|N|}\)</span> sets is infeasible and approximation error needs a domain-specific bound.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Enumerate supported sets, recompute optimized values, and test cross-differences. Store set keys canonically. Compare any additive reconstruction with exact values on all available subsets, then pass the same value routine and shock law to demand, pricing, bargaining, and welfare. Report unsupported sets and approximation envelopes.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the interaction, reference marginals, and six probabilities above.</li><li>Prove that a two-item set function is modular exactly when its single cross-difference is zero.</li><li>Add a third item and list the pairwise cross-differences required by the proposition.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Use Λ(<span class="math-inline">\(z\)</span>)=1/(1+<span class="math-inline">\(e^{-z}\)</span>) at exact values 3,4,5 and approximate values 1,2,3. <strong>2.</strong> The condition rearranges to <span class="math-inline">\(W(\{a,b\})=W(\{a\})+W(\{b\})-W(\varnothing)\)</span>. <strong>3.</strong> Check each pair in every context that excludes the pair, including both empty and singleton contexts.</p></details>
+            <ol class="reference-list"><li>Satoru Fujishige, <em>Submodular Functions and Optimization</em>.<small>Finite set functions and cross-differences.</small></li><li>Donald M. Topkis, <em>Supermodularity and Complementarity</em>.<small>Lattice differences and comparative statics.</small></li><li>Kenneth Train, <em>Discrete Choice Methods with Simulation</em>.<small>Choice kernels and menu probabilities.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Universe, canonical set keys, empty-set normalization, supported bundles, optimized value routine, resource constraints, boundary allocations, first and cross-differences, modularity test, reference context, additive reconstruction error, shock law, menu dependence, price and availability maps, demand, bargaining and welfare consistency, capacity, unsupported sets, and computational scaling.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers finite set values and additive-reconstruction audits. General random-set demand, combinatorial auctions, and approximation algorithms require further theory.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-05/v-05/">V-05 · Trace an Equation Through Code</a></li><li><a href="/resources/volume-04/iv-07/">IV-07 · Bargaining, Disagreement States, and Choice-Law Consistency</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#set-value">A bundle is a set-valued economic object</a>
+            <a href="#modularity-test">Zero cross-differences characterize fixed item increments</a>
+            <a href="#choice-kernel">Demand and welfare must use one coherent value map</a>
+            <a href="#set-boundaries">Support and approximation boundaries are part of the audit</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-05/v-10/"><span>Previous</span><strong>V-10 · Residual-Income Demand across Implementations</strong></a><a class="next" href="/resources/volume-05/v-12/"><span>Next</span><strong>V-12 · Operator Domains in Latent Measurement Models</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

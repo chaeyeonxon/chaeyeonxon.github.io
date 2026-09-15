@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Moment Inequalities, Partial Identification, and Sharp Bounds · Chae-Yeon Xon</title>
+  <meta name="description" content="Economic optimality conditions can produce inequalities rather than equations. Validity determines the population identified set, optimization gives target extrema, and constructive witnesses establish sharpness. Sampling uncertainty is projected onto this population geometry as a separate step.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-04/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Moment Inequalities, Partial Identification, and Sharp Bounds · Chae-Yeon Xon">
+  <meta property="og:description" content="Economic optimality conditions can produce inequalities rather than equations. Validity determines the population identified set, optimization gives target extrema, and constructive witnesses establish sharpness. Sampling uncertainty is projected onto this population geometry as a separate step.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-04/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Moment Inequalities, Partial Identification, and Sharp Bounds · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Economic optimality conditions can produce inequalities rather than equations. Validity determines the population identified set, optimization gives target extrema, and constructive witnesses establish sharpness. Sampling uncertainty is projected onto this population geometry as a separate step.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-04</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Conditional Probability, Design, and Partial Identification · Chapter II-04</div>
+        <h1>Moment Inequalities, Partial Identification, and Sharp Bounds</h1>
+        <p>Economic optimality conditions can produce inequalities rather than equations. Validity determines the population identified set, optimization gives target extrema, and constructive witnesses establish sharpness. Sampling uncertainty is projected onto this population geometry as a separate step.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-04.01</span><strong>Economic optimality</strong></li>
+              <li><span>II-04.02</span><strong>Valid population moments</strong></li>
+              <li><span>II-04.03</span><strong>Identified sets</strong></li>
+              <li><span>II-04.04</span><strong>Sharp extrema</strong></li>
+              <li><span>II-04.05</span><strong>Projection of uncertainty</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="moment-validity">
+            <h2>1. Optimality can imply an inequality</h2>
+            <p class="chapter-lede">A moment inequality restricts a population set. Bounds come from optimizing a declared target over that set, and endpoint witnesses establish sharpness.</p>
+            <p>Suppose an agent chooses <span class="math-inline">\(D=1\)</span> over <span class="math-inline">\(D=0\)</span> and the utility difference is <span class="math-inline">\(u_{1}-u_{0}=\theta-c\)</span>. Revealed preference gives <span class="math-inline">\(D(c-\theta)\le0\)</span> pointwise when the observed choice is optimal and ties are allowed. Hence every admissible population law satisfies <span class="math-inline">\(\mathbb{E}[D(c-\theta)]\le0\)</span> whenever the product is integrable.</p>
+            <p>The validity of this inequality depends on the choice set, utility specification, observation of <span class="math-inline">\(c\)</span>, and treatment of optimization error. Sampling variation affects its estimated analogue and leaves the population restriction conceptually separate.</p>
+          </section>
+
+          <section class="chapter-section" id="finite-lp">
+            <h2>2. Incomplete support gives a linear program</h2>
+            <p>Let latent types have probabilities <span class="math-inline">\(p=(p_{1},p_{2},p_{3})\)</span> with <span class="math-inline">\(p\ge0\)</span> and <span class="math-inline">\(1^{\top}p=1\)</span>. Suppose the observed event identifies <span class="math-inline">\(p_{1}+p_{2}=0.6\)</span>. The target is <span class="math-inline">\(\tau=p_{2}+2p_{3}\)</span>. Since <span class="math-inline">\(p_{3}=0.4\)</span> and <span class="math-inline">\(0\le p_{2}\le0.6\)</span>,</p>
+            <div class="equation-block" role="math" aria-label="Sharp target bounds in a three-type model."><span class="equation-tex">\[0.8\le \tau \le 1.4.\]</span><span class="equation-number">(1)</span></div>
+            <p>The lower endpoint is attained by <span class="math-inline">\(p^{L}\)</span>=(0.6,0,0.4); the upper endpoint is attained by <span class="math-inline">\(p^{U}\)</span>=(0,0.6,0.4). These feasible distributions prove sharpness: every intermediate target is attained by their convex mixtures.</p>
+          </section>
+
+          <section class="chapter-section" id="sharpness-theorem">
+            <h2>3. Primal witnesses close the sharpness argument</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Linear identified interval</span><p>Let <span class="math-inline">\(\mathcal{P}=\{p\in\mathbb{R}^{K}:p\ge0,\ 1^{\top}p=1,\ Ap=b,\ Gp\le d\}\)</span> be nonempty and compact. For linear target <span class="math-inline">\(c^{\top}p\)</span>, the identified set is the closed interval [<span class="math-inline">\(\operatorname{min}_{\mathcal{P}}c^{\top}p\)</span>, <span class="math-inline">\(\operatorname{max}_{\mathcal{P}}c^{\top}p\)</span>]. Both endpoints are attained.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> A continuous linear functional attains its extrema on nonempty compact <span class="math-inline">\(\mathcal{P}\)</span>. Convexity of <span class="math-inline">\(\mathcal{P}\)</span> makes its scalar image convex; a compact convex subset of <span class="math-inline">\(\mathbb{R}\)</span> is a closed interval. ∎</p></div>
+            <p>A dual certificate can prove an endpoint value, while a primal optimizer supplies a compatible population witness. Numerical sharpness reporting should include primal feasibility, dual feasibility, and their objective gap.</p>
+          </section>
+
+          <section class="chapter-section" id="sampling-projection">
+            <h2>4. Sampling uncertainty enlarges a different set</h2>
+            <p>If the observed share 0.6 is replaced by a confidence set <span class="math-inline">\(q\in[0.55,0.65]\)</span>, project the joint set over (<span class="math-inline">\(p,q\)</span>) subject to <span class="math-inline">\(p_{1}+p_{2}=q\)</span>. Then <span class="math-inline">\(p_{3}=1-q\)</span> and <span class="math-inline">\(\tau=p_{2}+2(1-q)\)</span>, yielding projected range [0.7,1.45]. This is a confidence projection built around the population model; it is not the population identified interval in (1).</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Three diagnoses merged into one wide interval</span><p>An empty population feasible set signals incompatible restrictions or data moments. A wide nonempty set signals limited identifying content. A wide confidence projection can also arise from imprecise estimated moments. Each diagnosis calls for a different response.</p></div>
+            <p>At probability boundaries zero and one, active nonnegativity constraints change the tangent geometry. Equality tolerances can falsely make an infeasible LP appear feasible, so solver residuals must be compared with the scale and uncertainty of the moments.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Encode probability normalization explicitly, retain all zero-mass boundary types, and solve both target directions. Store primal and dual solutions, active constraints, feasibility residuals, complementarity, and the duality gap. To assess assumptions, remove one row or inequality at a time and recompute the set.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify the endpoints and every convex-mixture target in Section 2.</li><li>Add inequality <span class="math-inline">\(p_{2}\le0.2\)</span> and recompute sharp bounds.</li><li>Set the observed share to 1.1 and distinguish mathematical infeasibility from a numerical tolerance issue.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Write <span class="math-inline">\(p_{2}=t\in[0,0.6]\)</span>, <span class="math-inline">\(p_{1}=0.6-t\)</span>, and <span class="math-inline">\(p_{3}=0.4\)</span>; then <span class="math-inline">\(\tau=0.8+t\)</span>. <strong>2.</strong> The interval becomes [0.8,1.0]. <strong>3.</strong> Nonnegative probabilities summing to one cannot have a subset share 1.1, so the exact set is empty.</p></details>
+            <ol class="reference-list"><li>Charles F. Manski, <em>Partial Identification of Probability Distributions</em>.<small>Population identified sets and bounds.</small></li><li>Alfred Galichon and Marc Henry (2011), “Set Identification in Models with Multiple Equilibria,” <em>Review of Economic Studies</em> 78, 1264–1298.<small>Moment inequalities and set identification.</small></li><li>Alexander Schrijver, <em>Theory of Linear and Integer Programming</em>, chapters on linear-program duality.<small>Primal witnesses and dual certificates.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the behavioral inequality, integrability, latent support, probability simplex, equality and inequality directions, population feasibility, target, endpoint witnesses, dual residuals, active boundaries, sampling confidence set, and projection rule.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers finite-support linear moment models, sharp target bounds, and confidence projection. Optimal moment selection and general nonlinear set inference require further theory.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-01/">II-01 · Conditional Probability and a Model&#x27;s Information Structure</a></li><li><a href="/resources/volume-01/i-01/">I-01 · Define the Research Object as a Contract</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#moment-validity">Optimality can imply an inequality</a>
+            <a href="#finite-lp">Incomplete support gives a linear program</a>
+            <a href="#sharpness-theorem">Primal witnesses close the sharpness argument</a>
+            <a href="#sampling-projection">Sampling uncertainty enlarges a different set</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-03/"><span>Previous</span><strong>II-03 · Random Assignment and Dynamic Policy Contrasts</strong></a><a class="next" href="/resources/volume-02/ii-05/"><span>Next</span><strong>II-05 · Stochastic Orders and Competing Sample Sizes</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

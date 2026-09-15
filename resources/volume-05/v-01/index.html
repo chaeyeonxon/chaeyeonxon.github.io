@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Version, Evidence, and Claim Ledgers · Chae-Yeon Xon</title>
+  <meta name="description" content="A research audit begins by fixing the object under review. Titles, filenames, and repository labels can survive substantive revisions, so each source needs a version record. A claim ledger then connects quoted propositions to assumptions, proof locations, code paths, data inputs, and the auditor&#x27;s residual conclusion.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-01/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Version, Evidence, and Claim Ledgers · Chae-Yeon Xon">
+  <meta property="og:description" content="A research audit begins by fixing the object under review. Titles, filenames, and repository labels can survive substantive revisions, so each source needs a version record. A claim ledger then connects quoted propositions to assumptions, proof locations, code paths, data inputs, and the auditor&#x27;s residual conclusion.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-01/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Version, Evidence, and Claim Ledgers · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A research audit begins by fixing the object under review. Titles, filenames, and repository labels can survive substantive revisions, so each source needs a version record. A claim ledger then connects quoted propositions to assumptions, proof locations, code paths, data inputs, and the auditor&#x27;s residual conclusion.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-01</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Audit Methods and Reproducibility · Chapter V-01</div>
+        <h1>Version, Evidence, and Claim Ledgers</h1>
+        <p>A research audit begins by fixing the object under review. Titles, filenames, and repository labels can survive substantive revisions, so each source needs a version record. A claim ledger then connects quoted propositions to assumptions, proof locations, code paths, data inputs, and the auditor&#x27;s residual conclusion.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-01.01</span><strong>Source hierarchy</strong></li>
+              <li><span>V-01.02</span><strong>Version records</strong></li>
+              <li><span>V-01.03</span><strong>Claim units</strong></li>
+              <li><span>V-01.04</span><strong>Assumption tables</strong></li>
+              <li><span>V-01.05</span><strong>Residual conclusions</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="audit-object">
+            <h2>1. Freeze the object before evaluating it</h2>
+            <p class="chapter-lede">An audit conclusion applies to a particular manuscript, code tree, data snapshot, and execution environment. A title or filename does not identify that object.</p>
+            <p>Let an audit object be <span class="math-inline">\(O=(M,C,D,E)\)</span>: manuscript bytes, code bytes, data or data manifest, and environment specification. A version record contains immutable digests, acquisition dates, repository revision, dirty-tree status, and the command that constructs released artifacts. The record also distinguishes source inputs from generated outputs.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Claim ledger</span><p>A claim ledger assigns each released claim a stable identifier and records its exact text, quantifiers, assumptions, proof location, computation entry point, data dependencies, test evidence, and residual audit status. A changed claim receives a new ledger state even when its section number is unchanged.</p></div>
+            <p>For example, the SHA-256 digest of the byte string “claim-v1” followed by a newline is 6887fd7e30f48ee45eea7690830d4e041ffa919af8d28af1062a96d8d5e1b763. One edited byte produces a different identifier. The digest gives an integrity check; it supplies no assessment of the sentence encoded by those bytes.</p>
+          </section>
+
+          <section class="chapter-section" id="evidence-graph">
+            <h2>2. Evidence is a typed dependency graph</h2>
+            <p>Represent the release as a directed graph whose nodes include claims, assumptions, lemmas, tables, scripts, source data, generated data, and artifacts. An edge must name its relation: “uses,” “proves,” “generates,” “tests,” or “contradicts.” Reachability from a claim to a source node records provenance, while proof checking evaluates whether the intervening edges are valid.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Coverage and validity are distinct</span><p>If every released claim node has a directed path to versioned source nodes, the evidence graph is provenance-complete relative to its declared node set. This property alone does not imply that any claim is true.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> The first statement is the definition of graph coverage. For the second, take a one-claim graph whose claim “1=2” points to a versioned text file containing that same statement. A complete provenance path exists, while the claim is false. Edge legality and evidence adequacy require additional checks. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="residual-status">
+            <h2>3. Residual conclusions preserve uncertainty</h2>
+            <p>Useful statuses include verified under listed assumptions, numerically reproduced, contradicted by a witness, unsupported by available evidence, blocked by unavailable data, and outside scope. “Pass” should identify the gate passed. A computation can reproduce a printed table while the estimand remains unidentified; a proof can be valid while its premise is empirically unsupported.</p>
+            <p>A ledger update propagates through dependents. If an assumption, dataset, or function changes, every reachable claim becomes review-due until its supporting path is rechecked. This invalidation rule prevents an unchanged PDF table from retaining a stale verified label after its generating source changed.</p>
+          </section>
+
+          <section class="chapter-section" id="version-boundaries">
+            <h2>4. Mutable and missing inputs bound the conclusion</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Filename used as version evidence</span><p>Two files named final.pdf can contain different bytes. An audit attached only to that name cannot determine which file passed.</p></div>
+            <p>A mutable URL needs an acquisition timestamp and local digest. A Git revision identifies committed content but excludes uncommitted modifications unless the dirty state and patch are captured. Large data governed by access restrictions may use a manifest with provider version, query, schema, row count, and permitted checksum. A digest collision is theoretically possible; the integrity claim is conditional on the selected hash function and threat model. Empty artifacts, missing submodules, line-ending conversion, generated timestamps, and nondeterministic archive order can also change bytes without changing intended semantics.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Create the ledger before substantive review. Hash every available input, record unavailable inputs explicitly, and extract the released claims into units small enough to receive separate conclusions. Build dependency edges from build rules and manual proof reading. On revision, compare bytes and semantics, then invalidate the transitive dependents of changed nodes.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Recompute the digest in Section 1 and show that removing the newline changes it.</li><li>Draw an evidence graph for one theorem and one generated table.</li><li>Give a release change that preserves every source digest but changes the execution result.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Hash exact bytes; text display alone does not reveal the terminal newline. <strong>2.</strong> The theorem should point through assumptions and lemmas; the table should point through script, configuration, and data nodes. <strong>3.</strong> A changed interpreter or library can change output while source inputs remain byte-identical, which is why the environment belongs to <span class="math-inline">\(O\)</span>.</p></details>
+            <ol class="reference-list"><li>Roger D. Peng (2011), “Reproducible Research in Computational Science,” <em>Science</em> 334, 1226–1227.<small>Reproducibility and computational evidence.</small></li><li>Geir Kjetil Sandve, Anton Nekrutenko, James Taylor, and Eivind Hovig (2013), “Ten Simple Rules for Reproducible Computational Research,” <em>PLoS Computational Biology</em> 9, e1003285.<small>Versioned inputs and recorded workflows.</small></li><li>Philip B. Stark (2018), “Before Reproducibility Must Come Preproducibility,” <em>Nature</em> 557, 613.<small>Specified evidence and analysis before rerunning.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Manuscript digest, code revision, dirty patch, data snapshot or manifest, environment lock, build command, source-generated distinction, claim identifiers, quantifiers, assumption edges, proof and computation paths, unavailable inputs, residual status, invalidation closure, mutable URLs, archive determinism, and release artifact digest.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter defines provenance and claim-ledger structure. Cryptographic adversaries, legal data custody, and formal proof-assistant verification require specialized procedures.</p></section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#audit-object">Freeze the object before evaluating it</a>
+            <a href="#evidence-graph">Evidence is a typed dependency graph</a>
+            <a href="#residual-status">Residual conclusions preserve uncertainty</a>
+            <a href="#version-boundaries">Mutable and missing inputs bound the conclusion</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><span></span><a class="next" href="/resources/volume-05/v-02/"><span>Next</span><strong>V-02 · Auditing the Arrows in a Proof</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

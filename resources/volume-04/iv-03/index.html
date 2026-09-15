@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Market Shares, Inversion, and Demographic Micro Moments · Chae-Yeon Xon</title>
+  <meta name="description" content="Market shares integrate individual choices over heterogeneity, while demographic micro moments condition on purchase events. Share inversion recovers mean utilities for a fixed model and parameter vector. Matching aggregate shares and a limited set of purchaser moments does not reconstruct the joint distribution of utilities, incomes, and choices.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-03/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Market Shares, Inversion, and Demographic Micro Moments · Chae-Yeon Xon">
+  <meta property="og:description" content="Market shares integrate individual choices over heterogeneity, while demographic micro moments condition on purchase events. Share inversion recovers mean utilities for a fixed model and parameter vector. Matching aggregate shares and a limited set of purchaser moments does not reconstruct the joint distribution of utilities, incomes, and choices.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-03/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Market Shares, Inversion, and Demographic Micro Moments · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Market shares integrate individual choices over heterogeneity, while demographic micro moments condition on purchase events. Share inversion recovers mean utilities for a fixed model and parameter vector. Matching aggregate shares and a limited set of purchaser moments does not reconstruct the joint distribution of utilities, incomes, and choices.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-03</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Demand, Supply, Bundles, and Welfare · Chapter IV-03</div>
+        <h1>Market Shares, Inversion, and Demographic Micro Moments</h1>
+        <p>Market shares integrate individual choices over heterogeneity, while demographic micro moments condition on purchase events. Share inversion recovers mean utilities for a fixed model and parameter vector. Matching aggregate shares and a limited set of purchaser moments does not reconstruct the joint distribution of utilities, incomes, and choices.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-03.01</span><strong>Individual-to-market aggregation</strong></li>
+              <li><span>IV-03.02</span><strong>Share matching</strong></li>
+              <li><span>IV-03.03</span><strong>Purchaser moments</strong></li>
+              <li><span>IV-03.04</span><strong>Estimation objectives</strong></li>
+              <li><span>IV-03.05</span><strong>Reconstruction boundaries</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="aggregate-shares">
+            <h2>1. Market shares integrate individual probabilities</h2>
+            <p class="chapter-lede">Aggregate shares and purchaser moments are different integrals of the same individual choice law. Their denominators and zero-share boundaries must remain visible.</p>
+            <p>Let consumer state <span class="math-inline">\(z_{i}\)</span> have distribution <span class="math-inline">\(F\)</span>, and let <span class="math-inline">\(P_{ij}(\delta,\theta)\)</span> be the model probability of choosing product <span class="math-inline">\(j\)</span>. Market share is <span class="math-inline">\(s_{j}(\delta,\theta)=\mathbb{E}_{F}[P_{ij}(\delta,\theta)]\)</span>. For an integrable demographic characteristic <span class="math-inline">\(z_{i}\)</span>,</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Purchaser conditional mean</span><div class="equation-block" role="math" aria-label="Demographic mean among purchasers."><span class="equation-tex">\[\mathbb{E}[z_i\mid J_i=j]=\frac{\mathbb{E}[z_iP_{ij}]}{s_j},\qquad s_j&gt;0.\]</span><span class="equation-number">(1)</span></div></div>
+            <div class="proof"><p><strong>Proof.</strong> Iterated expectation gives <span class="math-inline">\(\mathbb{E}[z_{i}1\{J_{i}=j\}]=\mathbb{E}[z_{i}P(J_{i}=j\mid z_{i})]\)</span>. Divide by <span class="math-inline">\(P(J_{i}=j)=s_{j}\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="micro-example">
+            <h2>2. A purchaser moment reweights the population</h2>
+            <p>Two equally common consumer types have <span class="math-inline">\(z=0\)</span> and <span class="math-inline">\(z=1\)</span>. Their purchase probabilities for product <span class="math-inline">\(j\)</span> are 0.2 and 0.8. Aggregate share is 0.5. The numerator in (1) is <span class="math-inline">\(0.5\cdot0\cdot0.2+0.5\cdot1\cdot0.8=0.4\)</span>, so the mean characteristic among purchasers is 0.8.</p>
+            <p>The population mean is 0.5. Conditioning on purchase shifts the type weights to 0.2 and 0.8. A simulation should reproduce both the aggregate denominator and the weighted numerator using the same draws.</p>
+          </section>
+
+          <section class="chapter-section" id="share-inversion">
+            <h2>3. Inversion is conditional on the demand model</h2>
+            <p>In homogeneous logit with outside share <span class="math-inline">\(s_{0}&gt;0\)</span> and product shares <span class="math-inline">\(s_{j}&gt;0\)</span>, mean utility relative to the outside option is <span class="math-inline">\(\delta _{j}=\log s_{j}-\log s_{0}\)</span>. Random-coefficient inversion instead solves a nonlinear fixed point for a fixed <span class="math-inline">\(\theta\)</span>, heterogeneity law, simulation design, and choice set.</p>
+            <p>Matching shares determines mean utilities under that fixed model. A limited set of demographic moments adds selected restrictions on the joint law. It does not reconstruct every substitution pattern or latent utility component.</p>
+          </section>
+
+          <section class="chapter-section" id="moment-boundaries">
+            <h2>4. Zero shares and reused draws</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Micro moment evaluated at a zero predicted share</span><p>Equation (1) divides by <span class="math-inline">\(s_{j}\)</span>. At zero share the conditional purchaser distribution is undefined, and a small denominator makes the moment numerically unstable.</p></div>
+            <p>A zero observed logit share implies <span class="math-inline">\(\delta _{j}=-\infty\)</span> in the exact inversion limit. Sampling zeros, censored shares, and structural unavailability require separate treatment. Changing simulation draws while updating <span class="math-inline">\(\delta\)</span> injects numerical noise into the inversion; fixed draws or controlled quasi-random sequences preserve a deterministic objective.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Store market weights, demographic draws, choice sets, <span class="math-inline">\(\theta\)</span>, and random seeds. At every inversion iterate, recompute shares and micro numerators from the same probabilities. Report share residuals, moment residuals, denominator floors, contraction or root tolerance, and the weighting matrix used to combine moments.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the share and purchaser mean in Section 2.</li><li>Invert homogeneous-logit utilities for shares (0.5,0.3,0.2), including the outside option.</li><li>Construct two type-specific probability tables with the same aggregate share and purchaser mean but different probabilities for another product.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The purchase-conditioned type-one weight is 0.4/0.5=0.8. <strong>2.</strong> With outside share 0.5, utilities are <span class="math-inline">\(\operatorname{log}(0.3/0.5)\)</span> and <span class="math-inline">\(\operatorname{log}(0.2/0.5)\)</span>. <strong>3.</strong> Preserve the two weighted restrictions for product <span class="math-inline">\(j\)</span> while reallocating remaining probability across other products.</p></details>
+            <ol class="reference-list"><li>Steven Berry (1994), “Estimating Discrete-Choice Models of Product Differentiation,” <em>RAND Journal of Economics</em> 25, 242–262.<small>Share inversion.</small></li><li>Steven Berry, James Levinsohn, and Ariel Pakes (1995), “Automobile Prices in Market Equilibrium,” <em>Econometrica</em> 63, 841–890.<small>Aggregate random-coefficient demand.</small></li><li>Steven Berry, James Levinsohn, and Ariel Pakes (2004), “Differentiated Products Demand Systems from a Combination of Micro and Macro Data,” <em>Journal of Political Economy</em> 112, 68–105.<small>Demographic micro moments.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the consumer law, market weights, choice sets, probability kernel, outside share, positive-share domain, inversion parameter vector, simulation draws, purchaser-moment numerator and denominator, weighting matrix, residuals, and denominator tolerance.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers share aggregation, elementary inversion, and purchaser moments. Full demand identification and GMM inference require specialized treatment.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-04/iv-02/">IV-02 · Residual-Income Demand and Approximation Domains</a></li><li><a href="/resources/volume-02/ii-06/">II-06 · Extremum Estimators and Uniform Local Expansions</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#aggregate-shares">Market shares integrate individual probabilities</a>
+            <a href="#micro-example">A purchaser moment reweights the population</a>
+            <a href="#share-inversion">Inversion is conditional on the demand model</a>
+            <a href="#moment-boundaries">Zero shares and reused draws</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-02/"><span>Previous</span><strong>IV-02 · Residual-Income Demand and Approximation Domains</strong></a><a class="next" href="/resources/volume-04/iv-04/"><span>Next</span><strong>IV-04 · From Demand Derivatives to Markups and Prices</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

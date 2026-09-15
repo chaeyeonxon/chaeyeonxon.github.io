@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Random Utility, Choice Sets, and Normalization · Chae-Yeon Xon</title>
+  <meta name="description" content="A discrete-choice model begins with consumers, alternatives, utilities, a shock law, and a choice set. Normalizations remove utility components that choices cannot reveal. Once these objects are declared, probabilities, simulations, derivatives, and counterfactuals can be generated from the same executable model rather than from disconnected formulas.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-01/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Random Utility, Choice Sets, and Normalization · Chae-Yeon Xon">
+  <meta property="og:description" content="A discrete-choice model begins with consumers, alternatives, utilities, a shock law, and a choice set. Normalizations remove utility components that choices cannot reveal. Once these objects are declared, probabilities, simulations, derivatives, and counterfactuals can be generated from the same executable model rather than from disconnected formulas.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-01/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Random Utility, Choice Sets, and Normalization · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A discrete-choice model begins with consumers, alternatives, utilities, a shock law, and a choice set. Normalizations remove utility components that choices cannot reveal. Once these objects are declared, probabilities, simulations, derivatives, and counterfactuals can be generated from the same executable model rather than from disconnected formulas.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-01</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Demand, Supply, Bundles, and Welfare · Chapter IV-01</div>
+        <h1>Random Utility, Choice Sets, and Normalization</h1>
+        <p>A discrete-choice model begins with consumers, alternatives, utilities, a shock law, and a choice set. Normalizations remove utility components that choices cannot reveal. Once these objects are declared, probabilities, simulations, derivatives, and counterfactuals can be generated from the same executable model rather than from disconnected formulas.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-01.01</span><strong>Consumers and alternatives</strong></li>
+              <li><span>IV-01.02</span><strong>Random utility</strong></li>
+              <li><span>IV-01.03</span><strong>Logit probabilities</strong></li>
+              <li><span>IV-01.04</span><strong>Normalization</strong></li>
+              <li><span>IV-01.05</span><strong>Executable model objects</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="random-utility">
+            <h2>1. Choice probabilities follow from a complete utility contract</h2>
+            <p class="chapter-lede">Alternatives, systematic utilities, shock law, location, and scale must be fixed before probabilities or elasticities are interpreted.</p>
+            <p>Consumer <span class="math-inline">\(i\)</span> chooses one alternative from a finite nonempty set <span class="math-inline">\(\mathcal{J}\)</span>. Utility is <span class="math-inline">\(U_{ij}=V_{ij}+\sigma\)</span> <span class="math-inline">\(\varepsilon _{ij}\)</span>, where <span class="math-inline">\(\sigma&gt;0\)</span> and the <span class="math-inline">\(\varepsilon _{ij}\)</span> are iid standard type-I extreme value. Ties have probability zero. The maximum-utility rule gives</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Multinomial logit probability</span><div class="equation-block" role="math" aria-label="Multinomial logit choice share."><span class="equation-tex">\[P_{ij}=\operatorname{exp}(V_{ij}/\sigma )/\sum _{k\in \mathcal{J}}\operatorname{exp}(V_{ik}/\sigma ).\]</span><span class="equation-number">(1)</span></div></div>
+            <div class="proof"><p><strong>Proof sketch.</strong> Condition on <span class="math-inline">\(\varepsilon _{ij}\)</span> and integrate the product of extreme-value distribution functions for every competing shock. The resulting integral equals the softmax expression. ∎</p></div>
+            <p>Differentiation yields <span class="math-inline">\(\partial P_{ij}/\partial V_{ik}=P_{ij}(1{j=k}-P_{ik})/\sigma\)</span>.</p>
+          </section>
+
+          <section class="chapter-section" id="normalization">
+            <h2>2. Location invariance and scale normalization are distinct</h2>
+            <p>Adding a common <span class="math-inline">\(c_{i}\)</span> to every <span class="math-inline">\(V_{ij}\)</span> cancels from numerator and denominator in (1). Choice data therefore identify utility differences. One may set an outside-option utility to zero or impose another location normalization.</p>
+            <p>Changing <span class="math-inline">\(\sigma\)</span> alters <span class="math-inline">\(V/\sigma\)</span> and generally changes probabilities and derivatives. Multiplying both systematic utility and <span class="math-inline">\(\sigma\)</span> by the same positive constant leaves choices unchanged; changing one while holding the other fixed changes the model.</p>
+          </section>
+
+          <section class="chapter-section" id="numerical-shares">
+            <h2>3. A three-alternative calculation</h2>
+            <p>Take systematic utilities (0,1,2). At <span class="math-inline">\(\sigma=1\)</span>, shares are approximately (0.09003,0.24473,0.66524). Adding five to every utility produces the same shares. At <span class="math-inline">\(\sigma=2\)</span>, shares become approximately (0.18632,0.30720,0.50648). The last vector is less concentrated because utility differences are smaller relative to shock scale.</p>
+            <p>A numerically stable implementation subtracts <span class="math-inline">\(\operatorname{max}_{j}V_{ij}/\sigma\)</span> before exponentiation. This changes neither ratios nor shares and prevents overflow. The same stabilization must be applied within each observation-specific choice set.</p>
+          </section>
+
+          <section class="chapter-section" id="choice-boundaries">
+            <h2>4. Choice-set and scale boundaries</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Coefficient compared across different shock scales</span><p>A price coefficient of <span class="math-inline">\(-1\)</span> with <span class="math-inline">\(\sigma=1\)</span> implies twice the utility sensitivity of the same coefficient with <span class="math-inline">\(\sigma=2\)</span>. Coefficients require a scale convention before behavioral comparison.</p></div>
+            <p>An empty choice set leaves the maximization undefined. An alternative assigned systematic utility <span class="math-inline">\(-\infty\)</span> has zero share as a limit and should be removed from finite exponentiation. As <span class="math-inline">\(\sigma\)</span> approaches zero, choices concentrate on systematic-utility maximizers and deterministic ties need a tie rule; as <span class="math-inline">\(\sigma\)</span> grows, finite utility differences vanish relative to shocks and shares approach uniformity over the available set.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Store the choice set by observation, utility formula, outside option, shock family, location normalization, and scale. Verify shares are nonnegative and sum to one, compare analytic derivatives with finite differences, and keep simulation draws fixed across counterfactuals.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce all shares in Section 3.</li><li>Verify the derivative formula and its zero column sum.</li><li>Take <span class="math-inline">\(\sigma\)</span> toward zero under a unique maximizer and under a systematic tie.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Divide (1,<span class="math-inline">\(e,e^{2}\)</span>) or (1,<span class="math-inline">\(e^{1/2},e\)</span>) by its sum. <strong>2.</strong> Summing derivatives over <span class="math-inline">\(j\)</span> gives <span class="math-inline">\(P_{ik}-P_{ik}\sum P_{ij}=0\)</span>. <strong>3.</strong> A unique maximizer receives limiting probability one; tied maximizers split mass under symmetric iid shocks.</p></details>
+            <ol class="reference-list"><li>Daniel McFadden (1974), “Conditional Logit Analysis of Qualitative Choice Behavior,” in <em>Frontiers in Econometrics</em>.<small>Random-utility logit probabilities.</small></li><li>Kenneth Train, <em>Discrete Choice Methods with Simulation</em>, Chapters 2–3.<small>Utility normalization and simulation.</small></li><li>Moshe Ben-Akiva and Steven Lerman, <em>Discrete Choice Analysis</em>.<small>Choice sets and identification conventions.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State consumers, nonempty choice sets, systematic utility, shock distribution, location and scale normalizations, tie behavior, outside option, unavailable alternatives, numerical stabilization, and probability and derivative residuals.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter develops finite multinomial logit as the executable baseline. Random coefficients and nested dependence require additional integration and identification conditions.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-01/">II-01 · Conditional Probability and a Model&#x27;s Information Structure</a></li><li><a href="/resources/volume-03/iii-16/">III-16 · KKT Conditions, Linear Duality, and Sharpness</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#random-utility">Choice probabilities follow from a complete utility contract</a>
+            <a href="#normalization">Location invariance and scale normalization are distinct</a>
+            <a href="#numerical-shares">A three-alternative calculation</a>
+            <a href="#choice-boundaries">Choice-set and scale boundaries</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><span></span><a class="next" href="/resources/volume-04/iv-02/"><span>Next</span><strong>IV-02 · Residual-Income Demand and Approximation Domains</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

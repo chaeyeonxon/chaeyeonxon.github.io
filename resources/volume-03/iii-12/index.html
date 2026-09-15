@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Spectral Projections and Cross-Candidate Identification · Chae-Yeon Xon</title>
+  <meta name="description" content="Candidate latent models may each admit stable inversion on their own ranges while comparisons between candidates remain undefined. Spectral band projections create common finite-resolution objects, but uniform stability across expanding bands imposes stronger conditions. Those conditions can conflict with the smoothing that makes a measurement model empirically plausible.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-12/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Spectral Projections and Cross-Candidate Identification · Chae-Yeon Xon">
+  <meta property="og:description" content="Candidate latent models may each admit stable inversion on their own ranges while comparisons between candidates remain undefined. Spectral band projections create common finite-resolution objects, but uniform stability across expanding bands imposes stronger conditions. Those conditions can conflict with the smoothing that makes a measurement model empirically plausible.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-12/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Spectral Projections and Cross-Candidate Identification · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Candidate latent models may each admit stable inversion on their own ranges while comparisons between candidates remain undefined. Spectral band projections create common finite-resolution objects, but uniform stability across expanding bands imposes stronger conditions. Those conditions can conflict with the smoothing that makes a measurement model empirically plausible.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-12</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Function Spaces, Inverse Problems, and Risk Certificates · Chapter III-12</div>
+        <h1>Spectral Projections and Cross-Candidate Identification</h1>
+        <p>Candidate latent models may each admit stable inversion on their own ranges while comparisons between candidates remain undefined. Spectral band projections create common finite-resolution objects, but uniform stability across expanding bands imposes stronger conditions. Those conditions can conflict with the smoothing that makes a measurement model empirically plausible.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-12.01</span><strong>Band projections</strong></li>
+              <li><span>III-12.02</span><strong>Uniform stability</strong></li>
+              <li><span>III-12.03</span><strong>Costs of stronger conditions</strong></li>
+              <li><span>III-12.04</span><strong>Shared candidate structure</strong></li>
+              <li><span>III-12.05</span><strong>Probability reconstruction</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="candidate-ranges">
+            <h2>1. Candidate-specific inversion has a type constraint</h2>
+            <p class="chapter-lede">Each latent candidate may fit the measured object through its own operator. Comparing recovered objects requires a common domain, range, and topology across candidates.</p>
+            <p>Let <span class="math-inline">\(T_{j}:X_{j}\to Y\)</span> denote the measurement operator under candidate <span class="math-inline">\(j\)</span>. Even when every <span class="math-inline">\(T_{j}\)</span> is injective, <span class="math-inline">\(T_{j}^{-1}y\)</span> exists only for <span class="math-inline">\(y\in \operatorname{range}(T_{j})\)</span>. A cross-candidate map <span class="math-inline">\(T_{1}^{-1}T_{0}\)</span> needs <span class="math-inline">\(\operatorname{range}(T_{0})\subseteq \operatorname{range}(T_{1})\)</span> on the tested class.</p>
+            <p>For example, on <span class="math-inline">\(\ell ^{2}\)</span> define <span class="math-inline">\(T_{0}e_{k}=k^{-1}e_{k}\)</span> and <span class="math-inline">\(T_{1}e_{k}=k^{-2}e_{k}\)</span>. The sequence <span class="math-inline">\(y_{k}=k^{-2}\)</span> lies in <span class="math-inline">\(\operatorname{range}(T_{0})\)</span> because its preimage is 1/<span class="math-inline">\(k\)</span>. Its formal <span class="math-inline">\(T_{1}\)</span> preimage is the constant sequence, so <span class="math-inline">\(y\)</span> lies outside <span class="math-inline">\(\operatorname{range}(T_{1})\)</span>.</p>
+          </section>
+
+          <section class="chapter-section" id="finite-band">
+            <h2>2. Spectral projections create common finite objects</h2>
+            <p>Let {<span class="math-inline">\(e_{k}\)</span>} be a shared orthonormal basis and <span class="math-inline">\(P_{K}\)</span> the projection onto its first <span class="math-inline">\(K\)</span> elements. If <span class="math-inline">\(Te_{k}=\sigma _{k}e_{k}\)</span> with <span class="math-inline">\(\sigma _{k}&gt;0\)</span>, the finite-band inverse is</p>
+            <div class="equation-block" role="math" aria-label="Finite band inverse."><span class="equation-tex">\[R_{K}y=\sum _{k\le K}\sigma _{k}^{-1}\langle y,e_{k}\rangle e_{k}, \quad \lVert R_{K}\rVert =1/\operatorname{min}_{k\le K}\sigma _{k}.\]</span><span class="equation-number">(1)</span></div>
+            <p>This gives a shared resolution experiment. It also exposes whether stability deteriorates as the resolution expands.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Uniform band stability implies a lower bound</span><p>If the projections increase to the identity and <span class="math-inline">\(\operatorname{sup}_{K}\lVert R_{K}\rVert \le M\)</span>, then <span class="math-inline">\(\lVert Tx\rVert \ge M^{-1}\lVert x\rVert\)</span> for every <span class="math-inline">\(x\)</span> in the closed span of the basis. Hence <span class="math-inline">\(T\)</span> has a bounded inverse on its range.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> For every finite-band <span class="math-inline">\(x\)</span>, equation (1) gives <span class="math-inline">\(x=R_{K}Tx\)</span>, and thus <span class="math-inline">\(\lVert x\rVert \le M\lVert Tx\rVert\)</span>. Approximate an arbitrary <span class="math-inline">\(x\)</span> by <span class="math-inline">\(P_{K}x\)</span> and use continuity of <span class="math-inline">\(T\)</span> to pass the inequality to the limit. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="smoothing-example">
+            <h2>3. Smoothing makes uniform stability fail</h2>
+            <p>For Gaussian or heat smoothing with <span class="math-inline">\(\sigma _{k}=\operatorname{exp}(-\tau k^{2})\)</span>, the band inverse norm is <span class="math-inline">\(\operatorname{exp}(\tau K^{2})\)</span>. At <span class="math-inline">\(\tau=0.01\)</span> it equals 1.284 at <span class="math-inline">\(K=5\)</span>, 2.718 at <span class="math-inline">\(K=10\)</span>, 54.598 at <span class="math-inline">\(K=20\)</span>, and about <span class="math-inline">\(8.89\times 10^{6}\)</span> at <span class="math-inline">\(K=40\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 2 · Compact infinite-dimensional inversion lacks a uniform bound</span><p>A compact injective operator on an infinite-dimensional Hilbert space cannot be bounded below.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> If <span class="math-inline">\(\lVert Tx\rVert \ge c\lVert x\rVert\)</span>, then the image of any orthonormal sequence has pairwise distances at least <span class="math-inline">\(c\sqrt{2}\)</span>. Compactness requires a convergent subsequence of those images, which is impossible under this separation. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="identification-claims">
+            <h2>4. What a failed comparison establishes</h2>
+            <p>A failed transported inverse shows that one proposed proof cannot compare the candidates on its stated domain. Identification fails only after constructing two admissible latent structures that generate the same observable law and disagree on the target. Other proof routes may use a shared finite resolution, a common invariant graph core, shape restrictions, or an estimand that lies in a stable adjoint range.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Proof gap promoted to nonidentification</span><p>Undefined cross-candidate algebra establishes a domain error. An observational-equivalence witness is a separate mathematical object and must satisfy every probability, positivity, normalization, and model restriction.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>For each candidate and band, report the smallest singular value, inverse norm, residual, and whether the observed object lies in the numerical range. Plot these quantities against <span class="math-inline">\(K\)</span>. A finite sequence of stable truncations should be accompanied by the analytic behavior as <span class="math-inline">\(K\)</span> tends to infinity.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Verify the range mismatch for <span class="math-inline">\(T_{0}\)</span>, <span class="math-inline">\(T_{1}\)</span>, and <span class="math-inline">\(y\)</span> in Section 1.</li>
+              <li>Reproduce the four inverse norms for Gaussian smoothing and find the largest band with norm below <span class="math-inline">\(10^{3}\)</span>.</li>
+              <li>Construct two finite-dimensional candidates with different ranges and one common observable vector; determine which transported inverses are legal.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The <span class="math-inline">\(T_{0}\)</span> preimage has entries 1/<span class="math-inline">\(k\)</span> and belongs to <span class="math-inline">\(\ell ^{2}\)</span>; the <span class="math-inline">\(T_{1}\)</span> preimage has entries one and lies outside <span class="math-inline">\(\ell ^{2}\)</span>. <strong>2.</strong> Solve <span class="math-inline">\(\operatorname{exp}(0.01K^{2})&lt;10^{3}\)</span>, giving <span class="math-inline">\(K&lt;\sqrt{100 \operatorname{log} 1000}\approx26.28\)</span>. The largest integer band is 26.</p></details>
+            <ol class="reference-list">
+              <li>Heinz W. Engl, Martin Hanke, and Andreas Neubauer, <em>Regularization of Inverse Problems</em>, Chapters 2–4.<small>Spectral cutoffs and stability.</small></li>
+              <li>Rainer Kress, <em>Linear Integral Equations</em>, Chapters 3–4.<small>Compact operators and ill-posed equations.</small></li>
+              <li>Whitney K. Newey and James L. Powell (2003), “Instrumental Variable Estimation of Nonparametric Models,” <em>Econometrica</em> 71, 1565–1578.<small>Economic conditional-moment inverse problems.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>List candidate domains and ranges, the shared projection, band singular values, inverse norms, limiting argument, and any observational-equivalence witness. Identify whether the result is a proof-gap diagnosis or an identification theorem.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter treats spectral projections, common-resolution comparisons, and uniform stability for compact inverse problems. General spectral calculus and full probability-model reconstruction are outside scope.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-11/">III-11 · Integral, Multiplication, Adjoint, and Smoothing Operators</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#candidate-ranges">Candidate-specific inversion has a type constraint</a>
+            <a href="#finite-band">Spectral projections create common finite objects</a>
+            <a href="#smoothing-example">Smoothing makes uniform stability fail</a>
+            <a href="#identification-claims">What a failed comparison establishes</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-11/"><span>Previous</span><strong>III-11 · Integral, Multiplication, Adjoint, and Smoothing Operators</strong></a><a class="next" href="/resources/volume-03/iii-13/"><span>Next</span><strong>III-13 · Hilbert Target Operators and Distribution States</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

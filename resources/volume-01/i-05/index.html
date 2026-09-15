@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Representation Budgets, Singular Values, and Approximation Loss · Chae-Yeon Xon</title>
+  <meta name="description" content="A representation budget forces approximation. Worst-direction error and distribution-weighted mean-square loss answer different questions and produce different spectral summaries. Continuity restrictions govern nonlinear encoders, while Taylor remainders connect a local spectral frontier to finite policy and state perturbations.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-05/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Representation Budgets, Singular Values, and Approximation Loss · Chae-Yeon Xon">
+  <meta property="og:description" content="A representation budget forces approximation. Worst-direction error and distribution-weighted mean-square loss answer different questions and produce different spectral summaries. Continuity restrictions govern nonlinear encoders, while Taylor remainders connect a local spectral frontier to finite policy and state perturbations.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-05/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Representation Budgets, Singular Values, and Approximation Loss · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A representation budget forces approximation. Worst-direction error and distribution-weighted mean-square loss answer different questions and produce different spectral summaries. Continuity restrictions govern nonlinear encoders, while Taylor remainders connect a local spectral frontier to finite policy and state perturbations.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-05</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Observation, Representation, and Sufficiency · Chapter I-05</div>
+        <h1>Representation Budgets, Singular Values, and Approximation Loss</h1>
+        <p>A representation budget forces approximation. Worst-direction error and distribution-weighted mean-square loss answer different questions and produce different spectral summaries. Continuity restrictions govern nonlinear encoders, while Taylor remainders connect a local spectral frontier to finite policy and state perturbations.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-05.01</span><strong>Two loss functions</strong></li>
+              <li><span>I-05.02</span><strong>Linear approximation frontiers</strong></li>
+              <li><span>I-05.03</span><strong>Continuous nonlinear encoders</strong></li>
+              <li><span>I-05.04</span><strong>Width lower bounds</strong></li>
+              <li><span>I-05.05</span><strong>Finite-perturbation error</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="linear-budget">
+            <h2>1. A rank budget approximates a target derivative</h2>
+            <p class="chapter-lede">When exact representation exceeds the available dimension, a loss function determines which response directions should be retained. Operator loss and average squared loss produce related spectral solutions with different numerical summaries.</p>
+            <p>Let <span class="math-inline">\(D\in \mathbb{R}^{r\times n}\)</span> be a target derivative after the state and target metrics have been whitened. A rank-<span class="math-inline">\(q\)</span> representation followed by a linear decoder produces an approximation <span class="math-inline">\(L\)</span> with <span class="math-inline">\(\operatorname{rank}(L)\le q\)</span>. Write the singular value decomposition <span class="math-inline">\(D=U\operatorname{diag}(\sigma _{1},\ldots,\sigma _{p})V^{\top}\)</span>, with <span class="math-inline">\(\sigma _{1}\ge\cdots\ge\sigma _{p}\ge0\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Two optimal spectral truncations</span><p>For <span class="math-inline">\(0\le q&lt;p\)</span>, the truncated SVD <span class="math-inline">\(D_{q}\)</span> minimizes both the spectral and Frobenius errors:</p>
+              <div class="equation-block" role="math" aria-label="Eckart Young approximation errors."><span class="equation-tex">\[\operatorname{min}_{\operatorname{rank}(L)\le q}\lVert D-L\rVert _{2}=\sigma _{q+1}, \quad \operatorname{min} \lVert D-L\rVert _{F}^{2}=\sum _{j&gt;q}\sigma _{j}^{2}.\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof sketch.</strong> <span class="math-inline">\(D_{q}\)</span> attains the displayed errors by orthogonality of the singular components. Any rank-<span class="math-inline">\(q\)</span> map has a null direction in the span of the first <span class="math-inline">\(q+1\)</span> right singular vectors; evaluating the error on a unit vector in that null direction gives the spectral lower bound <span class="math-inline">\(\sigma _{q+1}\)</span>. The Frobenius result follows by the same orthogonal decomposition and the variational characterization of singular values. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="loss-interpretation">
+            <h2>2. Norms encode different experiments</h2>
+            <p>The spectral norm controls the largest response error over unit state directions. If a whitened perturbation <span class="math-inline">\(v\)</span> has mean zero and covariance <span class="math-inline">\(I\)</span>, then <span class="math-inline">\(\mathbb{E}[\lVert(D-L)v\rVert^{2}]=\lVert D-L\rVert_{F}^{2}\)</span>. With covariance <span class="math-inline">\(\Sigma\)</span>, the corresponding matrix is <span class="math-inline">\(D\Sigma^{1/2}\)</span>, and a target weight enters by premultiplication.</p>
+            <p>For <span class="math-inline">\(D=\operatorname{diag}(4,2,1)\)</span>, a one-dimensional representation has worst-direction error 2 and isotropic mean-square error <span class="math-inline">\(2^{2}+1^{2}=5\)</span>. A two-dimensional representation has both errors equal to one. Reporting “the approximation error” without its norm leaves the claim incomplete.</p>
+            <p>If <span class="math-inline">\(\sigma _{q}=\sigma _{q+1}\)</span>, the optimal error remains unique while the retained singular subspace can be nonunique inside the tied singular-value space. A numerical implementation should report the tied cluster and compare subspaces through projections.</p>
+          </section>
+
+          <section class="chapter-section" id="nonlinear-lower-bound">
+            <h2>3. A continuous nonlinear encoder still faces a dimension bound</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 2 · Antipodal worst-case lower bound</span><p>Let the state set contain the radius-<span class="math-inline">\(\rho\)</span> sphere <span class="math-inline">\(S_{\rho}^{d-1}\)</span> in <span class="math-inline">\(\mathbb{R}^{d}\)</span>, let the target be the state itself, and let <span class="math-inline">\(z:S_{\rho}^{d-1}\to \mathbb{R}^{q}\)</span> be continuous with <span class="math-inline">\(q&lt;d\)</span>. For every decoder <span class="math-inline">\(\delta\)</span>,</p>
+              <div class="equation-block" role="math" aria-label="Worst case decoder lower bound from antipodal coincidence."><span class="equation-tex">\[\operatorname{sup}_{\lVert x\rVert =\rho } \lVert x-\delta (z(x))\rVert \ge \rho .\]</span><span class="equation-number">(2)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Borsuk–Ulam gives a unit vector <span class="math-inline">\(v\)</span> with <span class="math-inline">\(z(\rho v)=z(-\rho v)\)</span>. Let <span class="math-inline">\(a\)</span> be the common decoded value. The triangle inequality gives <span class="math-inline">\(2\rho=\lVert \rho v-(-\rho v)\rVert \le \lVert \rho v-a\rVert+\lVert -\rho v-a\rVert\)</span>, so at least one error is at least <span class="math-inline">\(\rho\)</span>. ∎</p></div>
+            <p>Continuity and the spherical state set carry the result. Discontinuous encodings or a finite state set require a different lower-bound argument.</p>
+          </section>
+
+          <section class="chapter-section" id="finite-radius">
+            <h2>4. From a derivative spectrum to a finite radius</h2>
+            <p>Suppose <span class="math-inline">\(\tau\)</span> is twice differentiable and its Hessian operator norm is bounded by <span class="math-inline">\(M\)</span> on a ball of radius <span class="math-inline">\(\rho\)</span> around <span class="math-inline">\(x_{0}\)</span>. Taylor's theorem gives</p>
+            <div class="equation-block" role="math" aria-label="Finite radius Taylor approximation bound."><span class="equation-tex">\[\lVert \tau (x_{0}+h)-\tau (x_{0})-D\tau _{x_{0}}h\rVert \le (M/2)\lVert h\rVert ^{2}.\]</span><span class="equation-number">(3)</span></div>
+            <p>Combining a rank-<span class="math-inline">\(q\)</span> approximation to <span class="math-inline">\(D\tau_{x_{0}}\)</span> with (3) gives a worst-case upper bound <span class="math-inline">\(\sigma _{q+1}\rho+(M/2)\rho ^{2}\)</span>. In the diagonal example with <span class="math-inline">\(q=1\)</span>, <span class="math-inline">\(\rho=0.1\)</span>, and <span class="math-inline">\(M=3\)</span>, this bound is 0.215.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Local singular values reported as global decoder risk</span><p>Singular values describe the linearized target at one reference state under declared metrics. A finite-radius risk statement needs Taylor control, a state distribution, or a separate global argument.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Whiten state and target metrics before computing the SVD, report the discarded spectrum, and verify approximation error under the same norm. Estimate or bound Hessian remainders on the actual perturbation region.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce both error criteria for diag(4,2,1) at ranks zero through three.</li><li>Prove (2) for <span class="math-inline">\(d=2\)</span> and <span class="math-inline">\(q=1\)</span> directly from the intermediate value theorem.</li><li>Derive the covariance-weighted truncation problem for a positive-definite <span class="math-inline">\(\Sigma\)</span>.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Spectral errors are 4,2,1,0 and squared Frobenius errors are 21,5,1,0. <strong>3.</strong> Write <span class="math-inline">\(v=\Sigma^{1/2}u\)</span> with <span class="math-inline">\(\operatorname{Cov}(u)=I\)</span>. The mean-square objective becomes the Frobenius approximation of <span class="math-inline">\(D\Sigma^{1/2}\)</span>.</p></details>
+            <ol class="reference-list"><li>C. Eckart and G. Young (1936), “The Approximation of One Matrix by Another of Lower Rank,” <em>Psychometrika</em> 1, 211–218.<small>Best low-rank approximation.</small></li><li>Rajendra Bhatia, <em>Matrix Analysis</em>, Chapter III.<small>Singular-value variational principles.</small></li><li>Jiří Matoušek, <em>Using the Borsuk–Ulam Theorem</em>, Chapter 2.<small>Antipodal coincidence theorem.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the state and target metrics, rank budget, loss norm, covariance weighting, discarded spectrum, nonlinear continuity assumptions, radius, Hessian bound, and whether the result is local or global.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers linear spectral approximation, one topological lower bound, and second-order finite-radius control. Nonlinear width theory and statistical selection of rank require additional results.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-02/">I-02 · Linear Maps, Kernels, Quotients, and Information Dimension</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#linear-budget">A rank budget approximates a target derivative</a>
+            <a href="#loss-interpretation">Norms encode different experiments</a>
+            <a href="#nonlinear-lower-bound">A continuous nonlinear encoder still faces a dimension bound</a>
+            <a href="#finite-radius">From a derivative spectrum to a finite radius</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-04/"><span>Previous</span><strong>I-04 · Minimum Information Repair and Feasible Records</strong></a><a class="next" href="/resources/volume-01/i-06/"><span>Next</span><strong>I-06 · From Local Derivatives to Global Decoder Risk</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Target Fisher Information: Identification and Precision · Chae-Yeon Xon</title>
+  <meta name="description" content="Singular Fisher information permits some targets to remain estimable while structural directions are unidentified. Kernel and range conditions answer identification; pseudoinverse variance answers precision. Gaussian repair and feasible PSD contractions translate those distinctions into record design.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-12/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Target Fisher Information: Identification and Precision · Chae-Yeon Xon">
+  <meta property="og:description" content="Singular Fisher information permits some targets to remain estimable while structural directions are unidentified. Kernel and range conditions answer identification; pseudoinverse variance answers precision. Gaussian repair and feasible PSD contractions translate those distinctions into record design.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-12/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Target Fisher Information: Identification and Precision · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Singular Fisher information permits some targets to remain estimable while structural directions are unidentified. Kernel and range conditions answer identification; pseudoinverse variance answers precision. Gaussian repair and feasible PSD contractions translate those distinctions into record design.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-12</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Information Transmission and Learning · Chapter I-12</div>
+        <h1>Target Fisher Information: Identification and Precision</h1>
+        <p>Singular Fisher information permits some targets to remain estimable while structural directions are unidentified. Kernel and range conditions answer identification; pseudoinverse variance answers precision. Gaussian repair and feasible PSD contractions translate those distinctions into record design.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-12.01</span><strong>Singular information matrices</strong></li>
+              <li><span>I-12.02</span><strong>Target identification</strong></li>
+              <li><span>I-12.03</span><strong>Precision thresholds</strong></li>
+              <li><span>I-12.04</span><strong>Gaussian repair</strong></li>
+              <li><span>I-12.05</span><strong>Constrained retention menus</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="singular-information">
+            <h2>1. Target identification is a kernel condition</h2>
+            <p class="chapter-lede">A singular information matrix can identify a target that ignores every score-null direction. Rank identifies the size of the learned subspace; target precision also depends on eigenvalues and orientation.</p>
+            <p>Let <span class="math-inline">\(\theta \in \mathbb{R}^{p}\)</span> index a regular local experiment with Fisher information <span class="math-inline">\(I\succeq0\)</span>. Consider a differentiable target whose local derivative is <span class="math-inline">\(C\in \mathbb{R}^{q\times p}\)</span>. In the linear Gaussian experiment <span class="math-inline">\(Y=A\theta+\varepsilon\)</span> with <span class="math-inline">\(\varepsilon \sim N(0,\Sigma)\)</span>, <span class="math-inline">\(\Sigma\succ0\)</span>, information is <span class="math-inline">\(I=A^{\top}\Sigma^{-1}A\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Linear-Gaussian target estimability</span><p>In the Gaussian experiment, <span class="math-inline">\(C\theta\)</span> has an unbiased linear estimator for every <span class="math-inline">\(\theta\)</span> exactly when</p>
+              <div class="equation-block" role="math" aria-label="Kernel condition and information bound for a linear target."><span class="equation-tex">\[\operatorname{ker}(I)\subseteq \operatorname{ker}(C) \Longleftrightarrow \operatorname{range}(C^{\top })\subseteq \operatorname{range}(I).\]</span><span class="equation-number">(1)</span></div>
+              <p>Under (1), the minimum covariance in the Loewner order among unbiased linear estimators is <span class="math-inline">\(CI^{+}C^{\top}\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Since <span class="math-inline">\(\Sigma\)</span> is positive definite, <span class="math-inline">\(\operatorname{ker}(I)=\operatorname{ker}(A)\)</span>. An estimator <span class="math-inline">\(BY\)</span> is unbiased exactly when <span class="math-inline">\(BA=C\)</span>, which is the factorization condition from I-02. Generalized least squares on <span class="math-inline">\(\operatorname{range}(A)\)</span> yields the displayed covariance; any other unbiased linear estimator adds a component orthogonal in the <span class="math-inline">\(\Sigma\)</span>-weighted observation space and therefore a positive-semidefinite covariance term. ∎</p></div>
+            <p>For broader regular experiments, the same kernel condition describes local pathwise estimability only after the tangent space, target derivative, and closure of the score range are specified. The Gaussian statement above is finite-dimensional and exact.</p>
+          </section>
+
+          <section class="chapter-section" id="rank-versus-precision">
+            <h2>2. Equal rank can support different precision</h2>
+            <p>Compare <span class="math-inline">\(I_{A}=\operatorname{diag}(4,1,0)\)</span> and <span class="math-inline">\(I_{B}=\operatorname{diag}(1,4,0)\)</span>. Both have rank two and the same null space. For target <span class="math-inline">\(c=e_{1}\)</span>, the information bounds <span class="math-inline">\(c^{\top}I^{+}c\)</span> are 1/4 and 1. For target <span class="math-inline">\(e_{2}\)</span>, they are 1 and 1/4. The identification verdict agrees across the experiments, while target precision reverses.</p>
+            <p>A threshold claim such as <span class="math-inline">\(\operatorname{Var}(c^{\top}\hat{\theta })\le v\)</span> therefore requires the target direction, information scale, sample-size convention, and estimator class. Matrix rank supplies none of those numerical quantities.</p>
+          </section>
+
+          <section class="chapter-section" id="gaussian-repair">
+            <h2>3. Gaussian augmentation repairs target-null directions</h2>
+            <p>Add records <span class="math-inline">\(Z=R\theta+\eta\)</span>, with <span class="math-inline">\(\eta \sim N(0,\Omega)\)</span>, <span class="math-inline">\(\Omega\succ0\)</span>, independent of the original experiment. Their information is <span class="math-inline">\(J=R^{\top}\Omega ^{-1}R\)</span>, and <span class="math-inline">\(\operatorname{ker}(I+J)=\operatorname{ker}(I)\cap \operatorname{ker}(R)\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 2 · Minimum unrestricted repair rank</span><p>If rows of <span class="math-inline">\(R\)</span> may be chosen freely, the minimum record rank that makes <span class="math-inline">\(C\theta\)</span> estimable is</p>
+              <div class="equation-block" role="math" aria-label="Minimum rank of Gaussian information repair."><span class="equation-tex">\[\operatorname{rank}(C|_{\operatorname{ker}(I)}).\]</span><span class="equation-number">(2)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Any valid augmentation must separate every target-relevant equivalence class in <span class="math-inline">\(\operatorname{ker}(I)\)</span>, so <span class="math-inline">\(\operatorname{rank}(R|_{\operatorname{\operatorname{ker}}(I)})\)</span> is at least the rank in (2). Choose that many linear functionals whose restrictions span the row space of <span class="math-inline">\(C\)</span> on <span class="math-inline">\(\operatorname{ker}(I)\)</span>. Their common kernel inside <span class="math-inline">\(\operatorname{ker}(I)\)</span> lies in <span class="math-inline">\(\operatorname{ker}(C)\)</span>, attaining the bound. ∎</p></div>
+            <p>For base information <span class="math-inline">\(\operatorname{diag}(4,0,1)\)</span> and target <span class="math-inline">\(C\)</span>=[0,1,0], (2) equals one. A scalar record of the second coordinate with noise variance one gives augmented information <span class="math-inline">\(\operatorname{diag}(4,1,1)\)</span> and target variance bound one. Noise variance 1/4 raises the added information to four and lowers the bound to 1/4.</p>
+          </section>
+
+          <section class="chapter-section" id="prior-boundary">
+            <h2>4. Prior precision and likelihood information answer different questions</h2>
+            <p>With Gaussian prior precision <span class="math-inline">\(P_{0}\)</span>, posterior precision is <span class="math-inline">\(P_{0}+I\)</span>. A positive-definite prior produces finite posterior variance along a likelihood-null direction. That finite variance records prior concentration; repeated data from the same null experiment contribute zero information in that direction.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Finite posterior variance labeled as data identification</span><p>Take <span class="math-inline">\(I=\operatorname{diag}(1,0)\)</span> and prior precision <span class="math-inline">\(P_{0}=I_{2}\)</span>. The posterior variance of <span class="math-inline">\(\theta _{2}\)</span> is one, yet the likelihood is constant in <span class="math-inline">\(\theta _{2}\)</span>. Changing the prior variance changes the posterior variance one-for-one. The data supply no identification of that coordinate.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Symmetrize the numerical information matrix, inspect negative eigenvalues against a declared tolerance, compute its numerical null space, and test the operator norm of <span class="math-inline">\(C\)</span> on that null space. Use the same eigenvalue threshold for the pseudoinverse and report sensitivity across plausible thresholds. Keep prior precision in a separate ledger column.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce both target bounds for <span class="math-inline">\(I_{A}\)</span> and <span class="math-inline">\(I_{B}\)</span>.</li><li>For base information diag(4,0,1), find the minimum unrestricted repair rank for targets [0,1,0] and [[1,0,0],[0,1,1]].</li><li>Add a feasible record dictionary and compare its minimum subset size with (2).</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The pseudoinverses are <span class="math-inline">\(\operatorname{diag}(1/4,1,0)\)</span> and <span class="math-inline">\(\operatorname{diag}(1,1/4,0)\)</span>. <strong>2.</strong> The base null space is <span class="math-inline">\(\operatorname{span}(e_{2})\)</span>. Both target matrices have restricted rank one, so one freely chosen scalar record suffices. <strong>3.</strong> Test <span class="math-inline">\(\operatorname{ker}(I)\cap \operatorname{ker}(R_{S})\subseteq \operatorname{ker}(C)\)</span> for each subset.</p></details>
+            <ol class="reference-list"><li>C. R. Rao, <em>Linear Statistical Inference and Its Applications</em>, chapters on estimable functions in linear models.<small>Estimability and generalized inverses.</small></li><li>A. W. van der Vaart, <em>Asymptotic Statistics</em>, Chapters 7 and 25.<small>Local information and efficiency bounds.</small></li><li>I-02 · Linear Maps, Kernels, Quotients, and Information Dimension.<small>Factorization and unrestricted repair rank.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the experiment, parameter and target derivative, sample-size normalization, information eigenvalues and threshold, null-space test, pseudoinverse convention, estimator class, record likelihood, feasible record set, target variance bound, and prior precision as a separate quantity.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The formal results cover finite-dimensional Gaussian linear experiments and unrestricted linear augmentation. Semiparametric tangent closures, adaptive designs, and constrained information menus require additional analysis.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-11/">I-11 · Administrative Handoffs as Statistical Experiments</a></li><li><a href="/resources/volume-01/i-02/">I-02 · Linear Maps, Kernels, Quotients, and Information Dimension</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#singular-information">Target identification is a kernel condition</a>
+            <a href="#rank-versus-precision">Equal rank can support different precision</a>
+            <a href="#gaussian-repair">Gaussian augmentation repairs target-null directions</a>
+            <a href="#prior-boundary">Prior precision and likelihood information answer different questions</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-11/"><span>Previous</span><strong>I-11 · Administrative Handoffs as Statistical Experiments</strong></a><a class="next" href="/resources/volume-01/i-13/"><span>Next</span><strong>I-13 · Information Budgets, Decision Loss, and Record Allocation</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

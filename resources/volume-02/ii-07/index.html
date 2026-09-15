@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>An Error Ledger for Monte Carlo and Forward Simulation · Chae-Yeon Xon</title>
+  <meta name="description" content="Simulation enters as numerical integration, forward value approximation, nested averaging, and optimization input. Centered simulation noise, bias, discretization, and common-random-number dependence scale differently. A useful computation reports each component against the estimator&#x27;s statistical normalization.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-07/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="An Error Ledger for Monte Carlo and Forward Simulation · Chae-Yeon Xon">
+  <meta property="og:description" content="Simulation enters as numerical integration, forward value approximation, nested averaging, and optimization input. Centered simulation noise, bias, discretization, and common-random-number dependence scale differently. A useful computation reports each component against the estimator&#x27;s statistical normalization.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-07/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="An Error Ledger for Monte Carlo and Forward Simulation · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Simulation enters as numerical integration, forward value approximation, nested averaging, and optimization input. Centered simulation noise, bias, discretization, and common-random-number dependence scale differently. A useful computation reports each component against the estimator&#x27;s statistical normalization.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-07</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Asymptotics and Simulation · Chapter II-07</div>
+        <h1>An Error Ledger for Monte Carlo and Forward Simulation</h1>
+        <p>Simulation enters as numerical integration, forward value approximation, nested averaging, and optimization input. Centered simulation noise, bias, discretization, and common-random-number dependence scale differently. A useful computation reports each component against the estimator&#x27;s statistical normalization.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-07.01</span><strong>Numerical integration</strong></li>
+              <li><span>II-07.02</span><strong>Forward simulators</strong></li>
+              <li><span>II-07.03</span><strong>Nested averages</strong></li>
+              <li><span>II-07.04</span><strong>Dependence from random numbers</strong></li>
+              <li><span>II-07.05</span><strong>Computational budgets</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="simulation-ledger">
+            <h2>1. Centered noise and bias occupy different rows</h2>
+            <p class="chapter-lede">Simulation can approximate an expectation, a continuation value, or an optimizer input. Its centered variance, directional bias, discretization error, and induced dependence use different rates.</p>
+            <p>For unit or inequality <span class="math-inline">\(i=1,\ldots,n_{I}\)</span>, let <span class="math-inline">\(\mu _{i}=\mathbb{E}[g_{i}(U)]\)</span> and estimate it with <span class="math-inline">\(\hat{\mu }_{i}=n_{s}^{-1}\sum _{s=1}^{n_{s}}g_{i}(U_{is})\)</span>. The aggregate integration error is <span class="math-inline">\(E=n_{I}^{-1}\sum(\hat{\mu}_{i}-\mu _{i})\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Independent-draw variance</span><p>If all centered terms are independent, have variances bounded by <span class="math-inline">\(\sigma ^{2}\)</span>, and have zero mean, then</p>
+              <div class="equation-block" role="math" aria-label="Variance bound for independent simulation averages."><span class="equation-tex">\[\operatorname{Var}(E)\le \sigma ^{2}/(n_{I}n_{s}).\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> The variance of a sum of independent centered terms is the sum of their variances. Divide the bound <span class="math-inline">\(n_{I}n_{s}\sigma ^{2}\)</span> by the squared denominator <span class="math-inline">\((n_{I}n_{s})^{2}\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="shared-draws">
+            <h2>2. Shared random numbers alter covariance</h2>
+            <p>Suppose <span class="math-inline">\(g_{i}(U_{s})-\mu _{i}=Z_{s}\)</span> for every <span class="math-inline">\(i\)</span>, with independent unit-variance <span class="math-inline">\(Z_{s}\)</span> across draws. Then averaging over <span class="math-inline">\(i\)</span> does nothing: <span class="math-inline">\(E=n_{s}^{-1}\sum Z_{s}\)</span> and <span class="math-inline">\(\operatorname{Var}(E)=1/n_{s}\)</span>.</p>
+            <p>With independent draws across both indices, the variance is 1/(<span class="math-inline">\(n_{I}n_{s}\)</span>). At <span class="math-inline">\(n_{I}=10\)</span> and <span class="math-inline">\(n_{s}=100\)</span>, the two variances are 0.01 and 0.001. Shared random numbers can reduce variance of paired differences when covariance cancels; their value depends on the estimand.</p>
+          </section>
+
+          <section class="chapter-section" id="bias-discretization">
+            <h2>3. Averaging cannot remove a common directional bias</h2>
+            <p>If <span class="math-inline">\(\mathbb{E}[\hat{\mu}_{i}-\mu _{i}]=b_{i}\)</span>, averaging produces <span class="math-inline">\(\bar{b}=n_{I}^{-1}\sum b_{i}\)</span>. A shared sign or common approximation method can keep <span class="math-inline">\(\bar{b}\)</span> at the same order as each component. Root-<span class="math-inline">\(n\)</span> inference requires <span class="math-inline">\(\sqrt{n}\bar{b}\to0\)</span> or an explicit bias correction.</p>
+            <p>Time discretization, value-function truncation, inner optimization tolerance, and interpolation error are deterministic conditional on their numerical inputs, even when those inputs were generated randomly. Each receives its own convergence study and scale comparison.</p>
+          </section>
+
+          <section class="chapter-section" id="nested-boundaries">
+            <h2>4. Nested and adaptive simulations need conditional accounting</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Draw count multiplied across dependent layers</span><p>Using the same outer path for many inner evaluations does not create the product number of independent paths. The variance must include covariance induced by shared outer states, common seeds, antithetic pairing, and adaptive stopping.</p></div>
+            <p>At zero simulation variance, Monte Carlo error disappears but discretization and model error can remain. At one draw, variance estimators based on within-unit replication are unavailable. Random stopping times require conditions for unbiasedness and finite expected cost. Seed sensitivity is a diagnostic rather than a probability theorem.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Record seeds, stream construction, common-random-number groups, nesting, antithetic rules, draw counts, time grid, truncation horizon, and solver tolerance. Replicate the entire simulation under independent top-level seeds and compare empirical variance with the analytic covariance formula.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify both variances in Section 2.</li><li>Let pairwise cross-unit correlation equal <span class="math-inline">\(\rho\)</span> and derive <span class="math-inline">\(\operatorname{Var}(E)\)</span> for equal within-unit variances.</li><li>Add bias 1/<span class="math-inline">\(n_{s}\)</span> and derive the two root-<span class="math-inline">\(n\)</span> requirements.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Independent averaging uses 1,000 unit-draw terms; perfectly shared noise uses 100 distinct terms. <strong>2.</strong> For unit averages with variance 1/<span class="math-inline">\(n_{s}\)</span>, the aggregate variance is <span class="math-inline">\([1+(n_{I}-1)\rho]/(n_{I}n_{s})\)</span>. <strong>3.</strong> Require <span class="math-inline">\(n/n_{s}^{2}\to0\)</span> for bias and <span class="math-inline">\(n/(n_{I}n_{s})\to0\)</span> for independent centered noise.</p></details>
+            <ol class="reference-list"><li>Christian P. Robert and George Casella, <em>Monte Carlo Statistical Methods</em>, chapters on variance reduction.<small>Monte Carlo variance and common random numbers.</small></li><li>Paul Glasserman, <em>Monte Carlo Methods in Financial Engineering</em>, Chapters 4–5.<small>Variance reduction and nested simulation principles.</small></li><li>Charles Gouriéroux and Alain Monfort, <em>Simulation-Based Econometric Methods</em>.<small>Simulation error in estimators.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the simulated object, outer and inner sample sizes, independent stream count, covariance groups, bias, discretization, horizon, solver error, random stopping rule, seeds, statistical normalization, and empirical replication variance.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers forward Monte Carlo averages and their use as generated inputs. Markov-chain Monte Carlo and continuous-time discretization theory require separate analyses.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-05/">II-05 · Stochastic Orders and Competing Sample Sizes</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#simulation-ledger">Centered noise and bias occupy different rows</a>
+            <a href="#shared-draws">Shared random numbers alter covariance</a>
+            <a href="#bias-discretization">Averaging cannot remove a common directional bias</a>
+            <a href="#nested-boundaries">Nested and adaptive simulations need conditional accounting</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-06/"><span>Previous</span><strong>II-06 · Extremum Estimators and Uniform Local Expansions</strong></a><a class="next" href="/resources/volume-02/ii-08/"><span>Next</span><strong>II-08 · Kinks, Binding Inequalities, and Simulation Inference</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

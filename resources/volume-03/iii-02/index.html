@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>State Spaces, Fibers, Tangent Directions, and Metrics · Chae-Yeon Xon</title>
+  <meta name="description" content="An economic state may live on a constrained space such as a simplex, a moment manifold, or a family of distributions. Observable reports partition that space into fibers, and tangent directions describe locally feasible changes. A metric records the units or loss used to measure those changes, so spectra and minimum-distance statements must be interpreted with the metric attached.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-02/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="State Spaces, Fibers, Tangent Directions, and Metrics · Chae-Yeon Xon">
+  <meta property="og:description" content="An economic state may live on a constrained space such as a simplex, a moment manifold, or a family of distributions. Observable reports partition that space into fibers, and tangent directions describe locally feasible changes. A metric records the units or loss used to measure those changes, so spectra and minimum-distance statements must be interpreted with the metric attached.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-02/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="State Spaces, Fibers, Tangent Directions, and Metrics · Chae-Yeon Xon">
+  <meta name="twitter:description" content="An economic state may live on a constrained space such as a simplex, a moment manifold, or a family of distributions. Observable reports partition that space into fibers, and tangent directions describe locally feasible changes. A metric records the units or loss used to measure those changes, so spectra and minimum-distance statements must be interpreted with the metric attached.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-02</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Local Geometry and Policy Paths · Chapter III-02</div>
+        <h1>State Spaces, Fibers, Tangent Directions, and Metrics</h1>
+        <p>An economic state may live on a constrained space such as a simplex, a moment manifold, or a family of distributions. Observable reports partition that space into fibers, and tangent directions describe locally feasible changes. A metric records the units or loss used to measure those changes, so spectra and minimum-distance statements must be interpreted with the metric attached.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-02.01</span><strong>Smooth state spaces</strong></li>
+              <li><span>III-02.02</span><strong>Restricted derivatives</strong></li>
+              <li><span>III-02.03</span><strong>Distributions and frames</strong></li>
+              <li><span>III-02.04</span><strong>The role of a metric</strong></li>
+              <li><span>III-02.05</span><strong>Coordinates for distribution states</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="setup-and-notation">
+            <h2>1. State spaces, fibers, and admissible directions</h2>
+            <p class="chapter-lede">A derivative has economic content only along feasible state directions. Constraints determine the tangent space, an observation map determines the hidden directions, and a metric determines the size assigned to each perturbation.</p>
+            <p>Let <span class="math-inline">\(\mathcal{M}\)</span> be a <span class="math-inline">\(d\)</span>-dimensional smooth state manifold, let <span class="math-inline">\(h:\mathcal{M}\to\mathbb{R}^{k}\)</span> be an observable report, and let <span class="math-inline">\(\tau:\mathcal{M}\to\mathbb{R}^{r}\)</span> be a target. For <span class="math-inline">\(y\)</span> in the range of <span class="math-inline">\(h\)</span>, the observational fiber is <span class="math-inline">\(\mathcal{M}_{y}=\{x\in\mathcal{M}:h(x)=y\}\)</span>.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Vertical tangent space</span><p>If <span class="math-inline">\(Dh_{x}\)</span> has rank <span class="math-inline">\(k\)</span>, the tangent space to the fiber through <span class="math-inline">\(x\)</span> is <span class="math-inline">\(V_{x}\)</span> = <span class="math-inline">\(\operatorname{ker}(Dh_{x})\)</span> <span class="math-inline">\(\subset\)</span> <span class="math-inline">\(T_{x}\mathcal{M}\)</span>. The restriction <span class="math-inline">\(D\tau_{x}|V_{x}\)</span> measures local target movement that the report leaves hidden.</p></div>
+            <p>A metric is a positive-definite bilinear form <span class="math-inline">\(G_{x}\)</span> on <span class="math-inline">\(T_{x}M\)</span>. It fixes units for state perturbations. A target weight <span class="math-inline">\(W\)</span> fixes units in <span class="math-inline">\(\mathbb{R}^{r}\)</span>. Both objects are part of any magnitude or spectral claim.</p>
+          </section>
+
+          <section class="chapter-section" id="coordinate-invariance">
+            <h2>2. Coordinate-invariant response spectra</h2>
+            <p>Choose a full-column-rank frame <span class="math-inline">\(E\)</span> whose columns span an admissible tangent space. Define <span class="math-inline">\(A\)</span> = <span class="math-inline">\(D\tau_{x}E\)</span> and <span class="math-inline">\(M\)</span> = <span class="math-inline">\(E^{\top}G_{x}E\)</span>. The squared response-to-cost ratios are generalized Rayleigh quotients.</p>
+            <div class="equation-block" role="math" aria-label="Generalized Rayleigh quotient."><span class="equation-tex">\[R(v) = (v^{\top }A^{\top }WA v)/(v^{\top }Mv).\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Frame invariance</span><p>Let <span class="math-inline">\(E^{\prime}=ER\)</span> for an invertible coordinate matrix <span class="math-inline">\(R\)</span>. The generalized eigenvalues of (<span class="math-inline">\(A^{\top}WA\)</span>, <span class="math-inline">\(M\)</span>) equal those of (<span class="math-inline">\(A^{\prime}^{\top}WA^{\prime}\)</span>, <span class="math-inline">\(M^{\prime}\)</span>). Corresponding generalized eigenspaces map by <span class="math-inline">\(v=Rv^{\prime}\)</span>, so their physical tangent subspaces <span class="math-inline">\(Ev\)</span> are unchanged. An individual eigenvector needs a normalization, and a repeated eigenvalue identifies a subspace rather than a unique direction.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Under the frame change, <span class="math-inline">\(A^{\prime}=AR\)</span> and <span class="math-inline">\(M^{\prime}=R^{\top}MR\)</span>. Substitution in (1) shows <span class="math-inline">\(R^{\prime}(v^{\prime})=R(Rv^{\prime})\)</span>. Invertibility of <span class="math-inline">\(R\)</span> makes this a bijection over nonzero coordinate vectors, so the stationary values and generalized spectrum coincide. ∎</p></div>
+            <p>An ordinary singular-value calculation silently sets <span class="math-inline">\(M=I\)</span>. Rescaling a coordinate then changes the implied metric and can change every reported singular value.</p>
+          </section>
+
+          <section class="chapter-section" id="simplex-example">
+            <h2>3. Worked probability-simplex example</h2>
+            <p>Take <span class="math-inline">\(x\)</span>=(0.2,0.3,0.5) in the interior of the three-category simplex. Feasible perturbations satisfy <span class="math-inline">\(1^{\top}\delta x=0\)</span>. Use the frame</p>
+            <div class="equation-block" role="math" aria-label="A two-column tangent frame for the probability simplex."><span class="equation-tex">\[E = \begin{bmatrix}1 &amp; 0 \\ 0 &amp; 1 \\ -1 &amp; -1\end{bmatrix}.\]</span><span class="equation-number">(2)</span></div>
+            <p>Let the target be <span class="math-inline">\(\tau(x)=(x_{1}-x_{3},x_{2}-x_{3})\)</span>. Then <span class="math-inline">\(A=\begin{bmatrix}2 &amp; 1 \\ 1 &amp; 2\end{bmatrix}\)</span>. The Fisher–Rao metric in ambient coordinates is <span class="math-inline">\(\operatorname{diag}(1/x_{i})\)</span>, so the restricted metric is</p>
+            <div class="equation-block" role="math" aria-label="Restricted Fisher Rao metric."><span class="equation-tex">\[M = E^{\top }\operatorname{diag}(5,\frac{10}{3},2)E = \begin{bmatrix}7 &amp; 2 \\ 2 &amp; \frac{16}{3}\end{bmatrix}.\]</span><span class="equation-number">(3)</span></div>
+            <p>With <span class="math-inline">\(W=I\)</span>, solve <span class="math-inline">\(A^{\top}Av=\lambda Mv\)</span>. The two generalized eigenvalues are approximately 1.13135 and 0.23865. Replacing <span class="math-inline">\(E\)</span> by <span class="math-inline">\(E\operatorname{diag}(10,0.1)\)</span> changes the ordinary singular values of <span class="math-inline">\(A\)</span> by orders of magnitude. Transforming <span class="math-inline">\(M\)</span> at the same time leaves 1.13135 and 0.23865 unchanged.</p>
+          </section>
+
+          <section class="chapter-section" id="failure-case">
+            <h2>4. Boundary cases</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Ambient and tangent directions</span><p>The vector (1,0,0) changes total probability and therefore lies outside the simplex tangent space. An ambient derivative evaluated in that direction answers a perturbation question for an enlarged model. The admissible state model supplies the linear restriction <span class="math-inline">\(1^{\top}\delta x=0\)</span> before any spectrum is computed.</p></div>
+            <p>At a boundary point with a zero probability, the Fisher–Rao coordinate expression diverges. A boundary analysis must use a compatible tangent cone, a different chart, or a limiting argument. The interior calculation does not extend by substituting a zero coordinate into (3).</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation and exercises</h2>
+            <ol>
+              <li>Construct a basis or frame for the null space of the active linearized constraints.</li>
+              <li>Restrict the target derivative and metric with the same frame.</li>
+              <li>Solve a symmetric generalized eigenvalue problem after a Cholesky whitening of the restricted metric.</li>
+              <li>Repeat under an invertible frame change and compare physical directions.</li>
+            </ol>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Verify (3) by direct multiplication and reproduce the two generalized eigenvalues.</li>
+              <li>Use <span class="math-inline">\(R=\operatorname{diag}(10,0.1)\)</span>, compute the naive singular values, and verify Proposition 1 numerically.</li>
+              <li>Replace the Fisher–Rao metric with a declared quadratic loss and describe how the leading direction changes.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Equation (3) follows from adding the third ambient metric weight, 2, to every entry generated by the last row of <span class="math-inline">\(E\)</span>. The generalized characteristic equation is <span class="math-inline">\(100\lambda ^{2}-137\lambda+27=0\)</span>. <strong>2.</strong> Use <span class="math-inline">\(A^{\prime}=AR\)</span> and <span class="math-inline">\(M^{\prime}=R^{\top}MR\)</span>; substitution returns the same polynomial in <span class="math-inline">\(\lambda\)</span>. The singular values of <span class="math-inline">\(AR\)</span> alone change because that calculation assigns identity cost to the rescaled coordinates.</p></details>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>Record the state space, active constraints, tangent frame, target derivative, state metric, target weight, and coordinate transformation. A reported spectrum has an economic interpretation only after those objects are fixed.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope and sources</h2>
+            <p>The chapter uses local coordinates, regular fibers, tangent restrictions, and finite-dimensional metrics. Global manifold topology and curvature enter later only where policy transport needs them.</p>
+            <ol class="reference-list">
+              <li>John M. Lee, <em>Introduction to Smooth Manifolds</em>, 2nd ed., Chapters 3–5.<small>Tangent vectors, differentials, submersions, and regular level sets.</small></li>
+              <li>Shun-ichi Amari, <em>Information Geometry and Its Applications</em>, Chapter 2.<small>Fisher metric on finite probability models.</small></li>
+              <li>Gene H. Golub and Charles F. Van Loan, <em>Matrix Computations</em>, 4th ed., §8.7.<small>Symmetric-definite generalized eigenvalue problems.</small></li>
+            </ol>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-01/">III-01 · Differentiating Implicit Models</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#setup-and-notation">State spaces, fibers, and admissible directions</a>
+            <a href="#coordinate-invariance">Coordinate-invariant response spectra</a>
+            <a href="#simplex-example">Worked probability-simplex example</a>
+            <a href="#failure-case">Boundary cases</a>
+            <a href="#implementation">Implementation and exercises</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope and sources</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-01/"><span>Previous</span><strong>III-01 · Differentiating Implicit Models</strong></a><a class="next" href="/resources/volume-03/iii-03/"><span>Next</span><strong>III-03 · Constrained Policy Motion and Lifts</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

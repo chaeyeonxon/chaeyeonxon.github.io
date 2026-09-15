@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Complementary Inputs, Option Production, and Supply Incentives · Chae-Yeon Xon</title>
+  <meta name="description" content="Households may need several inputs jointly to make an option feasible: time, care, transport, scheduling, or service availability. The resulting opportunity set is a production object distinct from preferences over feasible options. Bundle experiments and provider incentives can then be analyzed through enabling sets, set functions, and cost certificates.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-12/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Complementary Inputs, Option Production, and Supply Incentives · Chae-Yeon Xon">
+  <meta property="og:description" content="Households may need several inputs jointly to make an option feasible: time, care, transport, scheduling, or service availability. The resulting opportunity set is a production object distinct from preferences over feasible options. Bundle experiments and provider incentives can then be analyzed through enabling sets, set functions, and cost certificates.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-12/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Complementary Inputs, Option Production, and Supply Incentives · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Households may need several inputs jointly to make an option feasible: time, care, transport, scheduling, or service availability. The resulting opportunity set is a production object distinct from preferences over feasible options. Bundle experiments and provider incentives can then be analyzed through enabling sets, set functions, and cost certificates.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-12</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Policy and Empirical Computation · Chapter IV-12</div>
+        <h1>Complementary Inputs, Option Production, and Supply Incentives</h1>
+        <p>Households may need several inputs jointly to make an option feasible: time, care, transport, scheduling, or service availability. The resulting opportunity set is a production object distinct from preferences over feasible options. Bundle experiments and provider incentives can then be analyzed through enabling sets, set functions, and cost certificates.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-12.01</span><strong>Options and preferences</strong></li>
+              <li><span>IV-12.02</span><strong>Alternative enabling paths</strong></li>
+              <li><span>IV-12.03</span><strong>Time and care constraints</strong></li>
+              <li><span>IV-12.04</span><strong>Package experiments</strong></li>
+              <li><span>IV-12.05</span><strong>Supply incentives</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="enabling-sets">
+            <h2>1. Opportunity production precedes choice</h2>
+            <p class="chapter-lede">Complementary inputs determine which options are feasible. Preferences and equilibrium determine which feasible options are chosen and supplied.</p>
+            <p>Let input universe <span class="math-inline">\(N\)</span> be finite. An option has a monotone feasibility function <span class="math-inline">\(f:2^{N}\to\{0,1\}\)</span>: if <span class="math-inline">\(f(S)=1\)</span> and <span class="math-inline">\(S\subseteq T\)</span>, then <span class="math-inline">\(f(T)=1\)</span>. Minimal enabling sets form an antichain <span class="math-inline">\(\mathcal{P}\)</span>, and <span class="math-inline">\(f(S)=1\)</span> exactly when some <span class="math-inline">\(P\in \mathcal{P}\)</span> is contained in <span class="math-inline">\(S\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Möbius representation</span><p>Every set function has the unique expansion <span class="math-inline">\(f(S)=\sum _{T\subseteq S}m(T)\)</span>, where</p>
+              <div class="equation-block" role="math" aria-label="Mobius inversion on the subset lattice."><span class="equation-tex">\[m(T)=\sum _{R\subseteq T}(-1)^{|T\setminus R|}f(R).\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Substitute (1) into the expansion and interchange sums. For each <span class="math-inline">\(R\subseteq S\)</span>, the remaining coefficient is <span class="math-inline">\(\sum _{R\subseteq T\subseteq S}(-1)^{|T\setminus R|}\)</span>, which equals one when <span class="math-inline">\(R=S\)</span> and zero otherwise. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="alternative-paths">
+            <h2>2. Alternative enabling paths create interaction coefficients</h2>
+            <p>Let <span class="math-inline">\(N=\{a,b,c\}\)</span> and let an option be feasible when either both <span class="math-inline">\(a\)</span> and <span class="math-inline">\(b\)</span> are present or <span class="math-inline">\(c\)</span> is present. Minimal paths are <span class="math-inline">\(\{a,b\}\)</span> and <span class="math-inline">\(\{c\}\)</span>. Nonzero Möbius coefficients are <span class="math-inline">\(m({a,b})=1\)</span>, <span class="math-inline">\(m({c})=1\)</span>, and <span class="math-inline">\(m({a,b,c})=-1\)</span>.</p>
+            <p>The negative top coefficient removes double counting when both routes are supplied. Monotonicity alone does not imply nonnegative Möbius coefficients.</p>
+          </section>
+
+          <section class="chapter-section" id="cost-dual">
+            <h2>3. A minimum-enablement program has a price certificate</h2>
+            <p>Suppose inputs <span class="math-inline">\(a,b,c\)</span> cost 2,3,6. Enabling the option through package {<span class="math-inline">\(a,b\)</span>} costs five; route {<span class="math-inline">\(c\)</span>} costs six. A package-level relaxation is</p>
+            <div class="equation-block" role="math" aria-label="Minimum enabling path primal and dual."><span class="equation-tex">\[\begin{aligned}\text{Primal:}\quad &amp; \min_{y\ge0}\ 5y_{ab}+6y_c &amp;&amp; \text{subject to }y_{ab}+y_c\ge1, \\ \text{Dual:}\quad &amp; \max_{\lambda\ge0}\ \lambda &amp;&amp; \text{subject to }\lambda\le5,\ \lambda\le6.\end{aligned}\]</span><span class="equation-number">(2)</span></div>
+            <p>Both optima equal five. The dual value <span class="math-inline">\(\lambda=5\)</span> certifies that no mixture of the declared packages can cost less. Individual-input sharing across several options requires a larger integer or linear program and can create an integrality gap.</p>
+          </section>
+
+          <section class="chapter-section" id="opportunity-boundaries">
+            <h2>4. Feasibility, take-up, and welfare remain distinct</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Produced option counted as chosen outcome</span><p>Supplying an enabling path makes an option available. Choice also depends on preferences and competing options; realized service depends on capacity and equilibrium supply.</p></div>
+            <p>An option with no enabling path is infeasible under every package. The empty set can enable an outside option and then gives a nonzero constant coefficient. Zero-cost inputs and overlapping packages create multiple optimal implementations. Incomplete experimental support identifies only combinations of set-function values and can leave Möbius terms partially identified.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Enumerate observed packages, test monotonicity, recover Möbius coefficients only on supported subsets, list minimal paths, and solve both primal and dual cost problems. Report support gaps, integrality status, feasibility, duality gap, and which later model maps opportunity into choice.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Compute all eight feasibility values and Möbius coefficients in Section 2.</li><li>Verify both sides of (2).</li><li>Add a second option sharing input <span class="math-inline">\(a\)</span> and compare package-level and individual-input formulations.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Feasible sets are {<span class="math-inline">\(c\)</span>}, {<span class="math-inline">\(a,c\)</span>}, {<span class="math-inline">\(b,c\)</span>}, {<span class="math-inline">\(a,b\)</span>}, and {<span class="math-inline">\(a,b,c\)</span>}; inclusion-exclusion gives the three stated coefficients. <strong>2.</strong> Choose <span class="math-inline">\(y_{ab}=1\)</span> and <span class="math-inline">\(\lambda=5\)</span>. <strong>3.</strong> Shared procurement can lower joint cost relative to summing option-specific packages.</p></details>
+            <ol class="reference-list"><li>Satoru Fujishige, <em>Submodular Functions and Optimization</em>.<small>Set functions and subset-lattice structure.</small></li><li>Alexander Schrijver, <em>Theory of Linear and Integer Programming</em>.<small>Covering programs and dual certificates.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/subject-to-availability/">“Subject to Availability: Option Production under Complementary Inputs.”</a><small>Related childcare and work-option application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State inputs, package support, monotonicity, outside option, minimal paths, Möbius convention, unsupported subsets, costs, shared inputs, integer or fractional variables, primal and dual residuals, feasibility, take-up model, capacity, and welfare target.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers finite complementary-input feasibility and elementary cost certificates. Preference, provider equilibrium, and general mechanism design require separate models.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-15/">III-15 · Set Functions, Mobius Inversion, and Modularity</a></li><li><a href="/resources/volume-03/iii-16/">III-16 · KKT Conditions, Linear Duality, and Sharpness</a></li><li><a href="/resources/volume-02/ii-04/">II-04 · Moment Inequalities, Partial Identification, and Sharp Bounds</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#enabling-sets">Opportunity production precedes choice</a>
+            <a href="#alternative-paths">Alternative enabling paths create interaction coefficients</a>
+            <a href="#cost-dual">A minimum-enablement program has a price certificate</a>
+            <a href="#opportunity-boundaries">Feasibility, take-up, and welfare remain distinct</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-11/"><span>Previous</span><strong>IV-11 · Stable Baselines and Policy Response Capacity</strong></a><a class="next" href="/resources/volume-04/iv-13/"><span>Next</span><strong>IV-13 · Policy Transmission and the Actual Unit of Randomization</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

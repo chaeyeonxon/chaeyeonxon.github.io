@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Measurement Across Environments · Chae-Yeon Xon</title>
+  <meta name="description" content="Economic objects are often valued under changing prices, conventions, or environments. Scalar transport works only when attained ranges, rankings, and composition remain compatible. Mixed derivatives and bilinear representations measure environment-dependent information that a single recorded value fails to carry.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-07/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Measurement Across Environments · Chae-Yeon Xon">
+  <meta property="og:description" content="Economic objects are often valued under changing prices, conventions, or environments. Scalar transport works only when attained ranges, rankings, and composition remain compatible. Mixed derivatives and bilinear representations measure environment-dependent information that a single recorded value fails to carry.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-07/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Measurement Across Environments · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Economic objects are often valued under changing prices, conventions, or environments. Scalar transport works only when attained ranges, rankings, and composition remain compatible. Mixed derivatives and bilinear representations measure environment-dependent information that a single recorded value fails to carry.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-07</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Measurement, Records, and Time · Chapter I-07</div>
+        <h1>Measurement Across Environments</h1>
+        <p>Economic objects are often valued under changing prices, conventions, or environments. Scalar transport works only when attained ranges, rankings, and composition remain compatible. Mixed derivatives and bilinear representations measure environment-dependent information that a single recorded value fails to carry.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-07.01</span><strong>Objects and environments</strong></li>
+              <li><span>I-07.02</span><strong>Scalar transport</strong></li>
+              <li><span>I-07.03</span><strong>Composition and rankings</strong></li>
+              <li><span>I-07.04</span><strong>Interaction dimension</strong></li>
+              <li><span>I-07.05</span><strong>Normalization and covariance</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="environment-map">
+            <h2>1. Measurement is indexed by environment</h2>
+            <p class="chapter-lede">A source measurement can be transported to another environment only when source-equivalent objects remain equivalent for the target measurement.</p>
+            <p>Let <span class="math-inline">\(X\)</span> be an object space and <span class="math-inline">\(m:X\times \mathcal{E}\to Y\)</span> an environment-indexed measurement. For source environment <span class="math-inline">\(e_{0}\)</span> and target environment <span class="math-inline">\(e_{1}\)</span>, write <span class="math-inline">\(m_{0}(x)=m(x,e_{0})\)</span> and <span class="math-inline">\(m_{1}(x)=m(x,e_{1})\)</span>.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Deterministic measurement transport</span><p>A transport is a map <span class="math-inline">\(\phi _{10}:\operatorname{range}(m_{0})\to Y\)</span> such that <span class="math-inline">\(m_{1}=\phi _{10}\circ m_{0}\)</span>.</p></div>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Transport criterion</span><p>A deterministic transport exists exactly when ker-equivalence under <span class="math-inline">\(m_{0}\)</span> refines that under <span class="math-inline">\(m_{1}\)</span>:</p><div class="equation-block" role="math" aria-label="Fiber criterion for measurement transport."><span class="equation-tex">\[m_{0}(x)=m_{0}(x^{\prime}) \Rightarrow m_{1}(x)=m_{1}(x^{\prime}).\]</span><span class="equation-number">(1)</span></div></div>
+            <div class="proof"><p><strong>Proof.</strong> This is Proposition I-01 with source measurement as observation and target-environment measurement as target. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="valid-transport">
+            <h2>2. A valid scalar revaluation</h2>
+            <p>Let <span class="math-inline">\(X=\mathbb{R}\)</span> and define <span class="math-inline">\(m_{0}(x)=x^{2}\)</span> and <span class="math-inline">\(m_{1}(x)=2x^{2}+1\)</span>. Source fibers pair <span class="math-inline">\(x\)</span> and <span class="math-inline">\(-x\)</span>, and both receive the same target value. The transport is <span class="math-inline">\(\phi _{10}(y)=2y+1\)</span> on [0,<span class="math-inline">\(\infty\)</span>).</p>
+            <p>The formula is defined on the attained source range. Extending it to negative source reports is irrelevant to the model and would be an extrapolation.</p>
+          </section>
+
+          <section class="chapter-section" id="interaction-failure">
+            <h2>3. An environment interaction creates a missing direction</h2>
+            <p>Let the object be <span class="math-inline">\(x=(x_{1},x_{2})\in \mathbb{R}^{2}\)</span> and measurement</p>
+            <div class="equation-block" role="math" aria-label="Environment interaction measurement."><span class="equation-tex">\[m(x,e)=x_{1}+ex_{2}, \quad e_{0}=0, e_{1}=1.\]</span><span class="equation-number">(2)</span></div>
+            <p>Objects (0,0) and (0,1) have the same source measurement zero and target measurements zero and one. Criterion (1) fails. Differentially, <span class="math-inline">\(Dm_{0}\)</span>=[1,0] hides direction (0,1), while <span class="math-inline">\(Dm_{1}\)</span>=[1,1] loads on it. The mixed derivative</p>
+            <div class="equation-block" role="math" aria-label="Mixed object environment derivative."><span class="equation-tex">\[D_{x}\partial _{e}m=[0,1]\]</span><span class="equation-number">(3)</span></div>
+            <p>identifies the object direction whose value is activated by the environment change.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Scalar units used as a transport theorem</span><p>Source and target measurements can share units and dimension while their fibers differ. A scalar rescaling is valid only after the fiber criterion or a model restriction establishes it.</p></div>
+          </section>
+
+          <section class="chapter-section" id="local-necessity">
+            <h2>4. Differential necessity and its limit</h2>
+            <p>If the maps are differentiable and <span class="math-inline">\(m_{1}=\phi _{10}\circ m_{0}\)</span> with differentiable <span class="math-inline">\(\phi _{10}\)</span>, then <span class="math-inline">\(Dm_{1}=D\phi_{10}Dm_{0}\)</span> and <span class="math-inline">\(\operatorname{ker}(Dm_{0})\subseteq \operatorname{ker}(Dm_{1})\)</span>. This is a necessary local test. Passing it at one object does not establish global transport across source fibers.</p>
+            <p>When environment is continuous, a first-order expansion <span class="math-inline">\(\partial _{e}m\)</span> separates uniform revaluation from object-specific interaction. Integrating that derivative across a finite environment change needs smoothness and path information.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Group or solve for source fibers, compare target measurements within each fiber, and estimate mixed derivatives only after fixing object and environment coordinates. Report attained ranges and transport residuals.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify the transport and its domain in Section 2.</li><li>For (2), characterize every pair of environments with a deterministic scalar transport on all of <span class="math-inline">\(\mathbb{R}^{2}\)</span>.</li><li>Construct a nonlinear example that passes the derivative kernel test at one object and fails global transport.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Substitution gives <span class="math-inline">\(m_{1}(x)=2m_{0}(x)+1\)</span>. <strong>2.</strong> For source coefficient <span class="math-inline">\(e_{0}\)</span> and target coefficient <span class="math-inline">\(e_{1}\)</span>, the row [1,<span class="math-inline">\(e_{1}\)</span>] must be proportional to [1,<span class="math-inline">\(e_{0}\)</span>]. The first coordinate fixes the proportionality at one, so global scalar transport exists exactly when <span class="math-inline">\(e_{1}=e_{0}\)</span>.</p></details>
+            <ol class="reference-list"><li>David Blackwell (1951), “Comparison of Experiments,” <em>Proceedings of the Second Berkeley Symposium</em>, 93–102.<small>Information comparison through post-processing.</small></li><li>John M. Lee, <em>Introduction to Smooth Manifolds</em>, sections on differentials and constant-rank maps.<small>Local kernel tests.</small></li><li>I-03 · The Boundary Between Exact and Local Sufficiency.<small>Local versus global factorization.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/its-a-price-its-a-value/">“It’s a Price! It’s a Value!: Economic Measurement Across Environments.”</a><small>Related cross-environment measurement application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State source and target environments, object space, attained source range, both measurement maps, source fibers, transport domain, target residual, derivative kernel test, and interaction directions.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter treats deterministic measurement transport and local interaction diagnostics. Stochastic experiment comparison, domain adaptation, and estimated transport maps require additional assumptions.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-03/">I-03 · The Boundary Between Exact and Local Sufficiency</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#environment-map">Measurement is indexed by environment</a>
+            <a href="#valid-transport">A valid scalar revaluation</a>
+            <a href="#interaction-failure">An environment interaction creates a missing direction</a>
+            <a href="#local-necessity">Differential necessity and its limit</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-06/"><span>Previous</span><strong>I-06 · From Local Derivatives to Global Decoder Risk</strong></a><a class="next" href="/resources/volume-01/i-08/"><span>Next</span><strong>I-08 · Target-Directed Record Selection</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

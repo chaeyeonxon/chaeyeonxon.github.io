@@ -1,0 +1,257 @@
+---
+layout: main
+title: Chae-Yeon Xon
+---
+
+{% assign public_notes = site.data.notes | where: "public", true %}
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="identity">
+      <img class="header-avatar" src="{{ '/assets/yonsei-symbol.png' | relative_url }}" alt="Yonsei University">
+      <div class="identity-text">
+        <a class="name" href="#top">{{ site.data.profile.name }}</a>
+        <div class="affiliation">{{ site.data.profile.affiliation }}</div>
+      </div>
+    </div>
+    <nav aria-label="Primary navigation">
+      <a href="#research">Research</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      {% if site.data.profile.cv_url != "" %}<a href="{{ site.data.profile.cv_url | relative_url }}" target="_blank" rel="noopener">CV</a>{% endif %}
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="intro container">
+    <p class="intro-line">{{ site.data.profile.role }}</p>
+    <h1>{{ site.data.profile.hero_line_1 }}</h1>
+    <p class="intro-question">{{ site.data.profile.hero_line_2 }}</p>
+    <p class="intro-question">{{ site.data.profile.hero_line_3 }}</p>
+  </section>
+
+  <section class="featured-section container" id="research">
+    <div class="featured-heading">
+      <div>
+        <p class="eyebrow">Pinned</p>
+        <h2>Featured Research</h2>
+      </div>
+      <span class="featured-count">4 selected papers</span>
+    </div>
+    <p class="research-date-note">Dates refer to the current public draft; some projects developed from earlier research exercises and notes.</p>
+
+    {% assign pinned_papers = site.data.papers | where: "pinned", true | sort: "pin_order" %}
+    <div class="featured-grid">
+      {% for paper in pinned_papers %}
+      <article class="featured-card">
+        <div class="featured-title-row">
+          <span class="repo-mark" aria-hidden="true"></span>
+          <a class="featured-title" href="{{ paper.landing_url | relative_url }}">{{ paper.title }}</a>
+        </div>
+        {% if paper.subtitle != "" %}<p class="featured-subtitle">{{ paper.subtitle }}</p>{% endif %}
+        <p class="featured-summary">{{ paper.plain_summary }}</p>
+        <div class="featured-mini-bar" role="img" aria-label="Research mix: Econometrics {{ paper.mix.econometrics }}%, Structural {{ paper.mix.structural }}%, Micro {{ paper.mix.micro }}%, Macro {{ paper.mix.macro }}%, Measurement {{ paper.mix.measurement }}%, Institutions and Policy {{ paper.mix.institutions_policy }}%">
+          <span class="seg econometrics" style="width:{{ paper.mix.econometrics }}%"></span>
+          <span class="seg structural" style="width:{{ paper.mix.structural }}%"></span>
+          <span class="seg micro" style="width:{{ paper.mix.micro }}%"></span>
+          <span class="seg macro" style="width:{{ paper.mix.macro }}%"></span>
+          <span class="seg measurement" style="width:{{ paper.mix.measurement }}%"></span>
+          <span class="seg institutions" style="width:{{ paper.mix.institutions_policy }}%"></span>
+        </div>
+        <div class="featured-footer">
+          <span class="featured-field"><i class="c-econometrics"></i>Econometrics {{ paper.mix.econometrics }}%</span>
+          <div class="featured-links">
+            <a href="{{ paper.paper_url | relative_url }}" target="_blank" rel="noopener">Draft</a>
+            <a href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">Appendix</a>
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="research-toolbar">
+      <div class="research-heading-block">
+        <h2>Working Papers</h2>
+        <div class="mix-key" aria-label="Research mix legend">
+          <span><i class="c-econometrics"></i>Econometrics</span>
+          <span><i class="c-structural"></i>Structural</span>
+          <span><i class="c-micro"></i>Micro</span>
+          <span><i class="c-macro"></i>Macro</span>
+          <span><i class="c-measurement"></i>Measurement</span>
+          <span><i class="c-institutions"></i>Institutions / Policy</span>
+        </div>
+      </div>
+      <label class="sort-control">
+        <span>Order</span>
+        <select id="paper-sort" aria-label="Sort working papers">
+          <option value="title-desc" selected>Title Z–A</option>
+          <option value="title-asc">Title A–Z</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="paper-list" id="paper-list">
+      {% for paper in site.data.papers %}
+      <article class="paper-item" id="paper-{{ paper.slug }}" data-title="{{ paper.title | downcase }}">
+        <div class="paper-heading">
+          <div>
+            <h3><a class="paper-title-link" href="{{ paper.landing_url | relative_url }}">{{ paper.title }}</a></h3>
+            {% if paper.subtitle != "" %}<p class="subtitle">{{ paper.subtitle }}</p>{% endif %}
+          </div>
+          <div class="paper-year">{{ paper.year }}</div>
+        </div>
+        <p class="paper-question">{{ paper.question }}</p>
+        <p class="paper-summary">{{ paper.plain_summary }} {{ paper.technical_summary }}</p>
+        <div class="language-bar" role="img" aria-label="Research mix: Econometrics {{ paper.mix.econometrics }}%, Structural {{ paper.mix.structural }}%, Micro {{ paper.mix.micro }}%, Macro {{ paper.mix.macro }}%, Measurement {{ paper.mix.measurement }}%, Institutions and Policy {{ paper.mix.institutions_policy }}%">
+          <span class="seg econometrics" style="width:{{ paper.mix.econometrics }}%"></span>
+          <span class="seg structural" style="width:{{ paper.mix.structural }}%"></span>
+          <span class="seg micro" style="width:{{ paper.mix.micro }}%"></span>
+          <span class="seg macro" style="width:{{ paper.mix.macro }}%"></span>
+          <span class="seg measurement" style="width:{{ paper.mix.measurement }}%"></span>
+          <span class="seg institutions" style="width:{{ paper.mix.institutions_policy }}%"></span>
+        </div>
+        <div class="paper-meta-row">
+          <div class="paper-mix-values" aria-label="Research mix percentages">
+            {% if paper.mix.econometrics > 0 %}<span><i class="c-econometrics"></i>Econometrics {{ paper.mix.econometrics }}%</span>{% endif %}
+            {% if paper.mix.structural > 0 %}<span><i class="c-structural"></i>Structural {{ paper.mix.structural }}%</span>{% endif %}
+            {% if paper.mix.micro > 0 %}<span><i class="c-micro"></i>Micro {{ paper.mix.micro }}%</span>{% endif %}
+            {% if paper.mix.macro > 0 %}<span><i class="c-macro"></i>Macro {{ paper.mix.macro }}%</span>{% endif %}
+            {% if paper.mix.measurement > 0 %}<span><i class="c-measurement"></i>Measurement {{ paper.mix.measurement }}%</span>{% endif %}
+            {% if paper.mix.institutions_policy > 0 %}<span><i class="c-institutions"></i>Inst./Policy {{ paper.mix.institutions_policy }}%</span>{% endif %}
+          </div>
+          <div class="paper-links">
+            <a href="{{ paper.paper_url | relative_url }}" target="_blank" rel="noopener">Draft</a>
+            <a href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">Appendix</a>
+            {% if paper.code_url != "" %}<a href="{{ paper.code_url }}" target="_blank" rel="noopener">Code</a>{% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="note">Research-mix bars are editorial summaries of each draft’s composition.</p>
+  </section>
+
+
+
+  {% if public_notes.size > 0 %}
+  <section class="section container" id="comments">
+    <div class="research-toolbar">
+      <div class="research-heading-block">
+        <h2>Comments &amp; Technical Notes</h2>
+      </div>
+    </div>
+
+    <div class="paper-list">
+      {% for note in public_notes %}
+      <article class="paper-item">
+        <div class="paper-heading">
+          <div>
+            <h3><a class="paper-title-link" href="{{ note.landing_url | relative_url }}">{{ note.title }}</a></h3>
+            <p class="subtitle">A comment on {{ note.target_authors }} ({{ note.target_year }}) · {{ note.target_venue }}</p>
+          </div>
+          <div class="paper-year">{{ note.year }}</div>
+        </div>
+        <p class="paper-question">{{ note.technical_point }}</p>
+        <div class="paper-meta-row comment-meta-row">
+          <div></div>
+          <div class="paper-links">
+            {% if note.note_url != "" %}<a href="{{ note.note_url | relative_url }}" target="_blank" rel="noopener">Draft</a>{% endif %}
+          </div>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <p class="note">Technical notes from close readings and replications of published papers. Comments and corrections are welcome.</p>
+  </section>
+  {% endif %}
+
+
+
+  <section class="section container" id="resources">
+    <div class="research-toolbar">
+      <div class="research-heading-block">
+        <h2>Resources</h2>
+      </div>
+    </div>
+
+    <div class="paper-list">
+      <article class="paper-item">
+        <div class="paper-heading">
+          <div>
+            <h3><a class="paper-title-link" href="{{ '/resources/volume-01/' | relative_url }}">Identification, Measurement, and Counterfactual Reasoning</a></h3>
+            <p class="subtitle">Observable objects, counterfactual targets, information requirements, and measurement across environments.</p>
+          </div>
+          <div class="paper-year">16 chapters</div>
+        </div>
+      </article>
+      <article class="paper-item">
+        <div class="paper-heading">
+          <div>
+            <h3><a class="paper-title-link" href="{{ '/resources/volume-02/' | relative_url }}">Inference, Selection, and Simulation</a></h3>
+            <p class="subtitle">Sampling uncertainty, selection, simulation error, generated objects, and dependent-data inference.</p>
+          </div>
+          <div class="paper-year">13 chapters</div>
+        </div>
+      </article>
+      <article class="paper-item">
+        <div class="paper-heading">
+          <div>
+            <h3><a class="paper-title-link" href="{{ '/resources/volume-03/' | relative_url }}">Geometry, Dynamics, and Operators for Economic Models</a></h3>
+            <p class="subtitle">Geometry, dynamic systems, operator theory, optimization, and filtering for economic models.</p>
+          </div>
+          <div class="paper-year">18 chapters</div>
+        </div>
+      </article>
+      <article class="paper-item">
+        <div class="paper-heading">
+          <div>
+            <h3><a class="paper-title-link" href="{{ '/resources/volume-04/' | relative_url }}">Structural Models and Economic Computation</a></h3>
+            <p class="subtitle">Choice, equilibrium, measurement, policy transmission, and welfare computation.</p>
+          </div>
+          <div class="paper-year">17 chapters</div>
+        </div>
+      </article>
+      <article class="paper-item">
+        <div class="paper-heading">
+          <div>
+            <h3><a class="paper-title-link" href="{{ '/resources/volume-05/' | relative_url }}">Research Auditing: Proofs, Models, Code, and Counterexamples</a></h3>
+            <p class="subtitle">Assumptions, proof steps, numerical claims, code paths, counterexamples, and reproducibility.</p>
+          </div>
+          <div class="paper-year">12 chapters</div>
+        </div>
+      </article>
+    </div>
+    <p class="note">These books are working references I have developed while studying and doing research.</p>
+  </section>
+
+  <section class="section container narrow" id="about">
+    <h2>About</h2>
+    <h3 class="about-heading">{{ site.data.profile.about_heading }}</h3>
+    <p>{{ site.data.profile.about_paragraph }}</p>
+  </section>
+
+  <section class="section container narrow" id="contact">
+    <h2>Contact</h2>
+    <p><a href="mailto:{{ site.data.profile.email }}">{{ site.data.profile.email }}</a></p>
+    <div class="contact-links">
+      {% if site.data.profile.scholar_url != "" %}<a href="{{ site.data.profile.scholar_url }}" target="_blank" rel="noopener">Google Scholar</a>{% endif %}
+      {% if site.data.profile.orcid_url != "" %}<a href="{{ site.data.profile.orcid_url }}" target="_blank" rel="noopener">ORCID</a>{% endif %}
+      {% if site.data.profile.osf_url != "" %}<a href="{{ site.data.profile.osf_url }}" target="_blank" rel="noopener">OSF</a>{% endif %}
+      {% if site.data.profile.cv_url != "" %}<a href="{{ site.data.profile.cv_url | relative_url }}" target="_blank" rel="noopener">CV</a>{% endif %}
+      {% if site.data.profile.github_url != "" %}<a href="{{ site.data.profile.github_url }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>{{ site.data.profile.name }}</span>
+    <div class="footer-meta">
+      <span>{{ site.data.profile.affiliation }}</span>
+      <span>{{ site.data.profile.degree_status }}</span>
+    </div>
+  </div>
+</footer>

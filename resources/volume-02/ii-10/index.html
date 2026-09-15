@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Inference for Rank, Singular Values, and Eigenspaces · Chae-Yeon Xon</title>
+  <meta name="description" content="Exact rank, numerical rank, and effective rank answer different questions. Perturbation bounds transfer matrix error into singular-value and subspace error only when separation conditions hold. Near ties and lower-rank strata require set-valued or threshold-aware reporting.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-10/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Inference for Rank, Singular Values, and Eigenspaces · Chae-Yeon Xon">
+  <meta property="og:description" content="Exact rank, numerical rank, and effective rank answer different questions. Perturbation bounds transfer matrix error into singular-value and subspace error only when separation conditions hold. Near ties and lower-rank strata require set-valued or threshold-aware reporting.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-10/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Inference for Rank, Singular Values, and Eigenspaces · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Exact rank, numerical rank, and effective rank answer different questions. Perturbation bounds transfer matrix error into singular-value and subspace error only when separation conditions hold. Near ties and lower-rank strata require set-valued or threshold-aware reporting.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-10</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Generated Objects and Empirical Inference · Chapter II-10</div>
+        <h1>Inference for Rank, Singular Values, and Eigenspaces</h1>
+        <p>Exact rank, numerical rank, and effective rank answer different questions. Perturbation bounds transfer matrix error into singular-value and subspace error only when separation conditions hold. Near ties and lower-rank strata require set-valued or threshold-aware reporting.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-10.01</span><strong>Exact and numerical rank</strong></li>
+              <li><span>II-10.02</span><strong>Perturbation bounds</strong></li>
+              <li><span>II-10.03</span><strong>Rank strata</strong></li>
+              <li><span>II-10.04</span><strong>Risk frontiers</strong></li>
+              <li><span>II-10.05</span><strong>Robust reporting</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="singular-perturbation">
+            <h2>1. Matrix error bounds singular-value error</h2>
+            <p class="chapter-lede">Exact rank is discontinuous. Singular values are Lipschitz, while singular subspaces require a positive separation from neighboring values.</p>
+            <p>Let <span class="math-inline">\(\hat{A}=A+E\)</span> be real matrices of the same dimensions and order their singular values decreasingly. Weyl's perturbation inequality gives</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Singular-value stability</span><div class="equation-block" role="math" aria-label="Singular value perturbation bound."><span class="equation-tex">\[|\sigma _{j}(\widehat{A})-\sigma _{j}(A)|\le \lVert E\rVert _{2} \text{for every} j.\]</span><span class="equation-number">(1)</span></div></div>
+            <div class="proof"><p><strong>Proof sketch.</strong> The min-max characterization expresses each singular value through extrema of <span class="math-inline">\(\lVert Ax\rVert\)</span> over subspaces. The triangle inequality changes every such norm by at most <span class="math-inline">\(\lVert E\rVert_{2}\)</span>; apply the argument in both directions. ∎</p></div>
+            <p>If a high-probability bound <span class="math-inline">\(\lVert E\rVert_{2}\le \varepsilon\)</span> is available, each population singular value lies in <span class="math-inline">\([\max\{0,\hat{\sigma}_{j}-\varepsilon\},\hat{\sigma}_{j}+\varepsilon]\)</span>. A positive lower endpoint certifies a nonzero population direction under that event.</p>
+          </section>
+
+          <section class="chapter-section" id="eigenspace-example">
+            <h2>2. A separated eigenspace has a stable angle</h2>
+            <p>For symmetric matrices, take</p>
+            <div class="equation-block" role="math" aria-label="Two by two eigenspace perturbation example."><span class="equation-tex">\[A=\operatorname{diag}(3,1), \quad E=\begin{bmatrix}0 &amp; 0.1 \\ 0.1 &amp; 0\end{bmatrix}.\]</span><span class="equation-number">(2)</span></div>
+            <p>The perturbed eigenvalues are <span class="math-inline">\(2\pm \sqrt{1.01}\)</span>, approximately 3.00499 and 0.99501. Its leading eigenvector rotates by <span class="math-inline">\(\theta=\tfrac{1}{2}\arctan(0.1)\approx0.04983\)</span> radians, so <span class="math-inline">\(\sin\theta\approx0.04981\)</span>. The original eigengap is two and <span class="math-inline">\(\lVert E\rVert_{2}=0.1\)</span>; the exact angle is below their ratio 0.05. General Davis–Kahan statements use an explicitly defined separation between the target spectral cluster and its complement.</p>
+          </section>
+
+          <section class="chapter-section" id="ties-and-rank">
+            <h2>3. Near ties destabilize orientation before values</h2>
+            <p>Replace (2) by <span class="math-inline">\(\operatorname{diag}(1+\delta ,1)\)</span> and keep an off-diagonal perturbation <span class="math-inline">\(\varepsilon\)</span>. The rotation satisfies <span class="math-inline">\(\tan(2\theta)=2\varepsilon/\delta\)</span>. For fixed <span class="math-inline">\(\varepsilon\)</span>, <span class="math-inline">\(\theta\)</span> approaches <span class="math-inline">\(\pi/4\)</span> as <span class="math-inline">\(\delta\)</span> approaches zero from above. At <span class="math-inline">\(\delta=0\)</span>, the population eigenvalue is repeated and no individual leading population direction is distinguished; the full two-dimensional eigenspace is the invariant object.</p>
+            <p>Numerical rank counts singular values above a tolerance. Effective rank can instead weight the spectrum continuously. Exact rank inference needs an uncertainty statement around zero, while loss based on a discarded spectral tail may remain stable because singular values themselves obey (1).</p>
+          </section>
+
+          <section class="chapter-section" id="threshold-failure">
+            <h2>4. A threshold is part of the reported estimand</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Positive estimated singular value labeled as a new population rank</span><p>Sampling noise generically makes a rank-deficient matrix full rank. A thresholded estimate changes with units, normalization, and noise scale unless the threshold is transformed and justified with an error bound.</p></div>
+            <p>Subspace bounds require a gap separating the target cluster from the complementary spectrum. At a closing gap, report the tied spectral projector, a set of admissible subspaces, or value-based functionals. Sign conventions for isolated eigenvectors remove arbitrary <span class="math-inline">\(\pm\)</span> flips and still leave orientation unstable at a tie.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Scale the matrix and metric first, compute residuals of the SVD or eigendecomposition, and report the error norm, confidence bound, threshold, gaps, tied clusters, and projection distances. Compare results across thresholds tied to the estimated noise scale.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the eigenvalues and angle in Section 2.</li><li>Evaluate the angle for <span class="math-inline">\(\delta=1\)</span>,0.1,0.01 with <span class="math-inline">\(\varepsilon=0.05\)</span>.</li><li>Given <span class="math-inline">\(\hat{\sigma }\)</span>=(2,0.3,0.04) and <span class="math-inline">\(\varepsilon=0.05\)</span>, identify which nonzero singular values are certified.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The characteristic polynomial is <span class="math-inline">\((3-\lambda)(1-\lambda)-0.01\)</span>. The rotation formula follows from diagonalizing a symmetric <span class="math-inline">\(2\times2\)</span> matrix. <strong>2.</strong> Use <span class="math-inline">\(\theta=\tfrac{1}{2}\arctan(0.1/\delta)\)</span>; the angle tends toward <span class="math-inline">\(\pi/4\)</span> as <span class="math-inline">\(\delta\)</span> shrinks. <strong>3.</strong> The first two lower endpoints are positive; the third interval includes zero.</p></details>
+            <ol class="reference-list"><li>Rajendra Bhatia, <em>Matrix Analysis</em>, Chapter VII.<small>Eigenvalue and singular-value perturbation.</small></li><li>Chandler Davis and W. M. Kahan (1970), “The Rotation of Eigenvectors by a Perturbation. III,” <em>SIAM Journal on Numerical Analysis</em> 7, 1–46.<small>Invariant-subspace angle bounds.</small></li><li>G. W. Stewart and Ji-Guang Sun, <em>Matrix Perturbation Theory</em>.<small>Separated and multiple spectral subspaces.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the population and estimated matrices, units and metrics, perturbation norm and probability event, numerical threshold, singular intervals, eigengaps, tied clusters, vector sign convention, projector distance, and value functional used downstream.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers deterministic finite-matrix perturbation bounds used inside statistical confidence events. Random-matrix limits and optimal rank tests require additional theory.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-05/">II-05 · Stochastic Orders and Competing Sample Sizes</a></li><li><a href="/resources/volume-01/i-05/">I-05 · Representation Budgets, Singular Values, and Approximation Loss</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#singular-perturbation">Matrix error bounds singular-value error</a>
+            <a href="#eigenspace-example">A separated eigenspace has a stable angle</a>
+            <a href="#ties-and-rank">Near ties destabilize orientation before values</a>
+            <a href="#threshold-failure">A threshold is part of the reported estimand</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-09/"><span>Previous</span><strong>II-09 · Generated Responses, Estimated Operators, and Noisy Derivatives</strong></a><a class="next" href="/resources/volume-02/ii-11/"><span>Next</span><strong>II-11 · Local Projections and Covariance for Dependent Data</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

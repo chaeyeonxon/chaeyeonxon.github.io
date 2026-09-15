@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Define the Research Object as a Contract · Chae-Yeon Xon</title>
+  <meta name="description" content="A counterfactual question becomes precise only after the structural state, observation rule, policy set, horizon, target, loss, and admissible records are fixed. The chapter treats that list as a research contract and separates within-model policy comparisons from comparisons across model families.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-01/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Define the Research Object as a Contract · Chae-Yeon Xon">
+  <meta property="og:description" content="A counterfactual question becomes precise only after the structural state, observation rule, policy set, horizon, target, loss, and admissible records are fixed. The chapter treats that list as a research contract and separates within-model policy comparisons from comparisons across model families.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-01/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Define the Research Object as a Contract · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A counterfactual question becomes precise only after the structural state, observation rule, policy set, horizon, target, loss, and admissible records are fixed. The chapter treats that list as a research contract and separates within-model policy comparisons from comparisons across model families.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-01</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Observation, Representation, and Sufficiency · Chapter I-01</div>
+        <h1>Define the Research Object as a Contract</h1>
+        <p>A counterfactual question becomes precise only after the structural state, observation rule, policy set, horizon, target, loss, and admissible records are fixed. The chapter treats that list as a research contract and separates within-model policy comparisons from comparisons across model families.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-01.01</span><strong>Structure, observations, and targets</strong></li>
+              <li><span>I-01.02</span><strong>The state-design contract</strong></li>
+              <li><span>I-01.03</span><strong>Units of counterfactual comparison</strong></li>
+              <li><span>I-01.04</span><strong>Quantifiers and domains</strong></li>
+              <li><span>I-01.05</span><strong>Types of evidence</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="research-contract">
+            <h2>1. The research object is a typed contract</h2>
+            <p class="chapter-lede">A sufficiency claim has meaning only relative to a state model, an observation, and a target. Changing the target can change the answer while the observed data remain fixed.</p>
+            <p>Let <span class="math-inline">\(X\)</span> be a nonempty state set, <span class="math-inline">\(Y\)</span> an observation set, and <span class="math-inline">\(T\)</span> a target set. A research contract specifies an admissible state class <span class="math-inline">\(\mathcal{X}\subseteq X\)</span>, an observation map <span class="math-inline">\(h:\mathcal{X}\to Y\)</span>, a target <span class="math-inline">\(\tau:\mathcal{X}\to T\)</span>, and the interventions or counterfactual environments under which these maps are evaluated.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Observational equivalence</span><p>States <span class="math-inline">\(x\)</span> and <span class="math-inline">\(x^{\prime}\)</span> are observationally equivalent, written <span class="math-inline">\(x\sim _{h}x^{\prime}\)</span>, when <span class="math-inline">\(h(x)=h(x^{\prime})\)</span>. The fiber at report <span class="math-inline">\(y\)</span> is <span class="math-inline">\(h^{-1}(\{y\})\)</span>.</p></div>
+            <div class="formal-block definition"><span class="formal-label">Definition 2 · Exact target sufficiency</span><p>The report <span class="math-inline">\(h\)</span> is exactly sufficient for <span class="math-inline">\(\tau\)</span> on <span class="math-inline">\(\mathcal{X}\)</span> when a decoder <span class="math-inline">\(\delta:h(\mathcal{X})\to T\)</span> exists such that <span class="math-inline">\(\tau=\delta\circ h\)</span> on <span class="math-inline">\(\mathcal{X}\)</span>.</p></div>
+          </section>
+
+          <section class="chapter-section" id="fiber-theorem">
+            <h2>2. Fiber constancy is the exact criterion</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Factorization through an observation</span><p>The report <span class="math-inline">\(h\)</span> is exactly sufficient for <span class="math-inline">\(\tau\)</span> if and only if <span class="math-inline">\(\tau\)</span> is constant on every observational fiber:</p>
+              <div class="equation-block" role="math" aria-label="Fiber constancy condition for target sufficiency."><span class="equation-tex">\[h(x)=h(x^{\prime}) \Rightarrow \tau (x)=\tau (x^{\prime}).\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> If <span class="math-inline">\(\tau=\delta\circ h\)</span>, equal reports give equal decoded targets. Conversely, assume (1). For each attained report <span class="math-inline">\(y\)</span>, select any <span class="math-inline">\(x\)</span> with <span class="math-inline">\(h(x)=y\)</span> and define <span class="math-inline">\(\delta(y)=\tau(x)\)</span>. Fiber constancy makes this definition independent of the selected state and gives the factorization. ∎</p></div>
+            <p>The decoder is defined on the attained report set <span class="math-inline">\(h(\mathcal{X})\)</span>. Extension to reports outside that set is a separate extrapolation choice.</p>
+          </section>
+
+          <section class="chapter-section" id="finite-example">
+            <h2>3. One report, two target conclusions</h2>
+            <p>Take four states <span class="math-inline">\(\mathcal{X}=\{a,b,c,d\}\)</span> and define <span class="math-inline">\(h(a)=h(b)=0\)</span> and <span class="math-inline">\(h(c)=h(d)=1\)</span>. The fibers are <span class="math-inline">\(\{a,b\}\)</span> and <span class="math-inline">\(\{c,d\}\)</span>.</p>
+            <p>For target <span class="math-inline">\(\tau_{1}=h\)</span>, the within-fiber target diameter is zero and decoder <span class="math-inline">\(\delta_{1}(y)=y\)</span> works. Define a second scalar target by</p>
+            <div class="equation-block" role="math" aria-label="Second target values on four states."><span class="equation-tex">\[\tau _{2}(a)=0, \tau _{2}(b)=2, \tau _{2}(c)=1, \tau _{2}(d)=4.\]</span><span class="equation-number">(2)</span></div>
+            <p>The two fiber diameters are 2 and 3. Equation (1) fails in each fiber, so the same report loses the second target. Under squared loss and a uniform distribution within each fiber, the conditional-mean decoder gives 1 at report 0 and 5/2 at report 1. Its conditional mean-squared errors are 1 and 9/4.</p>
+          </section>
+
+          <section class="chapter-section" id="contract-components">
+            <h2>4. What must remain fixed</h2>
+            <p>A complete contract records the state class, observation, target, environment, admissible intervention, loss, and claim level. For a probabilistic statement it also specifies a law or a class of laws. For an approximate decoder it states the norm or risk under which approximation is measured.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Target-free sufficiency language</span><p>Calling <span class="math-inline">\(h\)</span> “sufficient” without naming <span class="math-inline">\(\tau\)</span> suppresses the quantifier that determines the claim. In the finite example, the statement is true for <span class="math-inline">\(\tau_{1}\)</span> and false for <span class="math-inline">\(\tau_{2}\)</span>.</p></div>
+            <p>Changing the admissible state set can also change the fibers. If state <span class="math-inline">\(b\)</span> is excluded, report 0 becomes sufficient for <span class="math-inline">\(\tau_{2}\)</span> on that restricted fiber. The restriction must be justified by the model or design.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>For a finite model, group states by the exact report key and compute each target range. With floating reports, define a tolerance only after the measurement scale is fixed; tolerance-based grouping changes the equivalence relation and should be reported as an approximation.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Construct both decoders for the finite example wherever they exist and verify Proposition 1.</li>
+              <li>Under a nonuniform law with probabilities (0.1,0.4,0.2,0.3), compute the conditional-mean decoder and total squared-error risk for <span class="math-inline">\(\tau_{2}\)</span>.</li>
+              <li>Give a target that is sufficient on {<span class="math-inline">\(a,b,c\)</span>} and loses sufficiency when <span class="math-inline">\(d\)</span> is added.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> For <span class="math-inline">\(\tau_{1}\)</span>, set <span class="math-inline">\(\delta(0)=0\)</span> and <span class="math-inline">\(\delta(1)=1\)</span>. For <span class="math-inline">\(\tau_{2}\)</span>, report 0 would require one decoder value to equal both 0 and 2, so no decoder exists. <strong>2.</strong> The conditional means are 8/5 and 14/5. The within-fiber variances are 16/25 and 54/25; weighting each by its fiber probability 1/2 gives total risk 7/5.</p></details>
+            <ol class="reference-list">
+              <li>Paul R. Halmos, <em>Naive Set Theory</em>, sections on equivalence relations and quotient sets.<small>Fibers and induced quotient maps.</small></li>
+              <li>David Blackwell (1951), “Comparison of Experiments,” <em>Proceedings of the Second Berkeley Symposium</em>, 93–102.<small>Decision-relative comparison of information.</small></li>
+              <li>Thomas M. Cover and Joy A. Thomas, <em>Elements of Information Theory</em>, §2.8.<small>Data processing and information loss under mappings.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>State the admissible states, observation, target, attained report set, fibers, decoder domain, intervention environment, probability law when used, loss, and exact or approximate claim.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter treats deterministic factorization through an observation and a finite risk illustration. Statistical sufficiency for a parameterized family and experiment comparison receive separate treatment.</p>
+          </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#research-contract">The research object is a typed contract</a>
+            <a href="#fiber-theorem">Fiber constancy is the exact criterion</a>
+            <a href="#finite-example">One report, two target conclusions</a>
+            <a href="#contract-components">What must remain fixed</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><span></span><a class="next" href="/resources/volume-01/i-02/"><span>Next</span><strong>I-02 · Linear Maps, Kernels, Quotients, and Information Dimension</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

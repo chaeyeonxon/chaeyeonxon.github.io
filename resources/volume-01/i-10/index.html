@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Adjoint Bridges Under Clock Uncertainty · Chae-Yeon Xon</title>
+  <meta name="description" content="An inverse problem can identify a payoff query without recovering the entire latent response. Adjoint equations characterize exact bridges, closures characterize approximable queries, and stability determines estimability. Multiple admissible clocks require a common bridge or a transparent range of decision values.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-10/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Adjoint Bridges Under Clock Uncertainty · Chae-Yeon Xon">
+  <meta property="og:description" content="An inverse problem can identify a payoff query without recovering the entire latent response. Adjoint equations characterize exact bridges, closures characterize approximable queries, and stability determines estimability. Multiple admissible clocks require a common bridge or a transparent range of decision values.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-10/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Adjoint Bridges Under Clock Uncertainty · Chae-Yeon Xon">
+  <meta name="twitter:description" content="An inverse problem can identify a payoff query without recovering the entire latent response. Adjoint equations characterize exact bridges, closures characterize approximable queries, and stability determines estimability. Multiple admissible clocks require a common bridge or a transparent range of decision values.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-10</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Measurement, Records, and Time · Chapter I-10</div>
+        <h1>Adjoint Bridges Under Clock Uncertainty</h1>
+        <p>An inverse problem can identify a payoff query without recovering the entire latent response. Adjoint equations characterize exact bridges, closures characterize approximable queries, and stability determines estimability. Multiple admissible clocks require a common bridge or a transparent range of decision values.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-10.01</span><strong>Inverse problems for queries</strong></li>
+              <li><span>I-10.02</span><strong>Range, closure, and stability</strong></li>
+              <li><span>I-10.03</span><strong>Common bridges</strong></li>
+              <li><span>I-10.04</span><strong>Multiple clocks and cohorts</strong></li>
+              <li><span>I-10.05</span><strong>Finite windows and boundary tails</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="query-bridge">
+            <h2>1. A query can be recovered through an adjoint equation</h2>
+            <p class="chapter-lede">Linear observations may discard the latent response while preserving a specified payoff. The payoff is recoverable exactly when its coefficient lies in the adjoint range.</p>
+            <p>Let a latent response be <span class="math-inline">\(g\in \mathbb{R}^{n}\)</span>, let the observed clock-aggregated response be <span class="math-inline">\(y=Kg\)</span> with <span class="math-inline">\(K\in \mathbb{R}^{m\times n}\)</span>, and let the scalar query be <span class="math-inline">\(\theta=c^{\top}g\)</span>. A bridge is a vector <span class="math-inline">\(b\in \mathbb{R}^{m}\)</span> such that <span class="math-inline">\(\theta=b^{\top}y\)</span> for every <span class="math-inline">\(g\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Exact finite-dimensional bridge</span><p>The following statements are equivalent: (i) a bridge exists; (ii) <span class="math-inline">\(K^{\top}b=c\)</span> has a solution; (iii) <span class="math-inline">\(c\)</span> belongs to <span class="math-inline">\(\operatorname{range}(K^{\top})\)</span>; and (iv) <span class="math-inline">\(c^{\top}v=0\)</span> for every <span class="math-inline">\(v\in \operatorname{ker}(K)\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Equality <span class="math-inline">\(b^{\top}Kg=c^{\top}g\)</span> for every <span class="math-inline">\(g\)</span> is equivalent to <span class="math-inline">\(K^{\top}b=c\)</span>. The fundamental theorem of linear algebra gives <span class="math-inline">\(\operatorname{range}(K^{\top})\)</span>=ker<span class="math-inline">\((K)^{\perp}\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="worked-bridge">
+            <h2>2. Total response survives a three-to-two clock</h2>
+            <p>Consider</p>
+            <div class="equation-block" role="math" aria-label="Clock matrix and exact total query."><span class="equation-tex">\[K= \begin{bmatrix}1 &amp; \frac{1}{2} &amp; 0 \\ 0 &amp; \frac{1}{2} &amp; 1\end{bmatrix}, \quad c=(1,1,1)^{\top }.\]</span><span class="equation-number">(1)</span></div>
+            <p>The middle latent bin is split equally across two recorded bins. The bridge <span class="math-inline">\(b=(1,1)^{\top}\)</span> satisfies <span class="math-inline">\(K^{\top}b=c\)</span>, so the latent total equals the observed total. The kernel is spanned by <span class="math-inline">\((-1/2,1,-1/2)^{\top}\)</span>, which is orthogonal to <span class="math-inline">\(c\)</span>.</p>
+            <p>The first-bin query <span class="math-inline">\(d=(1,0,0)^{\top}\)</span> has no exact bridge: the equations require <span class="math-inline">\(b_{1}=1\)</span> from column one, <span class="math-inline">\(b_{2}=0\)</span> from column three, and (<span class="math-inline">\(b_{1}+b_{2}\)</span>)/2=0 from column two. The last equality fails. Equivalently, <span class="math-inline">\(d\)</span> has inner product <span class="math-inline">\(-1/2\)</span> with the kernel vector.</p>
+          </section>
+
+          <section class="chapter-section" id="stable-bridge">
+            <h2>3. Noise selects among exact bridges</h2>
+            <p>Suppose the observed response is <span class="math-inline">\(Y=Kg+\varepsilon\)</span> with mean-zero noise covariance <span class="math-inline">\(\Omega\succ0\)</span>. Among exact bridges, the minimum-variance bridge solves</p>
+            <div class="equation-block" role="math" aria-label="Minimum variance adjoint bridge."><span class="equation-tex">\[\operatorname{min}_{b} b^{\top }\Omega b \text{subject to} K^{\top }b=c.\]</span><span class="equation-number">(2)</span></div>
+            <p>If the query is in the adjoint range, one solution is <span class="math-inline">\(\Omega ^{-1}K(K^{\top}\Omega ^{-1}K)^{+}c\)</span>. The pseudoinverse acts on the estimable subspace. In computation, solve the equality-constrained system using a rank-revealing factorization and verify both the adjoint residual and the constraint rank.</p>
+            <p>For <span class="math-inline">\(\Omega=I_{2}\)</span> in (1), the exact total bridge is unique and its noise variance is two. A small singular value in the relevant adjoint direction can make the bridge norm large even when the range condition holds.</p>
+          </section>
+
+          <section class="chapter-section" id="clock-uncertainty">
+            <h2>4. Multiple clocks require a common bridge</h2>
+            <p>Let <span class="math-inline">\(K_{1},\ldots,K_{L}\)</span> be admissible clock operators with a shared observed coordinate system. A clock-invariant linear report uses one vector <span class="math-inline">\(b\)</span> and therefore requires <span class="math-inline">\(K_{\ell}^{\top}b=c\)</span> for every <span class="math-inline">\(\ell\)</span>. Stack these equations before solving.</p>
+            <p>For <span class="math-inline">\(K_{1}=I_{2}\)</span> and <span class="math-inline">\(K_{2}=\begin{bmatrix}1 &amp; 1/2 \\ 0 &amp; 1/2\end{bmatrix}\)</span>, the total query <span class="math-inline">\(c=(1,1)^{\top}\)</span> has common bridge <span class="math-inline">\(b=(1,1)^{\top}\)</span>. The first-period query <span class="math-inline">\(c=(1,0)^{\top}\)</span> forces <span class="math-inline">\(b=(1,0)^{\top}\)</span> under <span class="math-inline">\(K_{1}\)</span>, whose second adjoint image is <span class="math-inline">\((1,1/2)^{\top}\)</span>; hence a common bridge is absent.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Least-squares residual treated as exact recovery</span><p>For an approximate bridge, the worst query bias over <span class="math-inline">\(\lVert g\rVert \le R\)</span> equals <span class="math-inline">\(R\lVert c-K^{\top}b\rVert\)</span> in the matching Euclidean dual norm. Its numerical size depends on the declared latent-response set and norm. A short residual alone supplies no scale-free recovery claim.</p></div>
+            <p>A finite observation window creates unobserved tail coordinates. If their query coefficient and response are <span class="math-inline">\(c_{T}\)</span> and <span class="math-inline">\(g_{T}\)</span>, the missing contribution is bounded by <span class="math-inline">\(\lVert c_{T}\rVert \lVert g_{T}\rVert\)</span> once a tail norm bound is justified.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Construct each clock matrix with its column and row conventions documented. Compute rank, null-space residuals, adjoint residuals, bridge norm, noise variance, and tail bound. Compare exact and least-squares solutions under one fixed norm and tolerance.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify both query conclusions for matrix (1) by the range and kernel tests.</li><li>Derive the minimum-variance formula in Section 3 from the Lagrangian.</li><li>For the two clocks in Section 4, characterize every query admitting a common bridge.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Multiplication gives <span class="math-inline">\(K^{\top}(1,1)^{\top}=(1,1,1)^{\top}\)</span>. The kernel witness separates the first-bin query. <strong>2.</strong> Stationarity gives <span class="math-inline">\(\Omega b=K\lambda\)</span>; substitution into the constraint yields <span class="math-inline">\(K^{\top}\Omega ^{-1}K\lambda=c\)</span>. <strong>3.</strong> Since <span class="math-inline">\(K_{1}\)</span> forces <span class="math-inline">\(b=c\)</span>, the second equation requires <span class="math-inline">\(c_{1}=c_{2}\)</span>.</p></details>
+            <ol class="reference-list"><li>Gene H. Golub and Charles F. Van Loan, <em>Matrix Computations</em>, chapters on least squares and constrained least squares.<small>Rank-revealing solution of adjoint systems.</small></li><li>Heinz W. Engl, Martin Hanke, and Andreas Neubauer, <em>Regularization of Inverse Problems</em>, Chapters 2–3.<small>Range, generalized inverses, and stability.</small></li><li>III-12 · Ill-Posed Inverse Problems and Regularization.<small>Closure, singular systems, and regularized recovery.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/fuzzy-clock/">“Fuzzy Clock: Decision-Specific Timing Information.”</a><small>Related use of common payoff bridges under clock uncertainty.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State latent and observed spaces, operator orientation, query, admissible clocks, noise covariance, exact range test, rank tolerance, adjoint residual, bridge variance, latent-set norm for approximation bias, observation window, and tail bound.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter proves finite-matrix query recovery and common-bridge conditions. Infinite-dimensional closure, regularization rates, and influence functions require the operator and inference volumes.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-09/">I-09 · Clock Error and Decision-Relevant Moments</a></li><li><a href="/resources/volume-03/iii-11/">III-11 · Integral, Multiplication, Adjoint, and Smoothing Operators</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#query-bridge">A query can be recovered through an adjoint equation</a>
+            <a href="#worked-bridge">Total response survives a three-to-two clock</a>
+            <a href="#stable-bridge">Noise selects among exact bridges</a>
+            <a href="#clock-uncertainty">Multiple clocks require a common bridge</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-09/"><span>Previous</span><strong>I-09 · Clock Error and Decision-Relevant Moments</strong></a><a class="next" href="/resources/volume-01/i-11/"><span>Next</span><strong>I-11 · Administrative Handoffs as Statistical Experiments</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

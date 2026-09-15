@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Gas Records, Event Time, and Storage Decisions · Chae-Yeon Xon</title>
+  <meta name="description" content="Recorded event time can differ from physical delivery, market response, and the decision deadline. When timing is uncertain, the value of a clock depends on the storage or scheduling action it informs. Measurement quality is therefore target-specific and must be evaluated against the loss of the actual decision.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-16/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Gas Records, Event Time, and Storage Decisions · Chae-Yeon Xon">
+  <meta property="og:description" content="Recorded event time can differ from physical delivery, market response, and the decision deadline. When timing is uncertain, the value of a clock depends on the storage or scheduling action it informs. Measurement quality is therefore target-specific and must be evaluated against the loss of the actual decision.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-16/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Gas Records, Event Time, and Storage Decisions · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Recorded event time can differ from physical delivery, market response, and the decision deadline. When timing is uncertain, the value of a clock depends on the storage or scheduling action it informs. Measurement quality is therefore target-specific and must be evaluated against the loss of the actual decision.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-16</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Policy and Empirical Computation · Chapter IV-16</div>
+        <h1>Gas Records, Event Time, and Storage Decisions</h1>
+        <p>Recorded event time can differ from physical delivery, market response, and the decision deadline. When timing is uncertain, the value of a clock depends on the storage or scheduling action it informs. Measurement quality is therefore target-specific and must be evaluated against the loss of the actual decision.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-16.01</span><strong>Physical and recorded events</strong></li>
+              <li><span>IV-16.02</span><strong>Observed responses</strong></li>
+              <li><span>IV-16.03</span><strong>Comparison designs</strong></li>
+              <li><span>IV-16.04</span><strong>Decision loss</strong></li>
+              <li><span>IV-16.05</span><strong>Timing uncertainty</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="physical-recorded-time">
+            <h2>1. Physical events and recorded events occupy different clocks</h2>
+            <p class="chapter-lede">A timestamp is an observation generated by a reporting process. Its value for estimation or storage control depends on the relation between recorded time and the physical event.</p>
+            <p>Let physical event time be <span class="math-inline">\(T\)</span> and recorded time be <span class="math-inline">\(R=T+U\)</span>, where the timing error <span class="math-inline">\(U\)</span> may depend on facility, load, sign, or event magnitude. If a physical response profile is <span class="math-inline">\(g(s)\)</span>, the mean profile aligned on recorded time is a mixture <span class="math-inline">\(\mathbb{E}[g(s+U)\mid\text{record inclusion}]\)</span>. Under independent additive error with density <span class="math-inline">\(f_{U}\)</span>, this is a convolution. Dependence or window selection changes the mixing law.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Decision information set</span><p>The information set <span class="math-inline">\(\mathcal{W}_{t}\)</span> contains records available when action <span class="math-inline">\(a_{t}\)</span> is chosen, including their release times and revisions. A field observed later cannot enter an operational rule at date <span class="math-inline">\(t\)</span>.</p></div>
+          </section>
+
+          <section class="chapter-section" id="bayes-decision">
+            <h2>2. The loss function determines the useful timing summary</h2>
+            <p>Suppose the controller predicts a scalar gas need <span class="math-inline">\(G\)</span> using record <span class="math-inline">\(W\)</span> and incurs squared loss <span class="math-inline">\((G-a)^{2}\)</span>. The optimal unconstrained action is the conditional mean. The minimum risk is <span class="math-inline">\(\mathbb{E}[\operatorname{Var}(G\mid W)]\)</span>. Under absolute loss a conditional median is optimal, and asymmetric inventory costs lead to a conditional quantile.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Capacity-constrained squared-loss action</span><p>If the feasible storage action is the interval [0,<span class="math-inline">\(K\)</span>] with <span class="math-inline">\(K\ge0\)</span>, every squared-loss Bayes action is the Euclidean projection of <span class="math-inline">\(\mathbb{E}[G\mid W]\)</span> onto <span class="math-inline">\([0,K]\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Conditional on <span class="math-inline">\(W\)</span>, decompose <span class="math-inline">\(\mathbb{E}[(G-a)^{2}\mid W]=\operatorname{Var}(G\mid W)+(\mathbb{E}[G\mid W]-a)^{2}\)</span>. The first term is action-invariant. Minimizing the second over a closed interval gives the closest feasible point to the conditional mean. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="timing-example">
+            <h2>3. A noisy record can be valuable without revealing the event</h2>
+            <p>Let <span class="math-inline">\(G\)</span> be zero or two with equal probability. Observe <span class="math-inline">\(W=G+U\)</span>, where <span class="math-inline">\(U\)</span> is independently <span class="math-inline">\(-1\)</span> or 1 with equal probability. Records <span class="math-inline">\(-1\)</span> and 3 reveal <span class="math-inline">\(G\)</span>. Record 1 arises from either physical value with equal posterior probability, so its posterior mean is one and posterior variance is one.</p>
+            <p>The conditional-mean rule is 0 at <span class="math-inline">\(W=-1\)</span>, 1 at <span class="math-inline">\(W=1\)</span>, and 2 at <span class="math-inline">\(W=3\)</span>. Since <span class="math-inline">\(P(W=1)=0.5\)</span>, its Bayes risk is 0.5. Using the raw record as the action yields E[<span class="math-inline">\((G-W)^{2}\)</span>]=E[<span class="math-inline">\(U^{2}\)</span>]=1. The posterior rule halves expected squared loss even though one record value remains ambiguous.</p>
+            <p>An event-study coefficient aligned on <span class="math-inline">\(W\)</span> describes the record-time mixture. It is not itself the Bayes action and need not recover the physical-time profile. The estimand, record process, and decision problem should therefore be reported separately.</p>
+          </section>
+
+          <section class="chapter-section" id="timing-boundaries">
+            <h2>4. Windows, censoring, and endogenous records alter the calculation</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Symmetric timing error inferred from a centered histogram</span><p>A centered observed distribution can result from asymmetric errors combined with sample selection or asymmetric physical events. Error symmetry requires information beyond the marginal recorded-time histogram.</p></div>
+            <p>A finite observation window censors events shifted across its edges. Storage capacity <span class="math-inline">\(K=0\)</span> fixes the action at zero; infinite capacity returns the conditional mean. At the equality boundaries <span class="math-inline">\(\mathbb{E}[G\mid W]=0\)</span> or <span class="math-inline">\(\mathbb{E}[G\mid W]=K\)</span>, the projection is continuous but its derivative has a kink. If record delay depends on <span class="math-inline">\(G\)</span>, the independent-convolution formula fails. Multiple records for one event create dependence and require event-level clustering or a deduplication rule. A missing timestamp can represent no event, failed recording, or delayed release; those states imply different likelihoods. Causal response claims additionally require an assignment or identification design beyond the clock model.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Keep physical quantity, event timestamp, recording timestamp, publication timestamp, revision timestamp, sensor identifier, unit, and quality flag as separate fields. Define the information vintage available at each decision date. Estimate or bound the record-error law using validation events, propagate it through the declared loss, and compare decisions by out-of-sample loss with chronological splits.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the posterior rule and both risks in Section 3.</li><li>Find the action when <span class="math-inline">\(K=1.5\)</span> and compute its risk.</li><li>Show how an event at the right edge can disappear from a fixed recorded-time window when <span class="math-inline">\(U&gt;0\)</span>.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Bayes’ rule gives posterior means 0, 1, and 2; only the middle record has conditional variance one. <strong>2.</strong> Projection replaces the action two at <span class="math-inline">\(W=3\)</span> by 1.5. This state has probability one quarter and adds <span class="math-inline">\(0.25\times 0.5^{2}=0.0625\)</span>, giving risk 0.5625. <strong>3.</strong> If inclusion requires <span class="math-inline">\(R\le b\)</span>, then <span class="math-inline">\(T\le b\)</span> can still be excluded whenever <span class="math-inline">\(U&gt;b-T\)</span>.</p></details>
+            <ol class="reference-list"><li>James O. Berger, <em>Statistical Decision Theory and Bayesian Analysis</em>.<small>Bayes actions under specified losses.</small></li><li>Raymond J. Carroll, David Ruppert, Leonard A. Stefanski, and Ciprian Crainiceanu, <em>Measurement Error in Nonlinear Models</em>.<small>Measurement-error structure and identification.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/fuzzy-clock/">“Fuzzy Clock: Decision-Specific Timing Information.”</a><small>Related event-time and storage application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Physical event, recorded event, release and revision times, additive-error support, dependence, duplicate records, window edges, left and right censoring, missing-state meanings, information vintage, target profile, loss function, action support, capacity kink, posterior calibration, experimental design, clustering level, and chronological out-of-sample evaluation.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers discrete timing-error examples and one-period Bayesian storage actions. Continuous-time filtering, dynamic inventory control, and causal event-study identification require additional models.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-09/">I-09 · Clock Error and Decision-Relevant Moments</a></li><li><a href="/resources/volume-01/i-10/">I-10 · Adjoint Bridges Under Clock Uncertainty</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#physical-recorded-time">Physical events and recorded events occupy different clocks</a>
+            <a href="#bayes-decision">The loss function determines the useful timing summary</a>
+            <a href="#timing-example">A noisy record can be valuable without revealing the event</a>
+            <a href="#timing-boundaries">Windows, censoring, and endogenous records alter the calculation</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-15/"><span>Previous</span><strong>IV-15 · Price Baskets, Bond Cash Flows, and Measurement Certificates</strong></a><a class="next" href="/resources/volume-04/iv-17/"><span>Next</span><strong>IV-17 · Bank Records, Reporting Systems, and Chronological Validation</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

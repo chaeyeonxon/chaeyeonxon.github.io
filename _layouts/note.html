@@ -1,0 +1,197 @@
+{% assign note = site.data.notes | where: "slug", page.note_slug | first %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>{{ note.title | escape }} · {{ site.title | escape }}</title>
+  <meta name="description" content="{{ note.summary | escape }}">
+  <meta name="keywords" content="{{ note.keywords | join: ', ' | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:title" content="{{ note.title | escape }}">
+  <meta property="og:description" content="{{ note.summary | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/yonsei-symbol.png' | absolute_url }}">
+  <meta property="og:image:secure_url" content="{{ '/assets/yonsei-symbol.png' | absolute_url }}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ note.title | escape }}">
+  <meta name="twitter:description" content="{{ note.summary | escape }}">
+  <meta name="twitter:image" content="{{ '/assets/yonsei-symbol.png' | absolute_url }}">
+  <link rel="image_src" href="{{ '/assets/yonsei-symbol.png' | absolute_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="48x48" href="{{ '/assets/favicon-48x48.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ '/assets/favicon-96x96.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ '/assets/yonsei-symbol.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="{{ '/assets/yonsei-symbol.png' | relative_url }}" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="{{ '/' | relative_url }}">{{ site.data.profile.name }}</a>
+          <div class="affiliation">{{ site.data.profile.affiliation }}</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="{{ '/#research' | relative_url }}">Research</a>
+        <a href="{{ '/#about' | relative_url }}">About</a>
+        <a href="{{ '/#contact' | relative_url }}">Contact</a>
+        {% if site.data.profile.cv_url != "" %}<a href="{{ site.data.profile.cv_url | relative_url }}" target="_blank" rel="noopener">CV</a>{% endif %}
+      </nav>
+    </div>
+  </header>
+
+  <main class="paper-page">
+    <div class="container">
+      <div class="paper-repo-path">
+        <span class="repo-mark" aria-hidden="true"></span>
+        <a href="{{ '/#comments' | relative_url }}">comments</a>
+        <span class="repo-slash">/</span>
+        <strong>{{ note.slug }}</strong>
+        <span class="paper-status-pill">Preliminary Technical Note</span>
+      </div>
+
+      <div class="paper-detail-grid">
+        <article class="paper-detail-main">
+          <header class="paper-detail-header">
+            <h1>{{ note.title }}</h1>
+            <p class="paper-detail-subtitle">A comment on {{ note.target_authors }} ({{ note.target_year }})</p>
+            <div class="paper-detail-byline">
+              <span>{{ site.data.profile.name }}</span>
+              <span>{{ note.display_date }}</span>
+            </div>
+            <div class="paper-detail-actions">
+              {% if note.note_url != "" %}<a class="paper-action primary" href="{{ note.note_url | relative_url }}" target="_blank" rel="noopener">Note PDF</a>{% endif %}
+              {% if note.replication_url != "" %}<a class="paper-action" href="{{ note.replication_url }}" target="_blank" rel="noopener">Replication</a>{% endif %}
+            </div>
+          </header>
+
+          {% if note.note_url != "" %}
+          <div class="paper-file-panel" aria-label="Note files">
+            <div class="paper-file-panel-head">
+              <span>Documents</span>
+              <span>1 file</span>
+            </div>
+            <a class="paper-file-row" href="{{ note.note_url | relative_url }}" target="_blank" rel="noopener">
+              <span class="file-icon" aria-hidden="true"></span>
+              <span class="file-name">Technical Note</span>
+              <span class="file-detail">{{ note.pages }} pages · {{ note.file_size }}</span>
+            </a>
+          </div>
+          {% endif %}
+
+          <div class="paper-resource-panel" aria-label="Referenced paper">
+            <div class="paper-resource-panel-head">
+              <span>Referenced paper</span>
+              <span>{{ note.target_year }}</span>
+            </div>
+            <a class="paper-resource-row" href="{{ note.target_url }}" target="_blank" rel="noopener">
+              <span class="resource-icon" aria-hidden="true"></span>
+              <span class="resource-copy">
+                <strong>{{ note.target_title }}</strong>
+                <small>{{ note.target_authors }} · {{ note.target_venue }}</small>
+              </span>
+              <span class="external-mark" aria-hidden="true">↗</span>
+            </a>
+            {% for resource in note.resources %}
+            <a class="paper-resource-row" href="{{ resource.url }}" target="_blank" rel="noopener">
+              <span class="resource-icon" aria-hidden="true"></span>
+              <span class="resource-copy">
+                <strong>{{ resource.name }}</strong>
+                <small>{{ resource.host }}</small>
+              </span>
+              <span class="external-mark" aria-hidden="true">↗</span>
+            </a>
+            {% endfor %}
+          </div>
+
+          <section class="paper-readme">
+            <div class="paper-readme-head">
+              <span class="readme-icon" aria-hidden="true"></span>
+              <strong>Overview</strong>
+            </div>
+            <div class="paper-readme-body">
+              <section class="paper-content-section">
+                <h2>Abstract</h2>
+                <p>{{ note.abstract }}</p>
+              </section>
+
+              <section class="paper-content-section">
+                <h2>Technical point</h2>
+                <p>{{ note.technical_point }}</p>
+              </section>
+
+              <section class="paper-content-section">
+                <h2>Scope</h2>
+                <div class="scope-grid">
+                  <div>
+                    <h3>Claims affected</h3>
+                    <p>{{ note.scope_affected }}</p>
+                  </div>
+                  <div>
+                    <h3>What remains intact</h3>
+                    <p>{{ note.scope_intact }}</p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+        </article>
+
+        <aside class="paper-detail-sidebar">
+          <section class="sidebar-section">
+            <h2>About</h2>
+            <p>{{ note.summary }}</p>
+          </section>
+
+          <section class="sidebar-section">
+            <h2>Metadata</h2>
+            <dl class="paper-metadata">
+              <div><dt>Author</dt><dd>{{ site.data.profile.name }}</dd></div>
+              <div><dt>Date</dt><dd>{{ note.display_date }}</dd></div>
+              <div><dt>JEL codes</dt><dd>{{ note.jel_codes }}</dd></div>
+            </dl>
+          </section>
+
+          <section class="sidebar-section">
+            <h2>Keywords</h2>
+            <div class="topic-tags">
+              {% for keyword in note.keywords %}
+              <span>{{ keyword }}</span>
+              {% endfor %}
+            </div>
+          </section>
+
+          <section class="sidebar-section draft-status">
+            <h2>Status</h2>
+            <p>{{ note.status }}</p>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>{{ site.data.profile.name }}</span>
+      <div class="footer-meta">
+        <span>{{ site.data.profile.affiliation }}</span>
+        <span>{{ site.data.profile.degree_status }}</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

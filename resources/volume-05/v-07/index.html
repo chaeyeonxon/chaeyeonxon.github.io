@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Selection after Symmetry · Chae-Yeon Xon</title>
+  <meta name="description" content="A symmetric vector of shocks can have zero mean coordinate by coordinate while a statistic selected using those shocks has a nonzero expectation. The distinction between a fixed order statistic and a shock-dependent selected statistic is the central audit object in boundary moment inequalities and other post-selection arguments.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-07/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Selection after Symmetry · Chae-Yeon Xon">
+  <meta property="og:description" content="A symmetric vector of shocks can have zero mean coordinate by coordinate while a statistic selected using those shocks has a nonzero expectation. The distinction between a fixed order statistic and a shock-dependent selected statistic is the central audit object in boundary moment inequalities and other post-selection arguments.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-07/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Selection after Symmetry · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A symmetric vector of shocks can have zero mean coordinate by coordinate while a statistic selected using those shocks has a nonzero expectation. The distinction between a fixed order statistic and a shock-dependent selected statistic is the central audit object in boundary moment inequalities and other post-selection arguments.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-07</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Six Applied Audit Case Studies · Chapter V-07</div>
+        <h1>Selection after Symmetry</h1>
+        <p>A symmetric vector of shocks can have zero mean coordinate by coordinate while a statistic selected using those shocks has a nonzero expectation. The distinction between a fixed order statistic and a shock-dependent selected statistic is the central audit object in boundary moment inequalities and other post-selection arguments.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-07.01</span><strong>The target claim</strong></li>
+              <li><span>V-07.02</span><strong>Fixed and selected statistics</strong></li>
+              <li><span>V-07.03</span><strong>An economic counterexample</strong></li>
+              <li><span>V-07.04</span><strong>Possible repairs</strong></li>
+              <li><span>V-07.05</span><strong>Evidence boundaries</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="fixed-selected">
+            <h2>1. Symmetry is preserved for fixed coordinates</h2>
+            <p class="chapter-lede">Coordinatewise symmetry does not survive a selection rule that favors large realized coordinates. The selected statistic has a different law.</p>
+            <p>Let <span class="math-inline">\(\varepsilon=(\varepsilon _{1},\ldots,\varepsilon _{K})\)</span> have iid Rademacher coordinates, each equal to <span class="math-inline">\(-1\)</span> or 1 with equal probability. Every predetermined coordinate has mean zero. Let <span class="math-inline">\(J(\varepsilon)\)</span> be any measurable maximizer of the realized vector, using a declared tie rule. Then <span class="math-inline">\(\varepsilon _{J(\varepsilon )}=\operatorname{max}_{j}\varepsilon _{j}\)</span>.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Selection-aware target</span><p>A selected target includes the selection map in its definition. Its expectation is <span class="math-inline">\(\mathbb{E}[T_{J(X)}(X)]\)</span>, which generally differs from evaluating <span class="math-inline">\(\mathbb{E}[T_{j}(X)]\)</span> and then substituting a random index.</p></div>
+          </section>
+
+          <section class="chapter-section" id="rademacher-witness">
+            <h2>2. The smallest witness has two coordinates</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Mean of the selected maximum</span><p>For <span class="math-inline">\(K\ge1\)</span> iid Rademacher coordinates, <span class="math-inline">\(\mathbb{E}[\max_{j}\varepsilon _{j}]=1-2^{1-K}\)</span>. This equals zero only at <span class="math-inline">\(K=1\)</span> and is positive for every <span class="math-inline">\(K\ge2\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> The maximum equals <span class="math-inline">\(-1\)</span> only when every coordinate equals <span class="math-inline">\(-1\)</span>, an event of probability <span class="math-inline">\(2^{-K}\)</span>. It equals one otherwise. Therefore its expectation is <span class="math-inline">\((1-2^{-K})-2^{-K}=1-2^{1-K}\)</span>. ∎</p></div>
+            <p>For <span class="math-inline">\(K=2\)</span>, the four equally likely vectors give selected values 1,1,1,<span class="math-inline">\(-1\)</span> and mean 1/2. Both fixed-coordinate means remain zero. This exact table refutes any step that transfers coordinate symmetry through the maximization rule.</p>
+            <p>An economic implementation lets two moment inequalities receive symmetric sampling shocks and reports the most violated moment. At a boundary where both population moments are zero, the reported maximum has positive mean. The phenomenon is a property of the selection operator, independent of the economic label attached to the moments.</p>
+          </section>
+
+          <section class="chapter-section" id="repairs">
+            <h2>3. Repairs change the target or account for selection</h2>
+            <p>A pre-specified index retains the coordinatewise symmetry result. Sample splitting can select on one independent subsample and evaluate on another; conditional on the selection sample, the evaluation noise can remain centered. Simultaneous inference controls the family of coordinates before selection. Selective inference conditions on a suitable selection event and changes the reference distribution.</p>
+            <p>Subtracting the known selection mean repairs this finite Rademacher example, but a general correction depends on the joint law, tie rule, and selection map. Marginal symmetry alone does not identify it when coordinates are dependent.</p>
+          </section>
+
+          <section class="chapter-section" id="selection-boundaries">
+            <h2>4. Ties, dependence, and estimated candidate sets matter</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Fixed-index lemma cited after data-dependent selection</span><p>A lemma quantified over each deterministic <span class="math-inline">\(j\)</span> does not cover <span class="math-inline">\(J(X)\)</span> unless it is uniform or conditioned through a valid selection argument.</p></div>
+            <p>At <span class="math-inline">\(K=1\)</span> there is no selection effect. Perfectly identical coordinates also remove it. Negative dependence can enlarge the chance that at least one coordinate is high; perfect positive dependence can collapse the effective candidate count. Atoms create ties and make the selected index distribution tie-rule dependent, even when the selected value is unchanged. A candidate set learned from the same data adds another selection stage. Empty candidate sets need a fallback definition, and growing <span class="math-inline">\(K\)</span> changes asymptotic approximations.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Write the selection map as executable pseudocode, enumerate a finite witness exactly, and compare fixed-index, selected-index, and conditional distributions. In data analysis, preserve the full candidate list, scores, tie rule, and random seed. Re-run all inferential stages inside every resample or use a theorem that explicitly conditions on the selection event.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify the proposition for <span class="math-inline">\(K=1\)</span>,2,3 by enumeration.</li><li>Compute the selected mean when all coordinates are identical Rademacher variables.</li><li>Explain why evaluating a selected moment on an independent holdout restores conditional centering.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The values are 0, 1/2, and 3/4. <strong>2.</strong> The maximum equals the common coordinate and has mean zero. <strong>3.</strong> Conditional on the selection sample, the chosen index is fixed relative to independent holdout noise; centering then applies to that conditional law.</p></details>
+            <ol class="reference-list"><li>H. A. David and H. N. Nagaraja, <em>Order Statistics</em>.<small>Distributions of maxima and selected order statistics.</small></li><li>Richard Berk et al. (2013), “Valid Post-Selection Inference,” <em>Annals of Statistics</em> 41, 802–837.<small>Simultaneous guarantees after model selection.</small></li><li>Jason D. Lee, Dennis L. Sun, Yuekai Sun, and Jonathan E. Taylor (2016), “Exact Post-Selection Inference, with Application to the Lasso,” <em>Annals of Statistics</em> 44, 907–927.<small>Conditioning on selection events.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Fixed versus random index, selection map, candidate count, joint law, symmetry scope, tie probability and rule, empty set, learned candidates, selected value versus selected identity, dependence, conditioning event, split independence, simultaneous family, rerun stages, growing dimension, and the exact estimand after correction.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers finite post-selection mean effects. High-dimensional selective inference and adaptive sequential experimentation require stronger probability tools.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-05/v-03/">V-03 · Minimal Counterexamples with Economic Structure</a></li><li><a href="/resources/volume-02/ii-02/">II-02 · Symmetry, Order Statistics, and Endogenous Selection</a></li><li><a href="/resources/volume-02/ii-04/">II-04 · Moment Inequalities, Partial Identification, and Sharp Bounds</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#fixed-selected">Symmetry is preserved for fixed coordinates</a>
+            <a href="#rademacher-witness">The smallest witness has two coordinates</a>
+            <a href="#repairs">Repairs change the target or account for selection</a>
+            <a href="#selection-boundaries">Ties, dependence, and estimated candidate sets matter</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-05/v-06/"><span>Previous</span><strong>V-06 · Publishing a Reproducible Computational Book</strong></a><a class="next" href="/resources/volume-05/v-08/"><span>Next</span><strong>V-08 · Root-n Simulation Error</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

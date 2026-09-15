@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Minimum Information Repair and Feasible Records · Chae-Yeon Xon</title>
+  <meta name="description" content="Missing dimension gives a lower bound on repair, while data collection imposes a second feasibility problem. Oracle coordinates chosen after seeing the target can differ sharply from records available before the policy or environment is known. Additivity, cost, timing, and measurement constraints determine attainable repairs.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-04/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Minimum Information Repair and Feasible Records · Chae-Yeon Xon">
+  <meta property="og:description" content="Missing dimension gives a lower bound on repair, while data collection imposes a second feasibility problem. Oracle coordinates chosen after seeing the target can differ sharply from records available before the policy or environment is known. Additivity, cost, timing, and measurement constraints determine attainable repairs.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-04/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Minimum Information Repair and Feasible Records · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Missing dimension gives a lower bound on repair, while data collection imposes a second feasibility problem. Oracle coordinates chosen after seeing the target can differ sharply from records available before the policy or environment is known. Additivity, cost, timing, and measurement constraints determine attainable repairs.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-04</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Observation, Representation, and Sufficiency · Chapter I-04</div>
+        <h1>Minimum Information Repair and Feasible Records</h1>
+        <p>Missing dimension gives a lower bound on repair, while data collection imposes a second feasibility problem. Oracle coordinates chosen after seeing the target can differ sharply from records available before the policy or environment is known. Additivity, cost, timing, and measurement constraints determine attainable repairs.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-04.01</span><strong>Missing dimension</strong></li>
+              <li><span>I-04.02</span><strong>Lower bounds and constructions</strong></li>
+              <li><span>I-04.03</span><strong>Admissible records</strong></li>
+              <li><span>I-04.04</span><strong>Additive representations</strong></li>
+              <li><span>I-04.05</span><strong>Constrained record dictionaries</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="repair-problem">
+            <h2>1. Unrestricted dimension and feasible records</h2>
+            <p class="chapter-lede">A rank bound counts how many unrestricted linear coordinates can repair a report. An actual reporting system offers a constrained dictionary whose records may have to be selected in larger bundles.</p>
+            <p>Let <span class="math-inline">\(A:\mathbb{R}^{n}\to \mathbb{R}^{k}\)</span> be the baseline report, <span class="math-inline">\(B:\mathbb{R}^{n}\to \mathbb{R}^{r}\)</span> the target, and <span class="math-inline">\(r_{j}^{\top}\)</span> the rows in a finite record dictionary <span class="math-inline">\(\mathcal{D}\)</span>. For a subset <span class="math-inline">\(S\subseteq \mathcal{D}\)</span>, let <span class="math-inline">\(R_{S}\)</span> stack its selected rows.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Feasible exact repair</span><p>A subset <span class="math-inline">\(S\)</span> repairs the target when (<span class="math-inline">\(A,R_{S}\)</span>) is sufficient for <span class="math-inline">\(B\)</span>. Its cardinality or acquisition cost is evaluated within the declared dictionary.</p></div>
+          </section>
+
+          <section class="chapter-section" id="dictionary-criterion">
+            <h2>2. Exact subset criterion</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Dictionary repair test</span><p>A record subset <span class="math-inline">\(S\)</span> repairs <span class="math-inline">\(B\)</span> exactly if and only if</p>
+              <div class="equation-block" role="math" aria-label="Kernel and row space tests for record repair."><span class="equation-tex">\[\operatorname{ker}(A)\bigcap \operatorname{ker}(R_{S})\subseteq \operatorname{ker}(B),\]</span><span class="equation-number">(1)</span></div>
+              <p>equivalently <span class="math-inline">\(\operatorname{row}(B)\subseteq \operatorname{row}([A;R_{S}])\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Apply Proposition I-02 to the stacked observation map. Its kernel is the intersection in (1), and its row space is the span of the baseline and selected record rows. ∎</p></div>
+            <p>The unrestricted lower bound remains <span class="math-inline">\(d=\operatorname{rank}(B|\operatorname{\operatorname{ker}}(A))\)</span>. Every feasible repair has at least <span class="math-inline">\(d\)</span> records when each record is scalar. Equality depends on the geometry of the available rows.</p>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>3. A one-dimensional deficit requiring two records</h2>
+            <p>Take latent state <span class="math-inline">\(x\in \mathbb{R}^{3}\)</span>, baseline and target</p>
+            <div class="equation-block" role="math" aria-label="Baseline sum report and third coordinate target."><span class="equation-tex">\[A=[1,1,1], \quad B=[0,0,1].\]</span><span class="equation-number">(2)</span></div>
+            <p>Because <span class="math-inline">\(B\)</span> is scalar and varies on <span class="math-inline">\(\operatorname{ker}(A)\)</span>, the unrestricted missing dimension is one. The dictionary contains only <span class="math-inline">\(r_{1}^{\top}\)</span>=[1,0,0] and <span class="math-inline">\(r_{2}^{\top}\)</span>=[0,1,0].</p>
+            <p>Selecting <span class="math-inline">\(r_{1}\)</span> leaves hidden direction (0,1,<span class="math-inline">\(-1\)</span>), which changes the target. Selecting <span class="math-inline">\(r_{2}\)</span> leaves (1,0,<span class="math-inline">\(-1\)</span>). Thus neither singleton repairs the target. Selecting both records gives</p>
+            <div class="equation-block" role="math" aria-label="Target decoder from sum and first two coordinates."><span class="equation-tex">\[x_{3}=Ax-r_{1}^{\top }x-r_{2}^{\top }x.\]</span><span class="equation-number">(3)</span></div>
+            <p>The feasible minimum is two, strictly above the unrestricted lower bound one.</p>
+          </section>
+
+          <section class="chapter-section" id="cost-and-search">
+            <h2>4. Costs, minimal repairs, and algorithms</h2>
+            <p>With positive record costs <span class="math-inline">\(c_{j}\)</span>, the exact design problem minimizes <span class="math-inline">\(\sum _{j\in S}c_{j}\)</span> subject to (1). Inclusion-minimal repairs form an antichain, while cost-minimal repairs depend on the cost vector. Exhaustive search is exact for a small dictionary; mixed-integer or branch-and-bound methods can encode the rank or decoder constraints for larger systems.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Unrestricted rank advertised as implementable repair</span><p>The lower bound identifies the size of a freely designed linear coordinate. The dictionary example attains no one-record repair. Feasibility, acquisition cost, privacy constraints, and measurement noise belong to the reporting contract.</p></div>
+            <p>Greedy selection needs a separate approximation theorem for its chosen objective. Exact rank gain can exhibit complementarities: a record with no standalone repair may be indispensable in a jointly sufficient bundle.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Precompute a stable row basis for <span class="math-inline">\(A\)</span>. For each candidate subset, append its rows, test whether every target row is reconstructed within tolerance, and retain the reconstruction residual and condition number. Exact rational arithmetic is preferable for small integer examples.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify the unrestricted deficit and all four dictionary subsets in the example.</li><li>Add direct record <span class="math-inline">\(r_{3}=x_{3}\)</span> with cost three while the first two records cost one each; solve the cost problem.</li><li>Construct a dictionary with two distinct inclusion-minimal repairs of different cardinalities.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> On <span class="math-inline">\(\operatorname{ker}(A)\)</span>, vector (0,1,<span class="math-inline">\(-1\)</span>) has nonzero target, so the scalar restricted target has rank one. Each singleton leaves the displayed target-relevant kernel direction; both rows make the three-row observation matrix full rank. <strong>2.</strong> The direct record is a one-record repair at cost three. The pair {<span class="math-inline">\(r_{1},r_{2}\)</span>} costs two and is optimal.</p></details>
+            <ol class="reference-list"><li>Alexander Schrijver, <em>Theory of Linear and Integer Programming</em>, chapters on polyhedra and combinatorial optimization.<small>Finite record-selection formulations.</small></li><li>Gene H. Golub and Charles F. Van Loan, <em>Matrix Computations</em>, §5.5.<small>Stable rank and row-space diagnostics.</small></li><li>III-15 · Set Functions, Möbius Inversion, and Modularity.<small>Minimal enabling antichains and interaction structure.</small></li></ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Report the baseline and target maps, unrestricted deficit, complete record dictionary, costs, selected subset, augmented rank, decoder residual, hidden-direction test, and whether the result is lower-bound, feasible, or cost optimal.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter treats exact finite-dimensional linear repair from a finite scalar dictionary. Noisy, approximate, private, and adaptive record design require additional objectives and constraints.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-03/">I-03 · The Boundary Between Exact and Local Sufficiency</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#repair-problem">Unrestricted dimension and feasible records</a>
+            <a href="#dictionary-criterion">Exact subset criterion</a>
+            <a href="#worked-example">A one-dimensional deficit requiring two records</a>
+            <a href="#cost-and-search">Costs, minimal repairs, and algorithms</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-03/"><span>Previous</span><strong>I-03 · The Boundary Between Exact and Local Sufficiency</strong></a><a class="next" href="/resources/volume-01/i-05/"><span>Next</span><strong>I-05 · Representation Budgets, Singular Values, and Approximation Loss</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

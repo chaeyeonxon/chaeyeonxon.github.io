@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>From Local Derivatives to Global Decoder Risk · Chae-Yeon Xon</title>
+  <meta name="description" content="Conditional means minimize squared reconstruction loss, and conditional variance measures the remaining risk. Fiberwise derivatives control variation only after geometric and probabilistic conditions are supplied. Poincare inequalities, component means, generator residuals, and graph approximation error form a complete risk certificate.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-06/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="From Local Derivatives to Global Decoder Risk · Chae-Yeon Xon">
+  <meta property="og:description" content="Conditional means minimize squared reconstruction loss, and conditional variance measures the remaining risk. Fiberwise derivatives control variation only after geometric and probabilistic conditions are supplied. Poincare inequalities, component means, generator residuals, and graph approximation error form a complete risk certificate.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-06/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="From Local Derivatives to Global Decoder Risk · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Conditional means minimize squared reconstruction loss, and conditional variance measures the remaining risk. Fiberwise derivatives control variation only after geometric and probabilistic conditions are supplied. Poincare inequalities, component means, generator residuals, and graph approximation error form a complete risk certificate.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-06</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Observation, Representation, and Sufficiency · Chapter I-06</div>
+        <h1>From Local Derivatives to Global Decoder Risk</h1>
+        <p>Conditional means minimize squared reconstruction loss, and conditional variance measures the remaining risk. Fiberwise derivatives control variation only after geometric and probabilistic conditions are supplied. Poincare inequalities, component means, generator residuals, and graph approximation error form a complete risk certificate.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-06.01</span><strong>Optimal decoder loss</strong></li>
+              <li><span>I-06.02</span><strong>Fiberwise energy</strong></li>
+              <li><span>I-06.03</span><strong>Poincare certificates</strong></li>
+              <li><span>I-06.04</span><strong>Component means and residuals</strong></li>
+              <li><span>I-06.05</span><strong>Limits of graph certificates</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="decoder-risk">
+            <h2>1. Conditional means define the optimal squared-loss decoder</h2>
+            <p class="chapter-lede">A derivative calculation measures variation along a fiber. Global decoder risk averages all unresolved variation, including differences between disconnected fiber components.</p>
+            <p>Let <span class="math-inline">\(X\)</span> be a random state, <span class="math-inline">\(Y=h(X)\)</span> the report, and <span class="math-inline">\(f(X)\)</span> a square-integrable scalar target. For any square-integrable decoder <span class="math-inline">\(\delta(Y)\)</span>, set <span class="math-inline">\(\delta^{*}(Y)\)</span>=E[<span class="math-inline">\(f(X)|Y\)</span>].</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Projection identity</span><p>The squared-loss risk decomposes as</p>
+              <div class="equation-block" role="math" aria-label="Conditional mean projection identity."><span class="equation-tex">\[E[(f-\delta )^{2}]=E[\operatorname{Var}(f|Y)]+E[(\delta ^{*}-\delta )^{2}].\]</span><span class="equation-number">(1)</span></div>
+              <p>Thus <span class="math-inline">\(\delta^{*}\)</span> minimizes risk, and its irreducible risk is the expected conditional variance.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Write <span class="math-inline">\(f-\delta=(f-\delta^{*})+(\delta^{*}-\delta)\)</span>. The cross term has conditional expectation zero given <span class="math-inline">\(Y\)</span>. Taking expectations yields (1). ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="component-bound">
+            <h2>2. Fiberwise Poincaré bounds need component means</h2>
+            <p>Fix a report <span class="math-inline">\(y\)</span>. Suppose its conditional law is a mixture over connected components <span class="math-inline">\(c\)</span> with weights <span class="math-inline">\(\pi _{c}(y)\)</span>. Let <span class="math-inline">\(\mu _{c}\)</span>=E[<span class="math-inline">\(f|Y=y,c\)</span>] and let <span class="math-inline">\(\mathcal{E}_{c}(f)\)</span> be a within-component Dirichlet energy with spectral gap <span class="math-inline">\(\lambda _{c}&gt;0\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 2 · Componentwise risk certificate</span><p>The conditional target variance satisfies</p>
+              <div class="equation-block" role="math" aria-label="Componentwise variance and Poincare bound."><span class="equation-tex">\[\operatorname{Var}(f|y)\le \sum _{c}\pi _{c}\mathcal{E}_{c}(f)/\lambda _{c}+\sum _{c}\pi _{c}(\mu _{c}-\mu )^{2},\]</span><span class="equation-number">(2)</span></div>
+              <p>where <span class="math-inline">\(\mu=\sum \pi _{c}\mu _{c}\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> The law of total variance across the component label gives an exact sum of average within-component variance and variance of component means. Apply the Poincaré inequality to each within-component term. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="disconnected-example">
+            <h2>3. Zero local energy with large decoder risk</h2>
+            <p>Consider one report whose conditional state graph consists of two disconnected edges with four equally likely nodes. Let the target values be (0,0,10,10), with the first pair on one component and the second pair on the other. The target is constant within each component, so every within-component edge energy is zero.</p>
+            <p>The conditional mean is five and the conditional variance is 25. In (2), the component means are zero and ten with weights one half, so the between-component term is 25. A certificate that retains only derivative or edge energy returns zero and misses the entire decoder risk.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Connectedness omitted from a local-to-global bound</span><p>A positive gap controls deviations from the mean inside one connected component. Multiple zero modes permit different component constants. Their weighted dispersion must be measured directly or ruled out by a connected-fiber assumption.</p></div>
+          </section>
+
+          <section class="chapter-section" id="numerical-residuals">
+            <h2>4. Generator and discretization residuals</h2>
+            <p>For a graph or numerical generator, record the residual of the constant null vector, reversibility error, component count, eigenpair residuals, and the smallest positive eigenvalue per component. If a Poisson equation or projected gradient is used to estimate energy, its solver residual contributes a separate numerical term; it does not belong inside the statistical conditional variance.</p>
+            <p>Grid refinement should track the target mean, between-component term, energy, gap, and discretization change independently. Agreement of their final sum with a direct finite-state conditional variance provides a closed-loop check.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Estimate or enumerate conditional fibers, identify connected components before computing gaps, center the target within each component, and combine the two terms in (2). Average the resulting bound over the report distribution to compare with the irreducible term in (1).</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify the risk decomposition for target values (0,0,10,10).</li><li>Replace them by (0,1,10,11) and compute within-component variance, between-component variance, and total variance.</li><li>Add an edge between the middle nodes and calculate how the global gap and energy change.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The mean is five; the four squared deviations are 25, so variance is 25. Both component variances are zero and the component-mean variance is 25. <strong>2.</strong> Component means are 1/2 and 21/2. Average within-component variance is 1/4 and the between-component variance is 25, giving total 25.25.</p></details>
+            <ol class="reference-list"><li>Olav Kallenberg, <em>Foundations of Modern Probability</em>, sections on conditional expectation.<small>Orthogonal projection and total variance.</small></li><li>Dominique Bakry, Ivan Gentil, and Michel Ledoux, <em>Analysis and Geometry of Markov Diffusion Operators</em>, Chapter 4.<small>Spectral gaps and Poincaré inequalities.</small></li><li>III-14 · Conditional Generators, Poincaré Inequalities, and Graph Certificates.<small>Finite-graph proof and generator assumptions.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/counterfactual-sufficiency/">“Counterfactual Sufficiency: State Representation and Response Geometry.”</a><small>Related conditional-generator application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Report the state law, report map, conditional target, optimal decoder, fiber components, component weights and means, energies, gaps, numerical residuals, discretization error, and exact or bounded risk.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter combines squared-loss conditional projection with componentwise Poincaré bounds. Other losses, estimated fibers, and high-dimensional graph convergence require separate theory.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-05/">I-05 · Representation Budgets, Singular Values, and Approximation Loss</a></li><li><a href="/resources/volume-03/iii-14/">III-14 · Conditional Generators, Poincare Inequalities, and Graph Certificates</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#decoder-risk">Conditional means define the optimal squared-loss decoder</a>
+            <a href="#component-bound">Fiberwise Poincaré bounds need component means</a>
+            <a href="#disconnected-example">Zero local energy with large decoder risk</a>
+            <a href="#numerical-residuals">Generator and discretization residuals</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-05/"><span>Previous</span><strong>I-05 · Representation Budgets, Singular Values, and Approximation Loss</strong></a><a class="next" href="/resources/volume-01/i-07/"><span>Next</span><strong>I-07 · Measurement Across Environments</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

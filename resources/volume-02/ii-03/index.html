@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Random Assignment and Dynamic Policy Contrasts · Chae-Yeon Xon</title>
+  <meta name="description" content="Policy effects depend on the assignment unit, timing, history, availability, and interference structure. ITT, factorial effects, sequential contrasts, and loop experiments therefore require separate estimands and assignment probabilities. Selection and nonresponse define further observation rules.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-03/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Random Assignment and Dynamic Policy Contrasts · Chae-Yeon Xon">
+  <meta property="og:description" content="Policy effects depend on the assignment unit, timing, history, availability, and interference structure. ITT, factorial effects, sequential contrasts, and loop experiments therefore require separate estimands and assignment probabilities. Selection and nonresponse define further observation rules.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-03/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Random Assignment and Dynamic Policy Contrasts · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Policy effects depend on the assignment unit, timing, history, availability, and interference structure. ITT, factorial effects, sequential contrasts, and loop experiments therefore require separate estimands and assignment probabilities. Selection and nonresponse define further observation rules.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-03</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Conditional Probability, Design, and Partial Identification · Chapter II-03</div>
+        <h1>Random Assignment and Dynamic Policy Contrasts</h1>
+        <p>Policy effects depend on the assignment unit, timing, history, availability, and interference structure. ITT, factorial effects, sequential contrasts, and loop experiments therefore require separate estimands and assignment probabilities. Selection and nonresponse define further observation rules.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-03.01</span><strong>ITT and factorial contrasts</strong></li>
+              <li><span>II-03.02</span><strong>Sequential randomization</strong></li>
+              <li><span>II-03.03</span><strong>Policy-loop experiments</strong></li>
+              <li><span>II-03.04</span><strong>Contrasts across time windows</strong></li>
+              <li><span>II-03.05</span><strong>Selection and nonresponse</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="factorial-contract">
+            <h2>1. An assignment mechanism defines the causal contrast</h2>
+            <p class="chapter-lede">A dynamic policy contrast is indexed by assignment unit, treatment history, availability, interference set, and outcome horizon. Known assignment probabilities identify only contrasts supported by that design.</p>
+            <p>For one unit in a <span class="math-inline">\(2\times2\)</span> factorial experiment, let <span class="math-inline">\(A,B\in\{0,1\}\)</span> be independently assigned with probabilities <span class="math-inline">\(\pi _{A},\pi _{B}\in(0,1)\)</span>. Let <span class="math-inline">\(Y(a,b)\)</span> be potential outcomes and assume consistency and no interference across the declared units. The main effect of <span class="math-inline">\(A\)</span>, averaged over the design distribution of <span class="math-inline">\(B\)</span>, is</p>
+            <div class="equation-block" role="math" aria-label="Factorial main effect under design averaging."><span class="equation-tex">\[\tau _{A}=\sum _{b=0}^{1}P(B=b)\{E[Y(1,b)]-E[Y(0,b)]\}.\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Horvitz–Thompson factorial contrast</span><p>Under random assignment, consistency, and positivity,</p>
+              <div class="equation-block" role="math" aria-label="Inverse probability estimator identity for factorial main effect."><span class="equation-tex">\[E[AY/\pi _{A}-(1-A)Y/(1-\pi _{A})]=\tau _{A}.\]</span><span class="equation-number">(2)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Condition on <span class="math-inline">\(B\)</span> and all potential outcomes. Random assignment of <span class="math-inline">\(A\)</span> makes the two weighted indicators have conditional expectations one for their respective potential outcomes. Average over <span class="math-inline">\(B\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="factorial-example">
+            <h2>2. Main and interaction effects use different contrasts</h2>
+            <p>Let <span class="math-inline">\(Y(a,b)=1+2a+3b+4ab\)</span>, with both assignments fair. The two effects of <span class="math-inline">\(A\)</span> conditional on <span class="math-inline">\(B\)</span> are two and six, so <span class="math-inline">\(\tau _{A}=4\)</span>. The factorial interaction is</p>
+            <div class="equation-block" role="math" aria-label="Factorial interaction contrast."><span class="equation-tex">\[Y(1,1)-Y(1,0)-Y(0,1)+Y(0,0)=4.\]</span><span class="equation-number">(3)</span></div>
+            <p>The equality of these two numerical values is incidental. One averages two treatment contrasts; the other is their difference.</p>
+          </section>
+
+          <section class="chapter-section" id="sequential-design">
+            <h2>3. Histories and availability enter sequential weights</h2>
+            <p>At decision time <span class="math-inline">\(t\)</span>, let <span class="math-inline">\(H_{t}\)</span> be recorded history and <span class="math-inline">\(I_{t}\in\{0,1\}\)</span> indicate availability. Assignment probability <span class="math-inline">\(\pi _{t}(H_{t})\)</span> is defined among available units. A proximal excursion contrast compares assignment one and zero at time <span class="math-inline">\(t\)</span> among a declared distribution of available histories, while later assignments follow a specified reference rule.</p>
+            <p>Inverse-probability terms contain <span class="math-inline">\(I_{t}[A_{t}/\pi _{t}-(1-A_{t})/(1-\pi _{t})]\)</span>. Positivity is needed only on histories assigned positive weight by the estimand. An unavailable decision point contributes no randomized contrast at that time.</p>
+          </section>
+
+          <section class="chapter-section" id="clusters-and-loops">
+            <h2>4. Cluster paths use the cluster as assignment unit</h2>
+            <p>If an entire organization receives a policy path or loop, the randomization unit is the organization. Outcomes within it can remain dependent, and standard errors must respect the assignment clusters. A terminal probe randomized after the path identifies a probe contrast conditional on the assigned path under its own probability. Observational improvement in predicting the terminal state is a different quantity.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Individual sample size used for cluster assignment</span><p>Replicated outcomes inside one assigned cluster do not create independent policy assignments. Treating them as independent shrinks uncertainty without increasing randomized support.</p></div>
+            <p>At assignment probabilities zero or one, the corresponding inverse weight is undefined and that contrast leaves the design support. Attrition and nonresponse add observation rules; inverse assignment weights alone do not correct them. Cross-cluster interference requires an exposure mapping or a broader assignment model.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Version the randomization table before outcomes are observed. Store unit, cluster, history, availability, assignment probability, treatment realization, response window, and missingness reason. Check probability bounds and weight tails, reproduce design-based means, and use variance estimators matched to the randomization level.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Enumerate all four assignments in Section 2 and verify (2)–(3).</li><li>Write the regime weight for a two-stage design with history-dependent probabilities.</li><li>Construct a cluster path experiment with a terminal probe and list the separately identified contrasts.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Potential outcomes are 1,3,4,10 under (0,0),(1,0),(0,1),(1,1). The average <span class="math-inline">\(A\)</span> effect is (2+6)/2=4 and the interaction is <span class="math-inline">\(10-3-4+1=4\)</span>. <strong>2.</strong> Multiply the two observed assignment indicators and divide by the product of their sequential probabilities along the realized history, provided both stages are available under the target regime.</p></details>
+            <ol class="reference-list"><li>Guido W. Imbens and Donald B. Rubin, <em>Causal Inference for Statistics, Social, and Biomedical Sciences</em>, chapters on randomized experiments.<small>Potential outcomes and assignment mechanisms.</small></li><li>James M. Robins (1986), “A New Approach to Causal Inference in Mortality Studies with a Sustained Exposure Period—Application to Control of the Healthy Worker Survivor Effect,” <em>Mathematical Modelling</em> 7, 1393–1512.<small>Sequential treatment histories.</small></li><li>Susan A. Murphy (2003), “Optimal Dynamic Treatment Regimes,” <em>Journal of the Royal Statistical Society B</em> 65, 331–355.<small>Dynamic treatment rules and sequential randomization.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the assignment unit, cluster, treatment support, history, availability, assignment probabilities, positivity set, interference mapping, response horizon, attrition rule, estimand averaging law, terminal probe, and variance estimator.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers factorial and sequential randomization identities and cluster-level bookkeeping. Observational identification and general interference theory require additional assumptions.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-01/">II-01 · Conditional Probability and a Model&#x27;s Information Structure</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#factorial-contract">An assignment mechanism defines the causal contrast</a>
+            <a href="#factorial-example">Main and interaction effects use different contrasts</a>
+            <a href="#sequential-design">Histories and availability enter sequential weights</a>
+            <a href="#clusters-and-loops">Cluster paths use the cluster as assignment unit</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-02/"><span>Previous</span><strong>II-02 · Symmetry, Order Statistics, and Endogenous Selection</strong></a><a class="next" href="/resources/volume-02/ii-04/"><span>Next</span><strong>II-04 · Moment Inequalities, Partial Identification, and Sharp Bounds</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

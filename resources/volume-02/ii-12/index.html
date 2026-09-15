@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Dependent Bootstraps and Nonsmooth Frontiers · Chae-Yeon Xon</title>
+  <meta name="description" content="Block and multiplier resampling must reproduce the relevant dependence and rerun generated stages. Minima, maxima, ties, and boundaries can be only directionally differentiable. Interior regularity, boundary inference, and fallback projection methods therefore belong to separate branches of the procedure.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-12/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Dependent Bootstraps and Nonsmooth Frontiers · Chae-Yeon Xon">
+  <meta property="og:description" content="Block and multiplier resampling must reproduce the relevant dependence and rerun generated stages. Minima, maxima, ties, and boundaries can be only directionally differentiable. Interior regularity, boundary inference, and fallback projection methods therefore belong to separate branches of the procedure.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-12/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dependent Bootstraps and Nonsmooth Frontiers · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Block and multiplier resampling must reproduce the relevant dependence and rerun generated stages. Minima, maxima, ties, and boundaries can be only directionally differentiable. Interior regularity, boundary inference, and fallback projection methods therefore belong to separate branches of the procedure.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-12</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Generated Objects and Empirical Inference · Chapter II-12</div>
+        <h1>Dependent Bootstraps and Nonsmooth Frontiers</h1>
+        <p>Block and multiplier resampling must reproduce the relevant dependence and rerun generated stages. Minima, maxima, ties, and boundaries can be only directionally differentiable. Interior regularity, boundary inference, and fallback projection methods therefore belong to separate branches of the procedure.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-12.01</span><strong>Blocks and multipliers</strong></li>
+              <li><span>II-12.02</span><strong>Re-estimating generated stages</strong></li>
+              <li><span>II-12.03</span><strong>Minima, maxima, and ties</strong></li>
+              <li><span>II-12.04</span><strong>Regular subproblems</strong></li>
+              <li><span>II-12.05</span><strong>Boundaries and fallbacks</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="directional-minimum">
+            <h2>1. A minimum is directionally differentiable at a tie</h2>
+            <p class="chapter-lede">Smooth components can produce a nonsmooth frontier. At a tie, the first-order map is a minimum over active directional changes rather than a single gradient.</p>
+            <p>Let <span class="math-inline">\(\phi(\theta)=\min\{\theta _{1},\theta _{2}\}\)</span>. If <span class="math-inline">\(\theta _{1}&lt;\theta _{2}\)</span>, the derivative in direction <span class="math-inline">\(h\)</span> is <span class="math-inline">\(h_{1}\)</span>. At <span class="math-inline">\(\theta _{1}=\theta _{2}\)</span>,</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Directional derivative of a two-way minimum</span><div class="equation-block" role="math" aria-label="Directional derivative of the minimum at a tie."><span class="equation-tex">\[\phi ^{\prime}_{\theta }(h)=\operatorname{min}\{h_{1},h_{2}\}.\]</span><span class="equation-number">(1)</span></div></div>
+            <div class="proof"><p><strong>Proof.</strong> At a tie <span class="math-inline">\(\theta _{1}=\theta _{2}=c\)</span>, <span class="math-inline">\([\phi(\theta+th)-\phi(\theta)]/t=[c+t\min(h_{1},h_{2})-c]/t\)</span> for <span class="math-inline">\(t&gt;0\)</span>. ∎</p></div>
+            <p>The map in (1) is continuous and positively homogeneous, but it is nonlinear. For direction (1,<span class="math-inline">\(-2\)</span>), the derivative is <span class="math-inline">\(-2\)</span>; for (<span class="math-inline">\(-2\)</span>,1), it is also <span class="math-inline">\(-2\)</span>.</p>
+          </section>
+
+          <section class="chapter-section" id="bootstrap-failure">
+            <h2>2. The ordinary centered bootstrap can fail at the tie</h2>
+            <p>Suppose <span class="math-inline">\(\sqrt{n}(\hat{\theta}-\theta)\Rightarrow Z\)</span> with a continuous bivariate limit and <span class="math-inline">\(\theta=(0,0)\)</span>. Then <span class="math-inline">\(\sqrt{n}\,\phi(\hat{\theta})\Rightarrow\min(Z_{1},Z_{2})\)</span>. If a bootstrap perturbation has limit <span class="math-inline">\(Z^{*}\)</span>, the ordinary centered plug-in statistic behaves conditionally like</p>
+            <div class="equation-block" role="math" aria-label="Naive bootstrap increment at a minimum tie."><span class="equation-tex">\[\operatorname{min}(Z_{1}+Z_{1}^{*},Z_{2}+Z_{2}^{*})-\operatorname{min}(Z_{1},Z_{2}),\]</span><span class="equation-number">(2)</span></div>
+            <p>whose conditional law depends on realized <span class="math-inline">\(Z\)</span> and generally differs from the target law of <span class="math-inline">\(\operatorname{min}(Z_{1},Z_{2})\)</span>. A directional bootstrap estimates the active set and applies an estimate of (1) to the bootstrap perturbation under conditions governing tie detection.</p>
+          </section>
+
+          <section class="chapter-section" id="dependent-resampling">
+            <h2>3. Resampling must reproduce the dependence unit</h2>
+            <p>For a stationary weakly dependent time series, moving-block procedures resample consecutive blocks. Typical smooth-statistic conditions send block length <span class="math-inline">\(\ell _{T}\)</span> to infinity while <span class="math-inline">\(\ell _{T}/T\to0\)</span>, alongside mixing and moment restrictions. Cluster multipliers attach one weight to every observation in the same cluster. Time multipliers require a dependence structure in the weights or in preaggregated score blocks.</p>
+            <p>Every generated response, nuisance estimate, covariance, active set, and optimization frontier that contributes first-order randomness must be recomputed within the draw. Holding a first stage fixed changes the resampled statistic unless a separate influence adjustment accounts for it.</p>
+          </section>
+
+          <section class="chapter-section" id="boundaries-fallbacks">
+            <h2>4. Interior, tie, and support boundaries are separate branches</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Smooth bootstrap applied after an estimated tie</span><p>Selecting one active component by an arbitrarily small sample difference treats the frontier as differentiable. When the population components tie, that selection remains random at first order.</p></div>
+            <p>A parameter-support boundary adds tangent-cone projection beyond the minimum map. A block length of one reduces to an iid bootstrap; a block as long as the sample supplies essentially one resampled series. If the directional-bootstrap regularity or tie threshold cannot be justified, projection of a joint confidence set for the smooth components gives a more conservative fallback.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Record resampling unit, block or multiplier construction, block length, number of draws, tie threshold, active-set rule, parameter support, random seed, and all rerun stages. Compare interior and tie data-generating processes in a coverage simulation and report Monte Carlo error for the coverage estimate.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify (1) for four directions, including a coordinate tie.</li><li>Simulate the two Gaussian expressions in the target limit and (2) conditional on fixed <span class="math-inline">\(Z\)</span>.</li><li>List every first-stage object that must be rerun for a frontier built from estimated local projections.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Substitute <span class="math-inline">\(\theta+t h\)</span> and divide by positive <span class="math-inline">\(t\)</span>. <strong>2.</strong> The target redraws a fresh minimum; the naive increment shifts the active comparison by the realized first-stage vector. <strong>3.</strong> Include shock construction, projection coefficients, covariance, model refit, response map, and frontier optimization when each is estimated.</p></details>
+            <ol class="reference-list"><li>Zheng Fang and Andres Santos (2019), “Inference on Directionally Differentiable Functions,” <em>Review of Economic Studies</em> 86, 377–412.<small>Bootstrap limits for directional maps.</small></li><li>S. N. Lahiri, <em>Resampling Methods for Dependent Data</em>.<small>Block bootstrap constructions and rates.</small></li><li>Donald W. K. Andrews (2000), “Inconsistency of the Bootstrap When a Parameter Is on the Boundary of the Parameter Space,” <em>Econometrica</em> 68, 399–405.<small>Boundary bootstrap failure.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the smooth inputs, active set, interior or tie status, directional derivative, parameter support, dependence unit, block or multiplier rule, block-length limits, rerun stages, tie threshold, bootstrap draw count, fallback projection, and simulated coverage error.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter gives one directional-minimum calculation and resampling design requirements. Each frontier still needs a theorem matched to its dependence and active-set geometry.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-06/">II-06 · Extremum Estimators and Uniform Local Expansions</a></li><li><a href="/resources/volume-02/ii-11/">II-11 · Local Projections and Covariance for Dependent Data</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#directional-minimum">A minimum is directionally differentiable at a tie</a>
+            <a href="#bootstrap-failure">The ordinary centered bootstrap can fail at the tie</a>
+            <a href="#dependent-resampling">Resampling must reproduce the dependence unit</a>
+            <a href="#boundaries-fallbacks">Interior, tie, and support boundaries are separate branches</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-11/"><span>Previous</span><strong>II-11 · Local Projections and Covariance for Dependent Data</strong></a><a class="next" href="/resources/volume-02/ii-13/"><span>Next</span><strong>II-13 · Predictive Validation, Coordinate Selection, and Oracle Bounds</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

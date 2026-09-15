@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Dynamic Choice and Forward Simulation · Chae-Yeon Xon</title>
+  <meta name="description" content="A dynamic choice model links current rewards, state transitions, expectations, and policy rules. Solving the Bellman equation identifies a policy for the declared state; forward simulation then maps that policy into employment, participation, or other paths. Compressing the state to counts is valid only when transition and reward objects close on those counts.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-08/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Dynamic Choice and Forward Simulation · Chae-Yeon Xon">
+  <meta property="og:description" content="A dynamic choice model links current rewards, state transitions, expectations, and policy rules. Solving the Bellman equation identifies a policy for the declared state; forward simulation then maps that policy into employment, participation, or other paths. Compressing the state to counts is valid only when transition and reward objects close on those counts.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-08/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dynamic Choice and Forward Simulation · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A dynamic choice model links current rewards, state transitions, expectations, and policy rules. Solving the Bellman equation identifies a policy for the declared state; forward simulation then maps that policy into employment, participation, or other paths. Compressing the state to counts is valid only when transition and reward objects close on those counts.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-08</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Dynamic Choice, Aggregation, and Policy Capacity · Chapter IV-08</div>
+        <h1>Dynamic Choice and Forward Simulation</h1>
+        <p>A dynamic choice model links current rewards, state transitions, expectations, and policy rules. Solving the Bellman equation identifies a policy for the declared state; forward simulation then maps that policy into employment, participation, or other paths. Compressing the state to counts is valid only when transition and reward objects close on those counts.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-08.01</span><strong>States, transitions, and rewards</strong></li>
+              <li><span>IV-08.02</span><strong>Bellman equations</strong></li>
+              <li><span>IV-08.03</span><strong>Policies and deviations</strong></li>
+              <li><span>IV-08.04</span><strong>State compression</strong></li>
+              <li><span>IV-08.05</span><strong>A labor-market example</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="finite-mdp">
+            <h2>1. Dynamic choice couples rewards and transitions</h2>
+            <p class="chapter-lede">A Bellman solution is tied to a declared state. A compressed state is structural only when rewards and transition probabilities are constant on its cells in the required sense.</p>
+            <p>Let finite state space <span class="math-inline">\(\mathcal{X}\)</span> and feasible actions <span class="math-inline">\(\mathcal{A}(x)\)</span> be nonempty. With bounded reward <span class="math-inline">\(r(x,a)\)</span>, row-stochastic transition <span class="math-inline">\(P(x^{\prime}|x,a)\)</span>, and discount <span class="math-inline">\(\beta \in[0,1)\)</span>, the Bellman operator is</p>
+            <div class="equation-block" role="math" aria-label="Bellman operator for finite dynamic choice."><span class="equation-tex">\[(TV)(x)=\operatorname{max}_{a\in \mathcal{A}(x)}\{r(x,a)+\beta \sum _{x^{\prime}}P(x^{\prime}|x,a)V(x^{\prime})\}.\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Discounted value uniqueness</span><p><span class="math-inline">\(T\)</span> is a contraction in the sup norm with modulus <span class="math-inline">\(\beta\)</span>. It has a unique fixed point, and value iteration converges to it from every bounded initial vector.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> For every action, the difference of expected continuation values is bounded by <span class="math-inline">\(\beta \lVert V-W\rVert_{\infty}\)</span>. Taking maxima preserves that bound. Apply the contraction mapping theorem. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="lumpability">
+            <h2>2. A partition closes only under reward and transition invariance</h2>
+            <p>Let <span class="math-inline">\(q:\mathcal{X}\to \mathcal{C}\)</span> partition microstates. For each action available throughout a cell, exact aggregation requires equal rewards for states in that cell and equal transition probability into every destination cell:</p>
+            <div class="equation-block" role="math" aria-label="Controlled lumpability condition."><span class="equation-tex">\[\sum _{z:q(z)=c^{\prime}}P(z|x,a)=\sum _{z:q(z)=c^{\prime}}P(z|x^{\prime},a)\]</span><span class="equation-number">(2)</span></div>
+            <p>for every <span class="math-inline">\(x,x^{\prime}\)</span> in the same source cell and every destination cell <span class="math-inline">\(c^{\prime}\)</span>. Then the Bellman equation and forward distribution update are well defined on cells.</p>
+          </section>
+
+          <section class="chapter-section" id="composition-example">
+            <h2>3. Equal counts can have different next counts</h2>
+            <p>Microstates one and two belong to cell <span class="math-inline">\(G\)</span>; state three belongs to <span class="math-inline">\(B\)</span>. From state one, transition probability to <span class="math-inline">\(B\)</span> is 0.1; from state two it is 0.5. Two populations concentrated respectively on states one and two both report aggregate counts (<span class="math-inline">\(G,B\)</span>)=(1,0), yet their next-period expected <span class="math-inline">\(B\)</span> counts are 0.1 and 0.5.</p>
+            <p>The aggregate count predicts imperfectly because within-<span class="math-inline">\(G\)</span> composition matters. Adding the share in microstate two repairs this example.</p>
+          </section>
+
+          <section class="chapter-section" id="dynamic-boundaries">
+            <h2>4. Discount and invariant-distribution boundaries</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Predictive count treated as a closed state</span><p>A count can forecast outcomes while violating (2). Forward simulation from an estimated count-only transition then averages over an implicit composition law that can change under policy.</p></div>
+            <p>At <span class="math-inline">\(\beta=1\)</span> the contraction proof ends; average-reward or undiscounted models need recurrence and normalization conditions. Reducible or periodic policy transitions can have multiple invariant distributions or nonconvergent distribution paths. Empty action sets leave (1) undefined, and policy-dependent feasibility must be carried into every cell.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Enumerate state-action pairs, verify transition rows sum to one, solve the Bellman fixed point, and report the sup-norm residual. For each proposed partition, compare rewards and destination-cell transition sums across all states in a cell before simulating compressed dynamics.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Construct the full three-state transition matrix for Section 3 and reproduce both next counts.</li><li>Modify the first two rows to satisfy (2) and write the two-cell transition.</li><li>Give a periodic two-state policy transition with no convergent distribution path from a point mass.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Use rows (0.9,0,0.1), (0,0.5,0.5), and any stochastic row for state three. <strong>2.</strong> Give the first two rows the same total probability of entering <span class="math-inline">\(G\)</span> and <span class="math-inline">\(B\)</span>. <strong>3.</strong> The transition <span class="math-inline">\(\begin{bmatrix}0 &amp; 1 \\ 1 &amp; 0\end{bmatrix}\)</span> alternates point masses.</p></details>
+            <ol class="reference-list"><li>Martin L. Puterman, <em>Markov Decision Processes</em>, chapters on discounted finite models.<small>Bellman contractions and stationary policies.</small></li><li>John G. Kemeny and J. Laurie Snell, <em>Finite Markov Chains</em>, chapters on lumpability.<small>Exact aggregation of Markov chains.</small></li><li>George Stachurski, <em>Economic Dynamics</em>.<small>Dynamic programming and distribution evolution.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State microstates, feasible actions, rewards, discount, transition orientation, initial distribution, horizon, policy tie rule, Bellman residual, proposed partition, within-cell reward and transition tests, recurrence, and invariant-distribution claim.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers finite discounted Markov decision processes and exact partition closure. Dynamic games and continuous-state approximation require further theory.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-04/iv-01/">IV-01 · Random Utility, Choice Sets, and Normalization</a></li><li><a href="/resources/volume-03/iii-07/">III-07 · Linear Dynamics: Stability and Response Spaces</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#finite-mdp">Dynamic choice couples rewards and transitions</a>
+            <a href="#lumpability">A partition closes only under reward and transition invariance</a>
+            <a href="#composition-example">Equal counts can have different next counts</a>
+            <a href="#dynamic-boundaries">Discount and invariant-distribution boundaries</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-07/"><span>Previous</span><strong>IV-07 · Bargaining, Disagreement States, and Choice-Law Consistency</strong></a><a class="next" href="/resources/volume-04/iv-09/"><span>Next</span><strong>IV-09 · Corporate Control and Policy-Invariant Aggregation</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

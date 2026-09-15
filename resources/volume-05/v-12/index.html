@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Operator Domains in Latent Measurement Models · Chae-Yeon Xon</title>
+  <meta name="description" content="Nonclassical measurement models use conditional operators to connect latent variables and repeated measurements. Candidate-specific invertibility does not automatically permit similarity transforms across candidates, shared spectral projections, or inverse action on reconstructed probabilities. A wrapped-Gaussian witness makes the range and stability problems visible in Fourier coordinates.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-12/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Operator Domains in Latent Measurement Models · Chae-Yeon Xon">
+  <meta property="og:description" content="Nonclassical measurement models use conditional operators to connect latent variables and repeated measurements. Candidate-specific invertibility does not automatically permit similarity transforms across candidates, shared spectral projections, or inverse action on reconstructed probabilities. A wrapped-Gaussian witness makes the range and stability problems visible in Fourier coordinates.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-12/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Operator Domains in Latent Measurement Models · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Nonclassical measurement models use conditional operators to connect latent variables and repeated measurements. Candidate-specific invertibility does not automatically permit similarity transforms across candidates, shared spectral projections, or inverse action on reconstructed probabilities. A wrapped-Gaussian witness makes the range and stability problems visible in Fourier coordinates.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-12</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Six Applied Audit Case Studies · Chapter V-12</div>
+        <h1>Operator Domains in Latent Measurement Models</h1>
+        <p>Nonclassical measurement models use conditional operators to connect latent variables and repeated measurements. Candidate-specific invertibility does not automatically permit similarity transforms across candidates, shared spectral projections, or inverse action on reconstructed probabilities. A wrapped-Gaussian witness makes the range and stability problems visible in Fourier coordinates.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-12.01</span><strong>Latent measurement structure</strong></li>
+              <li><span>V-12.02</span><strong>A wrapped-Gaussian witness</strong></li>
+              <li><span>V-12.03</span><strong>Three operator-domain failures</strong></li>
+              <li><span>V-12.04</span><strong>Stronger repairs and their cost</strong></li>
+              <li><span>V-12.05</span><strong>Conclusion boundaries</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="wrapped-operator">
+            <h2>1. A latent measurement model is an operator between named spaces</h2>
+            <p class="chapter-lede">Injectivity, range, bounded inverse, and cross-candidate composition are different properties. Each must be checked on its actual domain.</p>
+            <p>Let <span class="math-inline">\(\mathbb{T}=\mathbb{R}/(2\pi\mathbb{Z})\)</span> and work in <span class="math-inline">\(L^{2}(\mathbb{T})\)</span> with normalized Lebesgue measure. If a latent circular variable is observed with independent wrapped-Gaussian error of variance <span class="math-inline">\(\sigma ^{2}\)</span>, the conditional measurement operator <span class="math-inline">\(K_{\sigma}\)</span> convolves a latent density with the wrapped error density. In Fourier coordinates,</p>
+            <div class="equation-block" role="math" aria-label="Fourier multiplier of wrapped Gaussian convolution."><span class="equation-tex">\[\widehat{(K_{\sigma }f)}(k)=e^{-\sigma ^{2}k^{2}/2}\hat{f}(k), \quad k\in \mathbb{Z}.\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Operator-domain ledger</span><p>For every composition, inverse, adjoint, or spectral projection, record source space, codomain, algebraic domain, closure, norm, and whether the map is bounded. Candidate-specific objects retain candidate-specific domains until a common-space result is proved.</p></div>
+          </section>
+
+          <section class="chapter-section" id="inverse-result">
+            <h2>2. Gaussian convolution is injective and ill-posed</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Range and inverse of wrapped-Gaussian smoothing</span><p>For <span class="math-inline">\(\sigma&gt;0\)</span>, <span class="math-inline">\(K_{\sigma}:L^{2}(\mathbb{T})\to L^{2}(\mathbb{T})\)</span> is bounded, compact, self-adjoint, positive, and injective. Its range is dense and nonclosed, and its inverse on that range is unbounded.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> The Fourier basis diagonalizes the operator with real positive multipliers <span class="math-inline">\(a_{k}=e^{-\sigma ^{2}k^{2}/2}\)</span>. Their supremum is one, giving boundedness; they tend to zero, giving compactness. Positivity and self-adjointness follow from the real nonnegative diagonal. No multiplier is zero, so the kernel is trivial. Every finite Fourier polynomial has a finite preimage and such polynomials are dense, so the range is dense. For unit Fourier mode <span class="math-inline">\(e_{k}\)</span>, the inverse norm is <span class="math-inline">\(1/a_{k}\to\infty\)</span>; hence the inverse is unbounded and the range cannot be closed. ∎</p></div>
+            <p>At <span class="math-inline">\(\sigma=0.5\)</span> and frequency <span class="math-inline">\(k=6\)</span>, the forward multiplier is <span class="math-inline">\(e^{-4.5}\approx0.011109\)</span> and inverse amplification is <span class="math-inline">\(e^{4.5}\approx90.0171\)</span>. Small high-frequency record errors can therefore dominate an unregularized reconstruction.</p>
+          </section>
+
+          <section class="chapter-section" id="candidate-composition">
+            <h2>3. Cross-candidate transforms have restricted domains</h2>
+            <p>For candidates <span class="math-inline">\(\sigma _{1}&lt;\sigma _{2}\)</span>, the formal transform <span class="math-inline">\(K_{\sigma _{1}}K_{\sigma _{2}}^{-1}\)</span> is initially defined only on <span class="math-inline">\(\operatorname{range}(K_{\sigma _{2}})\)</span>. Its Fourier multiplier is <span class="math-inline">\(\exp[(\sigma _{2}^{2}-\sigma _{1}^{2})k^{2}/2]\)</span>, which is unbounded. At <span class="math-inline">\(\sigma _{1}=0.25\)</span>, <span class="math-inline">\(\sigma _{2}=0.5\)</span>, and <span class="math-inline">\(k=6\)</span>, the factor is <span class="math-inline">\(e^{3.375}\approx29.2243\)</span>.</p>
+            <p>Three audit failures follow. Candidate-specific injectivity does not make the inverse defined on all observed <span class="math-inline">\(L^{2}\)</span> functions. Algebraic similarity cannot be invoked through an unbounded transform without a common invariant domain. An estimated density perturbed off the exact range may have no square-integrable inverse, and truncation can violate nonnegativity or unit mass unless constrained.</p>
+          </section>
+
+          <section class="chapter-section" id="operator-boundaries">
+            <h2>4. Regularization changes the solved problem</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Injective operator reported as stably invertible</span><p>Every Fourier coefficient is identified in the population because multipliers are nonzero. Stability fails because their reciprocals diverge.</p></div>
+            <p>At <span class="math-inline">\(\sigma=0\)</span> the operator is the identity and loses compact smoothing. As <span class="math-inline">\(\sigma\)</span> grows, high-frequency singular values decay faster. Finite Fourier truncation gives a bounded inverse on the retained subspace, with condition number determined by the largest retained frequency. Tikhonov and spectral cutoffs introduce bias; their tuning parameter and target norm belong to the estimand. Zeros in a different error characteristic function destroy injectivity at those frequencies. Discrete grids create aliasing, and density constraints do not automatically survive an unconstrained inverse.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Declare Hilbert spaces and Fourier normalization, compute or bound singular multipliers, and test kernel and range claims candidate by candidate. Before composing inverses, verify range inclusion and boundedness on a common domain. Simulate perturbations by frequency, report amplification, and validate regularized outputs for mass, nonnegativity, residual norm, and sensitivity to cutoff.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce both amplification factors above.</li><li>Prove that finite Fourier polynomials lie in Range(<span class="math-inline">\(K_{\sigma}\)</span>).</li><li>Find the condition number of the truncated operator retaining <span class="math-inline">\(\lvert k\rvert \le K\)</span>.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Evaluate <span class="math-inline">\(\operatorname{exp}(4.5)\)</span> and <span class="math-inline">\(\exp[(0.25-0.0625)\times36/2]\)</span>. <strong>2.</strong> Divide each of finitely many Fourier coefficients by its positive multiplier; the resulting finite sequence defines an <span class="math-inline">\(L^{2}\)</span> preimage. <strong>3.</strong> The largest multiplier is one and the smallest retained multiplier is <span class="math-inline">\(\operatorname{exp}(-\sigma ^{2}K^{2}/2)\)</span>, so the condition number is <span class="math-inline">\(\operatorname{exp}(\sigma ^{2}K^{2}/2)\)</span>.</p></details>
+            <ol class="reference-list"><li>Rainer Kress, <em>Linear Integral Equations</em>, chapters on compact operators and ill-posed equations.<small>Range closure and unbounded inverses.</small></li><li>Marine Carrasco, Jean-Pierre Florens, and Eric Renault (2007), “Linear Inverse Problems in Structural Econometrics: Estimation Based on Spectral Decomposition and Regularization,” in <em>Handbook of Econometrics</em>, Volume 6B, 5633–5751.<small>Spectral regularization in econometric inverse problems.</small></li><li>Alexander Meister, <em>Deconvolution Problems in Nonparametric Statistics</em>.<small>Fourier multipliers and measurement-error inversion.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Source and codomain, measure and Fourier normalization, <span class="math-inline">\(\sigma\)</span> support, kernel, multiplier zeros, compactness, range density and closure, inverse algebraic domain, boundedness, candidate range inclusion, similarity domain, invariant subspace, observed perturbation, frequency cutoff, singular values, condition number, regularization bias, tuning rule, grid aliasing, mass and nonnegativity, residual norm, and sensitivity envelope.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers wrapped-Gaussian convolution on a circle. Noncompact supports, unknown error laws, nonlinear operators, and adaptive regularization require additional theory.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-05/v-02/">V-02 · Auditing the Arrows in a Proof</a></li><li><a href="/resources/volume-03/iii-12/">III-12 · Spectral Projections and Cross-Candidate Identification</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#wrapped-operator">A latent measurement model is an operator between named spaces</a>
+            <a href="#inverse-result">Gaussian convolution is injective and ill-posed</a>
+            <a href="#candidate-composition">Cross-candidate transforms have restricted domains</a>
+            <a href="#operator-boundaries">Regularization changes the solved problem</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-05/v-11/"><span>Previous</span><strong>V-11 · Set-Valued Demand and Coherent Counterfactuals</strong></a><span></span></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

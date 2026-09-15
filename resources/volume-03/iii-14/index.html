@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Conditional Generators, Poincare Inequalities, and Graph Certificates · Chae-Yeon Xon</title>
+  <meta name="description" content="Sufficiency can be tested through variation within an observation fiber. A conditional energy penalizes derivatives or differences along hidden directions. Under a spectral gap, small energy controls distance from a fiberwise constant function; on a finite graph the same logic becomes an exact Laplacian certificate.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-14/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Conditional Generators, Poincare Inequalities, and Graph Certificates · Chae-Yeon Xon">
+  <meta property="og:description" content="Sufficiency can be tested through variation within an observation fiber. A conditional energy penalizes derivatives or differences along hidden directions. Under a spectral gap, small energy controls distance from a fiberwise constant function; on a finite graph the same logic becomes an exact Laplacian certificate.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-14/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Conditional Generators, Poincare Inequalities, and Graph Certificates · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Sufficiency can be tested through variation within an observation fiber. A conditional energy penalizes derivatives or differences along hidden directions. Under a spectral gap, small energy controls distance from a fiberwise constant function; on a finite graph the same logic becomes an exact Laplacian certificate.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-14</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Function Spaces, Inverse Problems, and Risk Certificates · Chapter III-14</div>
+        <h1>Conditional Generators, Poincare Inequalities, and Graph Certificates</h1>
+        <p>Sufficiency can be tested through variation within an observation fiber. A conditional energy penalizes derivatives or differences along hidden directions. Under a spectral gap, small energy controls distance from a fiberwise constant function; on a finite graph the same logic becomes an exact Laplacian certificate.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-14.01</span><strong>Conditional energy</strong></li>
+              <li><span>III-14.02</span><strong>Generator assumptions</strong></li>
+              <li><span>III-14.03</span><strong>Spectral gaps</strong></li>
+              <li><span>III-14.04</span><strong>Residual bounds</strong></li>
+              <li><span>III-14.05</span><strong>Finite-graph analogues</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="conditional-energy">
+            <h2>1. Fiberwise variation as an energy problem</h2>
+            <p class="chapter-lede">When an observed report fixes a fiber of latent states, a generator can measure how much a target varies along that fiber. A spectral gap converts derivative energy into a bound on unresolved conditional variance.</p>
+            <p>Let <span class="math-inline">\(\pi\)</span> be a probability law on a fiber and <span class="math-inline">\(L\)</span> a densely defined self-adjoint Markov generator on <span class="math-inline">\(L^{2}(\pi)\)</span>, with <span class="math-inline">\(L\)</span>1=0 and spectrum in (<span class="math-inline">\(-\infty\)</span>,0]. Its Dirichlet form is</p>
+            <div class="equation-block" role="math" aria-label="Dirichlet energy from a generator."><span class="equation-tex">\[E(f,f)=-\langle f,Lf\rangle _{L^{2}(\pi )}.\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Spectral-gap Poincaré inequality</span><p>The fiber has gap <span class="math-inline">\(\lambda _{1}&gt;0\)</span> when every <span class="math-inline">\(f\)</span> in the form domain satisfies</p>
+              <div class="equation-block" role="math" aria-label="Poincare inequality."><span class="equation-tex">\[\operatorname{Var}_{\pi }(f)\le \lambda _{1}^{-1}E(f,f).\]</span><span class="equation-number">(2)</span></div>
+              <p>The null space must consist of constants on the connected fiber. Multiple connected components create multiple zero modes.</p></div>
+          </section>
+
+          <section class="chapter-section" id="graph-proof">
+            <h2>2. Finite-graph certificate</h2>
+            <p>For a reversible finite graph, let <span class="math-inline">\(Q=-L\)</span> be its positive semidefinite Laplacian in <span class="math-inline">\(L^{2}(\pi)\)</span>. Write its orthonormal eigenvectors as <span class="math-inline">\(\phi _{0}=1,\phi _{1},\ldots\)</span> with eigenvalues <span class="math-inline">\(0=\lambda _{0}&lt;\lambda _{1}\le\cdots\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Graph Poincaré bound</span><p>If the graph is connected, equation (2) holds with the sharp constant <span class="math-inline">\(\lambda _{1}^{-1}\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Center <span class="math-inline">\(f\)</span> and expand it as <span class="math-inline">\(\sum _{j\ge 1}a_{j}\phi _{j}\)</span>. Then <span class="math-inline">\(\operatorname{Var}_{\pi}(f)=\sum _{j\ge 1}a_{j}^{2}\)</span>, while <span class="math-inline">\(E(f,f)=\sum _{j\ge 1}\lambda _{j}a_{j}^{2}\ge \lambda _{1}\operatorname{Var}_{\pi}(f)\)</span>. Equality holds for <span class="math-inline">\(\phi _{1}\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>3. A three-node path and a disconnected fiber</h2>
+            <p>Take uniform <span class="math-inline">\(\pi\)</span> on three nodes and the path Laplacian</p>
+            <div class="equation-block" role="math" aria-label="Three node path graph Laplacian."><span class="equation-tex">\[Q=\begin{bmatrix}1 &amp; -1 &amp; 0 \\ -1 &amp; 2 &amp; -1 \\ 0 &amp; -1 &amp; 1\end{bmatrix}.\]</span><span class="equation-number">(3)</span></div>
+            <p>Its eigenvalues are 0, 1, and 3. For <span class="math-inline">\(f=(1,0,-1)^{\top}\)</span>, the mean is zero, <span class="math-inline">\(\operatorname{Var}_{\pi}(f)=2/3\)</span>, and <span class="math-inline">\(\langle f,Qf\rangle _{\pi}=2/3\)</span>. The Poincaré bound is attained because <span class="math-inline">\(f\)</span> is a gap eigenvector.</p>
+            <p>Delete one edge. The graph splits into two components and the zero eigenvalue has multiplicity two. A function that is constant on each component but takes different component values has zero energy and positive global variance. Component means must then enter the certificate explicitly.</p>
+          </section>
+
+          <section class="chapter-section" id="continuous-analogue">
+            <h2>4. Continuous generators and certification residuals</h2>
+            <p>For the standard normal law, the Ornstein–Uhlenbeck generator <span class="math-inline">\(Lf=f^{\prime\prime}-xf^{\prime}\)</span> has gap one on its natural <span class="math-inline">\(L^{2}\)</span> domain. The inequality <span class="math-inline">\(\operatorname{Var}(f)\le\mathbb{E}[(f^{\prime})^{2}]\)</span> follows, with equality for <span class="math-inline">\(f(x)=x\)</span>. Applying this template to another conditional diffusion requires verification of invariance, self-adjointness or reversibility, operator domain, and the claimed gap.</p>
+            <p>Suppose a decoder assigns one predicted target value to each observed report. The residual target on a fiber can be decomposed into its component means and a mean-zero part. Bound the latter by (2), report the former directly, and add numerical generator or graph-approximation error as a separate term.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · A discrete spectrum assumed from notation</span><p>A differential expression called a generator need not have compact resolvent or a positive spectral gap. Boundary conditions, domain, invariant measure, and connectedness determine whether the eigenvalue expansion used by the certificate exists.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>For a graph approximation, preserve reversibility in the weights, identify connected components, compute component means, and use the smallest positive eigenvalue within each component. Under grid refinement, report changes in the energy, gap, and target bound separately.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Diagonalize (3) and verify the equality case by direct multiplication.</li>
+              <li>Remove each edge in turn and construct a zero-energy function with positive global variance.</li>
+              <li>For <span class="math-inline">\(f(x)=x^{2}\)</span> under the standard normal law, compute variance and Ornstein–Uhlenbeck energy and compare them with (2).</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The vectors (1,1,1), (1,0,<span class="math-inline">\(-1\)</span>), and (1,<span class="math-inline">\(-2\)</span>,1) have eigenvalues 0, 1, and 3. Normalize them under the uniform inner product. <strong>3.</strong> For a standard normal variable, <span class="math-inline">\(\operatorname{Var}(X^{2})=3-1=2\)</span> and E[<span class="math-inline">\((2X)^{2}\)</span>]=4. The gap-one Poincaré bound gives <span class="math-inline">\(2\le4\)</span>; equality is reserved for the first nonconstant eigenspace.</p></details>
+            <ol class="reference-list">
+              <li>Dominique Bakry, Ivan Gentil, and Michel Ledoux, <em>Analysis and Geometry of Markov Diffusion Operators</em>, Chapters 2–4.<small>Generators, Dirichlet forms, and Poincaré inequalities.</small></li>
+              <li>Fan Chung, <em>Spectral Graph Theory</em>, Chapter 1.<small>Graph Laplacians and spectral gaps.</small></li>
+              <li>Mu-Fa Chen, <em>From Markov Chains to Non-Equilibrium Particle Systems</em>.<small>Gap inequalities for Markov processes.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>State the fiber law, generator or graph, domain, boundary conditions, reversibility, connected components, component means, energy, positive gap, residual, and discretization error.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter proves finite-graph Poincaré certification and records the assumptions needed for a conditional-generator analogue. General elliptic regularity and PDE spectral theory remain outside scope.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-13/">III-13 · Hilbert Target Operators and Distribution States</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#conditional-energy">Fiberwise variation as an energy problem</a>
+            <a href="#graph-proof">Finite-graph certificate</a>
+            <a href="#worked-example">A three-node path and a disconnected fiber</a>
+            <a href="#continuous-analogue">Continuous generators and certification residuals</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-13/"><span>Previous</span><strong>III-13 · Hilbert Target Operators and Distribution States</strong></a><a class="next" href="/resources/volume-03/iii-15/"><span>Next</span><strong>III-15 · Set Functions, Mobius Inversion, and Modularity</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,190 @@
+{
+  "id": "I",
+  "number": 1,
+  "title": "Identification, Measurement, and Counterfactual Reasoning",
+  "purpose": "This book defines the observable object, the counterfactual target, and the information a representation must preserve. It connects exact identification, local repair, approximate loss, measurement across environments, timing error, administrative transmission, and model comparison through one target-directed language.",
+  "parts": [
+    "Observation, Representation, and Sufficiency",
+    "Measurement, Records, and Time",
+    "Information Transmission and Learning",
+    "Comparisons Across Models"
+  ],
+  "chapters": [
+    {
+      "id": "I-01",
+      "part": "Observation, Representation, and Sufficiency",
+      "title": "Define the Research Object as a Contract",
+      "overview": "A counterfactual question becomes precise only after the structural state, observation rule, policy set, horizon, target, loss, and admissible records are fixed. The chapter treats that list as a research contract and separates within-model policy comparisons from comparisons across model families.",
+      "topics": ["Structure, observations, and targets", "The state-design contract", "Units of counterfactual comparison", "Quantifiers and domains", "Types of evidence"],
+      "method": "Construct a finite state space, an observation map, and two target maps. Partition the states into observational equivalence classes, then compute target variation within each class. The same observation can preserve one target and destroy another, which makes sufficiency target-specific.",
+      "exercise": "Create a four-state example with a many-to-one report. Enumerate every observational fiber, calculate two target ranges on each fiber, and record which target admits a decoder. Change the policy set and repeat the calculation.",
+      "checkpoint": "Give an example in which reports coincide and predictive error is small while a policy counterfactual varies inside the same observational fiber.",
+      "scope": "The chapter fixes the objects and claim types used by the series. General causal philosophy and surveys of structural modeling lie outside its remit."
+    },
+    {
+      "id": "I-02",
+      "part": "Observation, Representation, and Sufficiency",
+      "title": "Linear Maps, Kernels, Quotients, and Information Dimension",
+      "overview": "Linear algebra supplies the first exact language for lost information. Observation and target maps are compared through kernels, quotient spaces, projections, singular values, and weighted inner products. The rank of the target restricted to discarded directions measures the number of missing local coordinates.",
+      "topics": ["Linear information maps", "Quotients and factorization", "Matrix tools for computation", "Weighted geometry", "Hidden directions and repair"],
+      "method": "Prove that ker A contained in ker B is equivalent to a factorization B = CA on the attained image. Restrict B to ker A and use rank-nullity to obtain a lower bound on additional linear records. An unrestricted linear record can attain that bound by separating a complement of the restricted kernel.",
+      "exercise": "Use small rational matrices to compare exact rank with floating-point SVD. Rescale state coordinates and target loss, recompute generalized singular values, and identify which changes are coordinate artifacts.",
+      "checkpoint": "Distinguish a dimensional lower bound, attainment by arbitrary linear coordinates, and attainment from a fixed dictionary of feasible records.",
+      "scope": "The treatment ends at finite-dimensional factorization, pseudoinverses, and weighted spectra. Jordan structure appears in Geometry, Dynamics, and Operators for Economic Models."
+    },
+    {
+      "id": "I-03",
+      "part": "Observation, Representation, and Sufficiency",
+      "title": "The Boundary Between Exact and Local Sufficiency",
+      "overview": "Exact sufficiency requires target constancy on every observation fiber. A derivative condition sees only tangent directions at one regular point. Constant-rank coordinates can turn that condition into a local factorization, while disconnected fibers and separate branches can still support different target levels.",
+      "topics": ["Global fiber conditions", "Local tangent conditions", "Neighborhood factorization", "Connected components and branches", "Value, sign, and ordering targets"],
+      "method": "Start from linear factorization on the vertical tangent space and invoke constant-rank coordinates to obtain a neighborhood result. Then construct a fiber with two connected components whose derivatives vanish within each component but whose target constants differ.",
+      "exercise": "Enumerate branches that share an observation value. Compare a derivative test at each point with a global fiber test, then replace the full target by a sign or action-ordering target.",
+      "checkpoint": "Explain precisely why a rank condition at one point does not establish identification on a neighborhood or across an entire fiber.",
+      "scope": "The chapter uses smooth local structure and componentwise constancy. General topology lies beyond the required argument."
+    },
+    {
+      "id": "I-04",
+      "part": "Observation, Representation, and Sufficiency",
+      "title": "Minimum Information Repair and Feasible Records",
+      "overview": "Missing dimension gives a lower bound on repair, while data collection imposes a second feasibility problem. Oracle coordinates chosen after seeing the target can differ sharply from records available before the policy or environment is known. Additivity, cost, timing, and measurement constraints determine attainable repairs.",
+      "topics": ["Missing dimension", "Lower bounds and constructions", "Admissible records", "Additive representations", "Constrained record dictionaries"],
+      "method": "Show that unrestricted linear augmentation reaches the missing-rank lower bound. Then impose a finite record dictionary and construct an example in which every subset of that size leaves a target-relevant hidden direction.",
+      "exercise": "Assign costs and hidden-direction coverage to a small record dictionary. Enumerate feasible subsets, identify minimum-cost repairs, and compare their size with the unrestricted dimensional bound.",
+      "checkpoint": "State when every proposed record is observable and fixed. A target value created after the counterfactual is known cannot serve as a valid record.",
+      "scope": "The analysis covers target-directed augmentation under explicit record constraints. General sensor design and compressed sensing remain separate subjects."
+    },
+    {
+      "id": "I-05",
+      "part": "Observation, Representation, and Sufficiency",
+      "title": "Representation Budgets, Singular Values, and Approximation Loss",
+      "overview": "A representation budget forces approximation. Worst-direction error and distribution-weighted mean-square loss answer different questions and produce different spectral summaries. Continuity restrictions govern nonlinear encoders, while Taylor remainders connect a local spectral frontier to finite policy and state perturbations.",
+      "topics": ["Two loss functions", "Linear approximation frontiers", "Continuous nonlinear encoders", "Width lower bounds", "Finite-perturbation error"],
+      "method": "Derive the truncated-SVD solution for operator-norm loss and the spectral-tail solution for mean-square loss. State where continuity and antipodal coincidence enter a nonlinear lower bound, then add curvature and Taylor terms for a finite-radius experiment.",
+      "exercise": "Vary a singular spectrum, retained dimension, state radius, and policy scale. Compare the linear frontier with nonlinear finite-radius error and report the metric used for every calculation.",
+      "checkpoint": "Report rank, spectrum, metric, radius, and policy scale together. Rank alone does not determine finite-experiment error.",
+      "scope": "The chapter covers encoder lower bounds and local remainders for economic counterfactuals. Broader approximation theory is omitted."
+    },
+    {
+      "id": "I-06",
+      "part": "Observation, Representation, and Sufficiency",
+      "title": "From Local Derivatives to Global Decoder Risk",
+      "overview": "Conditional means minimize squared reconstruction loss, and conditional variance measures the remaining risk. Fiberwise derivatives control variation only after geometric and probabilistic conditions are supplied. Poincare inequalities, component means, generator residuals, and graph approximation error form a complete risk certificate.",
+      "topics": ["Optimal decoder loss", "Fiberwise energy", "Poincare certificates", "Component means and residuals", "Limits of graph certificates"],
+      "method": "Combine the conditional-mean projection identity with a fiberwise Poincare inequality. Track the mean of each connected component and every generator residual. A disconnected example shows why local energy alone can miss large decoder risk.",
+      "exercise": "Build a graph with two connected components. Hold local edge energy fixed while changing component means, then compare the resulting conditional risk and certificate terms.",
+      "checkpoint": "Identify every assumption that carries a derivative or graph statistic into a risk statement for the original continuous model.",
+      "scope": "The treatment stops at the generator assumptions and discrete analogue needed for risk certification. General PDE regularity and Sobolev theory are excluded."
+    },
+    {
+      "id": "I-07",
+      "part": "Measurement, Records, and Time",
+      "title": "Measurement Across Environments",
+      "overview": "Economic objects are often valued under changing prices, conventions, or environments. Scalar transport works only when attained ranges, rankings, and composition remain compatible. Mixed derivatives and bilinear representations measure environment-dependent information that a single recorded value fails to carry.",
+      "topics": ["Objects and environments", "Scalar transport", "Composition and rankings", "Interaction dimension", "Normalization and covariance"],
+      "method": "Construct one example with a valid scalar transport and another in which identical source values lead to different target revaluations. Use the mixed object-environment derivative to identify the missing interaction dimension.",
+      "exercise": "Evaluate two baskets in three price environments. Test scalar transport, ranking preservation, and composition records, then change the normalization and transform both records and targets consistently.",
+      "checkpoint": "Keep price indexes, unit values, and composition effects as distinct measurement objects with distinct assumptions.",
+      "scope": "The chapter develops the transport and record problem used by the research applications. It does not survey national accounting, index-number history, or asset pricing."
+    },
+    {
+      "id": "I-08",
+      "part": "Measurement, Records, and Time",
+      "title": "Target-Directed Record Selection",
+      "overview": "Record selection begins after conditioning on the source information already retained. Conditional covariance measures residual target risk, while a feasible field dictionary turns free coordinate choice into a combinatorial selection problem. Greedy and exchange procedures require explicit benchmarks and leakage controls.",
+      "topics": ["Fixing source records", "Conditional covariance", "Free coordinates and field dictionaries", "Selection algorithms", "Ex ante collection rules"],
+      "method": "Express the risk reduction from one additional record through a Schur complement. Compare that marginal value with the global optimum over a finite dictionary and separate algorithmic approximation from statistical evaluation.",
+      "exercise": "Compute exhaustive, greedy, and one-exchange selections for a small field menu. Add record costs, report trace loss and optimality gaps, and enforce a split that prevents target leakage.",
+      "checkpoint": "Verify that every candidate record was defined before target outcomes in the evaluation environment became available.",
+      "scope": "The chapter covers finite target-directed field selection. General feature engineering and deep representation learning remain outside the series."
+    },
+    {
+      "id": "I-09",
+      "part": "Measurement, Records, and Time",
+      "title": "Clock Error and Decision-Relevant Moments",
+      "overview": "Recorded time W can differ from event time G through displacement U. A decision may require only selected moments of that displacement. Binomial moment recursions recover latent temporal moments, and polynomial losses reveal exactly which clock moments determine an action and its residual loss.",
+      "topics": ["Physical and recorded time", "Required independence restrictions", "Triangular moment recursions", "Decision sufficiency", "Moment minimality"],
+      "method": "Derive the recursion from order zero through order d using the binomial expansion. For quadratic scheduling, calculate the optimal date shift from the mean displacement and the remaining loss from its variance. Match lower moments across two clocks while changing the next moment.",
+      "exercise": "Construct two finite-support clock laws with identical low-order moments. Evaluate expected loss for a finite action menu and identify where their action rankings separate.",
+      "checkpoint": "State whether the target is the full timing distribution, a scheduled loss, or an action ordering; each target requires a different information claim.",
+      "scope": "The chapter treats finite-moment decision sufficiency. Deconvolution rates and survival analysis are outside its boundary."
+    },
+    {
+      "id": "I-10",
+      "part": "Measurement, Records, and Time",
+      "title": "Adjoint Bridges Under Clock Uncertainty",
+      "overview": "An inverse problem can identify a payoff query without recovering the entire latent response. Adjoint equations characterize exact bridges, closures characterize approximable queries, and stability determines estimability. Multiple admissible clocks require a common bridge or a transparent range of decision values.",
+      "topics": ["Inverse problems for queries", "Range, closure, and stability", "Common bridges", "Multiple clocks and cohorts", "Finite windows and boundary tails"],
+      "method": "Prove the finite-matrix adjoint condition for one query and stack the conditions for several clock operators. Compare exact solutions, least-squares approximations, and minimum-variance bridges while tracking null-space intersections.",
+      "exercise": "Use several clock matrices and payoff vectors to compute exact, common, and minimum-variance bridges. Add an observation-window boundary and quantify the contribution of unobserved tails.",
+      "checkpoint": "A small least-squares residual establishes approximation in the chosen norm; exact range membership and stable inversion require separate evidence.",
+      "scope": "Influence functions for estimated operators appear in Inference, Selection, and Simulation. General nonparametric recovery theory is beyond this chapter."
+    },
+    {
+      "id": "I-11",
+      "part": "Information Transmission and Learning",
+      "title": "Administrative Handoffs as Statistical Experiments",
+      "overview": "Policies pass through channels that transform an upstream experiment and may generate new information downstream. Score projection describes information contraction under a Markov handoff. Delay, arrival, measurement, and causal mediation remain separate objects in the resulting stage ledger.",
+      "topics": ["Models of administrative handoffs", "Score projection", "Information loss and acquisition", "Delay and arrival rates", "Policy pathways"],
+      "method": "Calculate upstream and downstream scores in a small discrete channel and verify the conditional-expectation projection identity. Compare Fisher information matrices before and after the handoff, then add a downstream measurement that contributes new score directions.",
+      "exercise": "Construct two channels with the same final arrival rate and different target score ranks. Report delay distributions, information contraction, and acquisition as separate entries.",
+      "checkpoint": "Separate identification of conditional arrival probabilities from identification of causal effects at each administrative stage.",
+      "scope": "The focus is statistical information through policy delivery. Shannon capacity and coding theory remain outside the required toolkit."
+    },
+    {
+      "id": "I-12",
+      "part": "Information Transmission and Learning",
+      "title": "Target Fisher Information: Identification and Precision",
+      "overview": "Singular Fisher information permits some targets to remain estimable while structural directions are unidentified. Kernel and range conditions answer identification; pseudoinverse variance answers precision. Gaussian repair and feasible PSD contractions translate those distinctions into record design.",
+      "topics": ["Singular information matrices", "Target identification", "Precision thresholds", "Gaussian repair", "Constrained retention menus"],
+      "method": "Establish target estimability through ker I contained in ker C and derive the pseudoinverse variance on the estimable subspace. Compare equal-rank information matrices with different eigenvalues, then calculate the minimum rank of a Gaussian augmentation.",
+      "exercise": "Reduce and augment information in a two- or three-dimensional Gaussian channel. Track target identification, attainable variance, and the cost of reaching a declared precision threshold.",
+      "checkpoint": "Separate prior precision from information supplied by the data when interpreting a finite posterior variance.",
+      "scope": "The chapter covers finite-dimensional and linear-Gaussian targets. General semiparametric efficiency theory is not required."
+    },
+    {
+      "id": "I-13",
+      "part": "Information Transmission and Learning",
+      "title": "Information Budgets, Decision Loss, and Record Allocation",
+      "overview": "Information design allocates scarce retention and acquisition resources against target-specific decision loss. Local quadratic regret defines the objective, semidefinite constraints describe feasible information, and alternative release schemes carry different likelihoods and cost measures.",
+      "topics": ["Information and decision loss", "Retention and acquisition", "Retention semidefinite programs", "Rounded rate releases", "Exact decision samples"],
+      "method": "Derive the expected sampling cost of waiting for a fixed number of decisions in one stratum. Separately derive the grid-rate condition for a rounded conditional release. Place both mechanisms in an allocation problem with an explicit target precision objective.",
+      "exercise": "Under one budget, compare stratified link retention, new decision collection, and release of rounded conditional rates. Report likelihood, expected records read, and target covariance for each design.",
+      "checkpoint": "Use the likelihood that belongs to each release mechanism; rounded rates and fixed-decision samples generate different experiments.",
+      "scope": "Optimization is confined to the information menus and cost contracts used in the applications. General optimal-design theory is beyond the chapter."
+    },
+    {
+      "id": "I-14",
+      "part": "Information Transmission and Learning",
+      "title": "Bayesian Archives and Accumulated Information",
+      "overview": "An archive accumulates directional precision through repeated reports. The number of observations alone can conceal persistent blind directions. Prior precision, data information, target-weighted posterior loss, state persistence, and field labels determine what the archive teaches.",
+      "topics": ["Information in a report", "Prior and data precision", "Cumulative excitation", "Aging records", "The meaning of fields"],
+      "method": "Derive the Gaussian posterior mean and precision update for rank-one reports. Compare repeated measurement along one direction with a dispersed sequence and use the smallest eigenvalue of accumulated information to diagnose unlearned coordinates.",
+      "exercise": "Hold sample size fixed across concentrated and dispersed report sequences. Compute posterior covariance and target loss under a stable state and under a changing-state filter.",
+      "checkpoint": "Demonstrate directional excitation before claiming that a growing archive identifies or learns every target direction.",
+      "scope": "The analysis covers Gaussian coefficient learning and changing-state record value. Bayesian nonparametrics and Gaussian-process methods are excluded."
+    },
+    {
+      "id": "I-15",
+      "part": "Information Transmission and Learning",
+      "title": "Choosing Reporting Systems for Policy Learning",
+      "overview": "Institutions balance current operating loss, the cost of changing a reporting system, and the value of information for later targets. Reporting directions can evolve gradually, react to observed content, and create archive externalities for future decision makers.",
+      "topics": ["Operating and learning objectives", "Choosing reporting directions", "Dynamic adjustment", "Content-dependent selection", "Institutional interpretation"],
+      "method": "Write a two-dimensional Gaussian objective with current operating loss and a continuation value. Compute the optimal reporting direction, then vary adjustment cost and future target weights to trace specialization and reorientation.",
+      "exercise": "Implement a sequential reporting problem with configurable adjustment cost, state persistence, and future target demand. Plot reporting directions and posterior losses across dates.",
+      "checkpoint": "Tie every claim about record value to a declared target, horizon, and cost. More stored information need not solve every policy problem.",
+      "scope": "The chapter studies reporting and archive choices for economic learning systems. General mechanism design and political economy remain separate."
+    },
+    {
+      "id": "I-16",
+      "part": "Comparisons Across Models",
+      "title": "Counterfactual Frontiers Across Model Families",
+      "overview": "Model comparison requires a common response experiment: the same shock, normalization, observed response, target, and support. Family-entry and sign-reversal radii answer different questions. Coverage failure, within-response ambiguity, and held-out prediction failure provide distinct diagnoses.",
+      "topics": ["Common experimental contracts", "Family images and fibers", "Entry and reversal radii", "Three forms of failure", "Finite and certified support"],
+      "method": "Define response images and counterfactual targets for two simple model families. Compute the radius at which another family enters the admissible response set and the radius at which the target changes sign. Preserve family labels in the disjoint union.",
+      "exercise": "Compare a finite parameter grid with a certified local box around selected points. Calculate entry and reversal frontiers and mark the support over which each statement is valid.",
+      "checkpoint": "Show by example that local identification inside each family does not imply agreement across families that fit the same response.",
+      "scope": "The framework applies to declared families, protocols, and supports. It is not a comparison of all macroeconomic models or a general robust-control theory."
+    }
+  ]
+}

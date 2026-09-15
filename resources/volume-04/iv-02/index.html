@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Residual-Income Demand and Approximation Domains · Chae-Yeon Xon</title>
+  <meta name="description" content="When utility depends on income remaining after purchase, price enters through a nonlinear residual-income term. Replacing that term by a linear price coefficient is a local approximation whose error depends on price-income ratios, affordability, and heterogeneity. The approximation domain must therefore travel with any derivative, share, or welfare calculation.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-02/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Residual-Income Demand and Approximation Domains · Chae-Yeon Xon">
+  <meta property="og:description" content="When utility depends on income remaining after purchase, price enters through a nonlinear residual-income term. Replacing that term by a linear price coefficient is a local approximation whose error depends on price-income ratios, affordability, and heterogeneity. The approximation domain must therefore travel with any derivative, share, or welfare calculation.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-02/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Residual-Income Demand and Approximation Domains · Chae-Yeon Xon">
+  <meta name="twitter:description" content="When utility depends on income remaining after purchase, price enters through a nonlinear residual-income term. Replacing that term by a linear price coefficient is a local approximation whose error depends on price-income ratios, affordability, and heterogeneity. The approximation domain must therefore travel with any derivative, share, or welfare calculation.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-02</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Demand, Supply, Bundles, and Welfare · Chapter IV-02</div>
+        <h1>Residual-Income Demand and Approximation Domains</h1>
+        <p>When utility depends on income remaining after purchase, price enters through a nonlinear residual-income term. Replacing that term by a linear price coefficient is a local approximation whose error depends on price-income ratios, affordability, and heterogeneity. The approximation domain must therefore travel with any derivative, share, or welfare calculation.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-02.01</span><strong>Exact residual-income utility</strong></li>
+              <li><span>IV-02.02</span><strong>Linear price branches</strong></li>
+              <li><span>IV-02.03</span><strong>Taylor error</strong></li>
+              <li><span>IV-02.04</span><strong>Affordability</strong></li>
+              <li><span>IV-02.05</span><strong>Income heterogeneity</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="residual-income">
+            <h2>1. Affordability is part of the utility domain</h2>
+            <p class="chapter-lede">Residual-income utility is defined only when income after purchase is positive. Its local price slope and curvature vary with income and the expansion point.</p>
+            <p>For income <span class="math-inline">\(y&gt;0\)</span> and price <span class="math-inline">\(p&lt;y\)</span>, consider systematic utility difference <span class="math-inline">\(v(p;y)=q+\log(y-p)-\log y\)</span> relative to an outside option. Its derivatives are <span class="math-inline">\(v^{\prime}=-1/(y-p)\)</span> and <span class="math-inline">\(v^{\prime\prime}=-1/(y-p)^{2}\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Controlled local price approximation</span><p>Fix <span class="math-inline">\(p_{0}&lt;y\)</span>. If every price between <span class="math-inline">\(p_{0}\)</span> and <span class="math-inline">\(p\)</span> leaves residual income at least <span class="math-inline">\(m&gt;0\)</span>, then</p>
+              <div class="equation-block" role="math" aria-label="Taylor bound for log residual income."><span class="equation-tex">\[|v(p;y)-v(p_{0};y)+(p-p_{0})/(y-p_{0})|\le (p-p_{0})^{2}/(2m^{2}).\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Taylor's theorem gives a remainder <span class="math-inline">\(v^{\prime\prime}(\xi)(p-p_{0})^{2}/2\)</span> for an intermediate <span class="math-inline">\(\xi\)</span>. The residual-income bound controls <span class="math-inline">\(|v^{\prime\prime}(\xi)|\)</span> by 1/<span class="math-inline">\(m^{2}\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="two-income-example">
+            <h2>2. A common linear coefficient fits different income groups poorly</h2>
+            <p>Take quality <span class="math-inline">\(q=1\)</span>, incomes 10 and 20 with equal population weights, base price <span class="math-inline">\(p_{0}=2\)</span>, and binary logit choice. At price four, exact purchase probabilities are approximately 0.61991 and 0.68500. Linearizing each group's utility at price two gives probabilities approximately 0.62875 and 0.68644.</p>
+            <p>The exact own-price derivative is <span class="math-inline">\(-P(1-P)/(y-p)\)</span>. The linear approximation uses the fixed denominator <span class="math-inline">\(y-p_{0}\)</span> and its own approximated probability. Both the share error and derivative error grow as the evaluation price approaches an income boundary.</p>
+          </section>
+
+          <section class="chapter-section" id="aggregation">
+            <h2>3. Aggregate demand integrates affordability and choice</h2>
+            <p>For income distribution <span class="math-inline">\(F\)</span>, aggregate share is <span class="math-inline">\(\int 1\{p&lt;y\}\,\Lambda[v(p;y)]\,dF(y)\)</span>, where Λ is the logistic cdf. A mass of consumers can cross the affordability threshold when price changes. Differentiating under the integral then requires treatment of the moving support boundary in addition to the smooth within-support derivative.</p>
+            <p>A linear price coefficient estimated near one price and income distribution represents a local average slope. Reusing it under a different price-income support alters both curvature and the set of available purchases.</p>
+          </section>
+
+          <section class="chapter-section" id="domain-failure">
+            <h2>4. The log boundary cannot be crossed by Taylor expansion</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Linear utility evaluated beyond affordability</span><p>The linear approximation remains finite at <span class="math-inline">\(p\ge y\)</span>, while <span class="math-inline">\(\operatorname{log}(y-p)\)</span> is undefined. The approximation has crossed the domain of the structural utility.</p></div>
+            <p>At <span class="math-inline">\(p=y\)</span>, curvature diverges and no positive uniform residual-income bound <span class="math-inline">\(m\)</span> exists. At zero or negative prices, the formula remains mathematically defined when residual income is positive, while the economic environment must determine whether such prices are admissible.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Check affordability before evaluating logarithms, retain the income distribution and weights, and report the smallest residual income on every counterfactual path. Compare exact and linear utilities, probabilities, and derivatives at the same draws and choice sets.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the two-income probabilities in Section 2.</li><li>Compute exact and linearized derivatives at prices two and four.</li><li>Add an income mass at four and examine one-sided aggregate demand as price crosses four.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Apply Λ to 1+<span class="math-inline">\(\operatorname{log}(1-p/y)\)</span> and to its first-order expansion at two. <strong>2.</strong> Use <span class="math-inline">\(-P(1-P)/(y-p)\)</span> for the exact model. <strong>3.</strong> The mass becomes unaffordable at the boundary, creating a discrete share change under strict affordability.</p></details>
+            <ol class="reference-list"><li>Jerry A. Hausman and David A. Wise (1978), “A Conditional Probit Model for Qualitative Choice: Discrete Decisions Recognizing Interdependence and Heterogeneous Preferences,” <em>Econometrica</em> 46, 403–426.<small>Observed heterogeneity in discrete choice.</small></li><li>Kenneth Train, <em>Discrete Choice Methods with Simulation</em>.<small>Aggregation over observed heterogeneity.</small></li><li>Walter Rudin, <em>Principles of Mathematical Analysis</em>, chapters on Taylor's theorem.<small>Finite-radius remainder control.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State income and price supports, strict affordability rule, base price, smallest residual income, exact utility, linear coefficient, remainder bound, heterogeneity weights, moving support boundary, and exact versus approximated derivatives.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter treats logarithmic residual-income utility and a local price approximation. Flexible demand estimation and general expenditure systems require separate models.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-04/iv-01/">IV-01 · Random Utility, Choice Sets, and Normalization</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#residual-income">Affordability is part of the utility domain</a>
+            <a href="#two-income-example">A common linear coefficient fits different income groups poorly</a>
+            <a href="#aggregation">Aggregate demand integrates affordability and choice</a>
+            <a href="#domain-failure">The log boundary cannot be crossed by Taylor expansion</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-01/"><span>Previous</span><strong>IV-01 · Random Utility, Choice Sets, and Normalization</strong></a><a class="next" href="/resources/volume-04/iv-03/"><span>Next</span><strong>IV-03 · Market Shares, Inversion, and Demographic Micro Moments</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

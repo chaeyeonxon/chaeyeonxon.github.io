@@ -1,0 +1,212 @@
+{
+  "id": "III",
+  "number": 3,
+  "title": "Geometry, Dynamics, and Operators for Economic Models",
+  "purpose": "This book develops the mathematical tools needed to differentiate equilibrium systems, trace policy paths, analyze dynamic responses, work with inverse problems, and certify optimization claims. Each tool is tied to an economic question and accompanied by a diagnostic that separates a valid calculation from a stronger conclusion.",
+  "parts": [
+    "Local Geometry and Policy Paths",
+    "Linear Dynamics and Modes",
+    "Function Spaces, Inverse Problems, and Risk Certificates",
+    "Sets, Optimization, and Sequential Information"
+  ],
+  "chapters": [
+    {
+      "id": "III-01",
+      "part": "Local Geometry and Policy Paths",
+      "title": "Differentiating Implicit Models",
+      "overview": "Many economic outcomes are defined by equilibrium equations rather than explicit formulas. The implicit-function calculation converts derivatives of those equations into derivatives of the equilibrium, provided the relevant Jacobian is square and nonsingular. Inverse derivatives and low-rank updates then make comparative statics reusable across states, policies, and information changes.",
+      "topics": ["Multivariable differentiation", "Implicit equilibrium maps", "Second-order responses", "Low-rank updates", "Regularity and branch failure"],
+      "method": "State the finite-dimensional implicit-function theorem with its domains and regularity conditions, derive first- and second-order equilibrium responses, and reuse the Jacobian factorization under low-rank changes. A fully solved two-equation equilibrium connects the analytic derivative to conditioning, central finite differences, and branch failure at a singular point.",
+      "exercise": "Derive both columns and the second policy derivative for the benchmark equilibrium, prove the rank-one update formula, and analyze the symmetric and asymmetric branches at the singular reference point. Partial solutions and a reproducible standard-library Python calculation accompany the exercises.",
+      "checkpoint": "Verify the equilibrium residual, endogenous-Jacobian rank, conditioning, linear-solve residual, and finite-difference convergence. State whether the conclusion covers one local selection, every nearby equilibrium, or global uniqueness.",
+      "scope": "The chapter covers smooth finite-dimensional equality systems around a reference equilibrium. Constrained state spaces, inequality systems, bifurcations, nonsmooth generalized equations, and infinite-dimensional implicit maps require later chapters or additional results."
+    },
+    {
+      "id": "III-02",
+      "part": "Local Geometry and Policy Paths",
+      "title": "State Spaces, Fibers, Tangent Directions, and Metrics",
+      "overview": "An economic state may live on a constrained space such as a simplex, a moment manifold, or a family of distributions. Observable reports partition that space into fibers, and tangent directions describe locally feasible changes. A metric records the units or loss used to measure those changes, so spectra and minimum-distance statements must be interpreted with the metric attached.",
+      "topics": ["Smooth state spaces", "Restricted derivatives", "Distributions and frames", "The role of a metric", "Coordinates for distribution states"],
+      "method": "Represent a tangent direction in a local frame E and form the restricted derivative DE. Under a change of coordinates E'=ER, transform both the derivative matrix and the metric; solve the resulting generalized eigenvalue problem to obtain coordinate-invariant response magnitudes.",
+      "exercise": "At an interior point of a probability simplex, compute target sensitivity in two tangent bases. Compare a metric-aware generalized spectrum with the spectrum from an unadjusted Euclidean Gram matrix.",
+      "checkpoint": "A rescaling of coordinates can change a naive singular value without changing economic information. State the metric and admissible tangent space before interpreting magnitude.",
+      "scope": "The treatment covers local constrained geometry used by the research program. Curvature tensors and broader Riemannian theory appear only where policy transport requires them."
+    },
+    {
+      "id": "III-03",
+      "part": "Local Geometry and Policy Paths",
+      "title": "Constrained Policy Motion and Lifts",
+      "overview": "A desired path in reported aggregates generally leaves many compatible paths in the underlying state. A lift chooses one state velocity that implements the report velocity. The choice depends on feasibility, an implementation metric, and any drift already present in the state, so a lift is an economic specification rather than a neutral inverse.",
+      "topics": ["Report and state motion", "Implementation metrics", "Pseudoinverse lifts", "Drift and feasibility", "Minimal connection language"],
+      "method": "Minimize one half v'Gv subject to Dh(x)v=u-f_h(x). The first-order conditions give v=G^{-1}Dh'[DhG^{-1}Dh']^{-1}(u-f_h) when the constraint has full row rank. Insert this velocity in the state ODE and track feasibility along the path.",
+      "exercise": "Lift the same circular report path under two positive-definite metrics and a third specification with latent drift. Plot the resulting state paths and compare terminal states.",
+      "checkpoint": "Record the state technology, drift, metric, and constraint qualification. A Moore-Penrose symbol without those objects does not determine an economic implementation.",
+      "scope": "The chapter uses connections only as a language for constrained lifting. Global bundle classification and gauge theory are outside the intended use."
+    },
+    {
+      "id": "III-04",
+      "part": "Local Geometry and Policy Paths",
+      "title": "Curvature, Transport, and Holonomy",
+      "overview": "When two policy directions are lifted to the state space, applying them in different orders can produce different latent outcomes. Their commutator is the leading local measure of this order effect. Transport also changes target covectors, so a closed path in reported variables may alter both the hidden state and the response assigned to the next policy.",
+      "topics": ["Vector fields and order", "Curvature of a lift", "Target changes along paths", "Covector transport", "Levels of closure"],
+      "method": "Compose the flows generated by lifted fields X and Y around a rectangle of side epsilon. A Taylor expansion gives a terminal displacement proportional to epsilon squared times [X,Y], projected onto the vertical space when report motion closes. Transport a target gradient along the same path to distinguish state from response holonomy.",
+      "exercise": "Compute clockwise and counterclockwise loops for two nonlinear lifted vector fields. Divide the terminal gap by the loop area and compare it with the analytic commutator at the base point.",
+      "checkpoint": "A report can return to its initial value while the latent state or its future policy response changes. Declare which object is claimed to close.",
+      "scope": "The chapter develops the local holonomy calculation required by dynamic aggregation. Ricci curvature and global geometric classification are omitted."
+    },
+    {
+      "id": "III-05",
+      "part": "Local Geometry and Policy Paths",
+      "title": "Small-Loop Error Rates and Experimental Design",
+      "overview": "Finite policy loops contain curvature, higher-order terms, randomization error, and numerical error. Reversing or mirroring loops isolates components with different symmetry, while two loop scales help estimate the order of the remainder. These devices turn a geometric identity into an experimental design with an explicit resolution limit.",
+      "topics": ["Rectangle expansions", "Reversal and mirroring", "Two-scale calculations", "Designable policy directions", "Local power"],
+      "method": "Expand the loop contrast as C(epsilon)=epsilon squared K+epsilon cubed R+O(epsilon to the fourth). Average mirrored orientations to cancel the odd term, or combine two scales in a Richardson-style correction. Compare the remaining signal with sampling and integration error.",
+      "exercise": "Run an epsilon grid for a known nonlinear system. Estimate the log-log slope of raw, mirrored, and two-scale errors, then add simulated assignment noise to locate the smallest informative loop.",
+      "checkpoint": "A finite loop contrast estimates a local curvature term plus remainder. It is neither an exact curvature observation nor evidence about untested directions.",
+      "scope": "The focus is local loop design and error accounting. Nonlinear optimal control and global path planning are beyond the chapter."
+    },
+    {
+      "id": "III-06",
+      "part": "Local Geometry and Policy Paths",
+      "title": "Dynamic Quotients and Additive-State Realization",
+      "overview": "A static report may fail because future targets depend on states reached after transitions or policy lifts. Dynamic sufficiency therefore closes the target span under transport through the model. Finite-state systems permit an explicit closure algorithm, while an additive state representation requires further structure on how individual states combine.",
+      "topics": ["Accessible states", "Transported target spans", "Finite closure algorithms", "Additive frames", "The Gorman connection"],
+      "method": "Begin with terminal target rows C and repeatedly add rows of C A_w for admissible transition products A_w until the span stops growing. The quotient by the joint kernel is the smallest linear state retaining those responses. Test separately whether its coordinates aggregate additively across agents.",
+      "exercise": "For a small switching linear system, implement the span-closure algorithm and build the quotient state. Add one aggregate report at a time and identify when dynamic responses become reconstructible.",
+      "checkpoint": "Finite quotient dimension establishes a compact response state. It does not by itself yield an additive sufficient statistic or a behaviorally valid representative agent.",
+      "scope": "The chapter covers finite-dimensional dynamic closure and the additive-state question. Full Gorman aggregation theory and Lie-group realizations are excluded."
+    },
+    {
+      "id": "III-07",
+      "part": "Linear Dynamics and Modes",
+      "title": "Linear Dynamics: Stability and Response Spaces",
+      "overview": "For x_{t+1}=Ax_t+Bu_t and y_t=Cx_t, the transition matrix governs persistence, while B and C govern which shocks enter and which consequences are seen. Reachability and observability organize the resulting response space. Stability alone says little about the span or value of feasible policy responses.",
+      "topics": ["Linear state equations", "Stability", "Impulse-response maps", "Reachability and observability", "Compression criteria"],
+      "method": "Stack the matrices CB, CAB, through CA^{H-1}B to form a finite-horizon response operator. Compare its rank and singular values across choices of B and C while holding A fixed. Remove state directions lying in the joint kernel of all observed future responses.",
+      "exercise": "Construct three systems with the same stable A but different input and output matrices. Compute steady-state variance, response rank, and an energy-weighted response spectrum.",
+      "checkpoint": "Low volatility or a small spectral radius can coexist with a large response space. Report the intervention and target maps together with the transition law.",
+      "scope": "The chapter treats linear response and finite-horizon compression. Chaos, nonlinear controllability, and full control-system design are outside scope."
+    },
+    {
+      "id": "III-08",
+      "part": "Linear Dynamics and Modes",
+      "title": "Exact Root Counts and Equilibrium Determinacy",
+      "overview": "Dynamic equilibrium arguments often reduce to the number of characteristic roots inside or outside the unit circle. Signed economic interactions can produce cancellations hidden by absolute-value bounds. Exact polynomial calculations and root-count certificates therefore matter whenever determinacy rests on a boundary count.",
+      "topics": ["Signed and absolute structure", "Fixed-point systems", "Characteristic polynomials", "Unit-circle root counts", "Economic determinacy"],
+      "method": "Derive the characteristic polynomial from the signed system and use an exact rational example to compute a Routh or Schur-type count. Compare the result with a sufficient contraction bound based on absolute coefficients and identify the gap between the two claims.",
+      "exercise": "Build a three-node signed network whose absolute small-gain test fails while the exact root count satisfies the desired boundary condition. Compare floating roots at several precisions with the certificate.",
+      "checkpoint": "A numerical root list is useful evidence. Determinacy also requires a verified boundary convention, multiplicity treatment, and the economic mapping from roots to equilibrium restrictions.",
+      "scope": "The chapter supplies exact finite-polynomial tools for the case studies. General complex analysis and broad rational-expectations solution theory are omitted."
+    },
+    {
+      "id": "III-09",
+      "part": "Linear Dynamics and Modes",
+      "title": "Poles, Cancellation, and Generalized Modes",
+      "overview": "Repeated characteristic roots can generate polynomial-times-exponential responses, and input-output maps can cancel internal modes. A determinant records algebraic roots; an observable transfer function records poles after cancellation. Generalized eigenvectors or Jordan chains are needed when a repeated observable pole remains.",
+      "topics": ["Transfer functions", "Cancellations and multiplicity", "Generalized modes", "Jordan and realization views", "Nearly repeated roots"],
+      "method": "Expand a rational transfer function around a repeated pole and invert its partial fractions to obtain coefficients multiplying t^k lambda^t. Relate those terms to a Jordan block, then show how a zero in the numerator can remove the pole from the observable response.",
+      "exercise": "Compare impulse responses from two close simple poles, one repeated Jordan pole, and an internally repeated but canceled pole. Track coefficient instability as the simple poles coalesce.",
+      "checkpoint": "A multiple root of a system determinant need not be a multiple pole of the measured response. State the realization, input, output, and cancellation assumptions.",
+      "scope": "The chapter covers modal representation needed by dynamic-network audits. Full system identification and minimal-realization algorithms are beyond its boundary."
+    },
+    {
+      "id": "III-10",
+      "part": "Function Spaces, Inverse Problems, and Risk Certificates",
+      "title": "Function Spaces and Legal Operator Algebra",
+      "overview": "An inverse formula is meaningful only after the domain, codomain, norm, and range are fixed. An operator can be injective while its inverse is unbounded or defined only on a strict range. Compositions that look algebraically valid may therefore be undefined on candidate functions used in an identification proof.",
+      "topics": ["Spaces and norms", "Operator domains", "Meaning of an inverse", "Boundedness and theorem tools", "Composition and graph cores"],
+      "method": "Use a diagonal operator T e_k=sigma_k e_k with sigma_k approaching zero. It is injective, but the inverse maps e_k to e_k/sigma_k and has unbounded norm. Write the exact range and test every proposed composition against its domain before simplifying symbols.",
+      "exercise": "Truncate the diagonal example at increasing dimensions. Record the inverse norm and solve a noisy equation, then compare finite-dimensional solvability with stability in the limiting space.",
+      "checkpoint": "The expression T inverse is not automatically a bounded operator on the ambient space. State its domain and the topology in which a limit is taken.",
+      "scope": "The chapter covers the operator-domain discipline needed for nonparametric measurement models. C-star algebras and von Neumann algebras are outside scope."
+    },
+    {
+      "id": "III-11",
+      "part": "Function Spaces, Inverse Problems, and Risk Certificates",
+      "title": "Integral, Multiplication, Adjoint, and Smoothing Operators",
+      "overview": "Conditional expectation and measurement systems naturally produce integral and multiplication operators. Their adjoints identify which queries can be represented, while smoothing attenuates high-frequency components and makes inversion unstable. The legal norm depends on the probability space and cannot be transferred casually between L1 and L2 arguments.",
+      "topics": ["Probability integral operators", "Multiplication operators", "Adjoints", "Fourier smoothing", "Inverse domains"],
+      "method": "For a convolution operator, diagonalize in a Fourier basis. A Gaussian kernel multiplies frequency k by an exponentially decaying coefficient, so its inverse exponentially amplifies high-frequency error. Derive the adjoint identity for an integral kernel and state the integrability conditions used to exchange integrals.",
+      "exercise": "Apply a smoothing multiplier to signals with increasing frequency, add fixed noise, and invert on truncated bands. Track attenuation, amplification, and floating-point underflow.",
+      "checkpoint": "Hilbert-space intuition does not prove boundedness on L1 or justify an inverse outside the range. Match every adjoint and norm claim to its space.",
+      "scope": "The chapter treats integral operators and Fourier witnesses for economic inverse problems. General harmonic analysis and minimax inverse-problem theory are omitted."
+    },
+    {
+      "id": "III-12",
+      "part": "Function Spaces, Inverse Problems, and Risk Certificates",
+      "title": "Spectral Projections and Cross-Candidate Identification",
+      "overview": "Candidate latent models may each admit stable inversion on their own ranges while comparisons between candidates remain undefined. Spectral band projections create common finite-resolution objects, but uniform stability across expanding bands imposes stronger conditions. Those conditions can conflict with the smoothing that makes a measurement model empirically plausible.",
+      "topics": ["Band projections", "Uniform stability", "Costs of stronger conditions", "Shared candidate structure", "Probability reconstruction"],
+      "method": "Project each candidate onto the first K spectral modes and construct its finite-band inverse. Show that uniform boundedness of these inverses implies a lower bound on singular values over the expanding union; contrast that requirement with a nonatomic smoothing operator whose singular values vanish.",
+      "exercise": "Compare a well-conditioned finite matrix family with truncated Gaussian smoothing. Plot inverse norms by band and test whether candidate-specific solutions occupy a shared admissible range.",
+      "checkpoint": "Failure of one cross-candidate proof route establishes a gap in that route. It does not alone prove the economic model unidentified.",
+      "scope": "The chapter isolates projection, range, and uniform-stability issues. Abstract spectral calculus beyond these constructions is excluded."
+    },
+    {
+      "id": "III-13",
+      "part": "Function Spaces, Inverse Problems, and Risk Certificates",
+      "title": "Hilbert Target Operators and Distribution States",
+      "overview": "A finite-dimensional perturbation can affect an entire response curve. Mapping the perturbation into a Hilbert space of targets yields an integrated Gram operator whose spectrum ranks policy-relevant directions. When the state itself is a distribution, tangent restrictions and sieve approximations determine which perturbations the calculation represents.",
+      "topics": ["Finite-to-integrated targets", "Integrability", "Spectra of target operators", "Distribution tangents", "Sieve approximation"],
+      "method": "For response gradient g(t) in R^d, define G as the integral of g(t)g(t)' against a target measure. Show that v'Gv is the integrated squared response, so G is positive semidefinite; its trace is the integrated squared norm when finite.",
+      "exercise": "Approximate G on increasingly fine time grids and distribution sieves. Compare eigenvalues, eigenspaces, and the constraint that tangent perturbations integrate to zero.",
+      "checkpoint": "A finite-grid SVD is an approximation diagnostic. It does not prove compactness, trace class, or convergence without integrability and approximation conditions.",
+      "scope": "The chapter covers Hilbert-valued targets and finite-dimensional tangent approximations. Wasserstein geometry and PDE-based distribution dynamics are outside scope."
+    },
+    {
+      "id": "III-14",
+      "part": "Function Spaces, Inverse Problems, and Risk Certificates",
+      "title": "Conditional Generators, Poincare Inequalities, and Graph Certificates",
+      "overview": "Sufficiency can be tested through variation within an observation fiber. A conditional energy penalizes derivatives or differences along hidden directions. Under a spectral gap, small energy controls distance from a fiberwise constant function; on a finite graph the same logic becomes an exact Laplacian certificate.",
+      "topics": ["Conditional energy", "Generator assumptions", "Spectral gaps", "Residual bounds", "Finite-graph analogues"],
+      "method": "For a reversible conditional generator L with invariant law, express energy as minus the inner product of f and Lf. A Poincare inequality bounds conditional variance by energy divided by the gap. On a graph, diagonalize the Laplacian on each connected fiber and read the gap from its second eigenvalue.",
+      "exercise": "Prove the bound on a small weighted graph, then compare it with a one-dimensional Ornstein-Uhlenbeck example. Break graph connectivity and observe which fiberwise constants become separately unidentified.",
+      "checkpoint": "A spectral-gap certificate depends on reversibility, domain, boundary, and connectivity assumptions. Compact resolvent or discreteness of spectrum must be established when used.",
+      "scope": "The chapter gives generator and graph tools for residual sufficiency checks. General elliptic PDE theory is beyond its boundary."
+    },
+    {
+      "id": "III-15",
+      "part": "Sets, Optimization, and Sequential Information",
+      "title": "Set Functions, Mobius Inversion, and Modularity",
+      "overview": "When outcomes depend on bundles of inputs or options, a set function records the value of every feasible subset. Mobius inversion isolates interaction terms and minimal enabling combinations. Modularity is a strong restriction: it makes reference-set increments portable across bundles, while monotonicity alone permits complements and substitutes.",
+      "topics": ["Boolean lattices", "Minimal enabling sets", "Mobius inversion", "Representability", "Modularity"],
+      "method": "For a set value W, define the Mobius coefficient of A as the alternating sum of W over subsets of A. Invert the transform to reconstruct W. Show that all coefficients of order two or higher vanish exactly when W is modular, which makes each marginal contribution independent of the reference set.",
+      "exercise": "Enumerate all subsets of a three-input system, compute its Mobius transform, and compare exact set values with reference-bundle increments under complementarity and substitutability.",
+      "checkpoint": "A monotone set function may have negative or positive higher-order Mobius coefficients. Feasibility, value, and modularity are separate properties.",
+      "scope": "The chapter supplies finite set-function algebra for option production and bundling. Matroid theory and extremal combinatorics are omitted."
+    },
+    {
+      "id": "III-16",
+      "part": "Sets, Optimization, and Sequential Information",
+      "title": "KKT Conditions, Linear Duality, and Sharpness",
+      "overview": "Constrained economic calculations require feasibility, complementary slackness, and a treatment of corners. Linear-program duality turns a bound into a certificate and Farkas alternatives turn infeasibility into a witness. A sharp result additionally requires that the bound be attained by an admissible economic construction.",
+      "topics": ["Constrained optimization", "Corners", "Linear-program duality", "Infeasibility certificates", "Minimum enabling cost"],
+      "method": "Write the primal and dual for a small minimum-cost enabling problem. Use weak duality to bound every feasible allocation, then exhibit primal and dual solutions with equal value. When the primal is infeasible, construct a Farkas multiplier that separates the target from the feasible cone.",
+      "exercise": "Solve a family of small programs by enumeration and a numerical solver. Check primal residuals, dual residuals, complementary slackness, and an explicit attaining construction.",
+      "checkpoint": "A solver status or dual number is evidence from a computation. Sharpness also needs verified feasibility, equality of values, and an admissible construction.",
+      "scope": "The chapter treats linear and smooth constrained problems used in the books. Integer and general nonconvex optimization are outside scope."
+    },
+    {
+      "id": "III-17",
+      "part": "Sets, Optimization, and Sequential Information",
+      "title": "Matrix Optimization and Information Allocation",
+      "overview": "Information design frequently chooses a positive-semidefinite precision or retention matrix under budget and technological restrictions. Schur complements translate quadratic risk bounds into block-matrix constraints. Matrix KKT conditions and dual gaps provide certificates, while fixed spectra restrict which coordinate-wise information allocations are attainable.",
+      "topics": ["Positive-semidefinite order", "Schur complements", "Semidefinite programs", "Directional optimization", "Isospectral information design"],
+      "method": "Rewrite c'P^{-1}c less than or equal to t as positive semidefiniteness of a block matrix, including the needed range condition when P is singular. Form an SDP for retained precision, derive its dual, and distinguish eigenvalue choice from eigenvector orientation.",
+      "exercise": "Solve a small retention SDP under trace and spectral constraints. Rotate the eigenvectors while preserving eigenvalues, compare target risks, and report primal-dual gaps and minimum eigenvalues.",
+      "checkpoint": "An arbitrary vector of diagonal precision levels may be incompatible with a fixed spectrum. Check majorization or an explicit matrix construction before interpreting it as feasible.",
+      "scope": "The chapter covers small semidefinite certificates and orientation effects. Complexity theory and the full theory of matrix majorization are outside scope."
+    },
+    {
+      "id": "III-18",
+      "part": "Sets, Optimization, and Sequential Information",
+      "title": "Sequential Gaussian Learning and Filtering",
+      "overview": "A Gaussian signal updates precision by a rank-one term and shifts the posterior mean by a gain times the forecast error. Repeated measurements learn only in persistently excited directions. When the latent state changes, the prediction step prevents the static accumulation of precision and produces a Riccati recursion.",
+      "topics": ["Gaussian conditioning", "Rank-one precision updates", "Cumulative excitation", "Changing latent states", "Numerical stability"],
+      "method": "Complete the square to derive the one-signal posterior, then express the covariance update with Woodbury. For a dynamic state, alternate prediction P^- = A P A' + Q and measurement update P = P^- - P^-H'(HP^-H'+R)^{-1}HP^-; study contraction under observability and noise conditions.",
+      "exercise": "Compare a static archive, a drifting latent state, and a state with an unexcited direction. Implement covariance-form and square-root updates and track posterior eigenvalues.",
+      "checkpoint": "Static precision accumulation is not a filter for a changing state. State the transition, process noise, measurement design, and excitation condition.",
+      "scope": "The chapter covers linear Gaussian learning used by the archive models. Nonlinear filtering, stochastic control, and general partially observed games are excluded."
+    }
+  ]
+}

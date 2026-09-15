@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Predictive Validation, Coordinate Selection, and Oracle Bounds · Chae-Yeon Xon</title>
+  <meta name="description" content="Prediction exercises require chronological splits, separation of selection and evaluation, explicit baselines, and finite candidate classes. Oracle inequalities bound selection error under stated conditions, while cross-fitting controls reuse of estimated geometry. Predictive success remains evidence about the declared forecast task.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-13/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Predictive Validation, Coordinate Selection, and Oracle Bounds · Chae-Yeon Xon">
+  <meta property="og:description" content="Prediction exercises require chronological splits, separation of selection and evaluation, explicit baselines, and finite candidate classes. Oracle inequalities bound selection error under stated conditions, while cross-fitting controls reuse of estimated geometry. Predictive success remains evidence about the declared forecast task.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-13/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Predictive Validation, Coordinate Selection, and Oracle Bounds · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Prediction exercises require chronological splits, separation of selection and evaluation, explicit baselines, and finite candidate classes. Oracle inequalities bound selection error under stated conditions, while cross-fitting controls reuse of estimated geometry. Predictive success remains evidence about the declared forecast task.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-13</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Generated Objects and Empirical Inference · Chapter II-13</div>
+        <h1>Predictive Validation, Coordinate Selection, and Oracle Bounds</h1>
+        <p>Prediction exercises require chronological splits, separation of selection and evaluation, explicit baselines, and finite candidate classes. Oracle inequalities bound selection error under stated conditions, while cross-fitting controls reuse of estimated geometry. Predictive success remains evidence about the declared forecast task.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-13.01</span><strong>Chronological validation</strong></li>
+              <li><span>II-13.02</span><strong>Separating selection and evaluation</strong></li>
+              <li><span>II-13.03</span><strong>Finite-candidate guarantees</strong></li>
+              <li><span>II-13.04</span><strong>Cross-fitting estimated geometry</strong></li>
+              <li><span>II-13.05</span><strong>Prediction as a diagnostic</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="finite-oracle">
+            <h2>1. Finite validation dictionaries admit a uniform risk bound</h2>
+            <p class="chapter-lede">Held-out prediction can compare a declared finite candidate set. Its guarantee depends on separation between training, selection, and evaluation and on the dependence structure of validation observations.</p>
+            <p>Let <span class="math-inline">\(\mathcal{F}\)</span> be a fixed set of <span class="math-inline">\(M\)</span> predictors. On an independent validation sample <span class="math-inline">\(Z_{1},\ldots,Z_{n}\)</span>, let loss <span class="math-inline">\(\ell(f,Z)\)</span> lie in [0,1], population risk <span class="math-inline">\(R(f)=\mathbb{E}[\ell(f,Z)]\)</span>, and empirical risk <span class="math-inline">\(\hat{R}_{n}(f)=n^{-1}\sum \ell(f,Z_{i})\)</span>. Let <span class="math-inline">\(\hat{f}\)</span> minimize empirical risk over <span class="math-inline">\(\mathcal{F}\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Finite-class oracle inequality</span><p>If the validation observations are iid and independent of the fixed candidate functions, then with probability at least <span class="math-inline">\(1-\delta\)</span>,</p>
+              <div class="equation-block" role="math" aria-label="Finite class empirical risk oracle inequality."><span class="equation-tex">\[R(\hat{f})\le \operatorname{min}_{f\in \mathcal{F}}R(f)+2\sqrt{\operatorname{log}(2M/\delta )/(2n)}.\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Hoeffding's inequality and a union bound give <span class="math-inline">\(\operatorname{sup}_{f\in \mathcal{F}}\lvert \hat{R}_{n}(f)-R(f)\rvert \le \varepsilon\)</span> with probability at least <span class="math-inline">\(1-\delta\)</span> for the displayed <span class="math-inline">\(\varepsilon\)</span>. On that event, <span class="math-inline">\(R(\hat{f})\le \hat{R}(\hat{f})+\varepsilon \le \hat{R}(f^{*})+\varepsilon \le R(f^{*})+2\varepsilon\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="numerical-bound">
+            <h2>2. The generic bound can be conservative</h2>
+            <p>With <span class="math-inline">\(M=10\)</span>, <span class="math-inline">\(n=1000\)</span>, and <span class="math-inline">\(\delta=0.05\)</span>, <span class="math-inline">\(\varepsilon=\sqrt[\operatorname{log}(400)/2000]\approx0.05473\)</span> and the excess-risk term <span class="math-inline">\(2\varepsilon \approx0.10947\)</span>. This distribution-free number can exceed empirical differences between candidates. It remains a valid benchmark under the assumptions of Proposition 1; sharper bounds need variance, margin, stability, or complexity information.</p>
+            <p>Ties in empirical risk can be resolved by a prespecified rule. Every minimizer satisfies (1) on the same uniform event.</p>
+          </section>
+
+          <section class="chapter-section" id="chronological-design">
+            <h2>3. Time order changes both candidates and guarantees</h2>
+            <p>In an archive or backlog problem, a random split can place later regimes, field definitions, or outcomes in the training set used to predict earlier observations. An out-of-time split trains only on dates available before the validation block. Hyperparameter and coordinate selection must occur inside the training period or a nested validation period.</p>
+            <p>Serially dependent validation losses do not satisfy the iid Hoeffding step. A blocked concentration result, martingale argument, or effective-sample analysis must replace it. The chronological gap between training and validation can reduce short-range dependence and also changes the target deployment date.</p>
+          </section>
+
+          <section class="chapter-section" id="nuisance-and-claims">
+            <h2>4. Cross-fitting controls specific reuse paths</h2>
+            <p>If candidate functions are trained on data independent of the validation fold, Proposition 1 applies conditionally on the training data for a finite candidate list. If the same validation outcomes select coordinates, estimate geometry, tune hyperparameters, and report final loss, the candidate set is data dependent and the proof no longer applies directly.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Held-out RMSE reported as causal transport</span><p>Prediction on a declared future block evaluates that forecast distribution. It does not identify a treatment effect or guarantee performance after an untested policy, measurement, or population shift.</p></div>
+            <p>Baseline choice is part of the claim. Report absolute loss, improvement relative to a named baseline, uncertainty in their paired difference, and all dates. At zero validation size the risk estimate is undefined; with a single observation its sampling uncertainty cannot be learned from the fold alone.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Freeze the candidate dictionary and split dates before evaluation. Store preprocessing fit dates, coordinate selection, hyperparameters, baseline, loss units, fold sizes, dependence gap, and predictions. Use paired loss differences on identical validation observations and report uncertainty matched to their dependence.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the numerical bound in Section 2.</li><li>Draw a nested chronological split for training, tuning, and final evaluation.</li><li>Construct a leakage example in which a future-coded field improves random-split loss and fails out of time.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Compute <span class="math-inline">\(\log(2\cdot10/0.05)=\log 400\)</span> and divide by 2,000 before taking the square root; double the result for excess risk. <strong>2.</strong> Place training first, tuning second, and the untouched test block last, with any dependence gap between blocks. <strong>3.</strong> Encode the future outcome or regime in a field whose value is unavailable at the forecast origin.</p></details>
+            <ol class="reference-list"><li>Vladimir Vapnik, <em>Statistical Learning Theory</em>.<small>Empirical risk and finite-class uniform control.</small></li><li>Peter Bühlmann and Sara van de Geer, <em>Statistics for High-Dimensional Data</em>, chapters on oracle inequalities.<small>Selection bounds and nuisance control.</small></li><li>Rob J. Hyndman and George Athanasopoulos, <em>Forecasting: Principles and Practice</em>, sections on time-series cross-validation.<small>Chronological forecast evaluation.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the forecast origin, candidate dictionary, training and tuning dates, untouched evaluation dates, preprocessing fit, baseline, bounded or unbounded loss, dependence structure, fold size, oracle probability, nuisance reuse, paired uncertainty, and the exact predictive claim.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The theorem covers a fixed finite predictor class and iid bounded validation losses. Chronological dependence and learned high-complexity classes require replacement concentration arguments.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-06/">II-06 · Extremum Estimators and Uniform Local Expansions</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#finite-oracle">Finite validation dictionaries admit a uniform risk bound</a>
+            <a href="#numerical-bound">The generic bound can be conservative</a>
+            <a href="#chronological-design">Time order changes both candidates and guarantees</a>
+            <a href="#nuisance-and-claims">Cross-fitting controls specific reuse paths</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-12/"><span>Previous</span><strong>II-12 · Dependent Bootstraps and Nonsmooth Frontiers</strong></a><span></span></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

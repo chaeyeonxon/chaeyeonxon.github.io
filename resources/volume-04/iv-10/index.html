@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Heterogeneous States, Transition Economies, and Additive Summaries · Chae-Yeon Xon</title>
+  <meta name="description" content="A distribution of households, firms, or cases is often the true dynamic state. Moments or counts provide useful summaries when their transitions close under the policy and equilibrium law. Fixed-price transitions and equilibrium feedback must be separated, because a statistic sufficient for logistics can fail once prices or incentives respond to the distribution.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-10/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Heterogeneous States, Transition Economies, and Additive Summaries · Chae-Yeon Xon">
+  <meta property="og:description" content="A distribution of households, firms, or cases is often the true dynamic state. Moments or counts provide useful summaries when their transitions close under the policy and equilibrium law. Fixed-price transitions and equilibrium feedback must be separated, because a statistic sufficient for logistics can fail once prices or incentives respond to the distribution.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-10/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Heterogeneous States, Transition Economies, and Additive Summaries · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A distribution of households, firms, or cases is often the true dynamic state. Moments or counts provide useful summaries when their transitions close under the policy and equilibrium law. Fixed-price transitions and equilibrium feedback must be separated, because a statistic sufficient for logistics can fail once prices or incentives respond to the distribution.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-10</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Dynamic Choice, Aggregation, and Policy Capacity · Chapter IV-10</div>
+        <h1>Heterogeneous States, Transition Economies, and Additive Summaries</h1>
+        <p>A distribution of households, firms, or cases is often the true dynamic state. Moments or counts provide useful summaries when their transitions close under the policy and equilibrium law. Fixed-price transitions and equilibrium feedback must be separated, because a statistic sufficient for logistics can fail once prices or incentives respond to the distribution.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-10.01</span><strong>Distribution states</strong></li>
+              <li><span>IV-10.02</span><strong>Fixed prices and equilibrium</strong></li>
+              <li><span>IV-10.03</span><strong>Resolution</strong></li>
+              <li><span>IV-10.04</span><strong>Moment closure</strong></li>
+              <li><span>IV-10.05</span><strong>Transition and logistics examples</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="distribution-law">
+            <h2>1. A population distribution is a dynamic state</h2>
+            <p class="chapter-lede">Counts or moments close only when every microdistribution sharing them generates the same next summary under the declared policy and equilibrium environment.</p>
+            <p>Let <span class="math-inline">\(\mu _{t}\)</span> be a row probability vector on <span class="math-inline">\(K\)</span> finite types and let row-stochastic <span class="math-inline">\(P\)</span> govern a fixed-policy transition, so <span class="math-inline">\(\mu _{t+1}=\mu _{t}P\)</span>. A linear summary is <span class="math-inline">\(m_{t}=C\mu _{t}^{\top}\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Linear moment closure</span><p>A linear map <span class="math-inline">\(L\)</span> satisfies <span class="math-inline">\(m_{t+1}=Lm_{t}\)</span> for every signed state vector exactly when <span class="math-inline">\(\operatorname{ker}(C)\subseteq \operatorname{ker}(CP^{\top})\)</span>, equivalently <span class="math-inline">\(CP^{\top}=LC\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Apply the linear factorization theorem to current summary <span class="math-inline">\(C\)</span> and next summary <span class="math-inline">\(CP^{\top}\)</span>. Restricting to the probability simplex gives the same sufficient condition and can admit additional affine formulations when total mass is fixed. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="count-failure">
+            <h2>2. Within-cell composition changes next counts</h2>
+            <p>States one and two form group <span class="math-inline">\(G\)</span>; state three forms group <span class="math-inline">\(B\)</span>. Let transition rows be (0.9,0,0.1), (0,0.5,0.5), and (0,0,1). Distributions <span class="math-inline">\(\mu ^{a}\)</span>=(1,0,0) and <span class="math-inline">\(\mu ^{b}\)</span>=(0,1,0) both report (<span class="math-inline">\(G,B\)</span>)=(1,0). Their next <span class="math-inline">\(B\)</span> masses are 0.1 and 0.5.</p>
+            <p>Adding the mass in state two makes the three-state distribution recoverable from total mass and the two group summaries in this example. A lower-dimensional repair may suffice for a narrower target or horizon.</p>
+          </section>
+
+          <section class="chapter-section" id="equilibrium-feedback">
+            <h2>3. Fixed-price closure need not survive equilibrium feedback</h2>
+            <p>If transition matrix is <span class="math-inline">\(P(p,u)\)</span> and equilibrium price solves <span class="math-inline">\(p=\phi(\mu,u)\)</span>, a summary must preserve both the price map and the conditional transition. Two distributions can generate equal fixed-price next moments and different equilibrium prices, which then alter choices and transitions.</p>
+            <p>Logistical closure holding prices fixed is useful for forecasting that controlled environment. A structural policy state additionally carries every distribution feature entering prices, selection, or policy assignment.</p>
+          </section>
+
+          <section class="chapter-section" id="simplex-boundaries">
+            <h2>4. Simplex faces and inaccessible types</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Fixed transition closure extended to endogenous prices</span><p>A factorization of <span class="math-inline">\(CP^{\top}\)</span> through <span class="math-inline">\(C\)</span> at one fixed price says nothing about a price rule that varies inside a summary fiber.</p></div>
+            <p>Zero-mass types lie on simplex faces and can become positive only if transition inflows permit. Reducible transitions create invariant faces. Finite-horizon closure can hold for one target even when one-step full-distribution closure fails; the horizon and target belong in the test.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Fix row or column orientation, verify stochasticity, construct <span class="math-inline">\(C\)</span>, and test the factorization with exact arithmetic or a declared rank tolerance. Search summary fibers for pairs with different next moments and repeat after enabling equilibrium feedback.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the next <span class="math-inline">\(B\)</span> masses in Section 2.</li><li>Find an augmented summary that closes the displayed transition.</li><li>Construct a price map depending on within-<span class="math-inline">\(G\)</span> composition and show fixed-price closure can fail in equilibrium.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Multiply each point-mass distribution by its transition row. <strong>2.</strong> Retain the mass of state two in addition to group <span class="math-inline">\(B\)</span> and total mass. <strong>3.</strong> Let price equal the state-two share and make a transition probability depend on price.</p></details>
+            <ol class="reference-list"><li>John G. Kemeny and J. Laurie Snell, <em>Finite Markov Chains</em>.<small>Lumpability and aggregation.</small></li><li>Lars Peter Hansen and Thomas J. Sargent, <em>Recursive Models of Dynamic Linear Economies</em>.<small>State closure and recursive equilibrium.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/the-polar-express/">“The Polar Express: Dynamic Aggregation under Policy Holonomy.”</a><small>Related dynamic-aggregation application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the distribution simplex, transition orientation, policy and price environment, summary map, total-mass convention, closure target and horizon, kernel residual, simplex faces, reducibility, equilibrium feedback, and counterexample fiber.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers finite distribution transitions and linear closure diagnostics. Infinite-dimensional heterogeneous-agent computation requires further approximation theory.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-04/iv-08/">IV-08 · Dynamic Choice and Forward Simulation</a></li><li><a href="/resources/volume-03/iii-06/">III-06 · Dynamic Quotients and Additive-State Realization</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#distribution-law">A population distribution is a dynamic state</a>
+            <a href="#count-failure">Within-cell composition changes next counts</a>
+            <a href="#equilibrium-feedback">Fixed-price closure need not survive equilibrium feedback</a>
+            <a href="#simplex-boundaries">Simplex faces and inaccessible types</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-09/"><span>Previous</span><strong>IV-09 · Corporate Control and Policy-Invariant Aggregation</strong></a><a class="next" href="/resources/volume-04/iv-11/"><span>Next</span><strong>IV-11 · Stable Baselines and Policy Response Capacity</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

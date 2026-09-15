@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Exact Root Counts and Equilibrium Determinacy · Chae-Yeon Xon</title>
+  <meta name="description" content="Dynamic equilibrium arguments often reduce to the number of characteristic roots inside or outside the unit circle. Signed economic interactions can produce cancellations hidden by absolute-value bounds. Exact polynomial calculations and root-count certificates therefore matter whenever determinacy rests on a boundary count.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-08/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Exact Root Counts and Equilibrium Determinacy · Chae-Yeon Xon">
+  <meta property="og:description" content="Dynamic equilibrium arguments often reduce to the number of characteristic roots inside or outside the unit circle. Signed economic interactions can produce cancellations hidden by absolute-value bounds. Exact polynomial calculations and root-count certificates therefore matter whenever determinacy rests on a boundary count.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-08/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Exact Root Counts and Equilibrium Determinacy · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Dynamic equilibrium arguments often reduce to the number of characteristic roots inside or outside the unit circle. Signed economic interactions can produce cancellations hidden by absolute-value bounds. Exact polynomial calculations and root-count certificates therefore matter whenever determinacy rests on a boundary count.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-08</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Linear Dynamics and Modes · Chapter III-08</div>
+        <h1>Exact Root Counts and Equilibrium Determinacy</h1>
+        <p>Dynamic equilibrium arguments often reduce to the number of characteristic roots inside or outside the unit circle. Signed economic interactions can produce cancellations hidden by absolute-value bounds. Exact polynomial calculations and root-count certificates therefore matter whenever determinacy rests on a boundary count.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-08.01</span><strong>Signed and absolute structure</strong></li>
+              <li><span>III-08.02</span><strong>Fixed-point systems</strong></li>
+              <li><span>III-08.03</span><strong>Characteristic polynomials</strong></li>
+              <li><span>III-08.04</span><strong>Unit-circle root counts</strong></li>
+              <li><span>III-08.05</span><strong>Economic determinacy</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="setup-and-notation">
+            <h2>1. Determinacy is a boundary root count</h2>
+            <p class="chapter-lede">A dynamic equilibrium condition typically fixes how many roots must lie on each side of the unit circle. The certificate must preserve signs, count multiplicity, and exclude roots on the boundary.</p>
+            <p>Let the linearized system imply a real monic characteristic polynomial <span class="math-inline">\(p(z)=\operatorname{det}(zI-A)\)</span>. Define <span class="math-inline">\(N_{in}\)</span>, <span class="math-inline">\(N_{out}\)</span>, and <span class="math-inline">\(N_{unit}\)</span> as its root counts inside, outside, and on <span class="math-inline">\(\lvert z\rvert=1\)</span>, each counted with algebraic multiplicity. An economic determinacy statement adds a model-specific mapping between these counts and the number of predetermined or forward variables.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Certified root count</span><p>A root count is certified when exact coefficient signs or interval enclosures establish the count and establish <span class="math-inline">\(N_{unit}=0\)</span>. A floating list of approximated roots is a diagnostic because rounding can move a near-boundary root across the circle.</p></div>
+          </section>
+
+          <section class="chapter-section" id="quadratic-jury">
+            <h2>2. A complete quadratic Schur test</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Jury conditions for a real quadratic</span><p>Both roots of <span class="math-inline">\(p(z)=z^{2}+a_{1}z+a_{2}\)</span> lie strictly inside the unit circle exactly when</p>
+              <div class="equation-block" role="math" aria-label="Quadratic Jury stability inequalities."><span class="equation-tex">\[1+a_{1}+a_{2}&gt;0, \quad 1-a_{1}+a_{2}&gt;0, \quad 1-a_{2}&gt;0.\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Derivation.</strong> Apply the bilinear map <span class="math-inline">\(z=(1+s)/(1-s)\)</span>, which sends the open left half-plane to the open unit disk. After multiplying by <span class="math-inline">\((1-s)^{2}\)</span>, the transformed polynomial has coefficients 1+<span class="math-inline">\(a_{1}+a_{2}\)</span>, 2(<span class="math-inline">\(1-a_{2}\)</span>), and <span class="math-inline">\(1-a_{1}+a_{2}\)</span>. The second-order Hurwitz criterion requires these coefficients to have the same positive sign, which gives (1). ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>3. Signed cancellation defeats an absolute bound</h2>
+            <p>Consider the rational matrix</p>
+            <div class="equation-block" role="math" aria-label="Stable signed interaction matrix."><span class="equation-tex">\[A=\begin{bmatrix}\frac{3}{5} &amp; \frac{3}{5} \\ \frac{-3}{5} &amp; \frac{3}{5}\end{bmatrix}.\]</span><span class="equation-number">(2)</span></div>
+            <p>Its infinity norm is 6/5, so the sufficient contraction test <span class="math-inline">\(\lVert A\rVert_{\infty}&lt;1\)</span> fails. The same is true for the row-sum test applied to <span class="math-inline">\(\lvert A\rvert\)</span>. The signed characteristic polynomial is</p>
+            <div class="equation-block" role="math" aria-label="Characteristic polynomial for signed example."><span class="equation-tex">\[p(z)=z^{2}-(\frac{6}{5})z+\frac{18}{25}.\]</span><span class="equation-number">(3)</span></div>
+            <p>The three values in (1) are 13/25, 73/25, and 7/25. All are positive, so both roots are inside the unit circle. Direct calculation gives <span class="math-inline">\(3/5\pm(3/5)i\)</span>, each with modulus <span class="math-inline">\(\sqrt{18}/5\approx0.84853\)</span>. The exact certificate records the stabilizing effect of the negative cross-interaction that the absolute matrix discards.</p>
+          </section>
+
+          <section class="chapter-section" id="higher-order-counts">
+            <h2>4. Higher-degree workflow and boundary cases</h2>
+            <p>For a higher-degree rational polynomial, construct a Schur–Cohn table, a Jury table, or map the unit circle to the imaginary axis and use a Routh–Hurwitz count. Exact rational arithmetic is available when the linearized coefficients are rational. With estimated coefficients, use coefficient intervals or verified complex-root enclosures and report every boundary margin.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · An unreported unit root</span><p>If <span class="math-inline">\(p(1)=0\)</span> or <span class="math-inline">\(p(-1)=0\)</span>, strict root counts fail at the boundary. A repeated root also changes the number of independent modal solutions. A determinacy claim must specify how the economic boundary conditions treat those cases.</p></div>
+            <p>An absolute small-gain bound remains useful: when it passes, it gives a convenient sufficient certificate. Its failure leaves the exact signed system unresolved until a root-count calculation is performed.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Generate the characteristic polynomial from the signed equations before numerical rounding. Evaluate exact boundary tests first, compute high-precision roots as a cross-check, and compare the product and sum of the computed roots with the polynomial coefficients. Record the distance of every root from the unit circle.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Verify (3) directly from <span class="math-inline">\(\operatorname{det}(zI-A)\)</span> and reproduce all three Jury margins.</li>
+              <li>Replace 3/5 by a scalar <span class="math-inline">\(c\)</span>. Find the interval in which the exact system is stable while the infinity-norm contraction test fails.</li>
+              <li>Construct a cubic with one root outside and two inside the unit circle and certify the count after the bilinear transformation.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The determinant is <span class="math-inline">\((z-3/5)^{2}+9/25\)</span>, which expands to (3). Substitution into (1) gives 13/25, 73/25, and 7/25. <strong>2.</strong> With 3/5 replaced by <span class="math-inline">\(c&gt;0\)</span>, the roots are <span class="math-inline">\(c(1\pm i)\)</span> and have modulus <span class="math-inline">\(\sqrt{2}c\)</span>. Exact stability requires <span class="math-inline">\(c&lt;1/\sqrt{2}\)</span>, while the infinity-norm test requires <span class="math-inline">\(2c&lt;1\)</span>. The gap interval is <span class="math-inline">\(1/2\le c&lt;1/\sqrt{2}\)</span>.</p></details>
+            <ol class="reference-list">
+              <li>Eliahu I. Jury, <em>Theory and Application of the z-Transform Method</em>.<small>Discrete-time stability tables.</small></li>
+              <li>Felix R. Gantmacher, <em>The Theory of Matrices</em>, Volume II.<small>Root-location criteria and matrix pencils.</small></li>
+              <li>Olivier Blanchard and Charles Kahn (1980), “The Solution of Linear Difference Models under Rational Expectations,” <em>Econometrica</em> 48, 1305–1311.<small>Economic mapping from roots to equilibrium restrictions.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>Preserve signed coefficients, state the unit-circle convention, count multiplicities, test boundary roots, report exact or interval margins, and show how the economic model maps the certified count into a determinacy conclusion.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter supplies finite-polynomial root certificates used in linearized economic systems. General complex analysis, nonlinear global dynamics, and a full solution theory for rational-expectations models lie beyond this treatment.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-07/">III-07 · Linear Dynamics: Stability and Response Spaces</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#setup-and-notation">Determinacy is a boundary root count</a>
+            <a href="#quadratic-jury">A complete quadratic Schur test</a>
+            <a href="#worked-example">Signed cancellation defeats an absolute bound</a>
+            <a href="#higher-order-counts">Higher-degree workflow and boundary cases</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-07/"><span>Previous</span><strong>III-07 · Linear Dynamics: Stability and Response Spaces</strong></a><a class="next" href="/resources/volume-03/iii-09/"><span>Next</span><strong>III-09 · Poles, Cancellation, and Generalized Modes</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

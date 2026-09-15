@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Local Projections and Covariance for Dependent Data · Chae-Yeon Xon</title>
+  <meta name="description" content="A local-projection result is defined by its horizon, outcome unit, shock normalization, controls, sample, and covariance estimator. Serial, spatial, and clustered dependence call for different sandwich constructions. Robustness means stability across declared protocols, not silent changes in scale.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-11/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Local Projections and Covariance for Dependent Data · Chae-Yeon Xon">
+  <meta property="og:description" content="A local-projection result is defined by its horizon, outcome unit, shock normalization, controls, sample, and covariance estimator. Serial, spatial, and clustered dependence call for different sandwich constructions. Robustness means stability across declared protocols, not silent changes in scale.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-11/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Local Projections and Covariance for Dependent Data · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A local-projection result is defined by its horizon, outcome unit, shock normalization, controls, sample, and covariance estimator. Serial, spatial, and clustered dependence call for different sandwich constructions. Robustness means stability across declared protocols, not silent changes in scale.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-11</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Generated Objects and Empirical Inference · Chapter II-11</div>
+        <h1>Local Projections and Covariance for Dependent Data</h1>
+        <p>A local-projection result is defined by its horizon, outcome unit, shock normalization, controls, sample, and covariance estimator. Serial, spatial, and clustered dependence call for different sandwich constructions. Robustness means stability across declared protocols, not silent changes in scale.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-11.01</span><strong>The local-projection contract</strong></li>
+              <li><span>II-11.02</span><strong>Shock units</strong></li>
+              <li><span>II-11.03</span><strong>Serial dependence</strong></li>
+              <li><span>II-11.04</span><strong>Spatial and clustered dependence</strong></li>
+              <li><span>II-11.05</span><strong>Meaning of robustness</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="lp-contract">
+            <h2>1. A local projection is horizon specific</h2>
+            <p class="chapter-lede">A coefficient and its covariance are defined by the response horizon, outcome transformation, shock units, controls, usable dates, and dependence model.</p>
+            <p>For horizon <span class="math-inline">\(h\ge0\)</span>, consider <span class="math-inline">\(y_{t+h}=\alpha _{h}+\beta _{h}s_{t}+\gamma _{h}^{\top}x_{t}+u_{t,h}\)</span>. Stack regressors as <span class="math-inline">\(z_{t}\)</span> and define the OLS score <span class="math-inline">\(g_{t,h}=z_{t}u_{t,h}\)</span>. The usable sample has <span class="math-inline">\(T_{h}\)</span> observations after lags, leads, and missing values are removed.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · HAC sandwich</span><p>Under stationarity or an appropriate triangular-array analogue, finite long-run score variance, a central limit theorem, and nonsingular <span class="math-inline">\(Q_{h}=\mathbb{E}[z_{t}z_{t}^{\top}]\)</span>, the asymptotic covariance is</p>
+              <div class="equation-block" role="math" aria-label="HAC sandwich covariance for a local projection."><span class="equation-tex">\[Q_{h}^{-1}S_{h}Q_{h}^{-1}/T_{h}, \quad S_{h}=\sum _{\ell =-\infty }^{\infty }E[g_{t,h}g_{t-\ell ,h}^{\top }].\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof sketch.</strong> The OLS normal equations give <span class="math-inline">\(\sqrt{T_{h}}(\hat{\theta}_{h}-\theta _{h})=\hat{Q}_{h}^{-1}T_{h}^{-1/2}\sum g_{t,h}\)</span>. A dependent-data central limit theorem assigns the score sum covariance <span class="math-inline">\(S_{h}\)</span>, and the sample regressor moment converges to <span class="math-inline">\(Q_{h}\)</span>. Slutsky's theorem yields (1). ∎</p></div>
+            <p>A Bartlett HAC estimate truncates at bandwidth <span class="math-inline">\(L&lt;T_{h}\)</span> and weights lag <span class="math-inline">\(\ell\)</span> by <span class="math-inline">\(1-\lvert \ell\rvert/(L+1)\)</span>. Its validity requires a bandwidth sequence and dependence conditions matched to the data.</p>
+          </section>
+
+          <section class="chapter-section" id="shock-scaling">
+            <h2>2. Shock scaling transforms coefficients and standard errors together</h2>
+            <p>Replace the shock by <span class="math-inline">\(s_{t}^{*}=a s_{t}\)</span> with <span class="math-inline">\(a\ne0\)</span>, leaving the remaining regressor span unchanged. Then <span class="math-inline">\(\beta _{h}^{*}=\beta _{h}/a\)</span> and <span class="math-inline">\(\operatorname{se}(\beta _{h}^{*})=\operatorname{se}(\beta _{h})/|a|\)</span>. The absolute <span class="math-inline">\(t\)</span>-statistic is invariant.</p>
+            <p>For <span class="math-inline">\(\beta=0.4\)</span> and standard error 0.1, multiplying the shock by 100 gives coefficient 0.004 and standard error 0.001; both <span class="math-inline">\(t\)</span>-statistics equal four. A plotted response to a 25-basis-point shock must multiply the coefficient by the shock size in the same units.</p>
+          </section>
+
+          <section class="chapter-section" id="dependence-menu">
+            <h2>3. Dependence designs imply different score sums</h2>
+            <p>Time-series HAC aggregates score autocovariances by lag. Cluster covariance aggregates scores within each assignment or sampling cluster before forming outer products. Spatial HAC weights cross-sectional score pairs by distance. Two-way clustering uses an inclusion-exclusion construction over declared cluster dimensions. These estimators coincide only under special covariance structures.</p>
+            <p>Overlapping local-projection outcomes induce serial correlation through shared future observations even if one-step innovations are uncorrelated. Cumulative responses across horizons require the full cross-horizon covariance; summing horizon-specific standard errors is invalid.</p>
+          </section>
+
+          <section class="chapter-section" id="sample-boundaries">
+            <h2>4. Horizon and calendar boundaries change the sample</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Robustness table built from changing units</span><p>Changing annualization, shock normalization, outcome denominator, calendar aggregation, sample endpoint, or cumulative-response definition can move a coefficient without changing the underlying fitted relation. A robustness comparison must hold the response contract fixed or transform every result to common units.</p></div>
+            <p>At large <span class="math-inline">\(h\)</span>, <span class="math-inline">\(T_{h}\)</span> shrinks and a fixed bandwidth can approach the sample length. Missing leads can induce composition changes. Near-unit-root outcomes, generated shocks, and pre-estimated factors add terms beyond the elementary sandwich in (1). A singular regressor moment matrix makes the stated OLS coefficient unidentified.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Store one protocol row per horizon: dependent variable, transformation, shock series and scale, controls and lags, date range, usable count, covariance estimator, bandwidth or cluster variables, small-sample correction, and cumulative-response rule. Verify symmetry and PSD behavior of each covariance matrix.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the shock-rescaling example.</li><li>Write the finite Bartlett estimator corresponding to (1).</li><li>For horizons zero through four, enumerate which dates enter each regression and cumulative response.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Divide the coefficient by 100 and its standard error by 100; their ratio remains four. <strong>2.</strong> Sum the lag-zero score covariance and weighted symmetric lag pairs through <span class="math-inline">\(L\)</span>, then premultiply and postmultiply by the sample regressor-moment inverse. <strong>3.</strong> Horizon <span class="math-inline">\(h\)</span> loses the final <span class="math-inline">\(h\)</span> outcome dates before any lag-related trimming.</p></details>
+            <ol class="reference-list"><li>Òscar Jordà (2005), “Estimation and Inference of Impulse Responses by Local Projections,” <em>American Economic Review</em> 95, 161–182.<small>Horizon-specific local projections.</small></li><li>Whitney K. Newey and Kenneth D. West (1987), “A Simple, Positive Semi-definite, Heteroskedasticity and Autocorrelation Consistent Covariance Matrix,” <em>Econometrica</em> 55, 703–708.<small>Bartlett HAC covariance.</small></li><li>Bruce E. Hansen, <em>Econometrics</em>, chapters on least squares and covariance estimation.<small>Sandwich and cluster formulas.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State horizon, outcome units, shock normalization, controls, date support, effective sample, overlap, generated regressors, dependence design, bandwidth or clusters, boundary correction, cross-horizon covariance, cumulative rule, and numerical conditioning.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers linear horizon-specific projections and covariance bookkeeping. Identification of structural shocks and nonlinear time-series models require separate arguments.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-03/">II-03 · Random Assignment and Dynamic Policy Contrasts</a></li><li><a href="/resources/volume-02/ii-05/">II-05 · Stochastic Orders and Competing Sample Sizes</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#lp-contract">A local projection is horizon specific</a>
+            <a href="#shock-scaling">Shock scaling transforms coefficients and standard errors together</a>
+            <a href="#dependence-menu">Dependence designs imply different score sums</a>
+            <a href="#sample-boundaries">Horizon and calendar boundaries change the sample</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-10/"><span>Previous</span><strong>II-10 · Inference for Rank, Singular Values, and Eigenspaces</strong></a><a class="next" href="/resources/volume-02/ii-12/"><span>Next</span><strong>II-12 · Dependent Bootstraps and Nonsmooth Frontiers</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

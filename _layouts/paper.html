@@ -1,0 +1,211 @@
+{% assign paper = site.data.papers | where: "slug", page.paper_slug | first %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>{{ paper.citation_title | escape }} · {{ site.title | escape }}</title>
+  <meta name="description" content="{{ paper.abstract | escape }}">
+  <meta name="keywords" content="{{ paper.keywords | escape }}">
+  <meta name="citation_title" content="{{ paper.citation_title | escape }}">
+  <meta name="citation_author" content="{{ site.data.profile.name | escape }}">
+  <meta name="citation_publication_date" content="{{ paper.publication_date | escape }}">
+  <meta name="citation_pdf_url" content="{{ paper.paper_url | absolute_url }}">
+  <meta name="citation_fulltext_world_readable" content="">
+  <meta property="og:title" content="{{ paper.citation_title | escape }}">
+  <meta property="og:description" content="{{ paper.plain_summary | escape }}">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="{{ site.title | escape }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ '/assets/yonsei-symbol.png' | absolute_url }}">
+  <meta property="og:image:secure_url" content="{{ '/assets/yonsei-symbol.png' | absolute_url }}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ paper.citation_title | escape }}">
+  <meta name="twitter:description" content="{{ paper.plain_summary | escape }}">
+  <meta name="twitter:image" content="{{ '/assets/yonsei-symbol.png' | absolute_url }}">
+  <link rel="image_src" href="{{ '/assets/yonsei-symbol.png' | absolute_url }}">
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="48x48" href="{{ '/assets/favicon-48x48.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ '/assets/favicon-96x96.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ '/assets/yonsei-symbol.png' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="{{ '/assets/yonsei-symbol.png' | relative_url }}" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="{{ '/' | relative_url }}">{{ site.data.profile.name }}</a>
+          <div class="affiliation">{{ site.data.profile.affiliation }}</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="{{ '/#research' | relative_url }}">Research</a>
+        <a href="{{ '/#about' | relative_url }}">About</a>
+        <a href="{{ '/#contact' | relative_url }}">Contact</a>
+        {% if site.data.profile.cv_url != "" %}<a href="{{ site.data.profile.cv_url | relative_url }}" target="_blank" rel="noopener">CV</a>{% endif %}
+      </nav>
+    </div>
+  </header>
+
+  <main class="paper-page">
+    <div class="container">
+      <div class="paper-repo-path">
+        <span class="repo-mark" aria-hidden="true"></span>
+        <a href="{{ '/#research' | relative_url }}">research</a>
+        <span class="repo-slash">/</span>
+        <strong>{{ paper.slug }}</strong>
+        <span class="paper-status-pill">Working Paper</span>
+      </div>
+
+      <div class="paper-detail-grid">
+        <article class="paper-detail-main">
+          <header class="paper-detail-header">
+            <h1>{{ paper.title }}</h1>
+            {% if paper.subtitle != "" %}<p class="paper-detail-subtitle">{{ paper.subtitle }}</p>{% endif %}
+            <div class="paper-detail-byline">
+              <span>{{ site.data.profile.name }}</span>
+              <span>{{ paper.display_date }}</span>
+            </div>
+            <div class="paper-detail-actions">
+              <a class="paper-action primary" href="{{ paper.paper_url | relative_url }}" target="_blank" rel="noopener">Draft PDF</a>
+              <a class="paper-action" href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">Online Appendix</a>
+            </div>
+          </header>
+
+          <div class="paper-file-panel" aria-label="Paper files">
+            <div class="paper-file-panel-head">
+              <span>Documents</span>
+              <span>2 files</span>
+            </div>
+            <a class="paper-file-row" href="{{ paper.paper_url | relative_url }}" target="_blank" rel="noopener">
+              <span class="file-icon" aria-hidden="true"></span>
+              <span class="file-name">Draft PDF</span>
+              <span class="file-detail">{{ paper.paper_pages }} pages · {{ paper.paper_size }}</span>
+            </a>
+            <a class="paper-file-row" href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">
+              <span class="file-icon" aria-hidden="true"></span>
+              <span class="file-name">Online Appendix</span>
+              <span class="file-detail">{{ paper.appendix_pages }} pages · {{ paper.appendix_size }}</span>
+            </a>
+          </div>
+
+          <div class="paper-resource-panel" aria-label="Data and resources">
+            <div class="paper-resource-panel-head">
+              <span>Data &amp; resources</span>
+              {% if paper.data_sources.size > 0 %}<span>{{ paper.data_sources.size }} source{% if paper.data_sources.size != 1 %}s{% endif %}</span>{% endif %}
+            </div>
+            {% if paper.data_sources.size > 0 %}
+              {% for source in paper.data_sources %}
+              <a class="paper-resource-row" href="{{ source.url }}" target="_blank" rel="noopener">
+                <span class="resource-icon" aria-hidden="true"></span>
+                <span class="resource-copy">
+                  <strong>{{ source.name }}</strong>
+                  <small>{{ source.host }}</small>
+                </span>
+                <span class="external-mark" aria-hidden="true">↗</span>
+              </a>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+          <section class="paper-readme">
+            <div class="paper-readme-head">
+              <span class="readme-icon" aria-hidden="true"></span>
+              <strong>Overview</strong>
+            </div>
+
+            <div class="paper-readme-body">
+              <section class="paper-content-section">
+                <h2>Research question</h2>
+                <p class="paper-question-callout">{{ paper.question }}</p>
+              </section>
+
+              <section class="paper-content-section">
+                <h2>Abstract</h2>
+                <p>{{ paper.abstract }}</p>
+              </section>
+
+              <section class="paper-content-section">
+                <h2>In one sentence</h2>
+                <p>{{ paper.plain_summary }}</p>
+              </section>
+            </div>
+          </section>
+        </article>
+
+        <aside class="paper-detail-sidebar">
+          <section class="sidebar-section">
+            <h2>About</h2>
+            <p>{{ paper.technical_summary }}</p>
+          </section>
+
+          <section class="sidebar-section">
+            <h2>Research mix</h2>
+            <div class="sidebar-mix-bar" role="img" aria-label="Research mix">
+              <span class="seg econometrics" style="width:{{ paper.mix.econometrics }}%"></span>
+              <span class="seg structural" style="width:{{ paper.mix.structural }}%"></span>
+              <span class="seg micro" style="width:{{ paper.mix.micro }}%"></span>
+              <span class="seg macro" style="width:{{ paper.mix.macro }}%"></span>
+              <span class="seg measurement" style="width:{{ paper.mix.measurement }}%"></span>
+              <span class="seg institutions" style="width:{{ paper.mix.institutions_policy }}%"></span>
+            </div>
+            <div class="sidebar-mix-list">
+              {% if paper.mix.econometrics > 0 %}<span><i class="c-econometrics"></i>Econometrics <b>{{ paper.mix.econometrics }}%</b></span>{% endif %}
+              {% if paper.mix.structural > 0 %}<span><i class="c-structural"></i>Structural <b>{{ paper.mix.structural }}%</b></span>{% endif %}
+              {% if paper.mix.micro > 0 %}<span><i class="c-micro"></i>Micro <b>{{ paper.mix.micro }}%</b></span>{% endif %}
+              {% if paper.mix.macro > 0 %}<span><i class="c-macro"></i>Macro <b>{{ paper.mix.macro }}%</b></span>{% endif %}
+              {% if paper.mix.measurement > 0 %}<span><i class="c-measurement"></i>Measurement <b>{{ paper.mix.measurement }}%</b></span>{% endif %}
+              {% if paper.mix.institutions_policy > 0 %}<span><i class="c-institutions"></i>Institutions / Policy <b>{{ paper.mix.institutions_policy }}%</b></span>{% endif %}
+            </div>
+          </section>
+
+          <section class="sidebar-section">
+            <h2>Metadata</h2>
+            <dl class="paper-metadata">
+              <div><dt>Author</dt><dd>{{ site.data.profile.name }}</dd></div>
+              <div><dt>Date</dt><dd>{{ paper.display_date }}</dd></div>
+              <div><dt>JEL codes</dt><dd>{{ paper.jel_display }}</dd></div>
+            </dl>
+          </section>
+
+          <section class="sidebar-section">
+            <h2>Keywords</h2>
+            <div class="topic-tags">
+              {% for topic in paper.topics %}
+              <span>{{ topic }}</span>
+              {% endfor %}
+            </div>
+          </section>
+
+          <section class="sidebar-section draft-status">
+            <h2>Status</h2>
+            <p>{{ site.data.profile.draft_notice }}</p>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>{{ site.data.profile.name }}</span>
+      <div class="footer-meta">
+        <span>{{ site.data.profile.affiliation }}</span>
+        <span>{{ site.data.profile.degree_status }}</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

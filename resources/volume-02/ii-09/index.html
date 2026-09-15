@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Generated Responses, Estimated Operators, and Noisy Derivatives · Chae-Yeon Xon</title>
+  <meta name="description" content="Estimated derivatives and operators carry first-stage error into spectra, bridges, and counterfactual maps. Same-sample covariance, local range stability, noise-square bias, and moving frames must enter the expansion. Sample splitting solves only the terms its independence structure addresses.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-09/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Generated Responses, Estimated Operators, and Noisy Derivatives · Chae-Yeon Xon">
+  <meta property="og:description" content="Estimated derivatives and operators carry first-stage error into spectra, bridges, and counterfactual maps. Same-sample covariance, local range stability, noise-square bias, and moving frames must enter the expansion. Sample splitting solves only the terms its independence structure addresses.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-09/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Generated Responses, Estimated Operators, and Noisy Derivatives · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Estimated derivatives and operators carry first-stage error into spectra, bridges, and counterfactual maps. Same-sample covariance, local range stability, noise-square bias, and moving frames must enter the expansion. Sample splitting solves only the terms its independence structure addresses.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-09</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Generated Objects and Empirical Inference · Chapter II-09</div>
+        <h1>Generated Responses, Estimated Operators, and Noisy Derivatives</h1>
+        <p>Estimated derivatives and operators carry first-stage error into spectra, bridges, and counterfactual maps. Same-sample covariance, local range stability, noise-square bias, and moving frames must enter the expansion. Sample splitting solves only the terms its independence structure addresses.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-09.01</span><strong>Same-sample covariance</strong></li>
+              <li><span>II-09.02</span><strong>Stable bridges</strong></li>
+              <li><span>II-09.03</span><strong>Limits of pointwise derivatives</strong></li>
+              <li><span>II-09.04</span><strong>Bias in noisy Gram matrices</strong></li>
+              <li><span>II-09.05</span><strong>Moving coordinates and frames</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="generated-gram">
+            <h2>1. Squaring an estimated derivative adds noise energy</h2>
+            <p class="chapter-lede">A generated derivative carries first-stage variance into every Gram matrix, singular value, and bridge. Independent splits can remove a noise-square expectation while leaving sampling variance and range instability.</p>
+            <p>Let <span class="math-inline">\(D\in \mathbb{R}^{r\times p}\)</span> be a fixed population derivative. Two estimates satisfy <span class="math-inline">\(\hat{D}_{1}=D+E_{1}\)</span> and <span class="math-inline">\(\hat{D}_{2}=D+E_{2}\)</span>, conditional on a training object. Assume E[<span class="math-inline">\(E_{j}\)</span>]=0, finite second moments, and independence between the two errors.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Naive and split Gram expectations</span><p>The naive Gram has positive-semidefinite noise-square bias, while a symmetrized split Gram removes it:</p>
+              <div class="equation-block" role="math" aria-label="Naive and cross-fit Gram expectations."><span class="equation-tex">\[\begin{aligned}E[\hat{D}_{1}^{\top }\hat{D}_{1}]=D^{\top }D+E[E_{1}^{\top }E_{1}], \\ E[(\hat{D}_{1}^{\top }\hat{D}_{2}+\hat{D}_{2}^{\top }\hat{D}_{1})/2]=D^{\top }D.\end{aligned}\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Expand both products. Mean-zero errors remove the linear terms. The naive square retains E[<span class="math-inline">\(E_{1}^{\top}E_{1}\)</span>]. Independence makes E[<span class="math-inline">\(E_{1}^{\top}E_{2}\)</span>]=0. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="gram-example">
+            <h2>2. A two-coordinate example isolates the bias</h2>
+            <p>Let <span class="math-inline">\(D\)</span>=(1,2) and let each independent error equal <span class="math-inline">\(v\)</span>=(1,<span class="math-inline">\(-1\)</span>) or <span class="math-inline">\(-v\)</span> with equal probability. Then</p>
+            <div class="equation-block" role="math" aria-label="True, naive, and split expected Gram matrices."><span class="equation-tex">\[\begin{aligned}D^{\top }D=\begin{bmatrix}1 &amp; 2 \\ 2 &amp; 4\end{bmatrix}, \\ E[\hat{D}^{\top }\hat{D}]=\begin{bmatrix}2 &amp; 1 \\ 1 &amp; 5\end{bmatrix}, \quad E[G_{split}]=\begin{bmatrix}1 &amp; 2 \\ 2 &amp; 4\end{bmatrix}.\end{aligned}\]</span><span class="equation-number">(2)</span></div>
+            <p>The split matrix can be indefinite in one realization even though its expectation is positive semidefinite. Projecting it onto the PSD cone changes its finite-sample expectation. That projection is a separate regularization step.</p>
+          </section>
+
+          <section class="chapter-section" id="range-instability">
+            <h2>3. Exact range membership can be discontinuous</h2>
+            <p>Let <span class="math-inline">\(A(\eta)\)</span>=(1,<span class="math-inline">\(\eta ^{2}\)</span>) map <span class="math-inline">\(\mathbb{R}^{2}\)</span> to <span class="math-inline">\(\mathbb{R}\)</span> and consider query <span class="math-inline">\(c=(1,0)^{\top}\)</span>. At <span class="math-inline">\(\eta=0\)</span>, <span class="math-inline">\(c\)</span> lies in <span class="math-inline">\(\operatorname{range}(A(0)^{\top})\)</span>. For every <span class="math-inline">\(\eta \ne0\)</span>, it lies outside the one-dimensional span of <span class="math-inline">\((1,\eta ^{2})^{\top}\)</span>. The distance to that span is <span class="math-inline">\(|\eta|^{2}/\sqrt{1+\eta ^{4}}\)</span>, which tends to zero while exact membership fails throughout the punctured neighborhood.</p>
+            <p>A small range residual therefore supports approximate recovery under a declared latent norm. It does not establish a locally stable exact bridge. Stable exact membership needs a constant-rank or invariant-range condition plus compatible movement of the query.</p>
+          </section>
+
+          <section class="chapter-section" id="dependence-frames">
+            <h2>4. Splitting addresses only declared dependence terms</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Cross-fitting treated as range stability</span><p>Independent folds remove the cross-error expectation in (1). They leave the realized matrix noisy and do not keep a query inside an estimated adjoint range as the nuisance changes.</p></div>
+            <p>If both derivative estimates use overlapping observations, their cross covariance appears in the split expectation. If a spectrum is expressed in an estimated tangent frame, frame estimation contributes an additional rotation term. Repeated singular values make individual singular vectors unidentified; projection onto the full tied subspace is the stable object.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Record fold membership and overlap, compute naive and symmetrized split matrices, report asymmetry before symmetrization, PSD eigenvalues, any cone projection, and its size. For bridges, track rank, range residual, bridge norm, and residual sensitivity along nuisance perturbations.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce every matrix in (2).</li><li>Enumerate the four independent error-sign pairs and average their split matrices.</li><li>Derive the distance from <span class="math-inline">\((1,0)^{\top}\)</span> to <span class="math-inline">\(\operatorname{span}\{(1,\eta ^{2})^{\top}\}\)</span>.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Add <span class="math-inline">\(v^{\top}v=\begin{bmatrix}1 &amp; -1 \\ -1 &amp; 1\end{bmatrix}\)</span> to the true Gram. <strong>2.</strong> The cross-error signs average to zero, leaving the true Gram. <strong>3.</strong> Square the query norm minus its squared projection: <span class="math-inline">\(1-1/(1+\eta ^{4})=\eta ^{4}/(1+\eta ^{4})\)</span>.</p></details>
+            <ol class="reference-list"><li>A. W. van der Vaart, <em>Asymptotic Statistics</em>, chapters on the delta method and estimated functions.<small>Propagation of first-stage error.</small></li><li>Rajendra Bhatia, <em>Matrix Analysis</em>, chapters on matrix perturbation.<small>Generated Gram matrices and spectral maps.</small></li><li>III-12 · Ill-Posed Inverse Problems and Regularization.<small>Range conditions and approximate query recovery.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the population derivative, conditioning object, fold construction, error means and cross covariance, Gram orientation, PSD projection, nuisance path, rank and gap boundaries, frame convention, range residual, bridge norm, and latent norm for approximation.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers finite-dimensional generated Gram matrices and one range-instability example. General debiased learning and random-operator limits require additional conditions.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-06/">II-06 · Extremum Estimators and Uniform Local Expansions</a></li><li><a href="/resources/volume-03/iii-11/">III-11 · Integral, Multiplication, Adjoint, and Smoothing Operators</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#generated-gram">Squaring an estimated derivative adds noise energy</a>
+            <a href="#gram-example">A two-coordinate example isolates the bias</a>
+            <a href="#range-instability">Exact range membership can be discontinuous</a>
+            <a href="#dependence-frames">Splitting addresses only declared dependence terms</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-08/"><span>Previous</span><strong>II-08 · Kinks, Binding Inequalities, and Simulation Inference</strong></a><a class="next" href="/resources/volume-02/ii-10/"><span>Next</span><strong>II-10 · Inference for Rank, Singular Values, and Eigenspaces</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

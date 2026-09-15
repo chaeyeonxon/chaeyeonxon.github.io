@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Policy Transmission and the Actual Unit of Randomization · Chae-Yeon Xon</title>
+  <meta name="description" content="A policy announcement travels through administrative stages before a person receives a treatment. Assignment, notification, eligibility review, enrollment, and service delivery define different interventions and populations. Estimands must be indexed by the actual randomized unit and the observed transmission path.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-13/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Policy Transmission and the Actual Unit of Randomization · Chae-Yeon Xon">
+  <meta property="og:description" content="A policy announcement travels through administrative stages before a person receives a treatment. Assignment, notification, eligibility review, enrollment, and service delivery define different interventions and populations. Estimands must be indexed by the actual randomized unit and the observed transmission path.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-13/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Policy Transmission and the Actual Unit of Randomization · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A policy announcement travels through administrative stages before a person receives a treatment. Assignment, notification, eligibility review, enrollment, and service delivery define different interventions and populations. Estimands must be indexed by the actual randomized unit and the observed transmission path.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-13</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Policy and Empirical Computation · Chapter IV-13</div>
+        <h1>Policy Transmission and the Actual Unit of Randomization</h1>
+        <p>A policy announcement travels through administrative stages before a person receives a treatment. Assignment, notification, eligibility review, enrollment, and service delivery define different interventions and populations. Estimands must be indexed by the actual randomized unit and the observed transmission path.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-13.01</span><strong>Intervention units</strong></li>
+              <li><span>IV-13.02</span><strong>Administrative dynamics</strong></li>
+              <li><span>IV-13.03</span><strong>Handoff chains</strong></li>
+              <li><span>IV-13.04</span><strong>Sample boundaries</strong></li>
+              <li><span>IV-13.05</span><strong>Interpretation of effects</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="assignment-unit">
+            <h2>1. Assignment, delivery, and exposure are separate variables</h2>
+            <p class="chapter-lede">A policy experiment identifies contrasts generated by its assignment mechanism. Administrative delivery determines how much treatment those assignments actually produce.</p>
+            <p>Let <span class="math-inline">\(Z\in\{0,1\}\)</span> denote randomized assignment at the declared experimental unit, <span class="math-inline">\(D(z)\in\{0,1\}\)</span> the potential receipt of a policy, and <span class="math-inline">\(Y(z)\)</span> the potential outcome under assignment. Randomization means <span class="math-inline">\(Z\)</span> is independent of the full potential-outcome vector, possibly conditional on design strata. The intention-to-treat effects are <span class="math-inline">\(ITT_{Y}=\mathbb{E}[Y\mid Z=1]-\mathbb{E}[Y\mid Z=0]\)</span> and <span class="math-inline">\(ITT_{D}=\mathbb{E}[D\mid Z=1]-\mathbb{E}[D\mid Z=0]\)</span>.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Actual unit of randomization</span><p>The unit is the entity whose assignment is independently drawn by the design: person, household, branch, district, date, or cluster. Repeated records observed below that level do not create additional independent assignments.</p></div>
+          </section>
+
+          <section class="chapter-section" id="administrative-chain">
+            <h2>2. A handoff chain maps assignment into receipt</h2>
+            <p>Suppose delivery requires ordered stages <span class="math-inline">\(R_{1},\ldots,R_{K}\)</span>, and every successful unit must pass all stages. Then the chain rule gives</p>
+            <div class="equation-block" role="math" aria-label="Serial delivery probability."><span class="equation-tex">\[P(D=1|Z=z)=P(R_{1}=1|Z=z)\prod _{k=2}^{K}P(R_{k}=1|R_{1:k-1}=1,Z=z).\]</span><span class="equation-number">(1)</span></div>
+            <p>This factorization is a probability identity for a serial all-stages path. A workflow with optional branches, retries, or skipped stages needs a state-transition representation or a sum over valid paths. Multiplying unconditional stage success rates generally gives the wrong delivery probability because the risk sets differ.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Random-assignment Wald estimand</span><p>If assignment is randomized, exclusion gives <span class="math-inline">\(Y(z)=Y(D(z))\)</span>, receipt is monotone so <span class="math-inline">\(D(1)\ge D(0)\)</span>, and <span class="math-inline">\(ITT_{D}&gt;0\)</span>, then <span class="math-inline">\(ITT_{Y}/ITT_{D}\)</span> equals the average receipt effect for compliers.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Exclusion and binary receipt imply <span class="math-inline">\(Y(D(1))-Y(D(0))=[Y(1)-Y(0)][D(1)-D(0)]\)</span>. Randomization identifies the expectation of this expression and the expectation of <span class="math-inline">\(D(1)-D(0)\)</span>. Monotonicity makes the latter indicator equal one only for compliers. Dividing by its positive mean conditions the outcome effect on that group. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="numeric-example">
+            <h2>3. A delivery experiment</h2>
+            <p>Let half the eligible units be assigned to an administrative encouragement. Suppose receipt probabilities are 0.6 under <span class="math-inline">\(Z=1\)</span> and 0.1 under <span class="math-inline">\(Z=0\)</span>. If receipt adds two outcome units for every unit and assignment has no direct effect, then <span class="math-inline">\(ITT_{D}=0.5\)</span>, <span class="math-inline">\(ITT_{Y}=2(0.5)=1\)</span>, and the Wald ratio is two.</p>
+            <p>The outcome ITT remains a valid assignment effect when exclusion or monotonicity fails. The receipt-effect interpretation then fails. A contrast among delivered units, <span class="math-inline">\(\mathbb{E}[Y\mid D=1]-\mathbb{E}[Y\mid D=0]\)</span>, compares groups selected partly by their potential delivery behavior and generally lacks a causal interpretation.</p>
+          </section>
+
+          <section class="chapter-section" id="transmission-boundaries">
+            <h2>4. Interference, missing stages, and weak delivery</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Individual standard errors for clustered assignment</span><p>When branches are randomized and customers are observed, assignment varies at the branch level. Treating customer records as independent randomizations understates design uncertainty unless the covariance structure justifies that treatment.</p></div>
+            <p>Interference requires potential outcomes indexed by relevant assignment vectors or exposure mappings. Attrition after assignment can break identification unless outcome missingness is handled by design, weighting, bounds, or defensible models. A zero first stage makes the Wald ratio undefined; a small first stage makes conventional approximations unreliable. Equality at the monotonicity boundary permits units with no assignment response. Stage-specific rates are unidentified when stage timestamps or risk-set indicators are absent. Calendar windows must include the full delivery latency or explicitly classify right-censored cases.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Record the randomization unit, strata, assignment probability, interference neighborhood, stage order, risk set, retry rule, delivery date, outcome window, and missingness status. Estimate assignment contrasts at the design level. Decompose delivery only after verifying that administrative fields encode the declared states and that every probability uses the correct conditional risk set.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify the three effects in Section 3.</li><li>Write a path-probability formula when delivery occurs through either stages <span class="math-inline">\(A\to B\)</span> or the direct stage C.</li><li>Explain what remains identified if some units assigned to control obtain treatment and monotonicity is credible.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Receipt changes by 0.5, so the constant receipt effect generates an outcome change of one and ratio two. <strong>2.</strong> Add the probabilities of the two disjoint successful paths; shared or overlapping paths require inclusion-exclusion or a transition model. <strong>3.</strong> The assignment ITT is identified, and the Wald ratio identifies the complier average effect when exclusion and the positive-first-stage condition also hold.</p></details>
+            <ol class="reference-list"><li>Guido W. Imbens and Joshua D. Angrist (1994), “Identification and Estimation of Local Average Treatment Effects,” <em>Econometrica</em> 62, 467–475.<small>Instrumental assignment and complier effects.</small></li><li>Peter M. Aronow and Cyrus Samii (2017), “Estimating Average Causal Effects under General Interference,” <em>Annals of Applied Statistics</em> 11, 1912–1947.<small>Exposure mappings under interference.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/almost-a-policy/">“Almost a Policy: Transmission through Administrative Handoffs.”</a><small>Related administrative-delivery application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Randomization unit, assignment support, strata, cluster count, interference mapping, potential-outcome indexing, stage order, path branching, conditional risk sets, retries, delivery definition, exclusion, monotonicity, first-stage magnitude, outcome window, attrition, censoring, covariance estimator, and estimand population.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers randomized encouragement with administrative transmission. Observational instruments, time-varying treatment regimes, and network-optimal designs require additional assumptions and methods.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-03/">II-03 · Random Assignment and Dynamic Policy Contrasts</a></li><li><a href="/resources/volume-01/i-11/">I-11 · Administrative Handoffs as Statistical Experiments</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#assignment-unit">Assignment, delivery, and exposure are separate variables</a>
+            <a href="#administrative-chain">A handoff chain maps assignment into receipt</a>
+            <a href="#numeric-example">A delivery experiment</a>
+            <a href="#transmission-boundaries">Interference, missing stages, and weak delivery</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-12/"><span>Previous</span><strong>IV-12 · Complementary Inputs, Option Production, and Supply Incentives</strong></a><a class="next" href="/resources/volume-04/iv-14/"><span>Next</span><strong>IV-14 · Monetary Policy Experiments and Structural Model Families</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

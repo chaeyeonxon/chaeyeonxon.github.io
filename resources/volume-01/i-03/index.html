@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>The Boundary Between Exact and Local Sufficiency · Chae-Yeon Xon</title>
+  <meta name="description" content="Exact sufficiency requires target constancy on every observation fiber. A derivative condition sees only tangent directions at one regular point. Constant-rank coordinates can turn that condition into a local factorization, while disconnected fibers and separate branches can still support different target levels.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-03/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="The Boundary Between Exact and Local Sufficiency · Chae-Yeon Xon">
+  <meta property="og:description" content="Exact sufficiency requires target constancy on every observation fiber. A derivative condition sees only tangent directions at one regular point. Constant-rank coordinates can turn that condition into a local factorization, while disconnected fibers and separate branches can still support different target levels.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-03/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Boundary Between Exact and Local Sufficiency · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Exact sufficiency requires target constancy on every observation fiber. A derivative condition sees only tangent directions at one regular point. Constant-rank coordinates can turn that condition into a local factorization, while disconnected fibers and separate branches can still support different target levels.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-03</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Observation, Representation, and Sufficiency · Chapter I-03</div>
+        <h1>The Boundary Between Exact and Local Sufficiency</h1>
+        <p>Exact sufficiency requires target constancy on every observation fiber. A derivative condition sees only tangent directions at one regular point. Constant-rank coordinates can turn that condition into a local factorization, while disconnected fibers and separate branches can still support different target levels.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-03.01</span><strong>Global fiber conditions</strong></li>
+              <li><span>I-03.02</span><strong>Local tangent conditions</strong></li>
+              <li><span>I-03.03</span><strong>Neighborhood factorization</strong></li>
+              <li><span>I-03.04</span><strong>Connected components and branches</strong></li>
+              <li><span>I-03.05</span><strong>Value, sign, and ordering targets</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="first-order-sufficiency">
+            <h2>1. Pointwise derivative factorization</h2>
+            <p class="chapter-lede">A target derivative can factor through an observation derivative at one state while the target still varies within nearby fibers. Pointwise, neighborhood, and global claims use different quantifiers.</p>
+            <p>Let <span class="math-inline">\(\mathcal{M}\)</span> and <span class="math-inline">\(\mathcal{N}\)</span> be smooth finite-dimensional manifolds, with report <span class="math-inline">\(h:\mathcal{M}\to \mathcal{N}\)</span> and target <span class="math-inline">\(\tau:\mathcal{M}\to \mathbb{R}^{r}\)</span>. At <span class="math-inline">\(x_{0}\)</span>, vertical directions form <span class="math-inline">\(V_{x_{0}}=\operatorname{ker}(Dh_{x_{0}})\)</span>.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · First-order sufficiency</span><p>The report is first-order sufficient for the target at <span class="math-inline">\(x_{0}\)</span> when <span class="math-inline">\(D\tau_{x_{0}}\)</span> vanishes on <span class="math-inline">\(V_{x_{0}}\)</span>. Equivalently, a linear map <span class="math-inline">\(L:\operatorname{range}(Dh_{x_{0}})\to \mathbb{R}^{r}\)</span> satisfies <span class="math-inline">\(D\tau_{x_{0}}=L Dh_{x_{0}}\)</span>.</p></div>
+            <p>The equivalence is Proposition I-02 applied to tangent spaces. It describes derivatives at one point and supplies no neighborhood decoder by itself.</p>
+          </section>
+
+          <section class="chapter-section" id="local-theorem">
+            <h2>2. A local decoder under a neighborhood condition</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Constant-rank local factorization</span><p>Suppose <span class="math-inline">\(h\)</span> and <span class="math-inline">\(\tau\)</span> are continuously differentiable near <span class="math-inline">\(x_{0}\)</span>, <span class="math-inline">\(h\)</span> has constant rank <span class="math-inline">\(k\)</span> there, and <span class="math-inline">\(D\tau_{x}\)</span> vanishes on <span class="math-inline">\(\operatorname{ker}(Dh_{x})\)</span> at every point in that neighborhood. After shrinking to a constant-rank coordinate neighborhood, a continuously differentiable decoder <span class="math-inline">\(\delta\)</span> exists on the local attained report manifold with <span class="math-inline">\(\tau=\delta\circ h\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> The constant-rank theorem supplies local coordinates (<span class="math-inline">\(u,v\)</span>) in which <span class="math-inline">\(h(u,v)=(u,0)\)</span>. Vertical directions are the <span class="math-inline">\(v\)</span> directions. The assumed derivative condition gives <span class="math-inline">\(D_{v}\tau=0\)</span> throughout a sufficiently small coordinate box. Integrating along line segments in each <span class="math-inline">\(v\)</span>-slice shows that <span class="math-inline">\(\tau(u,v)\)</span> is independent of <span class="math-inline">\(v\)</span>. Define <span class="math-inline">\(\delta(u,0)=\tau(u,0)\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="pointwise-failure">
+            <h2>3. A pointwise condition with no local decoder</h2>
+            <p>On <span class="math-inline">\(\mathbb{R}^{2}\)</span>, set <span class="math-inline">\(h(x,z)=x\)</span> and <span class="math-inline">\(\tau(x,z)=x^{2}+xz\)</span>. At (0,0), <span class="math-inline">\(\operatorname{ker}(Dh)\)</span> is the <span class="math-inline">\(z\)</span>-axis and <span class="math-inline">\(D\tau\)</span>=(0,0), so first-order sufficiency holds. For every nonzero <span class="math-inline">\(x\)</span> near zero, changing <span class="math-inline">\(z\)</span> changes <span class="math-inline">\(\tau\)</span> while leaving <span class="math-inline">\(h\)</span> fixed. A local exact decoder therefore does not exist.</p>
+            <p>The omitted condition is visible in the vertical derivative <span class="math-inline">\(\partial \tau/\partial z=x\)</span>: it vanishes at the reference point and fails throughout every open neighborhood.</p>
+          </section>
+
+          <section class="chapter-section" id="global-failure">
+            <h2>4. Disconnected fibers defeat global factorization</h2>
+            <p>Let <span class="math-inline">\(\mathcal{M}=(\mathbb{R}\setminus\{0\})\times\mathbb{R}\)</span>, define <span class="math-inline">\(h(x,z)=x^{2}\)</span>, and set <span class="math-inline">\(\tau(x,z)=\operatorname{sign}(x)\)</span>. The report has rank one everywhere. Each positive report <span class="math-inline">\(y\)</span> has two connected fiber components, the lines <span class="math-inline">\(x=\sqrt{y}\)</span> and <span class="math-inline">\(x=-\sqrt{y}\)</span>.</p>
+            <p>The target is smooth on <span class="math-inline">\(\mathcal{M}\)</span> and has zero derivative everywhere. It is constant on each connected component and takes values +1 and <span class="math-inline">\(-1\)</span> on the two components of the same fiber. Local decoders exist around every state; a global decoder from <span class="math-inline">\(h\)</span> to <span class="math-inline">\(\tau\)</span> does not.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Local derivative evidence promoted to exact sufficiency</span><p>Vanishing vertical derivatives provide componentwise constancy when suitable paths connect points inside a fiber. Exact global sufficiency still requires equality across disconnected components and any other globally separated states sharing the report.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Evaluate the rank of <span class="math-inline">\(Dh\)</span> across a neighborhood, construct a basis for its kernel, and test <span class="math-inline">\(D\tau\)</span> on that basis. Then trace or enumerate connected fiber components and compare component-level target constants. Numerical continuation should record branch labels.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify first-order sufficiency and failure of local factorization in Section 3.</li><li>Compute the fibers and derivatives in Section 4 and prove the absence of a global decoder.</li><li>Strengthen Proposition 1 to a global result under a stated connected-fiber condition.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> <span class="math-inline">\(Dh\)</span>=[1,0], so the vertical space is span{(0,1)}. The vertical target derivative equals <span class="math-inline">\(x\)</span> and vanishes only on the line <span class="math-inline">\(x=0\)</span>. <strong>2.</strong> Equal positive reports pair the two signs of <span class="math-inline">\(x\)</span>. A decoder value at <span class="math-inline">\(y\)</span> would have to equal both +1 and <span class="math-inline">\(-1\)</span>.</p></details>
+            <ol class="reference-list"><li>John M. Lee, <em>Introduction to Smooth Manifolds</em>, sections on the rank theorem, submersions, and level sets.<small>Local coordinates and tangent spaces of fibers.</small></li><li>Victor Guillemin and Alan Pollack, <em>Differential Topology</em>, Chapter 1.<small>Constant-rank maps and regular level sets.</small></li><li>III-02 · State Spaces, Fibers, Tangent Directions, and Metrics.<small>Frames and metric-aware tangent calculations.</small></li></ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Label the claim as pointwise first-order, local exact, componentwise, or global exact. Report the rank neighborhood, vertical derivative, fiber components, decoder domain, and any branch labels.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter treats smooth finite-dimensional constant-rank maps. Singular strata, nonsmooth fibers, and probabilistic approximate decoders require additional analysis.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-02/">I-02 · Linear Maps, Kernels, Quotients, and Information Dimension</a></li><li><a href="/resources/volume-03/iii-01/">III-01 · Differentiating Implicit Models</a></li><li><a href="/resources/volume-03/iii-02/">III-02 · State Spaces, Fibers, Tangent Directions, and Metrics</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#first-order-sufficiency">Pointwise derivative factorization</a>
+            <a href="#local-theorem">A local decoder under a neighborhood condition</a>
+            <a href="#pointwise-failure">A pointwise condition with no local decoder</a>
+            <a href="#global-failure">Disconnected fibers defeat global factorization</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-02/"><span>Previous</span><strong>I-02 · Linear Maps, Kernels, Quotients, and Information Dimension</strong></a><a class="next" href="/resources/volume-01/i-04/"><span>Next</span><strong>I-04 · Minimum Information Repair and Feasible Records</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

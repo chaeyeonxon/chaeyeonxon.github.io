@@ -1,0 +1,25 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ '/' | absolute_url }}</loc>
+  </url>
+  {% for paper in site.data.papers %}
+  <url>
+    <loc>{{ paper.landing_url | absolute_url }}</loc>
+  </url>
+  {% endfor %}
+  {% assign public_notes = site.data.notes | where: "public", true %}
+  {% for note in public_notes %}
+  <url>
+    <loc>{{ note.landing_url | absolute_url }}</loc>
+  </url>
+  {% endfor %}
+  {% for resource in site.data.resource_pages %}
+  <url>
+    <loc>{{ resource.path | absolute_url }}</loc>
+  </url>
+  {% endfor %}
+</urlset>

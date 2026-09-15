@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Clock Error and Decision-Relevant Moments · Chae-Yeon Xon</title>
+  <meta name="description" content="Recorded time W can differ from event time G through displacement U. A decision may require only selected moments of that displacement. Binomial moment recursions recover latent temporal moments, and polynomial losses reveal exactly which clock moments determine an action and its residual loss.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-09/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Clock Error and Decision-Relevant Moments · Chae-Yeon Xon">
+  <meta property="og:description" content="Recorded time W can differ from event time G through displacement U. A decision may require only selected moments of that displacement. Binomial moment recursions recover latent temporal moments, and polynomial losses reveal exactly which clock moments determine an action and its residual loss.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-09/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Clock Error and Decision-Relevant Moments · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Recorded time W can differ from event time G through displacement U. A decision may require only selected moments of that displacement. Binomial moment recursions recover latent temporal moments, and polynomial losses reveal exactly which clock moments determine an action and its residual loss.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-09</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Measurement, Records, and Time · Chapter I-09</div>
+        <h1>Clock Error and Decision-Relevant Moments</h1>
+        <p>Recorded time W can differ from event time G through displacement U. A decision may require only selected moments of that displacement. Binomial moment recursions recover latent temporal moments, and polynomial losses reveal exactly which clock moments determine an action and its residual loss.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-09.01</span><strong>Physical and recorded time</strong></li>
+              <li><span>I-09.02</span><strong>Required independence restrictions</strong></li>
+              <li><span>I-09.03</span><strong>Triangular moment recursions</strong></li>
+              <li><span>I-09.04</span><strong>Decision sufficiency</strong></li>
+              <li><span>I-09.05</span><strong>Moment minimality</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="moment-recursion">
+            <h2>1. Clock error is an additive latent variable</h2>
+            <p class="chapter-lede">A timing correction is identified only after the relation between event time, recorded time, and displacement is fixed. Independence converts observed moments into a triangular recursion.</p>
+            <p>Let physical event time be a scalar random variable <span class="math-inline">\(G\)</span>, let clock displacement be <span class="math-inline">\(U\)</span>, and let recorded time be <span class="math-inline">\(W=G+U\)</span>. Assume <span class="math-inline">\(G\)</span> and <span class="math-inline">\(U\)</span> are independent and possess finite moments through order <span class="math-inline">\(d\)</span>. Write <span class="math-inline">\(m_{k}^{V}\)</span>=E[<span class="math-inline">\(V^{k}\)</span>] and set every zeroth moment equal to one.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Triangular raw-moment recovery</span><p>If the moments of <span class="math-inline">\(W\)</span> and <span class="math-inline">\(U\)</span> are known through order <span class="math-inline">\(d\)</span>, the moments of <span class="math-inline">\(G\)</span> are uniquely determined by</p>
+              <div class="equation-block" role="math" aria-label="Triangular recursion for latent event-time moments."><span class="equation-tex">\[m_{k}^{G}=m_{k}^{W}-\sum _{j=1}^{k} C(k,j)m_{k-j}^{G}m_{j}^{U}, \quad k=1,\ldots ,d.\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Expand <span class="math-inline">\((G+U)^{k}\)</span> by the binomial theorem and use independence to factor every mixed moment. The term with <span class="math-inline">\(j=0\)</span> is <span class="math-inline">\(m_{k}^{G}\)</span>; all remaining latent moments of <span class="math-inline">\(G\)</span> have order below <span class="math-inline">\(k\)</span>. Rearrangement gives (1), and induction gives uniqueness. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="worked-clock">
+            <h2>2. A three-moment calculation</h2>
+            <p>Let <span class="math-inline">\(G\)</span> equal two or four with equal probability. Let an independent displacement <span class="math-inline">\(U\)</span> equal <span class="math-inline">\(-1\)</span> with probability 1/4 and 1 with probability 3/4. The event-time moments are (3,10,36), and the displacement moments are (1/2,1,1/2). Direct enumeration of <span class="math-inline">\(W=G+U\)</span> gives</p>
+            <div class="equation-block" role="math" aria-label="First three recorded-time moments."><span class="equation-tex">\[(m_{1}^{W},m_{2}^{W},m_{3}^{W})=(3.5,14,60.5).\]</span><span class="equation-number">(2)</span></div>
+            <p>Recursion (1) returns <span class="math-inline">\(3.5-0.5=3\)</span>, then <span class="math-inline">\(14-2(3)(0.5)-1=10\)</span>, then <span class="math-inline">\(60.5-3(10)(0.5)-3(3)(1)-0.5=36\)</span>. The calculation reports raw moments; central moments require the usual recentering identities.</p>
+          </section>
+
+          <section class="chapter-section" id="decision-moments">
+            <h2>3. Quadratic scheduling separates action and residual loss</h2>
+            <p>Suppose a planner schedules at recorded time plus a constant shift <span class="math-inline">\(s\)</span> and incurs squared timing loss <span class="math-inline">\([G-(W+s)]^{2}\)</span>. Since <span class="math-inline">\(G-W=-U\)</span>,</p>
+            <div class="equation-block" role="math" aria-label="Quadratic scheduling loss under clock displacement."><span class="equation-tex">\[L(s)=E[(U+s)^{2}]=\operatorname{Var}(U)+[s+E(U)]^{2}.\]</span><span class="equation-number">(3)</span></div>
+            <p>The unique optimal shift is <span class="math-inline">\(s^{*}=-E(U)\)</span>, while the minimized loss is <span class="math-inline">\(\operatorname{Var}(U)\)</span>. The mean displacement identifies the action; the second moment is additionally required to evaluate residual loss. More generally, the expectation of a degree-<span class="math-inline">\(d\)</span> polynomial loss is determined by displacement moments through order <span class="math-inline">\(d\)</span>, subject to any moments involving other random inputs in that loss.</p>
+            <p>Two symmetric clocks, <span class="math-inline">\(U_{A}\in\{-1\)</span>,1} with equal probabilities and <span class="math-inline">\(U_{B}=0\)</span>, have the same optimal quadratic shift zero. Their minimized losses are one and zero. Agreement about an action therefore carries less information than agreement about its value.</p>
+          </section>
+
+          <section class="chapter-section" id="assumption-failure">
+            <h2>4. Dependence breaks the marginal-moment recursion</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Calibration moments used without joint restrictions</span><p>Let <span class="math-inline">\(G\)</span> take <span class="math-inline">\(-1\)</span> and 1 equally and set <span class="math-inline">\(U=-G\)</span>. Then <span class="math-inline">\(W=0\)</span>, while both <span class="math-inline">\(G\)</span> and <span class="math-inline">\(U\)</span> have mean zero and variance one. Applying the independence formula at order two would give <span class="math-inline">\(m_{2}^{G}=m_{2}^{W}-m_{2}^{U}=-1\)</span>, an impossibility. The omitted mixed moment <span class="math-inline">\(2\mathbb{E}[GU]=-2\)</span> carries the discrepancy.</p></div>
+            <p>Mean independence can support the first-moment identity while leaving higher recursions invalid. Conditional calibration, cohort-specific displacement, censoring at observation-window boundaries, and heaping each require an explicit observation law.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Record whether moments are raw or central, compute (1) from low to high order, and substitute recovered moments back into the forward binomial equations. Report the largest forward residual and the conditioning of any scaled moment system. High-order raw moments can be numerically unstable, so rescaling time and using orthogonal polynomial bases may improve computation without changing identification.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce all moments in (2) by enumerating the four joint support points.</li><li>Derive the fourth-order recursion and identify every mixed-moment restriction supplied by independence.</li><li>For absolute timing loss, characterize the set of optimal shifts and identify the required feature of the displacement law.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The joint probabilities are 1/8, 3/8, 1/8, and 3/8 for recorded times 1, 3, 3, and 5. Their first three raw moments are 3.5, 14, and 60.5. <strong>2.</strong> Subtract <span class="math-inline">\(4m_{3}^{G}m_{1}^{U}+6m_{2}^{G}m_{2}^{U}+4m_{1}^{G}m_{3}^{U}+m_{4}^{U}\)</span> from <span class="math-inline">\(m_{4}^{W}\)</span>. <strong>3.</strong> Any negative median of <span class="math-inline">\(U\)</span> is optimal.</p></details>
+            <ol class="reference-list"><li>William Feller, <em>An Introduction to Probability Theory and Its Applications</em>, Volume II, chapters on characteristic functions and moments.<small>Moments of sums and convolution.</small></li><li>Raymond J. Carroll, David Ruppert, Leonard A. Stefanski, and Ciprian Crainiceanu, <em>Measurement Error in Nonlinear Models</em>.<small>Additive measurement-error assumptions and their consequences.</small></li><li>II-11 · Testing a Clock Model.<small>Sampling and overidentification checks for calibrated clock laws.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/fuzzy-clock/">“Fuzzy Clock: Decision-Specific Timing Information.”</a><small>Related scheduling application of clock moments.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the event, recorded-time, and displacement variables; sign convention; support and window; independence or conditional-independence restriction; available moment order; raw or central convention; forward residuals; loss function; action menu; and exact target of the timing claim.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter establishes finite-moment recovery and decision sufficiency for an additive clock. Distributional deconvolution, censoring estimators, and duration models require further assumptions.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-01/">II-01 · Conditional Probability and a Model&#x27;s Information Structure</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#moment-recursion">Clock error is an additive latent variable</a>
+            <a href="#worked-clock">A three-moment calculation</a>
+            <a href="#decision-moments">Quadratic scheduling separates action and residual loss</a>
+            <a href="#assumption-failure">Dependence breaks the marginal-moment recursion</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-08/"><span>Previous</span><strong>I-08 · Target-Directed Record Selection</strong></a><a class="next" href="/resources/volume-01/i-10/"><span>Next</span><strong>I-10 · Adjoint Bridges Under Clock Uncertainty</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

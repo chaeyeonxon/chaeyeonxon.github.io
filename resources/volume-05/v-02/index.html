@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Auditing the Arrows in a Proof · Chae-Yeon Xon</title>
+  <meta name="description" content="A proof is a sequence of typed implications. Every arrow has a domain, quantifiers, fixed and varying objects, and a conclusion. Auditing the arrows often reveals that a result combines a valid component with an unsupported extension, allowing the conclusion to be narrowed without discarding the surrounding argument.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-02/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Auditing the Arrows in a Proof · Chae-Yeon Xon">
+  <meta property="og:description" content="A proof is a sequence of typed implications. Every arrow has a domain, quantifiers, fixed and varying objects, and a conclusion. Auditing the arrows often reveals that a result combines a valid component with an unsupported extension, allowing the conclusion to be narrowed without discarding the surrounding argument.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-02/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Auditing the Arrows in a Proof · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A proof is a sequence of typed implications. Every arrow has a domain, quantifiers, fixed and varying objects, and a conclusion. Auditing the arrows often reveals that a result combines a valid component with an unsupported extension, allowing the conclusion to be narrowed without discarding the surrounding argument.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-02</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Audit Methods and Reproducibility · Chapter V-02</div>
+        <h1>Auditing the Arrows in a Proof</h1>
+        <p>A proof is a sequence of typed implications. Every arrow has a domain, quantifiers, fixed and varying objects, and a conclusion. Auditing the arrows often reveals that a result combines a valid component with an unsupported extension, allowing the conclusion to be narrowed without discarding the surrounding argument.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-02.01</span><strong>Legality of an implication</strong></li>
+              <li><span>V-02.02</span><strong>Fixed and random objects</strong></li>
+              <li><span>V-02.03</span><strong>Changing ranges</strong></li>
+              <li><span>V-02.04</span><strong>Decomposed conclusions</strong></li>
+              <li><span>V-02.05</span><strong>Proof validity and claim truth</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="typed-arrow">
+            <h2>1. Each implication carries domains and quantifiers</h2>
+            <p class="chapter-lede">A proof audit asks which objects are fixed, which vary, where each expression is defined, and whether the conclusion uses the same quantifier order as its premise.</p>
+            <p>Write an arrow as <span class="math-inline">\((A,D,Q)\Rightarrow C\)</span>: assumptions, domains, quantifiers, and conclusion. Common changes include pointwise to uniform, almost sure to everywhere, fixed index to selected index, local to global, finite horizon to infinite horizon, and equality at an interior point to equality on a boundary. The proof is complete only if every change is licensed by a theorem whose hypotheses are present.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Arrow ledger</span><p>For each proof step, record the input statements, output statement, rule or cited result, object types, exceptional set, and dependencies. A step marked “algebra” still records nonzero denominators, operator domains, and any interchange of limit, expectation, derivative, or optimization.</p></div>
+          </section>
+
+          <section class="chapter-section" id="pointwise-example">
+            <h2>2. Pointwise convergence does not control moving peaks</h2>
+            <p>On [0,1], define <span class="math-inline">\(f_{n}(x)=n x(1-x)^{n}\)</span>. For each fixed <span class="math-inline">\(x\)</span>, the sequence converges to zero: at the endpoints this is immediate, and for <span class="math-inline">\(0&lt;x&lt;1\)</span> the exponential decay dominates <span class="math-inline">\(n\)</span>. Differentiation shows the maximum occurs at <span class="math-inline">\(x_{n}=1/(n+1)\)</span>, with value</p>
+            <div class="equation-block" role="math" aria-label="Maximum of a moving peak sequence."><span class="equation-tex">\[\operatorname{sup}_{0\le x\le 1}f_{n}(x)=[n/(n+1)]^{n+1}\to e^{-1}.\]</span><span class="equation-number">(1)</span></div>
+            <p>Thus pointwise convergence to zero does not imply uniform convergence or convergence of suprema to zero. At <span class="math-inline">\(n=10\)</span> and 100, the maxima are approximately 0.350494 and 0.366051.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Uniform inequalities pass to the limit</span><p>If <span class="math-inline">\(f_{n}\)</span> converges uniformly to <span class="math-inline">\(f\)</span> on a set <span class="math-inline">\(D\)</span> and <span class="math-inline">\(f_{n}(x)\le0\)</span> for all <span class="math-inline">\(x\in D\)</span> and every <span class="math-inline">\(n\)</span>, then <span class="math-inline">\(f(x)\le0\)</span> for every <span class="math-inline">\(x\in D\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> If <span class="math-inline">\(f(x^{*})=\delta&gt;0\)</span> at some point, uniform convergence gives <span class="math-inline">\(\lvert f_{n}(x^{*})-f(x^{*})\rvert&lt;\delta/2\)</span> for all large <span class="math-inline">\(n\)</span>. Then <span class="math-inline">\(f_{n}(x^{*})&gt;\delta/2\)</span>, contradicting the assumed inequality. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="decompose-conclusion">
+            <h2>3. Narrow the conclusion at the first unsupported arrow</h2>
+            <p>Suppose a theorem claims existence, uniqueness, continuity, and identification. Its existence argument may be valid while uniqueness uses strict convexity absent at a parameter boundary. The audit should preserve existence and mark only the dependent conclusions as unsupported. A dependency graph prevents an error in one branch from invalidating unrelated results.</p>
+            <p>Fixed and random objects require the same care. A probability statement established for every predetermined index does not automatically apply to an index selected from the realized data. Conditioning can repair some arguments, but only when the conditional law and measurable selection are specified.</p>
+          </section>
+
+          <section class="chapter-section" id="arrow-boundaries">
+            <h2>4. Null sets, boundaries, and interchanges need separate gates</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Almost-everywhere identity evaluated at a named point</span><p>An equality holding outside a measure-zero set supplies no value at a particular point that may lie in that set. A version, continuity argument, or one-sided limit must define the boundary value.</p></div>
+            <p>Division requires a nonzero denominator. Matrix inversion requires the declared square map to be bijective on its spaces. Differentiation under an integral needs domination or another interchange theorem. Expectation limits need uniform integrability or suitable domination beyond convergence in probability. Infinite-horizon conclusions need tail control. Equality constraints can reduce dimension, while active inequalities replace unconstrained gradients by tangent-cone conditions. Disconnected domains block path-integration arguments across components.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Number the proof sentences, parse each into premises and conclusion, and add explicit domains. Mark theorem invocations and compare every hypothesis with the assumption ledger. Search for quantifier changes and operators with restricted domains. When a step fails, compute the smallest downstream claim set and test whether a local repair, added assumption, or narrowed conclusion closes the gap.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Derive the maximizer and limit in (1).</li><li>Give an almost-surely convergent sequence whose expectations fail to converge.</li><li>Audit the step <span class="math-inline">\(A^{-1}Ax=x\)</span> when <span class="math-inline">\(A\)</span> is a rectangular matrix.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Differentiate the logarithm on (0,1); the stationary condition is <span class="math-inline">\(1/x-n/(1-x)=0\)</span>. <strong>2.</strong> On (0,1), let <span class="math-inline">\(X_{n}=n1\{U\le1/n\}\)</span>; it converges almost surely to zero for continuous <span class="math-inline">\(U\)</span>, while its expectation is one. <strong>3.</strong> A two-sided inverse generally does not exist; a left inverse only recovers <span class="math-inline">\(x\)</span> when <span class="math-inline">\(A\)</span> has full column rank and dimensions are compatible.</p></details>
+            <ol class="reference-list"><li>Walter Rudin, <em>Principles of Mathematical Analysis</em>, chapters on sequences of functions.<small>Pointwise and uniform convergence.</small></li><li>Patrick Billingsley, <em>Probability and Measure</em>, sections on modes of convergence and integration.<small>Almost-sure limits and expectation interchange.</small></li><li>R. Tyrrell Rockafellar and Roger J-B Wets, <em>Variational Analysis</em>, sections on constrained first-order conditions.<small>Boundary and tangent-cone arguments.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Object types, domains, quantifier order, fixed versus selected indices, exceptional sets, boundary values, denominator and inverse conditions, convergence mode, domination or uniform integrability, derivative and expectation interchanges, active constraints, connected components, time horizon, terminal condition, and the exact downstream claims depending on each arrow.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter presents manual proof-audit methods. Machine-checked type theory and formalization in theorem provers require separate syntax and libraries.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-05/v-01/">V-01 · Version, Evidence, and Claim Ledgers</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#typed-arrow">Each implication carries domains and quantifiers</a>
+            <a href="#pointwise-example">Pointwise convergence does not control moving peaks</a>
+            <a href="#decompose-conclusion">Narrow the conclusion at the first unsupported arrow</a>
+            <a href="#arrow-boundaries">Null sets, boundaries, and interchanges need separate gates</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-05/v-01/"><span>Previous</span><strong>V-01 · Version, Evidence, and Claim Ledgers</strong></a><a class="next" href="/resources/volume-05/v-03/"><span>Next</span><strong>V-03 · Minimal Counterexamples with Economic Structure</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

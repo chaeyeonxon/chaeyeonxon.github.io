@@ -1,0 +1,200 @@
+{
+  "id": "IV",
+  "number": 4,
+  "title": "Structural Models and Economic Computation",
+  "purpose": "This book carries economic primitives through choice, equilibrium, measurement, and welfare calculations. It emphasizes executable model contracts: every counterfactual uses the same utility, state, transition, choice set, normalization, and shock law unless a stated alternative model changes one of those objects.",
+  "parts": [
+    "Demand, Supply, Bundles, and Welfare",
+    "Dynamic Choice, Aggregation, and Policy Capacity",
+    "Policy and Empirical Computation"
+  ],
+  "chapters": [
+    {
+      "id": "IV-01",
+      "part": "Demand, Supply, Bundles, and Welfare",
+      "title": "Random Utility, Choice Sets, and Normalization",
+      "overview": "A discrete-choice model begins with consumers, alternatives, utilities, a shock law, and a choice set. Normalizations remove utility components that choices cannot reveal. Once these objects are declared, probabilities, simulations, derivatives, and counterfactuals can be generated from the same executable model rather than from disconnected formulas.",
+      "topics": ["Consumers and alternatives", "Random utility", "Logit probabilities", "Normalization", "Executable model objects"],
+      "method": "With type-I extreme-value shocks, integrate the maximum-utility rule to obtain the logit share. Show that a common additive shift leaves all shares unchanged, select an outside-option or location normalization, and distinguish that invariance from changes in utility scale.",
+      "exercise": "Simulate a market with an outside option. Apply a common utility shift, an outside-option renormalization, and a change in shock scale; verify which objects remain unchanged and which elasticities move.",
+      "checkpoint": "State the utility location and scale normalizations before interpreting a coefficient. The same numerical coefficient can imply different choice sensitivity under a different shock scale.",
+      "scope": "The chapter establishes the random-utility contract used later. Mixed logit, nested structures, and broader choice-model surveys are included only when a later calculation requires them."
+    },
+    {
+      "id": "IV-02",
+      "part": "Demand, Supply, Bundles, and Welfare",
+      "title": "Residual-Income Demand and Approximation Domains",
+      "overview": "When utility depends on income remaining after purchase, price enters through a nonlinear residual-income term. Replacing that term by a linear price coefficient is a local approximation whose error depends on price-income ratios, affordability, and heterogeneity. The approximation domain must therefore travel with any derivative, share, or welfare calculation.",
+      "topics": ["Exact residual-income utility", "Linear price branches", "Taylor error", "Affordability", "Income heterogeneity"],
+      "method": "Expand log(y-p) around a declared price: its first derivative is minus one over residual income and its second derivative controls the remainder. Aggregate the resulting individual probabilities over the income distribution while excluding alternatives that violate affordability.",
+      "exercise": "Use two income groups facing the same products. Compare exact and linearized shares, own-price derivatives, and approximation errors as price-income ratios rise.",
+      "checkpoint": "A local price coefficient is tied to a base point, income distribution, and choice set. Reusing it outside that domain changes the model.",
+      "scope": "The chapter covers residual-income demand and its controlled approximation. General consumer theory and flexible demand-system estimation are outside scope."
+    },
+    {
+      "id": "IV-03",
+      "part": "Demand, Supply, Bundles, and Welfare",
+      "title": "Market Shares, Inversion, and Demographic Micro Moments",
+      "overview": "Market shares integrate individual choices over heterogeneity, while demographic micro moments condition on purchase events. Share inversion recovers mean utilities for a fixed model and parameter vector. Matching aggregate shares and a limited set of purchaser moments does not reconstruct the joint distribution of utilities, incomes, and choices.",
+      "topics": ["Individual-to-market aggregation", "Share matching", "Purchaser moments", "Estimation objectives", "Reconstruction boundaries"],
+      "method": "Write the market share as the expectation of individual choice probability. Derive the purchaser mean E[z_i | j chosen] as E[z_i P_ij]/E[P_ij], then combine share and moment residuals in a transparent objective while holding simulation draws fixed.",
+      "exercise": "Fit mean utilities under exact and approximate income specifications. Recompute shares and one purchaser-income moment, then compare the unobserved substitution patterns that remain free.",
+      "checkpoint": "A fitted set of shares and micro moments validates those moments under the model. It does not establish full empirical replication or uniqueness of every latent object.",
+      "scope": "The chapter develops the aggregation and moment calculations used in the demand case studies. Full BLP estimation and general GMM theory are left to specialized treatments."
+    },
+    {
+      "id": "IV-04",
+      "part": "Demand, Supply, Bundles, and Welfare",
+      "title": "From Demand Derivatives to Markups and Prices",
+      "overview": "Supply-side counterfactuals inherit the entire demand derivative. Multi-product ownership maps the share Jacobian into markups through firms' first-order conditions. Two demand systems that match baseline shares can therefore imply different elasticities, markups, merger effects, and equilibrium prices.",
+      "topics": ["Individual demand derivatives", "Aggregate share Jacobians", "Ownership matrices", "Markup equations", "Price counterfactuals"],
+      "method": "Differentiate individual probabilities and integrate to form Delta, the derivative of shares with respect to prices. For ownership matrix Omega, derive s+(Omega elementwise Delta)'(p-c)=0 and solve for markups when the system is nonsingular.",
+      "exercise": "Compute markups in a two-product market under single-product and joint ownership. Repeat with exact residual-income and linear-price demand calibrated to the same baseline shares.",
+      "checkpoint": "Matching shares does not imply matching the demand Jacobian. Report derivative formulas, ownership, costs, and the equilibrium root used in a price comparison.",
+      "scope": "The chapter covers static differentiated-product pricing used by the resources. Dynamic oligopoly and broad industrial-organization surveys are outside scope."
+    },
+    {
+      "id": "IV-05",
+      "part": "Demand, Supply, Bundles, and Welfare",
+      "title": "Consumer Welfare and Compensating Variation",
+      "overview": "Consumer welfare must be computed from the same utility model that generated demand. A log-sum formula has a closed monetary interpretation under quasilinear utility with a constant marginal utility of income. Nonlinear residual-income utility generally requires a consumer-specific compensating-variation equation and an explicit treatment of shocks and choice sets.",
+      "topics": ["The valuation object", "Log-sum welfare", "Nonlinear income effects", "Ex ante and ex post welfare", "Coherent counterfactuals"],
+      "method": "Derive the standard log-sum change for a quasilinear logit model. For nonlinear income utility, define compensating variation as the income change that equalizes pre- and post-policy indirect utility and solve the monotone scalar equation for each consumer or simulation draw.",
+      "exercise": "Evaluate a product-entry or price-change counterfactual under quasilinear and residual-income utility. Compare closed-form log-sum welfare with root-solved compensating variation across income groups.",
+      "checkpoint": "The welfare routine must share the utility, shocks, normalization, and choice set used for demand. A convenient formula from another branch creates a different model.",
+      "scope": "The chapter treats consumer compensating variation for the demand systems in this book. Producer surplus, distributional social welfare, and general welfare theory require separate choices."
+    },
+    {
+      "id": "IV-06",
+      "part": "Demand, Supply, Bundles, and Welfare",
+      "title": "Viewing-Time Optimization and Set-Valued Demand",
+      "overview": "A bundle's value can arise from an internal allocation problem rather than a sum of item values. With concave viewing benefits and a time constraint, optimal attention depends jointly on all available channels. Reference-bundle increments approximate this set value only under restrictions that make marginal contributions portable across sets.",
+      "topics": ["Time allocation", "KKT systems", "Proportional allocation rules", "Reference bundles", "Purchase and choice sets"],
+      "method": "Solve a two-channel concave time-allocation problem with KKT conditions and derive the proportional rule for the chosen functional form. Substitute the optimizer to obtain the exact set value W(S), then compare W(S union j)-W(S) across reference sets.",
+      "exercise": "Enumerate every bundle in a small channel universe. Compute exact viewing value, reference-increment approximations, and purchase probabilities under one fixed shock law.",
+      "checkpoint": "A marginal value measured at one reference bundle is not automatically an item value valid in every counterfactual set.",
+      "scope": "The chapter covers viewing allocation and finite set-valued demand. General media economics, attention models, and large-scale bundle estimation are outside scope."
+    },
+    {
+      "id": "IV-07",
+      "part": "Demand, Supply, Bundles, and Welfare",
+      "title": "Bargaining, Disagreement States, and Choice-Law Consistency",
+      "overview": "A bargaining calculation requires a feasible agreement set, disagreement payoffs, bargaining weights, and a rule linking fees to consumer choices and firm profits. Target-specific substitutions in the choice kernel can change both surplus and disagreement values. Coherent counterfactuals therefore propagate one declared choice law through demand, bargaining, and welfare.",
+      "topics": ["The bargaining object", "Nash bargaining", "Choice kernels", "Target-specific computation", "Welfare consistency"],
+      "method": "Maximize the weighted Nash product of agreement surpluses and derive the fee condition. Differentiate profits with respect to a negotiated fee through the same consumer choice probabilities used to value carriage and the disagreement state.",
+      "exercise": "Solve a one-distributor, two-channel bargaining problem. Compare a coherent choice kernel with a calculation that changes the kernel by target and trace the resulting fees, carriage, and welfare.",
+      "checkpoint": "Using the same Nash formula does not make two calculations the same structural model. Check the disagreement state and choice law at every target.",
+      "scope": "The chapter supplies bargaining mechanics for the channel case study. General bargaining networks and endogenous network formation are outside scope."
+    },
+    {
+      "id": "IV-08",
+      "part": "Dynamic Choice, Aggregation, and Policy Capacity",
+      "title": "Dynamic Choice and Forward Simulation",
+      "overview": "A dynamic choice model links current rewards, state transitions, expectations, and policy rules. Solving the Bellman equation identifies a policy for the declared state; forward simulation then maps that policy into employment, participation, or other paths. Compressing the state to counts is valid only when transition and reward objects close on those counts.",
+      "topics": ["States, transitions, and rewards", "Bellman equations", "Policies and deviations", "State compression", "A labor-market example"],
+      "method": "For a finite Markov decision problem, apply value iteration or solve policy-specific linear systems. Simulate the invariant or transition distribution under the resulting policy, then compare a full microstate calculation with an aggregate state that satisfies or violates lumpability.",
+      "exercise": "Build a small employment-choice model with job offers and separations. Simulate individual states, group counts, and a compressed transition; quantify the error when within-group composition matters.",
+      "checkpoint": "Observed counts can be predictive without forming a closed structural state. Verify reward and transition invariance within every proposed aggregate cell.",
+      "scope": "The chapter treats finite dynamic choice and forward simulation. Dynamic games and broad labor-search theory are excluded."
+    },
+    {
+      "id": "IV-09",
+      "part": "Dynamic Choice, Aggregation, and Policy Capacity",
+      "title": "Corporate Control and Policy-Invariant Aggregation",
+      "overview": "Corporate groups can coordinate financing, pricing, or investment across legal entities. Aggregates built from entity-level balance sheets may conceal control links that govern joint adjustment to policy. A policy-invariant state must preserve the directions through which the relevant corporate organization changes equilibrium responses.",
+      "topics": ["Economic organization", "Joint adjustment", "Comparative statics", "Identification limits", "Empirical operationalization"],
+      "method": "Construct two control structures with the same reported entity aggregates and baseline equilibrium but different derivatives with respect to a financing or monetary-policy parameter. Use the hidden-response rank to identify the number of additional local coordinates required.",
+      "exercise": "Generate a small ownership network, aggregate it by legal location, and compute equilibrium response derivatives. Add ultimate-control or group-level records and measure the remaining hidden response.",
+      "checkpoint": "An association between a control proxy and observed responses does not by itself identify the effect of intervening on control. State the policy, equilibrium map, and maintained network assumptions.",
+      "scope": "The chapter develops corporate-control aggregation as a structural example. Corporate law, multinational finance, and full empirical implementation lie outside its boundary."
+    },
+    {
+      "id": "IV-10",
+      "part": "Dynamic Choice, Aggregation, and Policy Capacity",
+      "title": "Heterogeneous States, Transition Economies, and Additive Summaries",
+      "overview": "A distribution of households, firms, or cases is often the true dynamic state. Moments or counts provide useful summaries when their transitions close under the policy and equilibrium law. Fixed-price transitions and equilibrium feedback must be separated, because a statistic sufficient for logistics can fail once prices or incentives respond to the distribution.",
+      "topics": ["Distribution states", "Fixed prices and equilibrium", "Resolution", "Moment closure", "Transition and logistics examples"],
+      "method": "Write the law of motion for a finite type distribution and derive the induced transition for selected moments. Test closure by constructing two distributions with the same moments and different next-period moments or equilibrium prices.",
+      "exercise": "Simulate a transition economy and an administrative queue. Compare full distributions, count summaries, and augmented moments under fixed and endogenous prices.",
+      "checkpoint": "A backlog or moment can forecast a transition while omitting causal feedback through selection, prices, or policy. Declare which channels are held fixed.",
+      "scope": "The chapter covers finite distribution dynamics and closure diagnostics. Full heterogeneous-agent macroeconomics and queueing theory are outside scope."
+    },
+    {
+      "id": "IV-11",
+      "part": "Dynamic Choice, Aggregation, and Policy Capacity",
+      "title": "Stable Baselines and Policy Response Capacity",
+      "overview": "A stable baseline describes what happens under the prevailing transition law. Policy capacity describes the set of response paths reachable through available interventions. These objects depend on different matrices and constraints, so a quiet system can contain substantial unused response directions while a volatile system can offer few controllable directions.",
+      "topics": ["Response matrices", "Transition accounting", "Action menus", "Mechanism separation", "Value of instruments"],
+      "method": "Hold a stable transition matrix fixed and vary the intervention map. Stack finite-horizon responses to obtain the response span, then impose sign, budget, and assignment constraints to distinguish linear span from feasible policy paths.",
+      "exercise": "Compare a single policy arm, a randomized mixture, and a multi-arm design under the same transition dynamics. Compute response rank, feasible hulls, and target value.",
+      "checkpoint": "A large algebraic response span does not ensure a feasible, ethical, or implementable policy. Report the admissible action set and delivery constraints.",
+      "scope": "The chapter links transition accounting to intervention capacity. General behavioral control and engineering control design are outside scope."
+    },
+    {
+      "id": "IV-12",
+      "part": "Policy and Empirical Computation",
+      "title": "Complementary Inputs, Option Production, and Supply Incentives",
+      "overview": "Households may need several inputs jointly to make an option feasible: time, care, transport, scheduling, or service availability. The resulting opportunity set is a production object distinct from preferences over feasible options. Bundle experiments and provider incentives can then be analyzed through enabling sets, set functions, and cost certificates.",
+      "topics": ["Options and preferences", "Alternative enabling paths", "Time and care constraints", "Package experiments", "Supply incentives"],
+      "method": "Represent each option by its minimal enabling sets and recover its feasibility function with Mobius coefficients. Form a minimum-cost program for enabling a target set of options and use the dual to derive a bound on any implementation.",
+      "exercise": "Enumerate a three-input environment with alternative enabling paths. Vary provider costs and experimental support, solve the primal and dual, and identify which options become feasible.",
+      "checkpoint": "A feasible job or service option need not be chosen, filled, or welfare improving. Carry preferences, supply response, and equilibrium separately from opportunity production.",
+      "scope": "The chapter covers complementary-input opportunity production. Broad labor supply, childcare markets, and mechanism design require additional models."
+    },
+    {
+      "id": "IV-13",
+      "part": "Policy and Empirical Computation",
+      "title": "Policy Transmission and the Actual Unit of Randomization",
+      "overview": "A policy announcement travels through administrative stages before a person receives a treatment. Assignment, notification, eligibility review, enrollment, and service delivery define different interventions and populations. Estimands must be indexed by the actual randomized unit and the observed transmission path.",
+      "topics": ["Intervention units", "Administrative dynamics", "Handoff chains", "Sample boundaries", "Interpretation of effects"],
+      "method": "Define an intention-to-treat effect at the assignment stage and factor delivery probability through conditional stage transitions. Construct a path score from the Markov handoff system and show how missing stage information limits the treatment-on-the-treated interpretation.",
+      "exercise": "Simulate a lottery-to-enrollment pipeline with staggered notifications. Compare assignment effects, effects among arrivals, and a design that randomizes one administrative message.",
+      "checkpoint": "A comparison among people who reached a later stage generally conditions on post-assignment selection. Anchor every effect to its assignment and sample boundary.",
+      "scope": "The chapter develops administrative transmission for program evaluation. General health economics and comprehensive causal mediation theory are outside scope."
+    },
+    {
+      "id": "IV-14",
+      "part": "Policy and Empirical Computation",
+      "title": "Monetary Policy Experiments and Structural Model Families",
+      "overview": "Comparing monetary models requires a common shock unit, horizon, observable target, conditioning information, and loss. Structural families can then enter the comparison by their implied response maps. Calibration, profiling, and estimation are separate routes to model-specific inputs and should be labeled accordingly.",
+      "topics": ["A common experiment protocol", "Four structural families", "Response objects", "Calibration and profiling", "Counterfactual comparison"],
+      "method": "Define one normalized monetary shock and compute response vectors from small representative models under matching observable conventions. Project a common target onto each family's response set and report family entry, sign, or distance frontiers.",
+      "exercise": "Implement transparent representative-agent and heterogeneous-response surrogates under the same normalization. Vary the experiment set and record how model-family coverage changes.",
+      "checkpoint": "A transparent surrogate illustrates a structural mechanism and comparison protocol. It is not a replication of a full DSGE or HANK implementation.",
+      "scope": "The chapter supplies the cross-family computational protocol used by the research. Canonical DSGE and HANK solution methods remain separate literatures."
+    },
+    {
+      "id": "IV-15",
+      "part": "Policy and Empirical Computation",
+      "title": "Price Baskets, Bond Cash Flows, and Measurement Certificates",
+      "overview": "A price or value is defined by its source fields, units, aggregation rule, valuation date, and environment. Price baskets transport item-level records into an index; bond prices transport cash flows through discount factors. Certificates preserve enough of the source to recompute the target under declared environment changes.",
+      "topics": ["Basket measurement", "Source fields and revaluation", "Bond cash-flow value", "Sensitivity records", "Information budgets"],
+      "method": "Write bond value as the discounted sum of cash flows and derive first- and second-order yield sensitivities. Extend the calculation to key-rate shifts, then compare records that retain only price and duration with records that retain dated cash flows.",
+      "exercise": "Construct bonds with the same price and duration but different cash-flow timing. Apply parallel and nonparallel yield shifts and compare exact revaluation with each certificate.",
+      "checkpoint": "Equal price or duration does not guarantee equal response to a new environment. The certificate must preserve the source directions relevant to that revaluation.",
+      "scope": "The chapter covers baskets, fixed-income cash flows, and sensitivity certificates. Options, stochastic discount-factor estimation, and term-structure modeling are outside scope."
+    },
+    {
+      "id": "IV-16",
+      "part": "Policy and Empirical Computation",
+      "title": "Gas Records, Event Time, and Storage Decisions",
+      "overview": "Recorded event time can differ from physical delivery, market response, and the decision deadline. When timing is uncertain, the value of a clock depends on the storage or scheduling action it informs. Measurement quality is therefore target-specific and must be evaluated against the loss of the actual decision.",
+      "topics": ["Physical and recorded events", "Observed responses", "Comparison designs", "Decision loss", "Timing uncertainty"],
+      "method": "Under quadratic scheduling loss, condition on the available timestamp record and derive the optimal action as a posterior mean, with residual risk equal to posterior variance. Compare that decision metric with an event-study coefficient indexed by recorded time.",
+      "exercise": "Generate physical delivery times, noisy recorded times, prices, and storage choices. Compare naive event time, clock-adjusted designs, and decision loss under several clock laws.",
+      "checkpoint": "A timing pipeline can support a declared prediction or storage decision. It does not by itself identify every causal effect of war, regulation, or energy policy.",
+      "scope": "The chapter uses gas records as a timing-information example. Gas engineering, conflict attribution, and broad energy-market modeling lie outside scope."
+    },
+    {
+      "id": "IV-17",
+      "part": "Policy and Empirical Computation",
+      "title": "Bank Records, Reporting Systems, and Chronological Validation",
+      "overview": "Administrative bank records are produced by definitions, reporting incentives, revisions, and acquisition choices. A learning system combines those records with a prior and a likelihood, then evaluates forecasts in chronological order. Discrete, rounded, censored, or point-mass variables require likelihoods that respect their support.",
+      "topics": ["Field meaning", "Posterior construction", "Record acquisition", "Prediction baselines", "Calibration and validation"],
+      "method": "Build a small Gaussian updating model for continuous signals and a separate mixed likelihood for a variable with a point mass. Show why evaluating the point mass with a continuous density yields an invalid probability model, then design a leakage-free rolling evaluation.",
+      "exercise": "Create a dated archive with revisions and missing fields. Compare persistence and simple regression baselines with sequential updating, evaluating calibration and loss only on future periods.",
+      "checkpoint": "Good fit or forecast performance supports the declared prediction task. Causal policy effects and welfare conclusions require separate identifying assumptions and targets.",
+      "scope": "The chapter covers record semantics, sequential prediction, and chronological validation. Bank regulation, Bayesian nonparametrics, and general machine learning are outside scope."
+    }
+  ]
+}

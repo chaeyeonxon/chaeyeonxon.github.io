@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Symmetry, Order Statistics, and Endogenous Selection · Chae-Yeon Xon</title>
+  <meta name="description" content="An odd statistic has zero expectation under central symmetry when its index is fixed. If the index is selected using the same shocks, the composed statistic may lose that symmetry. Order-statistic calculations and joint reflection conditions reveal the missing step.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-02/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Symmetry, Order Statistics, and Endogenous Selection · Chae-Yeon Xon">
+  <meta property="og:description" content="An odd statistic has zero expectation under central symmetry when its index is fixed. If the index is selected using the same shocks, the composed statistic may lose that symmetry. Order-statistic calculations and joint reflection conditions reveal the missing step.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-02/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Symmetry, Order Statistics, and Endogenous Selection · Chae-Yeon Xon">
+  <meta name="twitter:description" content="An odd statistic has zero expectation under central symmetry when its index is fixed. If the index is selected using the same shocks, the composed statistic may lose that symmetry. Order-statistic calculations and joint reflection conditions reveal the missing step.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-02</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Conditional Probability, Design, and Partial Identification · Chapter II-02</div>
+        <h1>Symmetry, Order Statistics, and Endogenous Selection</h1>
+        <p>An odd statistic has zero expectation under central symmetry when its index is fixed. If the index is selected using the same shocks, the composed statistic may lose that symmetry. Order-statistic calculations and joint reflection conditions reveal the missing step.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-02.01</span><strong>Symmetry of fixed transformations</strong></li>
+              <li><span>II-02.02</span><strong>Order statistics</strong></li>
+              <li><span>II-02.03</span><strong>Selected indices</strong></li>
+              <li><span>II-02.04</span><strong>Joint reflection conditions</strong></li>
+              <li><span>II-02.05</span><strong>Numbers and sizes of markets</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="fixed-symmetry">
+            <h2>1. Symmetry must act on the complete statistic</h2>
+            <p class="chapter-lede">Central symmetry makes an integrable odd function mean zero. A data-dependent selection rule can turn individually odd candidates into a non-odd selected statistic.</p>
+            <p>Let <span class="math-inline">\(X\in \mathbb{R}^{n}\)</span> satisfy <span class="math-inline">\(X\equiv d-X\)</span>. If an integrable statistic <span class="math-inline">\(T\)</span> obeys <span class="math-inline">\(T(-x)=-T(x)\)</span>, then <span class="math-inline">\(\mathbb{E}[T(X)]=0\)</span>.</p>
+            <div class="proof"><p><strong>Proof.</strong> Distributional symmetry gives <span class="math-inline">\(\mathbb{E}[T(X)]=\mathbb{E}[T(-X)]=-\mathbb{E}[T(X)]\)</span>. Integrability makes both expectations finite. ∎</p></div>
+            <p>For order statistics, reflection reverses rank: if <span class="math-inline">\(X_{(1)}\le\cdots\le X_{(n)}\)</span>, then <span class="math-inline">\(X_{(k)}(-x)=-X_{(n+1-k)}(x)\)</span>. The median of an odd sample is therefore odd.</p>
+          </section>
+
+          <section class="chapter-section" id="selected-median">
+            <h2>2. Endogenous selection produces a signed absolute median</h2>
+            <p>Let <span class="math-inline">\(X_{1},X_{2},X_{3}\)</span> be independent <span class="math-inline">\(\operatorname{Uniform}(-1,1)\)</span> variables and let <span class="math-inline">\(M=X_{(2)}\)</span>. Define two candidate statistics <span class="math-inline">\(T_{1}=M\)</span> and <span class="math-inline">\(T_{2}=-M\)</span>. Each has mean zero. Select <span class="math-inline">\(K=1\)</span> when <span class="math-inline">\(M\le0\)</span> and <span class="math-inline">\(K=2\)</span> when <span class="math-inline">\(M&gt;0\)</span>. Then</p>
+            <div class="equation-block" role="math" aria-label="Endogenously selected median statistic."><span class="equation-tex">\[T_{K}=-|M|.\]</span><span class="equation-number">(1)</span></div>
+            <p>The median density is <span class="math-inline">\(f_{M}(m)=3(1-m^{2})/4\)</span> on [<span class="math-inline">\(-1\)</span>,1]. Hence <span class="math-inline">\(\mathbb{E}|M|=3/8\)</span> and <span class="math-inline">\(\mathbb{E}[T_{K}]=-3/8\)</span>. Also E[<span class="math-inline">\(M^{2}\)</span>]=1/5, so <span class="math-inline">\(\operatorname{Var}(T_{K})=1/5-9/64=19/320\)</span>.</p>
+            <p>Under joint reflection, <span class="math-inline">\(K\)</span> switches candidates while the selected value remains unchanged: <span class="math-inline">\(T_{K}(-x)=T_{K}(x)\)</span>. The composed statistic is even and nonpositive.</p>
+          </section>
+
+          <section class="chapter-section" id="joint-rule">
+            <h2>3. A selected sign result needs equivariance of the rule</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Joint reflection criterion</span><p>Let candidates <span class="math-inline">\(T_{k}\)</span> and selection rule <span class="math-inline">\(K(x)\)</span> be measurable. The selected statistic has mean zero under a centrally symmetric law whenever it is integrable and</p>
+              <div class="equation-block" role="math" aria-label="Oddness condition for a selected statistic."><span class="equation-tex">\[T_{K(-x)}(-x)=-T_{K(x)}(x)\]</span><span class="equation-number">(2)</span></div>
+              <p>outside a probability-zero set.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Condition (2) states that the complete composition is odd. Apply the symmetry argument from Section 1. ∎</p></div>
+            <p>Candidate-wise oddness alone does not imply (2), because reflection can change the selected index.</p>
+          </section>
+
+          <section class="chapter-section" id="ties-and-limits">
+            <h2>4. Ties, atoms, and large-market limits</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Fixed-index symmetry applied after endogenous selection</span><p>In (1), both candidates are odd and centered. The selection rule chooses the candidate with the nonpositive realized value, producing expectation <span class="math-inline">\(-3/8\)</span>.</p></div>
+            <p>The event <span class="math-inline">\(M=0\)</span> has probability zero under the continuous example. With atoms, its probability can be positive and the tie rule enters the distribution of <span class="math-inline">\(K\)</span>. For even samples, the definition of median also matters. A law-of-large-numbers limit for a selected share must retain the joint selection map; pointwise convergence of each fixed candidate does not validate interchange with a data-dependent index without uniform control.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Implement the reflection map on the full data vector and recompute the selection rule after reflection. Track ties explicitly. In Monte Carlo work, report the seed, draw count, sample standard deviation, and Monte Carlo standard error of each estimated mean; compare with any available exact integral.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Derive the median density and all moments displayed in Section 2.</li><li>Replace the selection rule by the candidate with the nonnegative value and compute its mean.</li><li>Repeat the construction for a discrete symmetric law with an atom at zero under two tie rules.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The second order-statistic density is <span class="math-inline">\(6F(m)[1-F(m)]f(m)\)</span>, which simplifies to 3(<span class="math-inline">\(1-m^{2}\)</span>)/4. Integrating on [0,1] gives 3/8 and 1/5. <strong>2.</strong> The selected statistic becomes <span class="math-inline">\(\lvert M\rvert\)</span> and has mean 3/8.</p></details>
+            <ol class="reference-list"><li>H. A. David and H. N. Nagaraja, <em>Order Statistics</em>, chapters on densities and moments of order statistics.<small>Finite-sample median distribution.</small></li><li>A. W. van der Vaart, <em>Asymptotic Statistics</em>, chapters on quantiles and stochastic convergence.<small>Large-sample quantile arguments.</small></li><li>Patrick Billingsley, <em>Probability and Measure</em>, sections on distributional symmetry and integration.<small>Symmetry-based expectation identities.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the reflection map, candidate statistics, complete selection rule, integrability, rank convention, atom and tie behavior, sample parity, fixed versus selected index, limiting mode, and Monte Carlo error.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter treats finite-sample reflection and an elementary order-statistic example. Uniform empirical-process results for large candidate classes require additional tools.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-01/">II-01 · Conditional Probability and a Model&#x27;s Information Structure</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#fixed-symmetry">Symmetry must act on the complete statistic</a>
+            <a href="#selected-median">Endogenous selection produces a signed absolute median</a>
+            <a href="#joint-rule">A selected sign result needs equivariance of the rule</a>
+            <a href="#ties-and-limits">Ties, atoms, and large-market limits</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-01/"><span>Previous</span><strong>II-01 · Conditional Probability and a Model&#x27;s Information Structure</strong></a><a class="next" href="/resources/volume-02/ii-03/"><span>Next</span><strong>II-03 · Random Assignment and Dynamic Policy Contrasts</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

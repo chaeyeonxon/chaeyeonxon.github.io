@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Target-Directed Record Selection · Chae-Yeon Xon</title>
+  <meta name="description" content="Record selection begins after conditioning on the source information already retained. Conditional covariance measures residual target risk, while a feasible field dictionary turns free coordinate choice into a combinatorial selection problem. Greedy and exchange procedures require explicit benchmarks and leakage controls.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-08/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Target-Directed Record Selection · Chae-Yeon Xon">
+  <meta property="og:description" content="Record selection begins after conditioning on the source information already retained. Conditional covariance measures residual target risk, while a feasible field dictionary turns free coordinate choice into a combinatorial selection problem. Greedy and exchange procedures require explicit benchmarks and leakage controls.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-08/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Target-Directed Record Selection · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Record selection begins after conditioning on the source information already retained. Conditional covariance measures residual target risk, while a feasible field dictionary turns free coordinate choice into a combinatorial selection problem. Greedy and exchange procedures require explicit benchmarks and leakage controls.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-08</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Measurement, Records, and Time · Chapter I-08</div>
+        <h1>Target-Directed Record Selection</h1>
+        <p>Record selection begins after conditioning on the source information already retained. Conditional covariance measures residual target risk, while a feasible field dictionary turns free coordinate choice into a combinatorial selection problem. Greedy and exchange procedures require explicit benchmarks and leakage controls.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-08.01</span><strong>Fixing source records</strong></li>
+              <li><span>I-08.02</span><strong>Conditional covariance</strong></li>
+              <li><span>I-08.03</span><strong>Free coordinates and field dictionaries</strong></li>
+              <li><span>I-08.04</span><strong>Selection algorithms</strong></li>
+              <li><span>I-08.05</span><strong>Ex ante collection rules</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="gaussian-record">
+            <h2>1. One record has target-specific value</h2>
+            <p class="chapter-lede">A record is valuable when it reduces uncertainty in the chosen target direction. Its raw variance or rank can be large while its target covariance is zero.</p>
+            <p>Let the current posterior for a latent state be <span class="math-inline">\(x\sim N(m,P)\)</span>, with <span class="math-inline">\(P\)</span> positive semidefinite. The scalar target is <span class="math-inline">\(c^{\top}x\)</span>. A candidate record is <span class="math-inline">\(z=a^{\top}x+\varepsilon\)</span>, where <span class="math-inline">\(\varepsilon\)</span> is independent with variance <span class="math-inline">\(r&gt;0\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Target variance reduction</span><p>After observing <span class="math-inline">\(z\)</span>, posterior covariance is</p>
+              <div class="equation-block" role="math" aria-label="Gaussian covariance and target variance reduction."><span class="equation-tex">\[\begin{aligned}P^{+}=P-Paa^{\top }P/(a^{\top }Pa+r), \\ \Delta (a|P,c)=(c^{\top }Pa)^{2}/(a^{\top }Pa+r).\end{aligned}\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> The joint covariance of (<span class="math-inline">\(x,z\)</span>) has cross block <span class="math-inline">\(Pa\)</span> and scalar record variance <span class="math-inline">\(a^{\top}Pa+r\)</span>. The Gaussian conditional covariance is its Schur complement. Premultiplying and postmultiplying the covariance reduction by <span class="math-inline">\(c^{\top}\)</span> and <span class="math-inline">\(c\)</span> gives <span class="math-inline">\(\Delta\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="dictionary-example">
+            <h2>2. Standalone rankings can select redundant records</h2>
+            <p>Take <span class="math-inline">\(P=I_{2}\)</span> and <span class="math-inline">\(c=(1,1)^{\top}\)</span>. Records 1 and 2 both measure <span class="math-inline">\(e_{1}\)</span> with noise variance 0.1. Record 3 measures <span class="math-inline">\(e_{2}\)</span> with noise variance 0.2. Their standalone reductions are 1/<span class="math-inline">\(1.1\approx0.90909\)</span>, 1/<span class="math-inline">\(1.1\approx0.90909\)</span>, and 1/<span class="math-inline">\(1.2\approx0.83333\)</span>.</p>
+            <p>Selecting the top two standalone scores chooses the duplicate pair. Two independent measurements of the first coordinate yield posterior target variance</p>
+            <div class="equation-block" role="math" aria-label="Target variance under duplicate and diversified record pairs."><span class="equation-tex">\[V_{12}=\frac{1}{21}+1\approx 1.04762, \quad V_{13}=\frac{1}{11}+\frac{1}{6}\approx 0.25758.\]</span><span class="equation-number">(2)</span></div>
+            <p>The diversified pair {1,3} reduces prior target variance two by about 1.74242, while the duplicate pair reduces it by about 0.95238. Recomputing conditional marginal values after selecting record 1 assigns only about 0.04329 additional reduction to its duplicate and 0.83333 to record 3.</p>
+          </section>
+
+          <section class="chapter-section" id="global-selection">
+            <h2>3. Exact and algorithmic selection claims</h2>
+            <p>For a finite dictionary and budget <span class="math-inline">\(k\)</span>, define <span class="math-inline">\(V(S)=c^{\top}P_{S}c\)</span>, where independent record precisions are accumulated before inversion. Exhaustive enumeration gives the exact optimum for small dictionaries. A greedy algorithm chooses the largest conditional marginal reduction at each step. Its approximation quality requires a property such as submodularity under the stated covariance and noise model.</p>
+            <p>Formula (1) gives a one-step marginal value conditional on the current covariance. It does not by itself prove that greedy selection is globally optimal.</p>
+          </section>
+
+          <section class="chapter-section" id="statistical-evaluation">
+            <h2>4. Estimation and evaluation after selection</h2>
+            <p>In applications, <span class="math-inline">\(P\)</span>, <span class="math-inline">\(c\)</span>, and record noise are estimated. Selecting and evaluating records on the same sample makes the reported improvement optimistic. Sample splitting or cross-fitting can separate dictionary selection from out-of-sample target-risk evaluation. The split rule and all candidate records remain part of the design.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · In-sample marginal gain reported as policy value</span><p>An estimated Schur-complement reduction combines model fit, target choice, and selection noise. Policy value also needs acquisition cost, feasibility, downstream use, and evaluation on observations untouched by the selection rule.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Update precision or covariance with stable rank-one formulas, recompute conditional values after each selection, and verify the final subset against exhaustive search when the dictionary is small. Report PSD residuals and out-of-sample target loss.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce every variance and reduction in (2).</li><li>Change record 3 noise variance to a parameter <span class="math-inline">\(r_{3}\)</span> and find when standalone ranking chooses it ahead of a duplicate.</li><li>Construct a three-record example in which greedy conditional selection and the global two-record optimum differ.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Precision in coordinate one is 1+10+10=21 for the duplicate pair. For the diversified pair, precisions are 11 and 6. Sum the two posterior coordinate variances because <span class="math-inline">\(c\)</span>=(1,1). <strong>2.</strong> Record 3 has standalone reduction 1/(1+<span class="math-inline">\(r_{3}\)</span>); it exceeds 1/1.1 exactly when <span class="math-inline">\(r_{3}&lt;0.1\)</span>.</p></details>
+            <ol class="reference-list"><li>Thomas Kailath, Ali Sayed, and Babak Hassibi, <em>Linear Estimation</em>, chapters on Gaussian conditioning.<small>Rank-one posterior covariance.</small></li><li>Andreas Krause and Carlos Guestrin (2007), “Near-optimal Observation Selection Using Submodular Functions,” <em>AAAI</em>.<small>Conditions for greedy information selection.</small></li><li>III-17 · Matrix Optimization and Information Allocation.<small>PSD epigraphs and constrained precision design.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/its-a-price-its-a-value/">“It’s a Price! It’s a Value!: Economic Measurement Across Environments.”</a><small>Related target-directed field-selection application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the posterior covariance, target direction, full record dictionary, noise model, budget and costs, conditional marginal formula, selected subset, global benchmark, PSD diagnostics, and sample-splitting evaluation rule.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter treats Gaussian target-variance selection from a finite linear record dictionary. Non-Gaussian value of information, adaptive experimentation, and privacy constraints require separate analysis.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-05/">I-05 · Representation Budgets, Singular Values, and Approximation Loss</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#gaussian-record">One record has target-specific value</a>
+            <a href="#dictionary-example">Standalone rankings can select redundant records</a>
+            <a href="#global-selection">Exact and algorithmic selection claims</a>
+            <a href="#statistical-evaluation">Estimation and evaluation after selection</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-07/"><span>Previous</span><strong>I-07 · Measurement Across Environments</strong></a><a class="next" href="/resources/volume-01/i-09/"><span>Next</span><strong>I-09 · Clock Error and Decision-Relevant Moments</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

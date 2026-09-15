@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Price Baskets, Bond Cash Flows, and Measurement Certificates · Chae-Yeon Xon</title>
+  <meta name="description" content="A price or value is defined by its source fields, units, aggregation rule, valuation date, and environment. Price baskets transport item-level records into an index; bond prices transport cash flows through discount factors. Certificates preserve enough of the source to recompute the target under declared environment changes.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-15/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Price Baskets, Bond Cash Flows, and Measurement Certificates · Chae-Yeon Xon">
+  <meta property="og:description" content="A price or value is defined by its source fields, units, aggregation rule, valuation date, and environment. Price baskets transport item-level records into an index; bond prices transport cash flows through discount factors. Certificates preserve enough of the source to recompute the target under declared environment changes.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-15/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Price Baskets, Bond Cash Flows, and Measurement Certificates · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A price or value is defined by its source fields, units, aggregation rule, valuation date, and environment. Price baskets transport item-level records into an index; bond prices transport cash flows through discount factors. Certificates preserve enough of the source to recompute the target under declared environment changes.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-15</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Policy and Empirical Computation · Chapter IV-15</div>
+        <h1>Price Baskets, Bond Cash Flows, and Measurement Certificates</h1>
+        <p>A price or value is defined by its source fields, units, aggregation rule, valuation date, and environment. Price baskets transport item-level records into an index; bond prices transport cash flows through discount factors. Certificates preserve enough of the source to recompute the target under declared environment changes.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-15.01</span><strong>Basket measurement</strong></li>
+              <li><span>IV-15.02</span><strong>Source fields and revaluation</strong></li>
+              <li><span>IV-15.03</span><strong>Bond cash-flow value</strong></li>
+              <li><span>IV-15.04</span><strong>Sensitivity records</strong></li>
+              <li><span>IV-15.05</span><strong>Information budgets</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="measurement-record">
+            <h2>1. A valuation record needs an environment</h2>
+            <p class="chapter-lede">A stored scalar value supports exact revaluation only when it carries sufficient information for the admissible changes in prices, quantities, discount factors, and conventions.</p>
+            <p>For item prices <span class="math-inline">\(p\)</span> and quantities <span class="math-inline">\(q\)</span>, expenditure is <span class="math-inline">\(V(p,q)=p^{\top}q\)</span>. A base-period basket records <span class="math-inline">\(q^{0}\)</span> and transports it across prices through <span class="math-inline">\(p^{\top}q^{0}\)</span>. A current-period basket uses <span class="math-inline">\(q^{1}\)</span>. These answer different questions when quantities adjust. Units, item coverage, quality adjustment, taxes, weights, and reference date belong to the definition of the index.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Measurement certificate</span><p>For a target family {<span class="math-inline">\(T_{e}:e\in \mathcal{E}\)</span>}, a record <span class="math-inline">\(C(x)\)</span> is a certificate over environments <span class="math-inline">\(\mathcal{E}\)</span> if every target factors as <span class="math-inline">\(T_{e}(x)=g_{e}(C(x))\)</span>. The environment class is part of the certificate claim.</p></div>
+          </section>
+
+          <section class="chapter-section" id="bond-sensitivity">
+            <h2>2. Dated cash flows determine parallel-yield sensitivity</h2>
+            <p>For deterministic cash flows <span class="math-inline">\(c_{i}\)</span> at times <span class="math-inline">\(t_{i}\ge0\)</span> and a continuously compounded flat yield <span class="math-inline">\(y\)</span>,</p>
+            <div class="equation-block" role="math" aria-label="Bond price duration and convexity under a flat continuous yield."><span class="equation-tex">\[\begin{aligned}P(y)=\sum _{i}c_{i}e^{-yt_{i}}, \quad D(y)=-P^{\prime}/P=\sum _{i}w_{i}t_{i}, \\ K(y)=P^{\prime\prime}/P=\sum _{i}w_{i}t_{i}^{2},\end{aligned}\]</span><span class="equation-number">(1)</span></div>
+            <p>where <span class="math-inline">\(w_{i}=c_{i}e^{-yt_{i}}/P(y)\)</span>. With nonnegative cash flows and positive price, the weights form a probability vector. The second-order parallel-shift approximation is <span class="math-inline">\(\Delta P/P\approx-D\Delta y+\tfrac{1}{2}K(\Delta y)^{2}\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Price and duration do not certify convexity</span><p>Even with nonnegative cash flows and a common valuation yield, equal price and duration can coexist with different convexity and different values after a nonzero parallel yield shift.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> At <span class="math-inline">\(y=0\)</span>, let Bond A pay 0.5 at time one and 0.5 at time three. Let Bond B pay one at time two. Both have price one and duration two. Equation (1) gives convexities five and four. Their prices after shift <span class="math-inline">\(\delta\)</span> are <span class="math-inline">\(0.5e^{-\delta}+0.5e^{-3\delta}\)</span> and <span class="math-inline">\(e^{-2\delta}\)</span>, which differ for every nonzero <span class="math-inline">\(\delta\)</span> because their equality would require <span class="math-inline">\(\cosh(\delta)=1\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="cash-flow-example">
+            <h2>3. One additional moment changes the revaluation</h2>
+            <p>For <span class="math-inline">\(\delta=0.1\)</span>, Bond A is worth approximately 0.822827 and Bond B approximately 0.818731. Their common first-order approximation is 0.8. Adding convexity gives 0.825 for A and 0.82 for B. The approximation error remains because higher time moments enter the exponential.</p>
+            <p>A full vector of dated cash flows certifies revaluation under any declared deterministic discount curve. Price and parallel duration provide only a local first-order certificate. Key-rate duration requires exposures to curve nodes and a specified interpolation rule. Cash-flow optionality, default, inflation linkage, and state dependence make future payments endogenous and require an additional model.</p>
+          </section>
+
+          <section class="chapter-section" id="certificate-boundaries">
+            <h2>4. Exactness ends at the declared environment class</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Duration transported across compounding conventions</span><p>A derivative with respect to a continuously compounded yield cannot be inserted unchanged into a discrete-yield approximation. The yield coordinate and payment frequency determine the derivative.</p></div>
+            <p>When price is zero, normalized duration and convexity are undefined. Negative cash flows can create negative weights, and duration can leave the range of payment dates. A payment at time zero has no yield sensitivity. At a kink created by an exercise rule, ordinary derivatives may fail to exist. For price baskets, missing items, entry and exit, unit changes, and substitution determine whether the same quantity vector remains meaningful. Equality of two index numbers at one environment supplies no transport result for another environment.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Preserve source fields before aggregation: identifiers, units, quantities or cash flows, dates, currencies, tax treatment, quality adjustments, discount convention, and version. Recompute the scalar from those records, verify derivative formulas by finite differences, and state the environment class over which the record is claimed to be sufficient. Store residuals and reconciliation totals.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the exact and second-order prices in Section 3.</li><li>Construct two price baskets with the same base expenditure and different responses to item-specific price changes.</li><li>Show how duration changes when the yield coordinate is <span class="math-inline">\(r\)</span> with annual discount factor <span class="math-inline">\((1+r)^{-t}\)</span>.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Substitute <span class="math-inline">\(\delta=0.1\)</span> in the two exponential formulas and use <span class="math-inline">\(P(0)=1\)</span>, <span class="math-inline">\(D=2\)</span>, and <span class="math-inline">\(K\in\{5,4\}\)</span>. <strong>2.</strong> Put the same base expenditure on different items; an item-specific shock then separates the values. <strong>3.</strong> Differentiation gives <span class="math-inline">\(-P^{\prime}(r)/P(r)=\sum w_{i}t_{i}/(1+r)\)</span>, the modified-duration coordinate.</p></details>
+            <ol class="reference-list"><li>John C. Hull, <em>Options, Futures, and Other Derivatives</em>, sections on duration and convexity.<small>Cash-flow sensitivity under yield changes.</small></li><li>W. Erwin Diewert (1976), “Exact and Superlative Index Numbers,” <em>Journal of Econometrics</em> 4, 115–145.<small>Price-index aggregation and economic foundations.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/its-a-price-its-a-value/">“It’s a Price! It’s a Value!: Economic Measurement Across Environments.”</a><small>Related certificate and revaluation application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Source identifiers, units, quantities, cash flows, payment dates, valuation date, currency, tax and quality treatment, discount and compounding convention, curve interpolation, sign of cash flows, positive-price condition, optionality, default, index weights, item support, environment class, derivative coordinate, finite-difference check, reconciliation residual, and data vintage.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers deterministic basket aggregation and fixed-cash-flow sensitivity. Arbitrage-free term-structure modeling, credit risk, embedded options, and statistical index construction require separate treatment.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-07/">I-07 · Measurement Across Environments</a></li><li><a href="/resources/volume-01/i-08/">I-08 · Target-Directed Record Selection</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#measurement-record">A valuation record needs an environment</a>
+            <a href="#bond-sensitivity">Dated cash flows determine parallel-yield sensitivity</a>
+            <a href="#cash-flow-example">One additional moment changes the revaluation</a>
+            <a href="#certificate-boundaries">Exactness ends at the declared environment class</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-14/"><span>Previous</span><strong>IV-14 · Monetary Policy Experiments and Structural Model Families</strong></a><a class="next" href="/resources/volume-04/iv-16/"><span>Next</span><strong>IV-16 · Gas Records, Event Time, and Storage Decisions</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

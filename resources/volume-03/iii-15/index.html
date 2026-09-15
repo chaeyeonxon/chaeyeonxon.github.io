@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Set Functions, Mobius Inversion, and Modularity · Chae-Yeon Xon</title>
+  <meta name="description" content="When outcomes depend on bundles of inputs or options, a set function records the value of every feasible subset. Mobius inversion isolates interaction terms and minimal enabling combinations. Modularity is a strong restriction: it makes reference-set increments portable across bundles, while monotonicity alone permits complements and substitutes.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-15/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Set Functions, Mobius Inversion, and Modularity · Chae-Yeon Xon">
+  <meta property="og:description" content="When outcomes depend on bundles of inputs or options, a set function records the value of every feasible subset. Mobius inversion isolates interaction terms and minimal enabling combinations. Modularity is a strong restriction: it makes reference-set increments portable across bundles, while monotonicity alone permits complements and substitutes.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-15/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Set Functions, Mobius Inversion, and Modularity · Chae-Yeon Xon">
+  <meta name="twitter:description" content="When outcomes depend on bundles of inputs or options, a set function records the value of every feasible subset. Mobius inversion isolates interaction terms and minimal enabling combinations. Modularity is a strong restriction: it makes reference-set increments portable across bundles, while monotonicity alone permits complements and substitutes.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-15</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Sets, Optimization, and Sequential Information · Chapter III-15</div>
+        <h1>Set Functions, Mobius Inversion, and Modularity</h1>
+        <p>When outcomes depend on bundles of inputs or options, a set function records the value of every feasible subset. Mobius inversion isolates interaction terms and minimal enabling combinations. Modularity is a strong restriction: it makes reference-set increments portable across bundles, while monotonicity alone permits complements and substitutes.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-15.01</span><strong>Boolean lattices</strong></li>
+              <li><span>III-15.02</span><strong>Minimal enabling sets</strong></li>
+              <li><span>III-15.03</span><strong>Mobius inversion</strong></li>
+              <li><span>III-15.04</span><strong>Representability</strong></li>
+              <li><span>III-15.05</span><strong>Modularity</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="boolean-lattice">
+            <h2>1. Packages form a Boolean lattice</h2>
+            <p class="chapter-lede">When an outcome depends on which inputs are jointly available, its domain is the set of subsets. Möbius coefficients separate singleton contributions, interactions, and higher-order overlap.</p>
+            <p>Let <span class="math-inline">\(N=\{1,\ldots,n\}\)</span> be a finite input set and <span class="math-inline">\(W:2^{N}\to \mathbb{R}\)</span> a set value. The Boolean lattice orders packages by inclusion. The marginal value of input <span class="math-inline">\(i\)</span> at reference package <span class="math-inline">\(S\)</span> is <span class="math-inline">\(\Delta _{i}W(S)=W(S\cup {i})-W(S)\)</span>.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Minimal enabling sets</span><p>For a monotone binary feasibility rule <span class="math-inline">\(F\)</span>, a package <span class="math-inline">\(A\)</span> is minimally enabling when <span class="math-inline">\(F(A)=1\)</span> and <span class="math-inline">\(F(B)=0\)</span> for every strict subset <span class="math-inline">\(B\subsetneq A\)</span>. The collection of minimal enabling sets is an antichain.</p></div>
+            <p>If feasibility requires either input 3 alone or the pair {1,2}, the minimal enabling antichain consists of {3} and {1,2}. Packages containing both paths create overlap that an additive input count does not record.</p>
+          </section>
+
+          <section class="chapter-section" id="mobius-inversion">
+            <h2>2. Möbius inversion</h2>
+            <p>Define the Möbius coefficient of <span class="math-inline">\(A\subseteq N\)</span> by</p>
+            <div class="equation-block" role="math" aria-label="Mobius coefficient on the Boolean lattice."><span class="equation-tex">\[m(A)=\sum _{B\subseteq A}(-1)^{|A\setminus B|}W(B).\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Reconstruction</span><p>For every package <span class="math-inline">\(S\)</span>,</p>
+              <div class="equation-block" role="math" aria-label="Mobius reconstruction formula."><span class="equation-tex">\[W(S)=\sum _{A\subseteq S}m(A).\]</span><span class="equation-number">(2)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Substitute (1) into the right side of (2) and collect the coefficient on <span class="math-inline">\(W(B)\)</span>. It equals <span class="math-inline">\(\sum _{A: B\subseteq A\subseteq S}(-1)^{|A\setminus B|}=(1-1)^{|S\setminus B|}\)</span>. This coefficient is one for <span class="math-inline">\(B=S\)</span> and zero otherwise. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>3. A three-input value surface</h2>
+            <p>Set <span class="math-inline">\(W(\varnothing)=0\)</span> and assign</p>
+            <div class="equation-block" role="math" aria-label="Set values for a three input example."><span class="equation-tex">\[W_{1}=2, W_{2}=1, W_{3}=\frac{3}{2}; \quad W_{12}=4, W_{13}=3, W_{23}=3, W_{123}=5.\]</span><span class="equation-number">(3)</span></div>
+            <p>The singleton Möbius coefficients are 2, 1, and 3/2. The pair coefficients are <span class="math-inline">\(m_{12}=1\)</span>, <span class="math-inline">\(m_{13}=-1/2\)</span>, and <span class="math-inline">\(m_{23}=1/2\)</span>. The third-order coefficient is <span class="math-inline">\(-1/2\)</span>. Summing all coefficients gives 5, which reconstructs <span class="math-inline">\(W_{123}\)</span>.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Monotonicity used as a sign restriction</span><p>Every inclusion in (3) weakly raises value, so <span class="math-inline">\(W\)</span> is monotone. Two Möbius coefficients are negative. Monotonicity restricts first differences; it does not force all interaction coefficients to be nonnegative.</p></div>
+          </section>
+
+          <section class="chapter-section" id="modularity">
+            <h2>4. Reference-independent marginal values</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 2 · Equivalent forms of modularity</span><p>The following are equivalent: (i) <span class="math-inline">\(\Delta _{i}W(S)\)</span> is independent of <span class="math-inline">\(S\)</span>; (ii) <span class="math-inline">\(W(A)+W(B)=W(A\cup B)+W(A\cap B)\)</span>; (iii) every Möbius coefficient with <span class="math-inline">\(\lvert A\rvert \ge2\)</span> is zero; (iv)</p>
+              <div class="equation-block" role="math" aria-label="Additive representation of a modular set function."><span class="equation-tex">\[W(S)=W(\varnothing )+\sum _{i\in S}[W(\{i\})-W(\varnothing )].\]</span><span class="equation-number">(4)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof sketch.</strong> Reference-independent increments telescope to (4). The representation implies the lattice equality in (ii). Applying (1) to (4) makes every coefficient of order at least two vanish. Finally, (2) with only constant and singleton coefficients gives (4). ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Index subsets by bit masks, enumerate submasks to compute (1), and reconstruct every set value with (2). Report the largest reconstruction residual and group coefficients by order. For estimated set values, attach uncertainty to contrasts before assigning complementarity or substitutability labels.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Reproduce every coefficient in the three-input example and verify all eight reconstructions.</li>
+              <li>Compute the Möbius coefficients of the binary enabling rule with minimal paths {3} and {1,2}.</li>
+              <li>Prove the implication from the lattice identity in Proposition 2 to reference-independent marginal increments.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Compute singletons first, then pair contrasts, then subtract every lower-order term from <span class="math-inline">\(W_{123}\)</span>. Reconstruction follows by summing coefficients indexed by subsets of each package. <strong>2.</strong> The enabling rule is <span class="math-inline">\(F(S)=1\{3\in S\ \text{or}\ \{1,2\}\subseteq S\}\)</span>}. Its nonzero coefficients are <span class="math-inline">\(m_{3}=1\)</span>, <span class="math-inline">\(m_{12}=1\)</span>, and <span class="math-inline">\(m_{123}=-1\)</span>, where the final term removes double counting.</p></details>
+            <ol class="reference-list">
+              <li>Gian-Carlo Rota (1964), “On the Foundations of Combinatorial Theory I: Theory of Möbius Functions,” <em>Zeitschrift für Wahrscheinlichkeitstheorie</em> 2, 340–368.<small>Incidence-algebra inversion.</small></li>
+              <li>Donald M. Topkis, <em>Supermodularity and Complementarity</em>, Chapters 2–3.<small>Lattice differences and economic complementarity.</small></li>
+              <li>Lloyd S. Shapley (1953), “A Value for n-Person Games.”<small>Allocation from set values.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>Declare the ground set, value normalization, minimal enabling antichain, full set table, transform convention, reconstruction residual, monotonicity contrasts, and modularity restrictions.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter covers finite Boolean lattices, enabling antichains, Möbius inversion, and modularity. Matroid theory and extremal combinatorics lie outside scope.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-02/">I-02 · Linear Maps, Kernels, Quotients, and Information Dimension</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#boolean-lattice">Packages form a Boolean lattice</a>
+            <a href="#mobius-inversion">Möbius inversion</a>
+            <a href="#worked-example">A three-input value surface</a>
+            <a href="#modularity">Reference-independent marginal values</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-14/"><span>Previous</span><strong>III-14 · Conditional Generators, Poincare Inequalities, and Graph Certificates</strong></a><a class="next" href="/resources/volume-03/iii-16/"><span>Next</span><strong>III-16 · KKT Conditions, Linear Duality, and Sharpness</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

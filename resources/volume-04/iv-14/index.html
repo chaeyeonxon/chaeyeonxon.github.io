@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Monetary Policy Experiments and Structural Model Families · Chae-Yeon Xon</title>
+  <meta name="description" content="Comparing monetary models requires a common shock unit, horizon, observable target, conditioning information, and loss. Structural families can then enter the comparison by their implied response maps. Calibration, profiling, and estimation are separate routes to model-specific inputs and should be labeled accordingly.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-14/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Monetary Policy Experiments and Structural Model Families · Chae-Yeon Xon">
+  <meta property="og:description" content="Comparing monetary models requires a common shock unit, horizon, observable target, conditioning information, and loss. Structural families can then enter the comparison by their implied response maps. Calibration, profiling, and estimation are separate routes to model-specific inputs and should be labeled accordingly.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-14/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Monetary Policy Experiments and Structural Model Families · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Comparing monetary models requires a common shock unit, horizon, observable target, conditioning information, and loss. Structural families can then enter the comparison by their implied response maps. Calibration, profiling, and estimation are separate routes to model-specific inputs and should be labeled accordingly.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-14</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Policy and Empirical Computation · Chapter IV-14</div>
+        <h1>Monetary Policy Experiments and Structural Model Families</h1>
+        <p>Comparing monetary models requires a common shock unit, horizon, observable target, conditioning information, and loss. Structural families can then enter the comparison by their implied response maps. Calibration, profiling, and estimation are separate routes to model-specific inputs and should be labeled accordingly.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-14.01</span><strong>A common experiment protocol</strong></li>
+              <li><span>IV-14.02</span><strong>Four structural families</strong></li>
+              <li><span>IV-14.03</span><strong>Response objects</strong></li>
+              <li><span>IV-14.04</span><strong>Calibration and profiling</strong></li>
+              <li><span>IV-14.05</span><strong>Counterfactual comparison</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="common-contract">
+            <h2>1. Model comparison begins with a common response contract</h2>
+            <p class="chapter-lede">Structural families become comparable after they receive the same experiment, normalization, observable map, horizon, and loss function.</p>
+            <p>Index model families by <span class="math-inline">\(m\in\{1,\ldots,M\}\)</span>. Family <span class="math-inline">\(m\)</span> has parameter space <span class="math-inline">\(\Theta _{m}\)</span>, equilibrium map <span class="math-inline">\(G_{m}\)</span>, experiment <span class="math-inline">\(e\)</span>, and response vector <span class="math-inline">\(r_{m}(\theta ;e)\in \mathbb{R}^{K}\)</span>. The response contract specifies shock units, information set, intervention timing, equilibrium selection, observable transformation, horizon, and whether responses are levels, elasticities, or percentage deviations.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Family distance</span><p>For benchmark response <span class="math-inline">\(r^{0}\)</span> and positive-semidefinite weight matrix <span class="math-inline">\(W\)</span>, define <span class="math-inline">\(d_{m}^{2}=\operatorname{inf}_{\theta \in \Theta _{m}}(r_{m}(\theta )-r^{0})^{\top}W(r_{m}(\theta)-r^{0})\)</span>. This is a distance in response space only when <span class="math-inline">\(W\)</span> is positive definite; a singular <span class="math-inline">\(W\)</span> defines a seminorm and ignores its null directions.</p></div>
+            <p>Business-cycle, sticky-price, search, and heterogeneous-agent models can all enter this contract. Their internal state vectors can differ. Comparison uses declared response objects and preserves family-specific equilibrium restrictions.</p>
+          </section>
+
+          <section class="chapter-section" id="projection">
+            <h2>2. Calibration, profiling, and estimation answer different questions</h2>
+            <p>Calibration fixes parameters from external evidence or chosen targets. Profiling minimizes a stated response loss over nuisance parameters for each focal parameter. Statistical estimation adds a sampling model and interprets the objective through likelihood or moment restrictions. A numerical minimizer alone does not determine which of these operations occurred.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Interior projection condition</span><p>Suppose <span class="math-inline">\(\Theta _{m}\)</span> is open near an interior minimizer <span class="math-inline">\(\hat{\theta}\)</span>, the response map is differentiable there, and <span class="math-inline">\(W\)</span> is symmetric. If <span class="math-inline">\(\hat{\theta}\)</span> minimizes the squared response loss, then <span class="math-inline">\(J_{m}(\hat{\theta})^{\top}W[r_{m}(\hat{\theta})-r^{0}]=0\)</span>, where <span class="math-inline">\(J_{m}\)</span> is the response Jacobian.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Differentiate the quadratic objective. Its gradient is twice the displayed Jacobian-weighted residual. An interior differentiable minimum has zero gradient. Boundary minima satisfy a normal-cone condition, so the zero-gradient conclusion need not hold there. ∎</p></div>
+            <p>The condition says that the residual is orthogonal, in the <span class="math-inline">\(W\)</span> geometry, to locally attainable response movements. It is a fit condition rather than evidence that the fitted parameter is economically identified. Rank of the Jacobian, parameter support, and the sampling design still matter.</p>
+          </section>
+
+          <section class="chapter-section" id="two-family-example">
+            <h2>3. Two families can fit nearby responses and disagree on a target</h2>
+            <p>Take benchmark <span class="math-inline">\(r^{0}\)</span>=(1,0.5), Euclidean weighting, and two one-parameter families. Family A has <span class="math-inline">\(r_{A}(\theta)=(\theta,0.5\theta)\)</span>, <span class="math-inline">\(\theta \in \mathbb{R}\)</span>. It fits exactly at <span class="math-inline">\(\theta=1\)</span>. Family B has <span class="math-inline">\(r_{B}(\phi)=(\phi,1-\phi)\)</span>, <span class="math-inline">\(\phi \in[0,1]\)</span>. Minimizing <span class="math-inline">\((\phi-1)^{2}+(0.5-\phi)^{2}\)</span> gives <span class="math-inline">\(\phi\)</span>̂=0.75, response (0.75,0.25), squared distance 0.125, and distance <span class="math-inline">\(\sqrt{0.125}\approx0.353553\)</span>.</p>
+            <p>Let the target be <span class="math-inline">\(\tau _{A}(\theta)=0.5\theta\)</span> and <span class="math-inline">\(\tau _{B}(\phi)=1-2\phi\)</span>. At their best fits, the targets are 0.5 and <span class="math-inline">\(-0.5\)</span>. The disagreement follows from family-specific target maps left unrestricted by the two matched observables. A comparison report should show the fit distance, fitted response, target, and parameter boundary for every family.</p>
+          </section>
+
+          <section class="chapter-section" id="family-boundaries">
+            <h2>4. Normalization and support determine the frontier</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Shock-size differences presented as mechanism differences</span><p>If one model receives a one-standard-deviation shock and another a one-percentage-point shock, response magnitudes are incomparable until the shocks are mapped into common units.</p></div>
+            <p>A singular <span class="math-inline">\(W\)</span> can give zero distance to distinct response vectors. A covariance inverse is unstable when estimated eigenvalues approach zero; regularization changes the metric and must be reported. Compact parameter sets guarantee a minimum for continuous losses, while open or unbounded sets may yield only an infimum. Multiple equilibria require a selection rule. Parameters at inequality boundaries use constrained first-order conditions. Responses at date zero depend on timing conventions, and terminal truncation can distort long-horizon comparisons. Model families selected after viewing the target data require a separate validation sample or an explicit selection adjustment for statistical claims.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Write one machine-readable experiment contract, expose a family adapter returning responses and targets, normalize units before optimization, and retain solver status and equilibrium residuals. Search globally when the objective is nonconvex, verify local derivatives, and trace the profile over economically admissible parameter sets. Distinguish sampling uncertainty, calibration ranges, numerical error, and cross-family variation in the output.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Derive <span class="math-inline">\(\phi\)</span>̂ and the reported distance for Family B.</li><li>Replace <span class="math-inline">\(W\)</span> by <span class="math-inline">\(\operatorname{diag}(1,0)\)</span> and characterize the minimizers and fitted distance.</li><li>Derive the constrained first-order condition when <span class="math-inline">\(\phi\)</span> is restricted to [0,0.6].</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The derivative is <span class="math-inline">\(4\phi-3\)</span>, so <span class="math-inline">\(\phi\)</span>̂=3/4 and the two residuals are <span class="math-inline">\(-1/4\)</span>. <strong>2.</strong> <span class="math-inline">\(\phi=1\)</span> fits the weighted coordinate exactly; the ignored second coordinate receives no penalty. <strong>3.</strong> The unconstrained value 0.75 is infeasible, so the minimum occurs at the upper endpoint 0.6 and the outward derivative is consistent with the normal-cone condition.</p></details>
+            <ol class="reference-list"><li>Robert E. Lucas Jr. (1976), “Econometric Policy Evaluation: A Critique,” <em>Carnegie-Rochester Conference Series on Public Policy</em> 1, 19–46.<small>Policy experiments and structural invariance.</small></li><li>Lars Peter Hansen (1982), “Large Sample Properties of Generalized Method of Moments Estimators,” <em>Econometrica</em> 50, 1029–1054.<small>Weighted moment criteria and statistical estimation.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/between-models/">“Between Models: Counterfactual Frontiers across Causal-Response Experiments.”</a><small>Related cross-family comparison application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Experiment units, information set, timing, equilibrium selection, observable map, horizon, normalization, parameter domains, family adapters, metric definiteness, covariance conditioning, rank, boundary solutions, global search, numerical residuals, family selection, target map, and separation of sampling, calibration, numerical, and family uncertainty.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers finite-dimensional response comparison across declared structural families. Bayesian model averaging, encompassing tests, and full solution methods for particular macroeconomic models require additional development.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-11/">II-11 · Local Projections and Covariance for Dependent Data</a></li><li><a href="/resources/volume-01/i-16/">I-16 · Counterfactual Frontiers Across Model Families</a></li><li><a href="/resources/volume-04/iv-10/">IV-10 · Heterogeneous States, Transition Economies, and Additive Summaries</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#common-contract">Model comparison begins with a common response contract</a>
+            <a href="#projection">Calibration, profiling, and estimation answer different questions</a>
+            <a href="#two-family-example">Two families can fit nearby responses and disagree on a target</a>
+            <a href="#family-boundaries">Normalization and support determine the frontier</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-13/"><span>Previous</span><strong>IV-13 · Policy Transmission and the Actual Unit of Randomization</strong></a><a class="next" href="/resources/volume-04/iv-15/"><span>Next</span><strong>IV-15 · Price Baskets, Bond Cash Flows, and Measurement Certificates</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

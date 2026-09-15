@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Bayesian Archives and Accumulated Information · Chae-Yeon Xon</title>
+  <meta name="description" content="An archive accumulates directional precision through repeated reports. The number of observations alone can conceal persistent blind directions. Prior precision, data information, target-weighted posterior loss, state persistence, and field labels determine what the archive teaches.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-14/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Bayesian Archives and Accumulated Information · Chae-Yeon Xon">
+  <meta property="og:description" content="An archive accumulates directional precision through repeated reports. The number of observations alone can conceal persistent blind directions. Prior precision, data information, target-weighted posterior loss, state persistence, and field labels determine what the archive teaches.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-14/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bayesian Archives and Accumulated Information · Chae-Yeon Xon">
+  <meta name="twitter:description" content="An archive accumulates directional precision through repeated reports. The number of observations alone can conceal persistent blind directions. Prior precision, data information, target-weighted posterior loss, state persistence, and field labels determine what the archive teaches.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-14</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Information Transmission and Learning · Chapter I-14</div>
+        <h1>Bayesian Archives and Accumulated Information</h1>
+        <p>An archive accumulates directional precision through repeated reports. The number of observations alone can conceal persistent blind directions. Prior precision, data information, target-weighted posterior loss, state persistence, and field labels determine what the archive teaches.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-14.01</span><strong>Information in a report</strong></li>
+              <li><span>I-14.02</span><strong>Prior and data precision</strong></li>
+              <li><span>I-14.03</span><strong>Cumulative excitation</strong></li>
+              <li><span>I-14.04</span><strong>Aging records</strong></li>
+              <li><span>I-14.05</span><strong>The meaning of fields</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="archive-update">
+            <h2>1. An archive accumulates directional precision</h2>
+            <p class="chapter-lede">Observation count measures archive size. The sum of loading outer products determines which parameter directions the archive learns.</p>
+            <p>Let a static coefficient <span class="math-inline">\(\theta \in \mathbb{R}^{p}\)</span> have Gaussian prior <span class="math-inline">\(N(m_{0},P_{0}^{-1})\)</span> with <span class="math-inline">\(P_{0}\succ0\)</span>. At date <span class="math-inline">\(t\)</span>, the archive receives <span class="math-inline">\(y_{t}=a_{t}^{\top}\theta+\varepsilon _{t}\)</span>, where conditionally independent <span class="math-inline">\(\varepsilon _{t}\sim N(0,r_{t})\)</span> and <span class="math-inline">\(r_{t}&gt;0\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Gaussian archive posterior</span><p>After <span class="math-inline">\(T\)</span> reports, posterior precision and mean satisfy</p>
+              <div class="equation-block" role="math" aria-label="Posterior precision and mean from an archive."><span class="equation-tex">\[\begin{aligned}P_{T}=P_{0}+\sum _{t=1}^{T}a_{t}a_{t}^{\top }/r_{t}, \\ m_{T}=P_{T}^{-1}[P_{0}m_{0}+\sum a_{t}y_{t}/r_{t}].\end{aligned}\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Expand the Gaussian prior log density and all independent report log likelihoods. Collect their quadratic and linear terms in <span class="math-inline">\(\theta\)</span> and complete the square. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="excitation-example">
+            <h2>2. Equal archive sizes can leave different blind directions</h2>
+            <p>Take <span class="math-inline">\(p=2\)</span>, <span class="math-inline">\(P_{0}=I_{2}\)</span>, unit report noise, and four reports. A concentrated archive uses <span class="math-inline">\(a_{t}=e_{1}\)</span> every date, giving data information <span class="math-inline">\(\operatorname{diag}(4,0)\)</span>, posterior covariance <span class="math-inline">\(\operatorname{diag}(1/5,1)\)</span>, and smallest data-information eigenvalue zero.</p>
+            <p>A dispersed archive uses two reports in each coordinate, giving data information <span class="math-inline">\(\operatorname{diag}(2,2)\)</span> and posterior covariance <span class="math-inline">\(\operatorname{diag}(1/3,1/3)\)</span>. For target <span class="math-inline">\(c=(1,1)^{\top}\)</span>, posterior variances are 6/5 and 2/3. Both archives contain four records; only the second persistently excites both target directions.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 2 · Directional learning criterion</span><p>For a sequence of archives with fixed prior precision, posterior variance in every unit direction converges to zero exactly when the smallest eigenvalue of cumulative data information diverges.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> The largest eigenvalue of the posterior covariance is the reciprocal of the smallest eigenvalue of prior plus data precision. The prior eigenvalues stay bounded as archive length grows. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="changing-state">
+            <h2>3. A changing state requires prediction before updating</h2>
+            <p>Let <span class="math-inline">\(\theta _{t}=F\theta_{t-1}+w_{t}\)</span> with process covariance <span class="math-inline">\(Q\succeq0\)</span>. If posterior covariance at <span class="math-inline">\(t-1\)</span> is <span class="math-inline">\(\Sigma_{t-1|t-1}\)</span>, the prior covariance for date <span class="math-inline">\(t\)</span> is <span class="math-inline">\(F\Sigma_{t-1|t-1}F^{\top}+Q\)</span>. The new report updates this predicted covariance through the Gaussian conditioning formula.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Static precision addition under state drift</span><p>Adding all historical outer products as in (1) treats every report as a measurement of one unchanged <span class="math-inline">\(\theta\)</span>. With <span class="math-inline">\(Q\)</span> positive or time-varying coefficients, old records measure earlier states. Their value for the current target passes through <span class="math-inline">\(F\)</span> and process noise.</p></div>
+            <p>The boundary <span class="math-inline">\(Q=0\)</span> and <span class="math-inline">\(F=I\)</span> returns the static model. Singular <span class="math-inline">\(Q\)</span> permits deterministic and stochastic state directions; covariance propagation remains valid, while precision-form shortcuts require care at singular matrices.</p>
+          </section>
+
+          <section class="chapter-section" id="field-semantics">
+            <h2>4. A field name is part of the measurement contract</h2>
+            <p>A repeated label identifies a common loading only when definitions, units, eligibility rules, and missing-value codes remain stable. If a field changes from <span class="math-inline">\(a^{\top}\theta\)</span> to <span class="math-inline">\(\widetilde{a}^{\top}\theta\)</span>, equation (1) must use the loading for its actual vintage. Silent field drift can create apparent excitation in a coordinate that the archive never measured consistently.</p>
+            <p>Initial conditions also matter: at <span class="math-inline">\(T=0\)</span> the posterior equals the prior, and a diffuse-prior limit exists only on directions with sufficient data information. Zero noise variance describes an exact constraint and should be handled as a limiting or constrained Gaussian problem, outside the <span class="math-inline">\(r_{t}&gt;0\)</span> derivation above.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Version each loading vector and field definition, accumulate information with symmetric rank-one updates, and monitor the full eigenvalue path. For changing states, use prediction and update steps with PSD factorizations. Report initial covariance, noise scales, missingness rules, eigenvalue tolerance, and target-weighted posterior loss.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the two four-record posterior covariances and target variances.</li><li>For alternating loadings <span class="math-inline">\(e_{1},e_{2}\)</span>, determine the smallest information eigenvalue after every date.</li><li>Compare static accumulation with a random-walk state for the same scalar report sequence.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Add <span class="math-inline">\(\operatorname{diag}(4,0)\)</span> or <span class="math-inline">\(\operatorname{diag}(2,2)\)</span> to the identity prior and invert each diagonal matrix. <strong>2.</strong> After <span class="math-inline">\(T\)</span> dates, the two eigenvalues are <span class="math-inline">\(\lceil T/2\rceil\)</span> and <span class="math-inline">\(\lfloor T/2\rfloor\)</span>, so the smaller diverges. <strong>3.</strong> In the random walk, add process variance before every measurement update; posterior precision is no longer the unweighted sum of all past report precisions.</p></details>
+            <ol class="reference-list"><li>Thomas Kailath, Ali Sayed, and Babak Hassibi, <em>Linear Estimation</em>, chapters on recursive least squares and Kalman filtering.<small>Gaussian precision and covariance updates.</small></li><li>Roger A. Horn and Charles R. Johnson, <em>Matrix Analysis</em>, chapters on Hermitian eigenvalue inequalities.<small>Directional excitation and eigenvalue bounds.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/economica-obscura/">“Economica Obscura: Institutions, Archives, and Policy Learning.”</a><small>Related institutional archive application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the latent coefficient or state process, initial prior, loading and units by vintage, report noise, conditional independence, missingness, archive horizon, cumulative eigenvalues, target, process transition and covariance, zero-noise handling, diffuse-prior limit, and PSD residuals.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers linear Gaussian archives for static coefficients and the covariance recursion for changing states. Adaptive reporting policies and endogenous field definitions are treated in the next chapter.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-01/">II-01 · Conditional Probability and a Model&#x27;s Information Structure</a></li><li><a href="/resources/volume-03/iii-18/">III-18 · Sequential Gaussian Learning and Filtering</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#archive-update">An archive accumulates directional precision</a>
+            <a href="#excitation-example">Equal archive sizes can leave different blind directions</a>
+            <a href="#changing-state">A changing state requires prediction before updating</a>
+            <a href="#field-semantics">A field name is part of the measurement contract</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-13/"><span>Previous</span><strong>I-13 · Information Budgets, Decision Loss, and Record Allocation</strong></a><a class="next" href="/resources/volume-01/i-15/"><span>Next</span><strong>I-15 · Choosing Reporting Systems for Policy Learning</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

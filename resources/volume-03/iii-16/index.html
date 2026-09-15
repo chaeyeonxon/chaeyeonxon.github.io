@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>KKT Conditions, Linear Duality, and Sharpness · Chae-Yeon Xon</title>
+  <meta name="description" content="Constrained economic calculations require feasibility, complementary slackness, and a treatment of corners. Linear-program duality turns a bound into a certificate and Farkas alternatives turn infeasibility into a witness. A sharp result additionally requires that the bound be attained by an admissible economic construction.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-16/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="KKT Conditions, Linear Duality, and Sharpness · Chae-Yeon Xon">
+  <meta property="og:description" content="Constrained economic calculations require feasibility, complementary slackness, and a treatment of corners. Linear-program duality turns a bound into a certificate and Farkas alternatives turn infeasibility into a witness. A sharp result additionally requires that the bound be attained by an admissible economic construction.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-16/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="KKT Conditions, Linear Duality, and Sharpness · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Constrained economic calculations require feasibility, complementary slackness, and a treatment of corners. Linear-program duality turns a bound into a certificate and Farkas alternatives turn infeasibility into a witness. A sharp result additionally requires that the bound be attained by an admissible economic construction.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-16</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Sets, Optimization, and Sequential Information · Chapter III-16</div>
+        <h1>KKT Conditions, Linear Duality, and Sharpness</h1>
+        <p>Constrained economic calculations require feasibility, complementary slackness, and a treatment of corners. Linear-program duality turns a bound into a certificate and Farkas alternatives turn infeasibility into a witness. A sharp result additionally requires that the bound be attained by an admissible economic construction.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-16.01</span><strong>Constrained optimization</strong></li>
+              <li><span>III-16.02</span><strong>Corners</strong></li>
+              <li><span>III-16.03</span><strong>Linear-program duality</strong></li>
+              <li><span>III-16.04</span><strong>Infeasibility certificates</strong></li>
+              <li><span>III-16.05</span><strong>Minimum enabling cost</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="convex-kkt">
+            <h2>1. KKT conditions need a model and a qualification</h2>
+            <p class="chapter-lede">A constrained optimum is certified by feasibility, stationarity, dual signs, and complementarity. In convex programs these conditions become sufficient; a constraint qualification supplies necessity and strong dual conclusions.</p>
+            <p>For the convex problem <span class="math-inline">\(\operatorname{min}_{x}\)</span> <span class="math-inline">\(f(x)\)</span> subject to <span class="math-inline">\(g_{j}(x)\le0\)</span> and <span class="math-inline">\(Ax=b\)</span>, define</p>
+            <div class="equation-block" role="math" aria-label="Lagrangian for a convex program."><span class="equation-tex">\[L(x,\lambda ,\nu )=f(x)+\sum _{j}\lambda _{j}g_{j}(x)+\nu ^{\top }(Ax-b).\]</span><span class="equation-number">(1)</span></div>
+            <p>KKT requires primal feasibility, <span class="math-inline">\(\lambda \ge0\)</span>, stationarity <span class="math-inline">\(0\in \partial _{x}L\)</span>, and <span class="math-inline">\(\lambda _{j}g_{j}(x)=0\)</span>. Slater's condition is a common qualification for convex inequality systems.</p>
+          </section>
+
+          <section class="chapter-section" id="lp-duality">
+            <h2>2. Minimum-cost enabling and its dual</h2>
+            <p>Consider the covering linear program</p>
+            <div class="equation-block" role="math" aria-label="Primal and dual covering linear programs."><span class="equation-tex">\[\begin{aligned}\text{Primal:}\quad &amp; \min_x\ c^{\top}x &amp;&amp; \text{subject to }Ax\ge b,\ x\ge0, \\ \text{Dual:}\quad &amp; \max_y\ b^{\top}y &amp;&amp; \text{subject to }A^{\top}y\le c,\ y\ge0.\end{aligned}\]</span><span class="equation-number">(2)</span></div>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Weak duality certificate</span><p>Every primal-feasible <span class="math-inline">\(x\)</span> and dual-feasible <span class="math-inline">\(y\)</span> satisfy <span class="math-inline">\(b^{\top}y\le c^{\top}x\)</span>. Equality certifies optimality of both solutions.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Since <span class="math-inline">\(y\ge0\)</span> and <span class="math-inline">\(Ax\ge b\)</span>, <span class="math-inline">\(b^{\top}y\le x^{\top}A^{\top}y\)</span>. Dual feasibility and <span class="math-inline">\(x\ge0\)</span> give <span class="math-inline">\(x^{\top}A^{\top}y\le x^{\top}c\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>3. A sharp two-requirement package</h2>
+            <p>Let</p>
+            <div class="equation-block" role="math" aria-label="Small covering problem matrices."><span class="equation-tex">\[A=\begin{bmatrix}1 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 1\end{bmatrix}, \quad b=(1,1)^{\top }, \quad c=(1,\frac{3}{2},1)^{\top }.\]</span><span class="equation-number">(3)</span></div>
+            <p>The primal allocation <span class="math-inline">\(x^{*}=(0,1,0)^{\top}\)</span> enables both requirements at cost 3/2. The dual vector <span class="math-inline">\(y^{*}=(3/4,3/4)^{\top}\)</span> satisfies <span class="math-inline">\(A^{\top}y^{*}=(3/4,3/2,3/4)^{\top}\le c\)</span> and has value 3/2. Equality in weak duality certifies the optimum. Complementary slackness records that both requirements bind and only the shared second input is used.</p>
+            <p>On the efficient boundary with <span class="math-inline">\(0\le x_{2}\le1\)</span>, set <span class="math-inline">\(x_{1}=x_{3}=1-x_{2}\)</span>. Cost is <span class="math-inline">\(2-x_{2}/2\)</span>, so the optimizer is unique at <span class="math-inline">\(x_{2}=1\)</span>.</p>
+          </section>
+
+          <section class="chapter-section" id="farkas">
+            <h2>4. Infeasibility and separation</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 2 · Farkas alternative</span><p>Exactly one of the following systems has a solution: (i) <span class="math-inline">\(Ax=b\)</span>, <span class="math-inline">\(x\ge0\)</span>; (ii) <span class="math-inline">\(A^{\top}y\ge0\)</span> and <span class="math-inline">\(b^{\top}y&lt;0\)</span>.</p></div>
+            <p>Take <span class="math-inline">\(A=\begin{bmatrix}1 &amp; 1 \\ 1 &amp; 1\end{bmatrix}\)</span> and <span class="math-inline">\(b=(1,0)^{\top}\)</span>. The equal rows cannot produce unequal coordinates in <span class="math-inline">\(b\)</span>. The multiplier <span class="math-inline">\(y=(-1,1)^{\top}\)</span> has <span class="math-inline">\(A^{\top}y=0\)</span> and <span class="math-inline">\(b^{\top}y=-1\)</span>, providing a finite certificate.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Solver status used as sharpness</span><p>A numerical status code reports behavior under tolerances and scaling. Sharpness requires a feasible extremizer and a matching dual or separation certificate, together with primal, dual, and complementarity residuals.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Rescale rows and variables, retain the original economic units for reporting, and print primal violation, dual violation, objective gap, and complementarity products. For infeasibility, request a dual ray and verify its inequalities outside the solver.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Derive the dual in (2) from the Lagrangian and verify all residuals for (3).</li>
+              <li>Change the shared-input cost from 3/2 to a parameter <span class="math-inline">\(c_{2}\)</span>; characterize the optimizer face for every <span class="math-inline">\(c_{2}\ge0\)</span>.</li>
+              <li>Verify the Farkas certificate and construct a minimally infeasible subsystem with three equations.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Attach nonnegative multipliers to <span class="math-inline">\(b-Ax\le0\)</span>. The infimum over <span class="math-inline">\(x\ge0\)</span> is finite when <span class="math-inline">\(A^{\top}y\le c\)</span>, producing (2). In (3), both primal slacks and the second dual slack are zero; unused inputs have positive dual slack. <strong>2.</strong> Along the efficient boundary cost is <span class="math-inline">\(2+(c_{2}-2)x_{2}\)</span>. The shared input is uniquely used when <span class="math-inline">\(c_{2}&lt;2\)</span>, the entire boundary is optimal at equality, and the two separate inputs are used when <span class="math-inline">\(c_{2}&gt;2\)</span>.</p></details>
+            <ol class="reference-list">
+              <li>Dimitris Bertsimas and John Tsitsiklis, <em>Introduction to Linear Optimization</em>, Chapters 4–5.<small>Duality and certificates.</small></li>
+              <li>Stephen Boyd and Lieven Vandenberghe, <em>Convex Optimization</em>, Chapter 5.<small>KKT conditions and constraint qualifications.</small></li>
+              <li>Alexander Schrijver, <em>Theory of Linear and Integer Programming</em>, Chapters 7–8.<small>Farkas lemmas and polyhedral duality.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>Report the primal and dual, sign conventions, qualification, active set, primal and dual solutions, feasibility residuals, objective gap, complementarity, and any independent Farkas certificate.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter covers convex KKT conditions, finite linear-program duality, corner solutions, and infeasibility certificates. Integer and general nonconvex optimization are outside scope.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-02/">I-02 · Linear Maps, Kernels, Quotients, and Information Dimension</a></li><li><a href="/resources/volume-03/iii-01/">III-01 · Differentiating Implicit Models</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#convex-kkt">KKT conditions need a model and a qualification</a>
+            <a href="#lp-duality">Minimum-cost enabling and its dual</a>
+            <a href="#worked-example">A sharp two-requirement package</a>
+            <a href="#farkas">Infeasibility and separation</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-15/"><span>Previous</span><strong>III-15 · Set Functions, Mobius Inversion, and Modularity</strong></a><a class="next" href="/resources/volume-03/iii-17/"><span>Next</span><strong>III-17 · Matrix Optimization and Information Allocation</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Function Spaces and Legal Operator Algebra · Chae-Yeon Xon</title>
+  <meta name="description" content="An inverse formula is meaningful only after the domain, codomain, norm, and range are fixed. An operator can be injective while its inverse is unbounded or defined only on a strict range. Compositions that look algebraically valid may therefore be undefined on candidate functions used in an identification proof.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-10/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Function Spaces and Legal Operator Algebra · Chae-Yeon Xon">
+  <meta property="og:description" content="An inverse formula is meaningful only after the domain, codomain, norm, and range are fixed. An operator can be injective while its inverse is unbounded or defined only on a strict range. Compositions that look algebraically valid may therefore be undefined on candidate functions used in an identification proof.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-10/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Function Spaces and Legal Operator Algebra · Chae-Yeon Xon">
+  <meta name="twitter:description" content="An inverse formula is meaningful only after the domain, codomain, norm, and range are fixed. An operator can be injective while its inverse is unbounded or defined only on a strict range. Compositions that look algebraically valid may therefore be undefined on candidate functions used in an identification proof.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-10</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Function Spaces, Inverse Problems, and Risk Certificates · Chapter III-10</div>
+        <h1>Function Spaces and Legal Operator Algebra</h1>
+        <p>An inverse formula is meaningful only after the domain, codomain, norm, and range are fixed. An operator can be injective while its inverse is unbounded or defined only on a strict range. Compositions that look algebraically valid may therefore be undefined on candidate functions used in an identification proof.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-10.01</span><strong>Spaces and norms</strong></li>
+              <li><span>III-10.02</span><strong>Operator domains</strong></li>
+              <li><span>III-10.03</span><strong>Meaning of an inverse</strong></li>
+              <li><span>III-10.04</span><strong>Boundedness and theorem tools</strong></li>
+              <li><span>III-10.05</span><strong>Composition and graph cores</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="spaces-and-operators">
+            <h2>1. An operator formula begins with spaces</h2>
+            <p class="chapter-lede">A symbol such as <span class="math-inline">\(T^{-1}y\)</span> has content only after the domain of <span class="math-inline">\(T\)</span>, its range, and the norms on both spaces have been fixed.</p>
+            <p>Let <span class="math-inline">\(X\)</span> and <span class="math-inline">\(Y\)</span> be normed spaces and <span class="math-inline">\(T:D(T)\subseteq X\to Y\)</span> a linear operator. A full-domain map <span class="math-inline">\(T:X\to Y\)</span> is bounded when a finite constant <span class="math-inline">\(M\)</span> satisfies <span class="math-inline">\(\lVert Tx\rVert_{Y}\le M\lVert x\rVert_{X}\)</span>. If <span class="math-inline">\(T\)</span> is injective, the inverse is the map</p>
+            <div class="equation-block" role="math" aria-label="Domain and codomain of an inverse operator."><span class="equation-tex">\[T^{-1}:\operatorname{range}(T)\to D(T).\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Legal composition</span><p>The composition <span class="math-inline">\(ST\)</span> is defined on <span class="math-inline">\(\{x\in D(T):Tx\in D(S)\}\)</span>. Algebraic cancellation involving <span class="math-inline">\(T^{-1}\)</span> is valid only on vectors that belong to <span class="math-inline">\(\operatorname{range}(T)\)</span> and to every subsequent operator domain.</p></div>
+          </section>
+
+          <section class="chapter-section" id="bounded-inverse">
+            <h2>2. Bounded inversion is a lower-bound property</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Stability of an injective operator</span><p>Let <span class="math-inline">\(T:X\to Y\)</span> be bounded and injective. Its inverse on <span class="math-inline">\(\operatorname{range}(T)\)</span> is bounded exactly when a constant <span class="math-inline">\(c&gt;0\)</span> satisfies</p>
+              <div class="equation-block" role="math" aria-label="Operator bounded below inequality."><span class="equation-tex">\[\lVert Tx\rVert _{Y}\ge c\lVert x\rVert _{X} \quad \text{for every} x\in X.\]</span><span class="equation-number">(2)</span></div>
+              <p>If <span class="math-inline">\(X\)</span> is Banach, condition (2) also implies that <span class="math-inline">\(\operatorname{range}(T)\)</span> is closed in <span class="math-inline">\(Y\)</span>.</p>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> If <span class="math-inline">\(\lVert T^{-1}\rVert \le M\)</span>, then <span class="math-inline">\(\lVert x\rVert=\lVert T^{-1}Tx\rVert \le M\lVert Tx\rVert\)</span>, giving (2) with <span class="math-inline">\(c=1/M\)</span>. Conversely, (2) gives <span class="math-inline">\(\lVert T^{-1}y\rVert \le c^{-1}\lVert y\rVert\)</span> on the range. If <span class="math-inline">\(Tx_{n}\)</span> converges, (2) makes <span class="math-inline">\(x_{n}\)</span> Cauchy; completeness supplies a limit whose image is the proposed range limit. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="diagonal-example">
+            <h2>3. An injective compact operator with unstable inverse</h2>
+            <p>Take <span class="math-inline">\(X=Y=\ell ^{2}\)</span> and define <span class="math-inline">\(Te_{k}=k^{-1}e_{k}\)</span>. Then</p>
+            <div class="equation-block" role="math" aria-label="Diagonal compact operator and its range."><span class="equation-tex">\[(Tx)_{k}=x_{k}/k, \quad \operatorname{range}(T)=\{y\in \ell ^{2}: \sum k^{2}|y_{k}|^{2}&lt;\infty \}.\]</span><span class="equation-number">(3)</span></div>
+            <p>The map is bounded, compact, and injective. Yet <span class="math-inline">\(\lVert T^{-1}e_{k}\rVert=k\)</span>, so the inverse norm on successively larger coordinate bands diverges. The sequence <span class="math-inline">\(y_{k}=1/k\)</span> belongs to <span class="math-inline">\(\ell ^{2}\)</span>, while its formal inverse is the constant sequence and lies outside <span class="math-inline">\(\ell ^{2}\)</span>. Thus <span class="math-inline">\(y\)</span> is outside the range in (3).</p>
+            <p>In an <span class="math-inline">\(N\)</span>-coordinate truncation, the inverse norm is exactly <span class="math-inline">\(N\)</span>. Noise <span class="math-inline">\(\delta e_{N}\)</span> in the measured object becomes <span class="math-inline">\(N\delta e_{N}\)</span> after inversion. With <span class="math-inline">\(\delta=10^{-4}\)</span> and <span class="math-inline">\(N=10\)</span>,000, a measurement perturbation of size <span class="math-inline">\(10^{-4}\)</span> creates a latent error of size one.</p>
+          </section>
+
+          <section class="chapter-section" id="graph-and-cores">
+            <h2>4. Unbounded operators and graph cores</h2>
+            <p>An unbounded operator can still be closed: convergence <span class="math-inline">\(x_{n}\to x\)</span> and <span class="math-inline">\(Tx_{n}\to y\)</span> then implies <span class="math-inline">\(x\in D(T)\)</span> and <span class="math-inline">\(Tx=y\)</span>. Its graph norm <span class="math-inline">\(\lVert x\rVert_{T}=\lVert x\rVert_{X}+\lVert Tx\rVert_{Y}\)</span> records both the object and its image. A graph core is a subset dense in <span class="math-inline">\(D(T)\)</span> under this norm.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Ambient convergence used through an inverse</span><p>Convergence <span class="math-inline">\(y_{n}\to y\)</span> in <span class="math-inline">\(Y\)</span> gives no convergence of <span class="math-inline">\(T^{-1}y_{n}\)</span> when the inverse is unbounded. The proof must supply convergence in the range norm or a regularization argument.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>For each displayed operator, create a type line containing domain, codomain, norm, range, and boundedness. For a numerical inverse, report the singular-value cutoff and the norm of the regularized inverse. A finite matrix result should be accompanied by its behavior as the discretization dimension grows.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Prove compactness of the diagonal operator in (3) by finite-rank truncation.</li>
+              <li>Characterize the range when the diagonal sequence is <span class="math-inline">\(2^{-k}\)</span> and compute the inverse norm on the first <span class="math-inline">\(N\)</span> coordinates.</li>
+              <li>Give operators <span class="math-inline">\(S\)</span> and <span class="math-inline">\(T\)</span> for which both are densely defined while <span class="math-inline">\(D(ST)\)</span> is a strict subset of <span class="math-inline">\(D(T)\)</span>.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Let <span class="math-inline">\(T_{N}\)</span> retain the first <span class="math-inline">\(N\)</span> diagonal coordinates. It has finite rank and <span class="math-inline">\(\lVert T-T_{N}\rVert=1/(N+1)\)</span>, which tends to zero; norm limits of finite-rank operators are compact. <strong>2.</strong> The range is {<span class="math-inline">\(y:\sum 4^{k}|y_{k}|^{2}&lt;\infty\)</span>}, and the first-<span class="math-inline">\(N\)</span> inverse norm is <span class="math-inline">\(2^{N}\)</span>.</p></details>
+            <ol class="reference-list">
+              <li>John B. Conway, <em>A Course in Functional Analysis</em>, Chapters II–III.<small>Bounded operators, closed range, and compactness.</small></li>
+              <li>Walter Rudin, <em>Functional Analysis</em>, Chapters 2, 4.<small>Banach-space operator theorems.</small></li>
+              <li>Heinz W. Engl, Martin Hanke, and Andreas Neubauer, <em>Regularization of Inverse Problems</em>, Chapter 2.<small>Ill-posed inversion and regularization.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>State every domain, codomain, norm, range, inverse domain, and composition domain. Report whether the inverse is bounded, closed, regularized, or available only in a finite truncation.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter establishes operator-domain discipline for Banach and Hilbert space inverse problems. Operator algebras and general spectral calculus are outside its boundary.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-02/">I-02 · Linear Maps, Kernels, Quotients, and Information Dimension</a></li><li><a href="/resources/volume-02/ii-01/">II-01 · Conditional Probability and a Model&#x27;s Information Structure</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#spaces-and-operators">An operator formula begins with spaces</a>
+            <a href="#bounded-inverse">Bounded inversion is a lower-bound property</a>
+            <a href="#diagonal-example">An injective compact operator with unstable inverse</a>
+            <a href="#graph-and-cores">Unbounded operators and graph cores</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-09/"><span>Previous</span><strong>III-09 · Poles, Cancellation, and Generalized Modes</strong></a><a class="next" href="/resources/volume-03/iii-11/"><span>Next</span><strong>III-11 · Integral, Multiplication, Adjoint, and Smoothing Operators</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

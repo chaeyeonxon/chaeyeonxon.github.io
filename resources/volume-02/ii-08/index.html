@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Kinks, Binding Inequalities, and Simulation Inference · Chae-Yeon Xon</title>
+  <meta name="description" content="Squared violations and other kinked criteria behave differently at binding and slack moments. Centered simulation noise changes covariance, while mass at the kink can create a mean shift. The limit depends on the relative simulation rate summarized by kappa.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-08/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Kinks, Binding Inequalities, and Simulation Inference · Chae-Yeon Xon">
+  <meta property="og:description" content="Squared violations and other kinked criteria behave differently at binding and slack moments. Centered simulation noise changes covariance, while mass at the kink can create a mean shift. The limit depends on the relative simulation rate summarized by kappa.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-08/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Kinks, Binding Inequalities, and Simulation Inference · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Squared violations and other kinked criteria behave differently at binding and slack moments. Centered simulation noise changes covariance, while mass at the kink can create a mean shift. The limit depends on the relative simulation rate summarized by kappa.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-08</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Asymptotics and Simulation · Chapter II-08</div>
+        <h1>Kinks, Binding Inequalities, and Simulation Inference</h1>
+        <p>Squared violations and other kinked criteria behave differently at binding and slack moments. Centered simulation noise changes covariance, while mass at the kink can create a mean shift. The limit depends on the relative simulation rate summarized by kappa.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-08.01</span><strong>Nonsmooth criteria</strong></li>
+              <li><span>II-08.02</span><strong>Mean and centered components</strong></li>
+              <li><span>II-08.03</span><strong>Probability mass at the kink</strong></li>
+              <li><span>II-08.04</span><strong>Limits indexed by kappa</strong></li>
+              <li><span>II-08.05</span><strong>Separate bias rates</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="binding-loss">
+            <h2>1. A binding inequality exposes the kink</h2>
+            <p class="chapter-lede">Centered simulation variation and binding-point mean shift are separate. A covariance correction addresses the first and leaves the second unchanged.</p>
+            <p>Let the population moment be <span class="math-inline">\(m(\theta)=\theta\)</span> and use squared violation <span class="math-inline">\(Q(\theta)=[m(\theta )]_{+}^{2}\)</span>, where <span class="math-inline">\([x]_{+}=\max\{0,x\}\)</span>. Approximate the moment at <span class="math-inline">\(\theta _{0}=0\)</span> with <span class="math-inline">\(\hat{m}_{s}(0)=n_{s}^{-1}\sum _{j=1}^{n_{s}}Z_{j}\)</span>, where the <span class="math-inline">\(Z_{j}\)</span> are independent Rademacher variables.</p>
+            <p>The simulated score at the binding point is <span class="math-inline">\(S_{s}=2[\hat{m}_{s}(0)]_{+}\)</span>. Symmetry gives a positive mean whenever the simulated average can be nonzero.</p>
+          </section>
+
+          <section class="chapter-section" id="finite-example">
+            <h2>2. A two-draw score has an exact mean shift</h2>
+            <p>For <span class="math-inline">\(n_{s}=2\)</span>, the simulated average is <span class="math-inline">\(-1\)</span>,0,1 with probabilities 1/4,1/2,1/4. Therefore <span class="math-inline">\(S_{s}\)</span> is zero with probability 3/4 and two with probability 1/4:</p>
+            <div class="equation-block" role="math" aria-label="Mean and variance of a binding simulated score."><span class="equation-tex">\[E[S_{s}]=\frac{1}{2}, \quad \operatorname{Var}(S_{s})=\frac{3}{4}.\]</span><span class="equation-number">(1)</span></div>
+            <p>Subtracting the mean yields a centered variable but does not make the original score unbiased. A variance estimator alone records 3/4 and misses the shift 1/2.</p>
+          </section>
+
+          <section class="chapter-section" id="kappa-regimes">
+            <h2>3. The relative simulation rate determines the first-order term</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Binding-score rate</span><p>As <span class="math-inline">\(n_{s}\to \infty\)</span>,</p>
+              <div class="equation-block" role="math" aria-label="Asymptotic mean and centered distribution of a binding score."><span class="equation-tex">\[\begin{aligned}\sqrt{n_{s}}E[S_{s}]\to \sqrt{2/\pi }, \\ \sqrt{n_{s}}(S_{s}-ES_{s})\Rightarrow 2[Z_{+}-E(Z_{+})], \quad Z\sim N(0,1).\end{aligned}\]</span><span class="equation-number">(2)</span></div>
+              <p>Let <span class="math-inline">\(\kappa _{n}=\sqrt{n/n_{s}}\)</span>. At root-<span class="math-inline">\(n\)</span> scale the contribution vanishes if <span class="math-inline">\(\kappa _{n}\to0\)</span>, has a finite positive mean shift and non-Gaussian centered limit if <span class="math-inline">\(\kappa _{n}\to\kappa\in(0,\infty)\)</span>, and is not tight on that scale if <span class="math-inline">\(\kappa _{n}\to \infty\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof sketch.</strong> The central limit theorem gives <span class="math-inline">\(\sqrt{n_{s}}\hat{m}_{s}(0)\Rightarrow Z\)</span>. The positive-part map is continuous, and bounded second moments give uniform integrability for the first two moments. Multiply the resulting limit by <span class="math-inline">\(\kappa _{n}\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="slack-and-boundary">
+            <h2>4. Slack moments and constraint boundaries behave differently</h2>
+            <p>If <span class="math-inline">\(m(\theta _{0})=-a&lt;0\)</span> with bounded simulation draws, the probability that simulation crosses the kink decreases exponentially in <span class="math-inline">\(n_{s}\)</span> by a concentration bound. Binding moments have no such fixed margin. Local-to-boundary sequences with <span class="math-inline">\(a\)</span> shrinking at the simulation standard-error rate interpolate between these cases.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Centered covariance correction used for kink bias</span><p>Correcting <span class="math-inline">\(\operatorname{Var}(S_{s})\)</span> leaves E[<span class="math-inline">\(S_{s}\)</span>] unchanged. At finite positive <span class="math-inline">\(\kappa\)</span>, the binding-point shift remains first order.</p></div>
+            <p>Other nonsmooth losses produce different maps and constants. Multiple binding inequalities introduce a multivariate cone projection and dependence across simulated moments. The result in (2) belongs to the declared scalar positive-part criterion.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Classify moments as slack, binding, or local-to-binding under a documented tolerance. Estimate centered covariance and mean shift separately across independent top-level seeds. Report <span class="math-inline">\(\kappa _{n}\)</span>, the simulation draw law, common-random-number structure, and how every generated stage is recomputed.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify the complete two-draw distribution and (1).</li><li>Compute the exact binding-score mean for one and three Rademacher draws.</li><li>Let <span class="math-inline">\(n_{s}=n^{c}\)</span> and classify the <span class="math-inline">\(\kappa\)</span> regimes.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Only the two-positive-draw outcome generates score two. <strong>2.</strong> For one draw the score is zero or two equally, so its mean is one. For three draws the positive averages are 1/3 and 1 with probabilities 3/8 and 1/8, giving score mean 1/2. <strong>3.</strong> <span class="math-inline">\(\kappa _{n}=n^{(1-c)/2}\)</span>; it vanishes for <span class="math-inline">\(c&gt;1\)</span>, is one for <span class="math-inline">\(c=1\)</span>, and diverges for <span class="math-inline">\(c&lt;1\)</span>.</p></details>
+            <ol class="reference-list"><li>A. Shapiro (1991), “Asymptotic Analysis of Stochastic Programs,” <em>Annals of Operations Research</em> 30, 169–186.<small>Nonsmooth stochastic-program limits.</small></li><li>Donald W. K. Andrews and Gustavo Soares (2010), “Inference for Parameters Defined by Moment Inequalities,” <em>Econometrica</em> 78, 119–157.<small>Binding and slack moment regimes.</small></li><li>A. W. van der Vaart, <em>Asymptotic Statistics</em>, Chapter 3.<small>Continuous mapping and delta-method boundaries.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the loss and directional map, population slack, binding and local sequences, simulation law, draw count, <span class="math-inline">\(\kappa\)</span> sequence, score mean, centered covariance, dependence, tolerance, parameter boundary, and which stages are rerun.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The formal calculation covers one scalar squared-violation score with bounded simulation draws. Other nonsmooth estimators require their own directional derivatives and resampling theory.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-06/">II-06 · Extremum Estimators and Uniform Local Expansions</a></li><li><a href="/resources/volume-02/ii-07/">II-07 · An Error Ledger for Monte Carlo and Forward Simulation</a></li><li><a href="/resources/volume-02/ii-04/">II-04 · Moment Inequalities, Partial Identification, and Sharp Bounds</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#binding-loss">A binding inequality exposes the kink</a>
+            <a href="#finite-example">A two-draw score has an exact mean shift</a>
+            <a href="#kappa-regimes">The relative simulation rate determines the first-order term</a>
+            <a href="#slack-and-boundary">Slack moments and constraint boundaries behave differently</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-07/"><span>Previous</span><strong>II-07 · An Error Ledger for Monte Carlo and Forward Simulation</strong></a><a class="next" href="/resources/volume-02/ii-09/"><span>Next</span><strong>II-09 · Generated Responses, Estimated Operators, and Noisy Derivatives</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

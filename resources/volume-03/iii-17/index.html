@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Matrix Optimization and Information Allocation · Chae-Yeon Xon</title>
+  <meta name="description" content="Information design frequently chooses a positive-semidefinite precision or retention matrix under budget and technological restrictions. Schur complements translate quadratic risk bounds into block-matrix constraints. Matrix KKT conditions and dual gaps provide certificates, while fixed spectra restrict which coordinate-wise information allocations are attainable.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-17/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Matrix Optimization and Information Allocation · Chae-Yeon Xon">
+  <meta property="og:description" content="Information design frequently chooses a positive-semidefinite precision or retention matrix under budget and technological restrictions. Schur complements translate quadratic risk bounds into block-matrix constraints. Matrix KKT conditions and dual gaps provide certificates, while fixed spectra restrict which coordinate-wise information allocations are attainable.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-17/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Matrix Optimization and Information Allocation · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Information design frequently chooses a positive-semidefinite precision or retention matrix under budget and technological restrictions. Schur complements translate quadratic risk bounds into block-matrix constraints. Matrix KKT conditions and dual gaps provide certificates, while fixed spectra restrict which coordinate-wise information allocations are attainable.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-17</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Sets, Optimization, and Sequential Information · Chapter III-17</div>
+        <h1>Matrix Optimization and Information Allocation</h1>
+        <p>Information design frequently chooses a positive-semidefinite precision or retention matrix under budget and technological restrictions. Schur complements translate quadratic risk bounds into block-matrix constraints. Matrix KKT conditions and dual gaps provide certificates, while fixed spectra restrict which coordinate-wise information allocations are attainable.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-17.01</span><strong>Positive-semidefinite order</strong></li>
+              <li><span>III-17.02</span><strong>Schur complements</strong></li>
+              <li><span>III-17.03</span><strong>Semidefinite programs</strong></li>
+              <li><span>III-17.04</span><strong>Directional optimization</strong></li>
+              <li><span>III-17.05</span><strong>Isospectral information design</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="psd-order">
+            <h2>1. Precision matrices live in the PSD cone</h2>
+            <p class="chapter-lede">Information allocation compares positive-semidefinite matrices through their action on directions. Singular matrices require range conditions because some target directions receive zero precision.</p>
+            <p>For symmetric matrices <span class="math-inline">\(A\)</span> and <span class="math-inline">\(B\)</span>, write <span class="math-inline">\(A\succeq B\)</span> when <span class="math-inline">\(A-B\)</span> is positive semidefinite. Every <span class="math-inline">\(P\succeq0\)</span> has a unique positive-semidefinite square root and a Moore–Penrose inverse <span class="math-inline">\(P^{\dagger}\)</span>. The quadratic target risk <span class="math-inline">\(c^{\top}P^{\dagger}c\)</span> is finite in the information interpretation only when <span class="math-inline">\(c\in \operatorname{range}(P)\)</span>.</p>
+          </section>
+
+          <section class="chapter-section" id="schur-complement">
+            <h2>2. Generalized Schur complement</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Singular block-PSD epigraph</span><p>For <span class="math-inline">\(P\succeq0\)</span>,</p>
+              <div class="equation-block" role="math" aria-label="Generalized Schur complement condition."><span class="equation-tex">\[\begin{bmatrix}P &amp; c \\ c^{\top } &amp; t\end{bmatrix}\succeq 0 \Longleftrightarrow c\in \operatorname{range}(P) \text{and} t\ge c^{\top }P^{\dagger }c.\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> A vector in <span class="math-inline">\(\operatorname{ker}(P)\)</span> must be orthogonal to <span class="math-inline">\(c\)</span> for the block quadratic form to remain nonnegative under arbitrary scaling; hence <span class="math-inline">\(c\)</span> lies in <span class="math-inline">\(\operatorname{range}(P)\)</span>. Write <span class="math-inline">\(c=Pu\)</span> with <span class="math-inline">\(u=P^{\dagger}c\)</span>. Completing the square gives <span class="math-inline">\(x^{\top}Px+2\alpha c^{\top}x+\alpha ^{2}t=(x+\alpha u)^{\top}P(x+\alpha u)+\alpha ^{2}(t-c^{\top}P^{\dagger}c)\)</span>. ∎</p></div>
+            <p>With <span class="math-inline">\(P=\operatorname{diag}(4,0)\)</span> and <span class="math-inline">\(c=(2,0)^{\top}\)</span>, the risk is one and the block matrix is PSD exactly when <span class="math-inline">\(t\ge1\)</span>. Replacing <span class="math-inline">\(c\)</span> by <span class="math-inline">\((2,0.1)^{\top}\)</span> violates the range condition; no finite <span class="math-inline">\(t\)</span> repairs the block constraint.</p>
+          </section>
+
+          <section class="chapter-section" id="information-sdp">
+            <h2>3. Information retention as an SDP</h2>
+            <p>Suppose retained signal <span class="math-inline">\(j\)</span> contributes <span class="math-inline">\(a_{j}a_{j}^{\top}\)</span> units of precision per unit weight. With base precision <span class="math-inline">\(P_{0}\)</span>, costs <span class="math-inline">\(d_{j}\)</span>, and budget <span class="math-inline">\(B\)</span>, a target-risk problem is</p>
+            <div class="equation-block" role="math" aria-label="Semidefinite information allocation problem."><span class="equation-tex">\[\begin{aligned}\text{minimize}\quad &amp; t \\ \text{subject to}\quad &amp; \begin{bmatrix}P_{0}+\sum_j w_{j}a_{j}a_{j}^{\top} &amp; c \\ c^{\top} &amp; t\end{bmatrix}\succeq0, \\ &amp; \sum_j d_{j}w_{j}\le B,\quad w\ge0.\end{aligned}\]</span><span class="equation-number">(2)</span></div>
+            <p>Matrix-valued KKT conditions pair the PSD constraint with a PSD dual matrix. The inner product of primal and dual slack matrices supplies complementarity; eigenvalue feasibility and the dual gap should be reported.</p>
+          </section>
+
+          <section class="chapter-section" id="orientation-majorization">
+            <h2>4. Eigenvalues and orientation are separate choices</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 2 · Orthogonal Procrustes value</span><p>If <span class="math-inline">\(M=U\Sigma V^{\top}\)</span> is a singular-value decomposition, then</p>
+              <div class="equation-block" role="math" aria-label="Orthogonal Procrustes maximum."><span class="equation-tex">\[\operatorname{max}_{Q^{\top }Q=I} \operatorname{tr}(Q^{\top }M)=\sum _{j}\sigma _{j}(M),\]</span><span class="equation-number">(3)</span></div>
+              <p>attained at <span class="math-inline">\(Q=UV^{\top}\)</span> when an orthogonal solution is admissible.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Write <span class="math-inline">\(\operatorname{tr}(Q^{\top}M)=\operatorname{tr}(V^{\top}Q^{\top}U\Sigma)\)</span>. The diagonal entries of the orthogonal matrix <span class="math-inline">\(U^{\top}QV\)</span> are at most one, so the trace is bounded by <span class="math-inline">\(\operatorname{tr}(\Sigma)\)</span>. The proposed <span class="math-inline">\(Q\)</span> attains the bound. ∎</p></div>
+            <p>Schur–Horn further restricts diagonals under a fixed spectrum: a feasible diagonal is majorized by the eigenvalue vector. With eigenvalues (3,1), any diagonal must sum to four and each entry lies between one and three. The proposed allocation (4,0) has the right sum and is infeasible.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Spectrum treated as a free diagonal budget</span><p>Eigenvalues specify information along endogenous orthogonal directions. Coordinate-level precision depends on orientation and must satisfy majorization restrictions.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Symmetrize computed matrices, report minimum eigenvalues of every PSD slack, verify the range residual <span class="math-inline">\(\lVert (I-PP^{\dagger})c\rVert\)</span>, and compute primal and dual objectives in original units. Inspect sensitivity at singular boundaries.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Verify both examples following (1) by testing the block quadratic form.</li>
+              <li>Solve (2) when <span class="math-inline">\(P_{0}=I\)</span>, <span class="math-inline">\(c=(1,1)^{\top}\)</span>, and available signals are the two coordinate directions with equal cost.</li>
+              <li>List all two-dimensional diagonals feasible under eigenvalues (3,1) and construct an orthogonal rotation attaining each one.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> For <span class="math-inline">\(c=(2,0)^{\top}\)</span>, completing the square leaves <span class="math-inline">\((t-1)\alpha ^{2}\)</span>. For <span class="math-inline">\(c=(2,0.1)^{\top}\)</span>, test a block vector whose first component lies in <span class="math-inline">\(\operatorname{ker}(P)\)</span> and scale its last coordinate to create a negative cross term. <strong>3.</strong> Every feasible diagonal is (<span class="math-inline">\(d,4-d\)</span>) with <span class="math-inline">\(1\le d\le3\)</span>. A rotation with squared cosine (<span class="math-inline">\(d-1\)</span>)/2 realizes it.</p></details>
+            <ol class="reference-list">
+              <li>Stephen Boyd and Lieven Vandenberghe, <em>Convex Optimization</em>, Chapters 4–5, Appendix A.5.<small>SDPs, duality, and Schur complements.</small></li>
+              <li>Rajendra Bhatia, <em>Matrix Analysis</em>, Chapters II–III.<small>PSD order and matrix inequalities.</small></li>
+              <li>Roger Horn and Charles Johnson, <em>Matrix Analysis</em>.<small>Generalized inverses, majorization, and Schur–Horn structure.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>Report PSD conventions, singular range conditions, primal and dual slack eigenvalues, budget feasibility, dual gap, complementarity, target orientation, and majorization checks.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter covers PSD order, generalized Schur complements, information-allocation SDPs, orthogonal orientation, and finite-dimensional majorization. SDP complexity theory lies outside scope.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-16/">III-16 · KKT Conditions, Linear Duality, and Sharpness</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#psd-order">Precision matrices live in the PSD cone</a>
+            <a href="#schur-complement">Generalized Schur complement</a>
+            <a href="#information-sdp">Information retention as an SDP</a>
+            <a href="#orientation-majorization">Eigenvalues and orientation are separate choices</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-16/"><span>Previous</span><strong>III-16 · KKT Conditions, Linear Duality, and Sharpness</strong></a><a class="next" href="/resources/volume-03/iii-18/"><span>Next</span><strong>III-18 · Sequential Gaussian Learning and Filtering</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

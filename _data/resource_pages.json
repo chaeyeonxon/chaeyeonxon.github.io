@@ -1,0 +1,330 @@
+[
+  {
+    "path": "/resources/",
+    "title": "Resources"
+  },
+  {
+    "path": "/resources/volume-01/",
+    "title": "Identification, Measurement, and Counterfactual Reasoning"
+  },
+  {
+    "path": "/resources/volume-01/i-01/",
+    "title": "Define the Research Object as a Contract"
+  },
+  {
+    "path": "/resources/volume-01/i-02/",
+    "title": "Linear Maps, Kernels, Quotients, and Information Dimension"
+  },
+  {
+    "path": "/resources/volume-01/i-03/",
+    "title": "The Boundary Between Exact and Local Sufficiency"
+  },
+  {
+    "path": "/resources/volume-01/i-04/",
+    "title": "Minimum Information Repair and Feasible Records"
+  },
+  {
+    "path": "/resources/volume-01/i-05/",
+    "title": "Representation Budgets, Singular Values, and Approximation Loss"
+  },
+  {
+    "path": "/resources/volume-01/i-06/",
+    "title": "From Local Derivatives to Global Decoder Risk"
+  },
+  {
+    "path": "/resources/volume-01/i-07/",
+    "title": "Measurement Across Environments"
+  },
+  {
+    "path": "/resources/volume-01/i-08/",
+    "title": "Target-Directed Record Selection"
+  },
+  {
+    "path": "/resources/volume-01/i-09/",
+    "title": "Clock Error and Decision-Relevant Moments"
+  },
+  {
+    "path": "/resources/volume-01/i-10/",
+    "title": "Adjoint Bridges Under Clock Uncertainty"
+  },
+  {
+    "path": "/resources/volume-01/i-11/",
+    "title": "Administrative Handoffs as Statistical Experiments"
+  },
+  {
+    "path": "/resources/volume-01/i-12/",
+    "title": "Target Fisher Information: Identification and Precision"
+  },
+  {
+    "path": "/resources/volume-01/i-13/",
+    "title": "Information Budgets, Decision Loss, and Record Allocation"
+  },
+  {
+    "path": "/resources/volume-01/i-14/",
+    "title": "Bayesian Archives and Accumulated Information"
+  },
+  {
+    "path": "/resources/volume-01/i-15/",
+    "title": "Choosing Reporting Systems for Policy Learning"
+  },
+  {
+    "path": "/resources/volume-01/i-16/",
+    "title": "Counterfactual Frontiers Across Model Families"
+  },
+  {
+    "path": "/resources/volume-02/",
+    "title": "Inference, Selection, and Simulation"
+  },
+  {
+    "path": "/resources/volume-02/ii-01/",
+    "title": "Conditional Probability and a Model's Information Structure"
+  },
+  {
+    "path": "/resources/volume-02/ii-02/",
+    "title": "Symmetry, Order Statistics, and Endogenous Selection"
+  },
+  {
+    "path": "/resources/volume-02/ii-03/",
+    "title": "Random Assignment and Dynamic Policy Contrasts"
+  },
+  {
+    "path": "/resources/volume-02/ii-04/",
+    "title": "Moment Inequalities, Partial Identification, and Sharp Bounds"
+  },
+  {
+    "path": "/resources/volume-02/ii-05/",
+    "title": "Stochastic Orders and Competing Sample Sizes"
+  },
+  {
+    "path": "/resources/volume-02/ii-06/",
+    "title": "Extremum Estimators and Uniform Local Expansions"
+  },
+  {
+    "path": "/resources/volume-02/ii-07/",
+    "title": "An Error Ledger for Monte Carlo and Forward Simulation"
+  },
+  {
+    "path": "/resources/volume-02/ii-08/",
+    "title": "Kinks, Binding Inequalities, and Simulation Inference"
+  },
+  {
+    "path": "/resources/volume-02/ii-09/",
+    "title": "Generated Responses, Estimated Operators, and Noisy Derivatives"
+  },
+  {
+    "path": "/resources/volume-02/ii-10/",
+    "title": "Inference for Rank, Singular Values, and Eigenspaces"
+  },
+  {
+    "path": "/resources/volume-02/ii-11/",
+    "title": "Local Projections and Covariance for Dependent Data"
+  },
+  {
+    "path": "/resources/volume-02/ii-12/",
+    "title": "Dependent Bootstraps and Nonsmooth Frontiers"
+  },
+  {
+    "path": "/resources/volume-02/ii-13/",
+    "title": "Predictive Validation, Coordinate Selection, and Oracle Bounds"
+  },
+  {
+    "path": "/resources/volume-03/",
+    "title": "Geometry, Dynamics, and Operators for Economic Models"
+  },
+  {
+    "path": "/resources/volume-03/iii-01/",
+    "title": "Differentiating Implicit Models"
+  },
+  {
+    "path": "/resources/volume-03/iii-02/",
+    "title": "State Spaces, Fibers, Tangent Directions, and Metrics"
+  },
+  {
+    "path": "/resources/volume-03/iii-03/",
+    "title": "Constrained Policy Motion and Lifts"
+  },
+  {
+    "path": "/resources/volume-03/iii-04/",
+    "title": "Curvature, Transport, and Holonomy"
+  },
+  {
+    "path": "/resources/volume-03/iii-05/",
+    "title": "Small-Loop Error Rates and Experimental Design"
+  },
+  {
+    "path": "/resources/volume-03/iii-06/",
+    "title": "Dynamic Quotients and Additive-State Realization"
+  },
+  {
+    "path": "/resources/volume-03/iii-07/",
+    "title": "Linear Dynamics: Stability and Response Spaces"
+  },
+  {
+    "path": "/resources/volume-03/iii-08/",
+    "title": "Exact Root Counts and Equilibrium Determinacy"
+  },
+  {
+    "path": "/resources/volume-03/iii-09/",
+    "title": "Poles, Cancellation, and Generalized Modes"
+  },
+  {
+    "path": "/resources/volume-03/iii-10/",
+    "title": "Function Spaces and Legal Operator Algebra"
+  },
+  {
+    "path": "/resources/volume-03/iii-11/",
+    "title": "Integral, Multiplication, Adjoint, and Smoothing Operators"
+  },
+  {
+    "path": "/resources/volume-03/iii-12/",
+    "title": "Spectral Projections and Cross-Candidate Identification"
+  },
+  {
+    "path": "/resources/volume-03/iii-13/",
+    "title": "Hilbert Target Operators and Distribution States"
+  },
+  {
+    "path": "/resources/volume-03/iii-14/",
+    "title": "Conditional Generators, Poincare Inequalities, and Graph Certificates"
+  },
+  {
+    "path": "/resources/volume-03/iii-15/",
+    "title": "Set Functions, Mobius Inversion, and Modularity"
+  },
+  {
+    "path": "/resources/volume-03/iii-16/",
+    "title": "KKT Conditions, Linear Duality, and Sharpness"
+  },
+  {
+    "path": "/resources/volume-03/iii-17/",
+    "title": "Matrix Optimization and Information Allocation"
+  },
+  {
+    "path": "/resources/volume-03/iii-18/",
+    "title": "Sequential Gaussian Learning and Filtering"
+  },
+  {
+    "path": "/resources/volume-04/",
+    "title": "Structural Models and Economic Computation"
+  },
+  {
+    "path": "/resources/volume-04/iv-01/",
+    "title": "Random Utility, Choice Sets, and Normalization"
+  },
+  {
+    "path": "/resources/volume-04/iv-02/",
+    "title": "Residual-Income Demand and Approximation Domains"
+  },
+  {
+    "path": "/resources/volume-04/iv-03/",
+    "title": "Market Shares, Inversion, and Demographic Micro Moments"
+  },
+  {
+    "path": "/resources/volume-04/iv-04/",
+    "title": "From Demand Derivatives to Markups and Prices"
+  },
+  {
+    "path": "/resources/volume-04/iv-05/",
+    "title": "Consumer Welfare and Compensating Variation"
+  },
+  {
+    "path": "/resources/volume-04/iv-06/",
+    "title": "Viewing-Time Optimization and Set-Valued Demand"
+  },
+  {
+    "path": "/resources/volume-04/iv-07/",
+    "title": "Bargaining, Disagreement States, and Choice-Law Consistency"
+  },
+  {
+    "path": "/resources/volume-04/iv-08/",
+    "title": "Dynamic Choice and Forward Simulation"
+  },
+  {
+    "path": "/resources/volume-04/iv-09/",
+    "title": "Corporate Control and Policy-Invariant Aggregation"
+  },
+  {
+    "path": "/resources/volume-04/iv-10/",
+    "title": "Heterogeneous States, Transition Economies, and Additive Summaries"
+  },
+  {
+    "path": "/resources/volume-04/iv-11/",
+    "title": "Stable Baselines and Policy Response Capacity"
+  },
+  {
+    "path": "/resources/volume-04/iv-12/",
+    "title": "Complementary Inputs, Option Production, and Supply Incentives"
+  },
+  {
+    "path": "/resources/volume-04/iv-13/",
+    "title": "Policy Transmission and the Actual Unit of Randomization"
+  },
+  {
+    "path": "/resources/volume-04/iv-14/",
+    "title": "Monetary Policy Experiments and Structural Model Families"
+  },
+  {
+    "path": "/resources/volume-04/iv-15/",
+    "title": "Price Baskets, Bond Cash Flows, and Measurement Certificates"
+  },
+  {
+    "path": "/resources/volume-04/iv-16/",
+    "title": "Gas Records, Event Time, and Storage Decisions"
+  },
+  {
+    "path": "/resources/volume-04/iv-17/",
+    "title": "Bank Records, Reporting Systems, and Chronological Validation"
+  },
+  {
+    "path": "/resources/volume-05/",
+    "title": "Research Auditing: Proofs, Models, Code, and Counterexamples"
+  },
+  {
+    "path": "/resources/volume-05/v-01/",
+    "title": "Version, Evidence, and Claim Ledgers"
+  },
+  {
+    "path": "/resources/volume-05/v-02/",
+    "title": "Auditing the Arrows in a Proof"
+  },
+  {
+    "path": "/resources/volume-05/v-03/",
+    "title": "Minimal Counterexamples with Economic Structure"
+  },
+  {
+    "path": "/resources/volume-05/v-04/",
+    "title": "Numerical Illustration versus Mathematical Certificate"
+  },
+  {
+    "path": "/resources/volume-05/v-05/",
+    "title": "Trace an Equation Through Code"
+  },
+  {
+    "path": "/resources/volume-05/v-06/",
+    "title": "Publishing a Reproducible Computational Book"
+  },
+  {
+    "path": "/resources/volume-05/v-07/",
+    "title": "Selection after Symmetry"
+  },
+  {
+    "path": "/resources/volume-05/v-08/",
+    "title": "Root-n Simulation Error"
+  },
+  {
+    "path": "/resources/volume-05/v-09/",
+    "title": "Determinacy and Persistence in Dynamic Networks"
+  },
+  {
+    "path": "/resources/volume-05/v-10/",
+    "title": "Residual-Income Demand across Implementations"
+  },
+  {
+    "path": "/resources/volume-05/v-11/",
+    "title": "Set-Valued Demand and Coherent Counterfactuals"
+  },
+  {
+    "path": "/resources/volume-05/v-12/",
+    "title": "Operator Domains in Latent Measurement Models"
+  }
+]

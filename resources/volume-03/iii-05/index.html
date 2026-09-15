@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Small-Loop Error Rates and Experimental Design · Chae-Yeon Xon</title>
+  <meta name="description" content="Finite policy loops contain curvature, higher-order terms, randomization error, and numerical error. Reversing or mirroring loops isolates components with different symmetry, while two loop scales help estimate the order of the remainder. These devices turn a geometric identity into an experimental design with an explicit resolution limit.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-05/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Small-Loop Error Rates and Experimental Design · Chae-Yeon Xon">
+  <meta property="og:description" content="Finite policy loops contain curvature, higher-order terms, randomization error, and numerical error. Reversing or mirroring loops isolates components with different symmetry, while two loop scales help estimate the order of the remainder. These devices turn a geometric identity into an experimental design with an explicit resolution limit.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-05/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Small-Loop Error Rates and Experimental Design · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Finite policy loops contain curvature, higher-order terms, randomization error, and numerical error. Reversing or mirroring loops isolates components with different symmetry, while two loop scales help estimate the order of the remainder. These devices turn a geometric identity into an experimental design with an explicit resolution limit.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-05</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Local Geometry and Policy Paths · Chapter III-05</div>
+        <h1>Small-Loop Error Rates and Experimental Design</h1>
+        <p>Finite policy loops contain curvature, higher-order terms, randomization error, and numerical error. Reversing or mirroring loops isolates components with different symmetry, while two loop scales help estimate the order of the remainder. These devices turn a geometric identity into an experimental design with an explicit resolution limit.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-05.01</span><strong>Rectangle expansions</strong></li>
+              <li><span>III-05.02</span><strong>Reversal and mirroring</strong></li>
+              <li><span>III-05.03</span><strong>Two-scale calculations</strong></li>
+              <li><span>III-05.04</span><strong>Designable policy directions</strong></li>
+              <li><span>III-05.05</span><strong>Local power</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="setup-and-notation">
+            <h2>1. From a geometric identity to a finite experiment</h2>
+            <p class="chapter-lede">A finite loop contains the desired area effect together with higher-order dynamics, numerical integration error, and sampling noise. Symmetry and multiple scales separate these components only under a stated expansion.</p>
+            <p>Let <span class="math-inline">\(C(\varepsilon)\)</span> be an oriented loop contrast for a fixed pair of policy directions. Assume a local expansion</p>
+            <div class="equation-block" role="math" aria-label="Loop contrast expansion."><span class="equation-tex">\[C(\varepsilon )=\varepsilon ^{2}K+\varepsilon ^{3}R+\varepsilon ^{4}S+O(\varepsilon ^{5}).\]</span><span class="equation-number">(1)</span></div>
+            <p>The estimand <span class="math-inline">\(K\)</span> is the area-normalized local bracket or target-curvature term. Define <span class="math-inline">\(Q(\varepsilon)=C(\varepsilon)/\varepsilon ^{2}\)</span>. A single finite scale estimates <span class="math-inline">\(K\)</span> with an order-<span class="math-inline">\(\varepsilon\)</span> bias under (1).</p>
+          </section>
+
+          <section class="chapter-section" id="symmetry-result">
+            <h2>2. Mirroring and two-scale correction</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Bias cancellation</span><p>Suppose a mirrored design has expansion <span class="math-inline">\(C^{m}(\varepsilon)=\varepsilon ^{2}K-\varepsilon ^{3}R+\varepsilon ^{4}S+O(\varepsilon ^{5})\)</span>. Then</p>
+              <div class="equation-block" role="math" aria-label="Mirrored and Richardson curvature estimators."><span class="equation-tex">\[\begin{aligned}\bar{Q}(\varepsilon )=[C(\varepsilon )+C^{m}(\varepsilon )]/(2\varepsilon ^{2})=K+\varepsilon ^{2}S+O(\varepsilon ^{3}), \\ Q^{R}(\varepsilon )=[4\bar{Q}(\varepsilon /2)-\bar{Q}(\varepsilon )]/3=K+O(\varepsilon ^{3}).\end{aligned}\]</span><span class="equation-number">(2)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Add the two expansions to cancel the cubic coefficient and divide by <span class="math-inline">\(2\varepsilon ^{2}\)</span>. Evaluate the resulting expression at <span class="math-inline">\(\varepsilon\)</span> and <span class="math-inline">\(\varepsilon/2\)</span>. The weighted difference in (2) cancels the <span class="math-inline">\(\varepsilon ^{2}S\)</span> term. ∎</p></div>
+            <p>The cancellation follows from the assumed symmetry of the two physical designs. Label reversal, time reversal, and geometric mirroring need separate derivations because they can transform nuisance terms differently.</p>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>3. Worked error decomposition</h2>
+            <p>Take <span class="math-inline">\(C(\varepsilon)=2\varepsilon ^{2}+3\varepsilon ^{3}+5\varepsilon ^{4}\)</span> and <span class="math-inline">\(C^{m}(\varepsilon)=2\varepsilon ^{2}-3\varepsilon ^{3}+5\varepsilon ^{4}\)</span>. At <span class="math-inline">\(\varepsilon=0.1\)</span>, the raw estimator is <span class="math-inline">\(Q=2.35\)</span> and the mirrored estimator is <span class="math-inline">\(\bar{Q}=2.05\)</span>. At <span class="math-inline">\(\varepsilon=0.05\)</span>, <span class="math-inline">\(\bar{Q}=2.0125\)</span>. The two-scale expression gives exactly 2 for this fourth-order polynomial.</p>
+            <p>Now add observation noise with variance <span class="math-inline">\(\sigma ^{2}/n\)</span> to each loop contrast. Dividing by <span class="math-inline">\(\varepsilon ^{2}\)</span> produces variance proportional to <span class="math-inline">\(\sigma ^{2}/(n\varepsilon ^{4})\)</span>. Shrinking <span class="math-inline">\(\varepsilon\)</span> reduces truncation bias and amplifies sampling error. A design therefore needs a scale range where the estimated slope is stable and the signal remains above its resolution limit.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · A visually small loop</span><p>A small <span class="math-inline">\(\varepsilon\)</span> does not certify the asymptotic regime. Discontinuous policies, active constraints, branch changes, solver tolerances, and treatment noncompliance can dominate the <span class="math-inline">\(\varepsilon ^{2}\)</span> term. The scale plot must include achieved policy paths and report closure alongside the normalized contrast.</p></div>
+          </section>
+
+          <section class="chapter-section" id="design-and-inference">
+            <h2>4. Design and inference ledger</h2>
+            <p>A randomized loop experiment assigns orientation, mirror status, and scale. The outcome contrast should be formed from the randomization unit specified by the policy. Standard errors must respect clustering induced by common paths, organizations, or time blocks. Numerical integration error is evaluated separately by solver refinement on the same assigned paths.</p>
+            <ol>
+              <li>Choose policy directions and verify local feasibility in both orientations.</li>
+              <li>Randomize path variants at the intervention unit and record achieved paths.</li>
+              <li>Estimate raw, mirrored, and two-scale contrasts with a shared covariance calculation.</li>
+              <li>Plot normalized estimates against <span class="math-inline">\(\varepsilon\)</span> and report the estimated error slope.</li>
+              <li>Declare the smallest scale whose sampling and solver uncertainty permit the target contrast to be resolved.</li>
+            </ol>
+          </section>
+
+          <section class="chapter-section" id="exercises">
+            <h2>5. Exercises and sources</h2>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <ol class="exercise-list">
+              <li>Derive the bias orders in (2) when the remainder in (1) is uniform over the tested directions.</li>
+              <li>Minimize the leading mean-squared error <span class="math-inline">\(a^{2}\varepsilon ^{4}+\sigma ^{2}/(n\varepsilon ^{4})\)</span> and interpret the resulting scale.</li>
+              <li>Construct a mirror operation that also changes <span class="math-inline">\(K\)</span> and show why averaging then targets a different object.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Mirroring removes the <span class="math-inline">\(\varepsilon ^{3}\)</span> term before division by <span class="math-inline">\(\varepsilon ^{2}\)</span>, leaving an <span class="math-inline">\(\varepsilon ^{2}\)</span> bias. The weights 4/3 and <span class="math-inline">\(-1/3\)</span> remove that term across the two scales. <strong>2.</strong> Differentiation gives <span class="math-inline">\(4a^{2}\varepsilon ^{3}-4\sigma ^{2}/(n\varepsilon ^{5})=0\)</span>. Thus <span class="math-inline">\(\varepsilon ^{8}=\sigma ^{2}/(a^{2}n)\)</span> and <span class="math-inline">\(\varepsilon\)</span> is proportional to <span class="math-inline">\(n^{-1/8}\)</span>.</p></details>
+            <ol class="reference-list">
+              <li>Ernst Hairer, Syvert Nørsett, and Gerhard Wanner, <em>Solving Ordinary Differential Equations I</em>, Chapters II–III.<small>Local truncation error and extrapolation methods.</small></li>
+              <li>Douglas C. Montgomery, <em>Design and Analysis of Experiments</em>, Chapters 5–6.<small>Factorial contrasts and blocking principles.</small></li>
+              <li>III-04 · Curvature, Transport, and Holonomy.<small>Geometric object estimated by the finite loop.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>Report the expansion, symmetry action, loop scales, achieved paths, closure errors, randomization unit, covariance estimator, solver tolerance, and resolution limit. A finite contrast equals the local target plus the displayed remainder terms.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter covers local rectangular-loop designs and bias accounting. Global path optimization and nonlinear optimal control require separate tools.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-04/">III-04 · Curvature, Transport, and Holonomy</a></li><li><a href="/resources/volume-02/ii-05/">II-05 · Stochastic Orders and Competing Sample Sizes</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#setup-and-notation">From a geometric identity to a finite experiment</a>
+            <a href="#symmetry-result">Mirroring and two-scale correction</a>
+            <a href="#worked-example">Worked error decomposition</a>
+            <a href="#design-and-inference">Design and inference ledger</a>
+            <a href="#exercises">Exercises and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-04/"><span>Previous</span><strong>III-04 · Curvature, Transport, and Holonomy</strong></a><a class="next" href="/resources/volume-03/iii-06/"><span>Next</span><strong>III-06 · Dynamic Quotients and Additive-State Realization</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

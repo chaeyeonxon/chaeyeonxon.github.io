@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Differentiating Implicit Models · Chae-Yeon Xon</title>
+  <meta name="description" content="Many economic outcomes are defined by equilibrium equations rather than explicit formulas. The implicit-function calculation converts derivatives of those equations into derivatives of the equilibrium, provided the relevant Jacobian is square and nonsingular. Inverse derivatives and low-rank updates then make comparative statics reusable across states, policies, and information changes.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-01/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Differentiating Implicit Models · Chae-Yeon Xon">
+  <meta property="og:description" content="Many economic outcomes are defined by equilibrium equations rather than explicit formulas. The implicit-function calculation converts derivatives of those equations into derivatives of the equilibrium, provided the relevant Jacobian is square and nonsingular. Inverse derivatives and low-rank updates then make comparative statics reusable across states, policies, and information changes.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-01/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Differentiating Implicit Models · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Many economic outcomes are defined by equilibrium equations rather than explicit formulas. The implicit-function calculation converts derivatives of those equations into derivatives of the equilibrium, provided the relevant Jacobian is square and nonsingular. Inverse derivatives and low-rank updates then make comparative statics reusable across states, policies, and information changes.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-01</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Local Geometry and Policy Paths · Chapter III-01</div>
+        <h1>Differentiating Implicit Models</h1>
+        <p>Many economic outcomes are defined by equilibrium equations rather than explicit formulas. The implicit-function calculation converts derivatives of those equations into derivatives of the equilibrium, provided the relevant Jacobian is square and nonsingular. Inverse derivatives and low-rank updates then make comparative statics reusable across states, policies, and information changes.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-01.01</span><strong>Multivariable differentiation</strong></li>
+              <li><span>III-01.02</span><strong>Implicit equilibrium maps</strong></li>
+              <li><span>III-01.03</span><strong>Inverse-matrix derivatives</strong></li>
+              <li><span>III-01.04</span><strong>Low-rank updates</strong></li>
+              <li><span>III-01.05</span><strong>Regularity and branch failure</strong></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section" id="setup-and-notation">
+            <h2>1. Setup and notation</h2>
+            <p class="chapter-lede">An equilibrium calculation begins with equations and a reference solution. Comparative statics require an additional object: a locally selected equilibrium branch whose derivative is well defined. The Jacobian with respect to endogenous variables determines whether the equations supply that branch.</p>
+            <p>Let <span class="math-inline">\(A\subset\mathbb{R}^{n}\)</span> and <span class="math-inline">\(\Theta\subset\mathbb{R}^{m}\)</span> be open sets. The endogenous vector is <span class="math-inline">\(a\in A\)</span>, and the parameter vector is <span class="math-inline">\(\theta=(s,p)\in\Theta\)</span>, where <span class="math-inline">\(s\)</span> collects states and <span class="math-inline">\(p\)</span> collects policy variables. A system of equilibrium conditions is a map <span class="math-inline">\(F:A\times\Theta\to\mathbb{R}^{n}\)</span>. Its equilibrium correspondence is</p>
+            <div class="equation-block" role="math" aria-label="The equilibrium correspondence at theta is the set of a such that F of a theta equals zero."><span class="equation-tex">\[E(\theta ) = \{a \in A : F(a, \theta ) = 0\}.\]</span><span class="equation-number">(1)</span></div>
+            <p>A reference pair <span class="math-inline">\((a_{0},\theta_{0})\)</span> satisfies <span class="math-inline">\(F(a_{0},\theta_{0})=0\)</span>. Write <span class="math-inline">\(J_{0}\)</span> = <span class="math-inline">\(D_{a}F(a_{0},\theta_{0})\)</span> for the <span class="math-inline">\(n\times n\)</span> equilibrium Jacobian.</p>
+            <div class="formal-block definition">
+              <span class="formal-label">Definition 1 · Regular equilibrium</span>
+              <p>The reference equilibrium (<span class="math-inline">\(a_{0}\)</span>, <span class="math-inline">\(\theta_{0}\)</span>) is regular when <span class="math-inline">\(J_{0}\)</span> is nonsingular. A local equilibrium selection is a function <span class="math-inline">\(g\)</span> defined on a neighborhood of <span class="math-inline">\(\theta_{0}\)</span> such that <span class="math-inline">\(g(\theta_{0})\)</span> = <span class="math-inline">\(a_{0}\)</span> and <span class="math-inline">\(F(g(\theta),\theta)=0\)</span> throughout that neighborhood.</p>
+            </div>
+            <div class="formal-block">
+              <span class="formal-label">Assumption A · Local regularity</span>
+              <ol>
+                <li><span class="math-inline">\(F\)</span> is continuously differentiable on an open neighborhood of (<span class="math-inline">\(a_{0}\)</span>, <span class="math-inline">\(\theta_{0}\)</span>).</li>
+                <li>The number of equilibrium equations equals the number of endogenous variables.</li>
+                <li><span class="math-inline">\(J_{0}\)</span> is nonsingular.</li>
+              </ol>
+            </div>
+            <p>The square-system condition describes the coordinates chosen for the local calculation. Systems with redundant equations, free endogenous coordinates, or inequality constraints require a rank reduction, a parameterization of the solution set, or constrained differentiation.</p>
+          </section>
+
+          <section class="chapter-section" id="first-order-result">
+            <h2>2. Local existence and first-order comparative statics</h2>
+            <div class="formal-block">
+              <span class="formal-label">Proposition 1 · Implicit equilibrium derivative</span>
+              <p>Under Assumption A, there are neighborhoods <span class="math-inline">\(U\)</span> of <span class="math-inline">\(a_{0}\)</span> and <span class="math-inline">\(V\)</span> of <span class="math-inline">\(\theta_{0}\)</span> and a unique continuously differentiable map <span class="math-inline">\(g:V\to U\)</span> satisfying <span class="math-inline">\(F(g(\theta),\theta)=0\)</span>. For every direction <span class="math-inline">\(h\in\mathbb{R}^{m}\)</span>,</p>
+              <div class="equation-block" role="math" aria-label="The directional derivative of g at theta zero in direction h equals negative J zero inverse times the theta derivative of F in direction h."><span class="equation-tex">\[Dg(\theta _{0})[h] = -J_{0}^{-1}D_{\theta }F(a_{0}, \theta _{0})[h].\]</span><span class="equation-number">(2)</span></div>
+              <p>Equivalently, the derivative matrix solves the linear system</p>
+              <div class="equation-block" role="math" aria-label="J zero times D g equals negative D theta F."><span class="equation-tex">\[J_{0}Dg(\theta _{0}) = -D_{\theta }F(a_{0}, \theta _{0}).\]</span><span class="equation-number">(3)</span></div>
+            </div>
+            <div class="proof">
+              <p><strong>Proof.</strong> The finite-dimensional implicit-function theorem applied at (<span class="math-inline">\(a_{0}\)</span>, <span class="math-inline">\(\theta_{0}\)</span>) gives the neighborhoods and the local map <span class="math-inline">\(g\)</span>. Differentiate the identity <span class="math-inline">\(F(g(\theta),\theta)=0\)</span> in direction <span class="math-inline">\(h\)</span>. The chain rule gives <span class="math-inline">\(D_{a}F\,Dg[h]+D_{\theta}F[h]=0\)</span>. Nonsingularity of <span class="math-inline">\(J_{0}\)</span> gives (2). ∎</p>
+            </div>
+            <h3>What the proposition establishes</h3>
+            <p>The theorem supplies one branch through the reference equilibrium and uniqueness among equilibria inside <span class="math-inline">\(U\)</span> for parameters inside <span class="math-inline">\(V\)</span>. Other equilibria can exist outside <span class="math-inline">\(U\)</span>. A global uniqueness claim needs additional structure such as global univalence, monotonicity, contraction, or a model-specific equilibrium argument.</p>
+            <p>Equation (3) is the computational form. A numerical routine should factor <span class="math-inline">\(J_{0}\)</span> and solve for the columns of <span class="math-inline">\(Dg\)</span>. Forming <span class="math-inline">\(J_{0}^{-1}\)</span> explicitly creates extra floating-point error and discards useful matrix structure.</p>
+          </section>
+
+          <section class="chapter-section" id="higher-order-result">
+            <h2>3. Second-order responses</h2>
+            <p>Curvature determines how quickly a first-order response ceases to approximate a finite policy change. Suppose <span class="math-inline">\(\theta\)</span> is scalar and <span class="math-inline">\(F\)</span> is twice continuously differentiable. Let <span class="math-inline">\(v\)</span> = <span class="math-inline">\(g^{\prime}(\theta_{0})\)</span>. The second derivative follows from differentiating the equilibrium identity twice.</p>
+            <div class="formal-block">
+              <span class="formal-label">Proposition 2 · Second derivative of an implicit branch</span>
+              <p>Under Assumption A and <span class="math-inline">\(F\in C^{2}\)</span>, the local selection is twice continuously differentiable and</p>
+              <div class="equation-block" role="math" aria-label="The second derivative of g equals negative J inverse times the sum of the second derivatives of F."><span class="equation-tex">\[g^{\prime\prime}(\theta _{0}) = -J_{0}^{-1}\{F_{aa}[v,v] + 2F_{a\theta }[v] + F_{\theta \theta }\}.\]</span><span class="equation-number">(4)</span></div>
+              <p>All derivatives on the right side are evaluated at (<span class="math-inline">\(a_{0}\)</span>, <span class="math-inline">\(\theta_{0}\)</span>).</p>
+            </div>
+            <div class="proof">
+              <p><strong>Proof.</strong> Differentiate <span class="math-inline">\(F_{a}g^{\prime}\)</span> + <span class="math-inline">\(F_{\theta}\)</span> = 0 once more. The product and chain rules give <span class="math-inline">\(F_{a}g^{\prime\prime}\)</span> + <span class="math-inline">\(F_{aa}[g^{\prime},g^{\prime}]\)</span> + <span class="math-inline">\(2F_{a\theta}[g^{\prime}]\)</span> + <span class="math-inline">\(F_{\theta \theta}\)</span> = 0. Solve the resulting linear system with <span class="math-inline">\(J_{0}\)</span>. ∎</p>
+            </div>
+            <p>For a vector parameter, (4) becomes a bilinear map. Given directions <span class="math-inline">\(h\)</span> and <span class="math-inline">\(k\)</span>, compute <span class="math-inline">\(Dg[h]\)</span> and <span class="math-inline">\(Dg[k]\)</span>, assemble the four second-derivative terms, and solve one more system with the same Jacobian factorization.</p>
+          </section>
+
+          <section class="chapter-section" id="conditioning-and-updates">
+            <h2>4. Conditioning and low-rank updates</h2>
+            <p>The derivative magnitude depends on the economic right-hand side and the inverse Jacobian. For a subordinate matrix norm, equation (2) implies</p>
+            <div class="equation-block" role="math" aria-label="The norm of D g is bounded by the norm of J inverse times the norm of D theta F."><span class="equation-tex">\[\lVert Dg\rVert \le \lVert J_{0}^{-1}\rVert \lVert D_{\theta }F\rVert .\]</span><span class="equation-number">(5)</span></div>
+            <p>A large condition number <span class="math-inline">\(\kappa(J_{0})\)</span> = <span class="math-inline">\(\lVert J_{0}\rVert \lVert J_{0}^{-1}\rVert\)</span> signals sensitivity of the linear solve to perturbations in the equations and their derivatives. Scaling matters. A report should state the norm and the units or normalization of each equation.</p>
+            <div class="formal-block">
+              <span class="formal-label">Proposition 3 · Rank-r Jacobian update</span>
+              <p>Let <span class="math-inline">\(J_{1}\)</span> = <span class="math-inline">\(J_{0}\)</span> + <span class="math-inline">\(UV^{\top}\)</span>, where <span class="math-inline">\(U\)</span> and <span class="math-inline">\(V\)</span> have <span class="math-inline">\(r\)</span> columns. If <span class="math-inline">\(J_{0}\)</span> and <span class="math-inline">\(I_{r}\)</span> + <span class="math-inline">\(V^{\top}J_{0}^{-1}U\)</span> are nonsingular, then</p>
+              <div class="equation-block" role="math" aria-label="Woodbury formula for a rank r update."><span class="equation-tex">\[J_{1}^{-1} = J_{0}^{-1} - J_{0}^{-1}U(I_{r} + V^{\top }J_{0}^{-1}U)^{-1}V^{\top }J_{0}^{-1}.\]</span><span class="equation-number">(6)</span></div>
+            </div>
+            <p>Equation (6) reuses the baseline factorization when a policy changes a few rows, columns, or interaction channels. The small <span class="math-inline">\(r\times r\)</span> matrix also detects failure of the update: its singularity coincides with singularity of the updated Jacobian under the stated conditions.</p>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>5. Worked nonlinear equilibrium</h2>
+            <p>Consider two endogenous variables, quantity <span class="math-inline">\(q\)</span> and wedge <span class="math-inline">\(w\)</span>, with policy <span class="math-inline">\(p\)</span> and state <span class="math-inline">\(s\)</span>:</p>
+            <div class="equation-block" role="math" aria-label="F one equals q plus w squared minus p, and F two equals w plus q squared minus s."><span class="equation-tex">\[\begin{aligned}F_{1}(q,w;p,s) = q + w^{2} - p, \\ F_{2}(q,w;p,s) = w + q^{2} - s.\end{aligned}\]</span><span class="equation-number">(7)</span></div>
+            <p>At (<span class="math-inline">\(q_{0},w_{0}\)</span>) = (1/5, 3/10), the compatible parameter values are (<span class="math-inline">\(p_{0},s_{0}\)</span>) = (29/100, 17/50). The equilibrium Jacobian and its determinant are</p>
+            <div class="equation-block" role="math" aria-label="J equals the matrix with rows one comma two w and two q comma one. At the benchmark it is one point six, point four one, with determinant point seven six."><span class="equation-tex">\[\begin{aligned}J(q,w) = \begin{bmatrix}1 &amp; 2w \\ 2q &amp; 1\end{bmatrix}, \\ J_{0} = \begin{bmatrix}1 &amp; \frac{3}{5} \\ \frac{2}{5} &amp; 1\end{bmatrix}, \quad \operatorname{det}(J_{0}) = \frac{19}{25}.\end{aligned}\]</span><span class="equation-number">(8)</span></div>
+            <p>Holding <span class="math-inline">\(s\)</span> fixed, <span class="math-inline">\(F_{p}\)</span> = <span class="math-inline">\((-1,0)^{\top}\)</span>. Equation (3) gives</p>
+            <div class="equation-block" role="math" aria-label="The derivatives q p and w p equal twenty five over nineteen and negative ten over nineteen."><span class="equation-tex">\[[q_{p}, w_{p}]^{\top } = [\frac{25}{19}, \frac{-10}{19}]^{\top } \approx [1.315789, -0.526316]^{\top }.\]</span><span class="equation-number">(9)</span></div>
+            <p>Holding <span class="math-inline">\(p\)</span> fixed gives <span class="math-inline">\([q_{s}, w_{s}]^{\top}\)</span> = <span class="math-inline">\([-15/19, 25/19]^{\top}\)</span>. For the policy derivative, the Hessian term in (4) is <span class="math-inline">\((2w_{p}^{2}, 2q_{p}^{2})^{\top}\)</span>. Hence <span class="math-inline">\(q_{pp}=13750/6859\approx2.004665\)</span> and <span class="math-inline">\(w_{pp}=-29250/6859\approx-4.264470\)</span>.</p>
+            <h3>Finite-difference verification</h3>
+            <p>For each step <span class="math-inline">\(h\)</span>, solve the nonlinear system at <span class="math-inline">\(p_{0}\)</span> <span class="math-inline">\(\pm\)</span> <span class="math-inline">\(h\)</span> while holding <span class="math-inline">\(s\)</span> fixed, then form the central difference. The table reports the Euclidean error relative to (9). The near-singular comparison uses (<span class="math-inline">\(q,w\)</span>) = (0.49,0.49), where <span class="math-inline">\(\kappa _{2}(J)\)</span> = 99.</p>
+            <div class="chapter-table-wrap">
+              <table class="chapter-table">
+                <thead><tr><th>Reference point</th><th>h</th><th>FD <span class="math-inline">\(q_{p}\)</span></th><th>FD <span class="math-inline">\(w_{p}\)</span></th><th>Derivative error</th></tr></thead>
+                <tbody>
+                  <tr><td>(0.20, 0.30), <span class="math-inline">\(\kappa _{2}\)</span> = 2.98</td><td><span class="math-inline">\(10^{-2}\)</span></td><td>1.3157021122</td><td><span class="math-inline">\(-0.5265443315\)</span></td><td><span class="math-inline">\(2.45\times10^{-4}\)</span></td></tr>
+                  <tr><td>(0.20, 0.30), <span class="math-inline">\(\kappa _{2}\)</span> = 2.98</td><td><span class="math-inline">\(10^{-4}\)</span></td><td>1.3157894650</td><td><span class="math-inline">\(-0.5263158124\)</span></td><td><span class="math-inline">\(2.45\times10^{-8}\)</span></td></tr>
+                  <tr><td>(0.20, 0.30), <span class="math-inline">\(\kappa _{2}\)</span> = 2.98</td><td><span class="math-inline">\(10^{-6}\)</span></td><td>1.3157894737</td><td><span class="math-inline">\(-0.5263157895\)</span></td><td><span class="math-inline">\(3.49\times10^{-11}\)</span></td></tr>
+                  <tr><td>(0.49, 0.49), <span class="math-inline">\(\kappa _{2}\)</span> = 99</td><td><span class="math-inline">\(10^{-2}\)</span></td><td>13.3839346254</td><td><span class="math-inline">\(-13.1218367246\)</span></td><td><span class="math-inline">\(1.66\times10^{1}\)</span></td></tr>
+                  <tr><td>(0.49, 0.49), <span class="math-inline">\(\kappa _{2}\)</span> = 99</td><td><span class="math-inline">\(10^{-4}\)</span></td><td>25.2446410392</td><td><span class="math-inline">\(-24.7399072734\)</span></td><td><span class="math-inline">\(1.09\times10^{-2}\)</span></td></tr>
+                  <tr><td>(0.49, 0.49), <span class="math-inline">\(\kappa _{2}\)</span> = 99</td><td><span class="math-inline">\(10^{-6}\)</span></td><td>25.2525244655</td><td><span class="math-inline">\(-24.7474739922\)</span></td><td><span class="math-inline">\(1.09\times10^{-6}\)</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>The benchmark exhibits the expected second-order decay of central-difference error until floating-point cancellation becomes visible. Near singularity, the derivative is roughly twenty times larger and a coarse step crosses substantial curvature. A derivative report without conditioning and a step-size grid conceals this distinction.</p>
+          </section>
+
+          <section class="chapter-section" id="failure-case">
+            <h2>6. Failure at a singular equilibrium</h2>
+            <div class="formal-block warning">
+              <span class="formal-label">Counterexample · A branch can survive while local uniqueness fails</span>
+              <p>Set <span class="math-inline">\(p\)</span> = <span class="math-inline">\(s\)</span> = <span class="math-inline">\(t\)</span>. At <span class="math-inline">\(t\)</span> = 3/4, (<span class="math-inline">\(q,w\)</span>) = (1/2,1/2) solves (7), and <span class="math-inline">\(\operatorname{det}(J)\)</span> = 0. The symmetric branch <span class="math-inline">\(q\)</span> = <span class="math-inline">\(w\)</span> = <span class="math-inline">\(x\)</span> satisfies <span class="math-inline">\(x\)</span> + <span class="math-inline">\(x^{2}\)</span> = <span class="math-inline">\(t\)</span> and has derivative <span class="math-inline">\(dx/dt\)</span> = 1/(1+<span class="math-inline">\(2x\)</span>) = 1/2 at the reference point.</p>
+              <p>A second family follows from <span class="math-inline">\(q+w=1\)</span>. Substitution gives <span class="math-inline">\(t=3/4+(q-1/2)^{2}\)</span>. Every <span class="math-inline">\(t&gt;3/4\)</span> close to the reference value therefore has two additional equilibria, <span class="math-inline">\((q,w)=(1/2\pm\sqrt{t-3/4},\,1/2\mp\sqrt{t-3/4})\)</span>.</p>
+            </div>
+            <p>The singular Jacobian blocks the implicit-function theorem for a unique two-parameter equilibrium selection. A differentiable symmetric selection still exists along the one-dimensional restriction <span class="math-inline">\(p\)</span> = <span class="math-inline">\(s\)</span>. The example separates three claims: existence of a selected branch, regularity of the full equilibrium system, and uniqueness of the equilibrium correspondence.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>7. Implementation protocol</h2>
+            <p>The following procedure keeps the theorem, numerical solve, and diagnostic evidence aligned.</p>
+            <pre class="pseudocode">input: F, reference (a0, theta0), parameter direction h
+1. verify ||F(a0, theta0)|| is below the declared residual tolerance
+2. compute J = D_a F(a0, theta0) and B = D_theta F(a0, theta0)[h]
+3. estimate reciprocal conditioning and record the matrix norm
+4. solve J v = -B with a factorization; retain the residual ||J v + B||
+5. solve F(a_plus, theta0 + delta h) = 0 from a0
+6. solve F(a_minus, theta0 - delta h) = 0 from a0
+7. compare v with (a_plus - a_minus)/(2 delta) over a step-size grid
+8. repeat after rescaling equations when units differ materially
+output: derivative, solve residual, condition estimate, finite-difference table</pre>
+            <ul>
+              <li>Automatic differentiation evaluates <span class="math-inline">\(J\)</span> and <span class="math-inline">\(B\)</span>; it does not supply equilibrium existence or branch uniqueness.</li>
+              <li>Continuation methods reduce branch switching by using the previous solution as the next initial value and monitoring Jacobian singular values.</li>
+              <li>Equation scaling changes numerical conditioning. Report the scaling whenever the rows of <span class="math-inline">\(F\)</span> use different units.</li>
+              <li>A central difference tests the implemented derivative and nonlinear solver jointly. A residual check for each perturbed equilibrium identifies solver failure.</li>
+            </ul>
+            <a class="chapter-download" href="/assets/code/volume-03/iii-01.py">Download the reproducible Python calculation →</a>
+          </section>
+
+          <section class="chapter-section" id="exercises">
+            <h2>8. Exercises</h2>
+            <ol class="exercise-list">
+              <li>For the benchmark in (7), derive both columns of <span class="math-inline">\(Dg\)</span> with respect to (<span class="math-inline">\(p,s\)</span>). Verify each column by multiplying it by <span class="math-inline">\(J_{0}\)</span>.
+                <details class="solution-sketch"><summary>Partial solution</summary><p>The two columns are <span class="math-inline">\((25/19, -10/19)^{\top}\)</span> and <span class="math-inline">\((-15/19, 25/19)^{\top}\)</span>. Their Jacobian products are <span class="math-inline">\((1,0)^{\top}\)</span> and <span class="math-inline">\((0,1)^{\top}\)</span>, matching <span class="math-inline">\(-F_{p}\)</span> and <span class="math-inline">\(-F_{s}\)</span>.</p></details>
+              </li>
+              <li>Use Proposition 2 to derive <span class="math-inline">\(q_{pp}\)</span> and <span class="math-inline">\(w_{pp}\)</span>. Compare the quadratic approximation with the exact numerical equilibrium at <span class="math-inline">\(p_{0}\)</span> + 0.01.
+                <details class="solution-sketch"><summary>Partial solution</summary><p>The second derivatives are 13750/6859 and <span class="math-inline">\(-29250/6859\)</span>. The approximation is <span class="math-inline">\(a(p_{0}+\Delta)\approx a_{0}+a_{p}\Delta+\frac{1}{2}a_{pp}\Delta ^{2}\)</span>.</p></details>
+              </li>
+              <li>Prove the rank-one form of Proposition 3 directly by multiplying the proposed inverse by <span class="math-inline">\(J_{0}\)</span> + <span class="math-inline">\(uv^{\top}\)</span>. State the scalar condition that permits the update.
+                <details class="solution-sketch"><summary>Partial solution</summary><p>The condition is <span class="math-inline">\(1+v^{\top}J_{0}^{-1}u\ne0\)</span>. After expansion, the two rank-one correction terms cancel.</p></details>
+              </li>
+              <li>At the singular point in Section 6, draw the three equilibrium branches in (<span class="math-inline">\(t,q\)</span>) coordinates. Identify which derivative diverges as the two asymmetric branches approach <span class="math-inline">\(t\)</span> = 3/4.
+                <details class="solution-sketch"><summary>Partial solution</summary><p>The asymmetric branches satisfy <span class="math-inline">\(q\)</span> = 1/2 <span class="math-inline">\(\pm\)</span> <span class="math-inline">\(\sqrt{t-3/4}\)</span>, so <span class="math-inline">\(dq/dt\)</span> = <span class="math-inline">\(\pm[2\sqrt (t-3/4)]^{-1}\)</span>. Their slopes diverge at the branch point; the symmetric branch has slope 1/2.</p></details>
+              </li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>9. Audit checkpoint</h2>
+            <ul>
+              <li><strong>Object:</strong> Are the endogenous variables, parameters, equation domains, and units fixed?</li>
+              <li><strong>Existence:</strong> Is the reported reference point an equilibrium to the declared tolerance?</li>
+              <li><strong>Regularity:</strong> Is the endogenous Jacobian square and nonsingular at that point?</li>
+              <li><strong>Claim:</strong> Does the conclusion concern a local selection, all local equilibria, or global uniqueness?</li>
+              <li><strong>Computation:</strong> Was the derivative obtained by solving a linear system with a reported residual and condition estimate?</li>
+              <li><strong>Validation:</strong> Does a step-size grid reproduce the analytic derivative on the same branch?</li>
+            </ul>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>10. Scope boundary</h2>
+            <p>This chapter covers smooth finite-dimensional equality systems around a reference equilibrium. Chapter III-02 treats derivatives on constrained state spaces, III-03 treats constrained policy motion, and III-16 treats inequality constraints and complementary slackness. General bifurcation theory, nonsmooth generalized equations, differential-algebraic systems, and infinite-dimensional implicit maps require additional results.</p>
+          </section>
+
+          <section class="chapter-section" id="references">
+            <h2>References and source crosswalk</h2>
+            <ol class="reference-list">
+              <li>Walter Rudin, <em>Principles of Mathematical Analysis</em>, 3rd ed., §§9.26–9.29, pp. 224–227.
+                <small>Source for Proposition 1: finite-dimensional implicit-function theorem and derivative formula. <a href="https://www.lehman.edu/faculty/rbettiol/lehman_teaching/2020mat320/baby_Rudin.pdf" target="_blank" rel="noopener">Reference copy</a>.</small>
+              </li>
+              <li>Martin J. Osborne, <em>Mathematical Methods for Economic Theory</em>, §2.3, Proposition 2.3.1.
+                <small>Economic comparative-statics formulation and worked implicit-derivative examples. <a href="https://mjo.osborne.economics.utoronto.ca/index.php/tutorial/index/1/dfi/t" target="_blank" rel="noopener">Online text</a>.</small>
+              </li>
+              <li>James McKernan, MIT 18.022, Lecture 13, “Implicit Functions.”
+                <small>Multivariable equation systems and the nonsingular endogenous-Jacobian condition. <a href="https://ocw.mit.edu/courses/18-022-calculus-of-several-variables-fall-2010/resources/mit18_022f10_l_13/" target="_blank" rel="noopener">MIT OpenCourseWare</a>.</small>
+              </li>
+              <li>William W. Hager (1989), “Updating the Inverse of a Matrix,” <em>SIAM Review</em> 31(2), 221–239, DOI 10.1137/1031049.
+                <small>Source for Proposition 3 and the history and uses of Sherman–Morrison–Woodbury updates. <a href="https://people.clas.ufl.edu/hager/files/update-1.pdf" target="_blank" rel="noopener">Author-hosted article</a>.</small>
+              </li>
+              <li>E. Anderson et al., <em>LAPACK Users’ Guide</em>, 3rd ed., “Linear Equations” and “Accuracy and Stability.”
+                <small>Computational guidance for factor-and-solve methods, condition estimation, refinement, and error bounds. <a href="https://www.netlib.org/lapack/lug/node26.html" target="_blank" rel="noopener">Netlib documentation</a>.</small>
+              </li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-prerequisites">
+            <h2>Prerequisites</h2>
+            <ul><li><a href="/resources/volume-01/i-02/">I-02 · Linear Maps, Kernels, Quotients, and Information Dimension</a></li></ul>
+          </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#setup-and-notation">Setup and notation</a>
+            <a href="#first-order-result">First-order result</a>
+            <a href="#higher-order-result">Second-order responses</a>
+            <a href="#conditioning-and-updates">Conditioning and updates</a>
+            <a href="#worked-example">Worked equilibrium</a>
+            <a href="#failure-case">Failure case</a>
+            <a href="#implementation">Implementation</a>
+            <a href="#exercises">Exercises</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+            <a href="#references">References</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><span></span><a class="next" href="/resources/volume-03/iii-02/"><span>Next</span><strong>III-02 · State Spaces, Fibers, Tangent Directions, and Metrics</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

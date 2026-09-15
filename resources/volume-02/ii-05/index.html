@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Stochastic Orders and Competing Sample Sizes · Chae-Yeon Xon</title>
+  <meta name="description" content="Asymptotic negligibility depends on the normalization used by the estimator. Several sample sizes can grow at different rates, so convergence of a raw error term does not determine its contribution after root-n scaling. Triangular arrays and counterexample sequences make those comparisons explicit.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-05/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Stochastic Orders and Competing Sample Sizes · Chae-Yeon Xon">
+  <meta property="og:description" content="Asymptotic negligibility depends on the normalization used by the estimator. Several sample sizes can grow at different rates, so convergence of a raw error term does not determine its contribution after root-n scaling. Triangular arrays and counterexample sequences make those comparisons explicit.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-05/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Stochastic Orders and Competing Sample Sizes · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Asymptotic negligibility depends on the normalization used by the estimator. Several sample sizes can grow at different rates, so convergence of a raw error term does not determine its contribution after root-n scaling. Triangular arrays and counterexample sequences make those comparisons explicit.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-05</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Asymptotics and Simulation · Chapter II-05</div>
+        <h1>Stochastic Orders and Competing Sample Sizes</h1>
+        <p>Asymptotic negligibility depends on the normalization used by the estimator. Several sample sizes can grow at different rates, so convergence of a raw error term does not determine its contribution after root-n scaling. Triangular arrays and counterexample sequences make those comparisons explicit.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-05.01</span><strong>Convergence notation</strong></li>
+              <li><span>II-05.02</span><strong>Statistical scales</strong></li>
+              <li><span>II-05.03</span><strong>Triangular arrays</strong></li>
+              <li><span>II-05.04</span><strong>Competing rates</strong></li>
+              <li><span>II-05.05</span><strong>Counterexample sequences</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="normalized-orders">
+            <h2>1. The estimator chooses the relevant normalization</h2>
+            <p class="chapter-lede">An approximation error can converge to zero and still enter a root-sample-size limit. Raw convergence and normalized negligibility are separate statements.</p>
+            <p>Let the statistical sample size be <span class="math-inline">\(n\)</span>, the number of independently simulated inequalities or units be <span class="math-inline">\(n_{I}\)</span>, and the number of simulation draws per unit be <span class="math-inline">\(n_{s}\)</span>. Suppose a directional simulation bias has order <span class="math-inline">\(n_{s}^{-1}\)</span> and a centered independent simulation average has standard deviation of order <span class="math-inline">\((n_{I}n_{s})^{-1/2}\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Root-n negligibility conditions</span><p>At root-<span class="math-inline">\(n\)</span> scale, the squared bias and centered variance vanish when</p>
+              <div class="equation-block" role="math" aria-label="Rate conditions for simulation bias and centered variance."><span class="equation-tex">\[n/n_{s}^{2}\to 0, \quad n/(n_{I}n_{s})\to 0.\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Multiply the bias by <span class="math-inline">\(\sqrt{n}\)</span> and square, giving order <span class="math-inline">\(n/n_{s}^{2}\)</span>. Multiplying the centered error by <span class="math-inline">\(\sqrt{n}\)</span> gives variance of order <span class="math-inline">\(n/(n_{I}n_{s})\)</span>. Convergence of these nonnegative orders to zero yields the claims. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="exponent-example">
+            <h2>2. Three growing sample sizes can lie on different boundaries</h2>
+            <p>Set <span class="math-inline">\(n=m^{4}\)</span>, <span class="math-inline">\(n_{I}=m\)</span>, and <span class="math-inline">\(n_{s}=m^{3}\)</span>. Then</p>
+            <div class="equation-block" role="math" aria-label="Competing sample size rates."><span class="equation-tex">\[n/n_{s}^{2}=m^{-2}\to 0, \quad n/(n_{I}n_{s})=1.\]</span><span class="equation-number">(2)</span></div>
+            <p>The directional bias is negligible at root-<span class="math-inline">\(n\)</span> scale, while centered simulation noise remains first order. Increasing raw simulation sizes therefore does not make every computational term asymptotically negligible.</p>
+          </section>
+
+          <section class="chapter-section" id="exponent-classification">
+            <h2>3. Exponent inequalities classify the regimes</h2>
+            <p>Let <span class="math-inline">\(n=m^{a}\)</span>, <span class="math-inline">\(n_{I}=m^{b}\)</span>, and <span class="math-inline">\(n_{s}=m^{c}\)</span> for positive exponents. The bias condition is <span class="math-inline">\(2c&gt;a\)</span>; the centered-noise condition is <span class="math-inline">\(b+c&gt;a\)</span>. Equality places a term on the first-order boundary, and reversing an inequality makes that term dominate the root-<span class="math-inline">\(n\)</span> scale.</p>
+            <p>Slowly varying factors matter on equality boundaries. For example, <span class="math-inline">\(n_{s}=\sqrt{n}\)</span> log <span class="math-inline">\(n\)</span> makes <span class="math-inline">\(\sqrt{n}/n_{s}\)</span> vanish, while <span class="math-inline">\(n_{s}=\sqrt{n}\)</span>/log <span class="math-inline">\(n\)</span> makes it diverge. Exponent labels alone classify neither sequence because both have exponent one half relative to <span class="math-inline">\(n\)</span>.</p>
+          </section>
+
+          <section class="chapter-section" id="counterexample-sequence">
+            <h2>4. Raw convergence supplies no normalized conclusion</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Consistency rate substituted for inference rate</span><p>Let <span class="math-inline">\(e_{n}=n^{-1/4}\)</span>. Then <span class="math-inline">\(e_{n}\to0\)</span> while <span class="math-inline">\(\sqrt{n}e_{n}=n^{1/4}\to \infty\)</span>. The approximation is consistent and dominates a root-<span class="math-inline">\(n\)</span> expansion.</p></div>
+            <p>Stochastic orders require the same comparison: <span class="math-inline">\(R_{n}=o_{p}(1)\)</span> does not imply <span class="math-inline">\(\sqrt{n}R_{n}=o_{p}(1)\)</span>. Dependence can also change the nominal product <span class="math-inline">\(n_{I}n_{s}\)</span>; that variance calculation is examined in II-07.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Create one row per error component with raw order, estimator normalization, normalized order, source of dependence, and boundary regime. Evaluate sequences numerically over increasing <span class="math-inline">\(m\)</span>, while retaining the analytic exponent calculation and any slowly varying factors.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify both ratios in (2) for <span class="math-inline">\(m=10\)</span>,100,1000.</li><li>Classify the (<span class="math-inline">\(b,c\)</span>) plane for fixed <span class="math-inline">\(a=1\)</span>.</li><li>Construct a logarithmic boundary sequence for the centered-noise condition.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The bias ratios are <span class="math-inline">\(10^{-2},10^{-4},10^{-6}\)</span>; the centered-noise ratio stays one. <strong>2.</strong> Bias is negligible above <span class="math-inline">\(c=1/2\)</span>, and centered noise is negligible above <span class="math-inline">\(b+c=1\)</span>. <strong>3.</strong> Multiply or divide one boundary sample size by log <span class="math-inline">\(m\)</span> and evaluate the resulting squared factor.</p></details>
+            <ol class="reference-list"><li>A. W. van der Vaart, <em>Asymptotic Statistics</em>, Chapter 2.<small>Stochastic orders and convergence modes.</small></li><li>Patrick Billingsley, <em>Convergence of Probability Measures</em>, chapters on weak convergence.<small>Normalization and triangular arrays.</small></li><li>Whitney K. Newey and Daniel McFadden (1994), “Large Sample Estimation and Hypothesis Testing,” in <em>Handbook of Econometrics</em>, Volume IV.<small>Remainder rates in estimator expansions.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State every sample size, their joint sequence, statistical normalization, raw bias and variance orders, dependence structure, exponent equality cases, slowly varying factors, and the normalized order of each remainder.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers scalar rate comparisons for finite-dimensional triangular arrays. Process-level weak convergence and high-dimensional rate theory require additional results.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-01/">II-01 · Conditional Probability and a Model&#x27;s Information Structure</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#normalized-orders">The estimator chooses the relevant normalization</a>
+            <a href="#exponent-example">Three growing sample sizes can lie on different boundaries</a>
+            <a href="#exponent-classification">Exponent inequalities classify the regimes</a>
+            <a href="#counterexample-sequence">Raw convergence supplies no normalized conclusion</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-04/"><span>Previous</span><strong>II-04 · Moment Inequalities, Partial Identification, and Sharp Bounds</strong></a><a class="next" href="/resources/volume-02/ii-06/"><span>Next</span><strong>II-06 · Extremum Estimators and Uniform Local Expansions</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

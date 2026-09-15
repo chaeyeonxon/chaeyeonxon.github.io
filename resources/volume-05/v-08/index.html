@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Root-n Simulation Error · Chae-Yeon Xon</title>
+  <meta name="description" content="Simulation-based dynamic estimators involve the sample size, the number of simulated alternatives or paths, and the number of draws per object. Root-n inference depends on their joint rates. A simulated first stage can add variance or bias to the score even when the population target remains unchanged.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-08/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Root-n Simulation Error · Chae-Yeon Xon">
+  <meta property="og:description" content="Simulation-based dynamic estimators involve the sample size, the number of simulated alternatives or paths, and the number of draws per object. Root-n inference depends on their joint rates. A simulated first stage can add variance or bias to the score even when the population target remains unchanged.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-08/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Root-n Simulation Error · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Simulation-based dynamic estimators involve the sample size, the number of simulated alternatives or paths, and the number of draws per object. Root-n inference depends on their joint rates. A simulated first stage can add variance or bias to the score even when the population target remains unchanged.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-08</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Six Applied Audit Case Studies · Chapter V-08</div>
+        <h1>Root-n Simulation Error</h1>
+        <p>Simulation-based dynamic estimators involve the sample size, the number of simulated alternatives or paths, and the number of draws per object. Root-n inference depends on their joint rates. A simulated first stage can add variance or bias to the score even when the population target remains unchanged.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-08.01</span><strong>Condition ledgers</strong></li>
+              <li><span>V-08.02</span><strong>A small dynamic model</strong></li>
+              <li><span>V-08.03</span><strong>Competing sequences</strong></li>
+              <li><span>V-08.04</span><strong>Corrected limiting variance</strong></li>
+              <li><span>V-08.05</span><strong>Unresolved boundaries</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="three-rates">
+            <h2>1. Sampling size and simulation effort enter separately</h2>
+            <p class="chapter-lede">Consistency of a simulated object does not determine its contribution at root-<span class="math-inline">\(n\)</span> scale. Bias and variance have different rate requirements.</p>
+            <p>Let <span class="math-inline">\(X_{i}\)</span> be iid with mean <span class="math-inline">\(\theta\)</span> and variance <span class="math-inline">\(\sigma _{X}^{2}\)</span>. For each observation use <span class="math-inline">\(m_{n}\)</span> independent simulation draws <span class="math-inline">\(\eta _{ir}\)</span> with mean zero and variance <span class="math-inline">\(\sigma _{\eta}^{2}\)</span>. Consider</p>
+            <div class="equation-block" role="math" aria-label="Estimator with sampling and simulation errors."><span class="equation-tex">\[\hat{\theta }_{n}=n^{-1}\sum _{i=1}^{n}[X_{i}+b/m_{n}+m_{n}^{-1}\sum _{r=1}^{m_{n}}\eta _{ir}].\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Root-<span class="math-inline">\(n\)</span> simulation negligibility</span><p>The simulation approximation is negligible for a target limit when its centered stochastic component and deterministic approximation bias both vanish after multiplication by <span class="math-inline">\(\sqrt{n}\)</span> in the estimator expansion.</p></div>
+          </section>
+
+          <section class="chapter-section" id="limit-law">
+            <h2>2. Bias and variance have separate limits</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Triangular-array decomposition</span><p>Assume the variables in (1) are mutually independent across observations, simulation draws are independent of data, and both components have uniformly bounded moments of some order 2+<span class="math-inline">\(\delta\)</span>. If 1/<span class="math-inline">\(m_{n}\to \tau\)</span>, then <span class="math-inline">\(\sqrt{n}[\hat{\theta }_{n}-\theta-b/m_{n}]\)</span> converges in distribution to <span class="math-inline">\(N(0,\sigma _{X}^{2}+\tau \sigma _{\eta}^{2})\)</span>. If additionally <span class="math-inline">\(\sqrt{n}/m_{n}\to \lambda&lt;\infty\)</span>, the same result centered at <span class="math-inline">\(\theta\)</span> has mean <span class="math-inline">\(\lambda b\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Subtract <span class="math-inline">\(b/m_{n}\)</span> from each summand. The centered row variables are independent with variance <span class="math-inline">\(\sigma _{X}^{2}+\sigma _{\eta}^{2}/m_{n}\)</span>. The moment bound gives a Lyapunov central limit theorem with the limiting variance stated above. Under the additional rate, restoring the deterministic term adds <span class="math-inline">\(\sqrt{n b}/m_{n}\to \lambda b\)</span>. ∎</p></div>
+            <p>When <span class="math-inline">\(m_{n}\to \infty\)</span>, <span class="math-inline">\(\tau=0\)</span>, so independent centered simulation noise disappears from this sample average. Bias requires the stronger rate <span class="math-inline">\(m_{n}/\sqrt{n}\to \infty\)</span> to disappear when <span class="math-inline">\(b\ne0\)</span>. Shared draws, nonlinear first stages, or simulation inside an optimizer can produce a different expansion.</p>
+          </section>
+
+          <section class="chapter-section" id="rate-example">
+            <h2>3. Three simulation budgets at <span class="math-inline">\(n=10\)</span>,000</h2>
+            <p>Set <span class="math-inline">\(b=1\)</span> and both variances to one. With <span class="math-inline">\(\sqrt{n}=100\)</span>, simulation budgets <span class="math-inline">\(m=10\)</span>,100,1000 give root-<span class="math-inline">\(n\)</span> bias terms 10,1,0.1 and centered asymptotic variances 1.1,1.01,1.001. Increasing <span class="math-inline">\(m\)</span> reduces both quantities, with different powers.</p>
+            <p>For <span class="math-inline">\(m_{n}=n^{\alpha}\)</span>, root-<span class="math-inline">\(n\)</span> bias is <span class="math-inline">\(b n^{1/2-\alpha}\)</span>: it diverges for <span class="math-inline">\(\alpha&lt;1/2\)</span>, has a finite nonzero limit for <span class="math-inline">\(\alpha=1/2\)</span>, and vanishes for <span class="math-inline">\(\alpha&gt;1/2\)</span>. Centered simulation variance vanishes for every <span class="math-inline">\(\alpha&gt;0\)</span> in this independent-draw design.</p>
+          </section>
+
+          <section class="chapter-section" id="simulation-boundaries">
+            <h2>4. Dependence and nonlinearity change the ledger</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Fixed simulation budget justified by consistency</span><p>With <span class="math-inline">\(b\ne0\)</span> and fixed <span class="math-inline">\(m\)</span>, the estimator converges to <span class="math-inline">\(\theta+b/m\)</span>. Root-<span class="math-inline">\(n\)</span> inference centered at <span class="math-inline">\(\theta\)</span> is invalid.</p></div>
+            <p>Common random numbers correlate simulation errors across observations and can prevent averaging. Antithetic or quasi-random draws change variance rates. Estimated policies create nonsmooth selection, and optimizer tolerance can add another deterministic sequence. If the number of alternatives, paths, and draws all grow, each rate belongs in the ledger. A single draw gives finite variance but may fail moment conditions under heavy tails. Random stopping can create bias. At zero simulation variance, only approximation bias remains; at zero bias, fixed <span class="math-inline">\(m\)</span> can still alter the limiting variance.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Derive the estimator expansion before choosing simulation budgets. Separate deterministic approximation, centered simulation noise, data sampling, optimization residual, and discretization. Record whether draws are independent, shared, nested, antithetic, or stopped adaptively. Replicate across independent random streams and compare empirical scaling with the predicted powers.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the three bias and variance pairs in Section 3.</li><li>Derive the fixed-<span class="math-inline">\(m\)</span> limit when <span class="math-inline">\(b=0\)</span>.</li><li>Show how a simulation error shared by every observation changes the variance of the sample mean.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Use <span class="math-inline">\(\sqrt{n b}/m\)</span> and 1+1/<span class="math-inline">\(m\)</span>. <strong>2.</strong> The centered limit variance is 1+1/<span class="math-inline">\(m\)</span>. <strong>3.</strong> If the same error <span class="math-inline">\(Z_{m}\)</span> enters every summand, averaging over <span class="math-inline">\(i\)</span> leaves it unchanged; <span class="math-inline">\(\sqrt{n Z_{m}}\)</span> requires a joint <span class="math-inline">\(n,m\)</span> rate.</p></details>
+            <ol class="reference-list"><li>Ariel Pakes and David Pollard (1989), “Simulation and the Asymptotics of Optimization Estimators,” <em>Econometrica</em> 57, 1027–1057.<small>Simulation error in extremum estimators.</small></li><li>Christian Gouriéroux and Alain Monfort, <em>Simulation-Based Econometric Methods</em>.<small>Bias, variance, and simulation design.</small></li><li>Patrick Billingsley, <em>Probability and Measure</em>, sections on triangular-array central limit theorems.<small>Limit argument used in the proposition.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Sample size, simulations per object, alternatives and paths, deterministic bias, centered variance, joint rates, independence, shared or nested draws, common random numbers, moment conditions, heavy tails, random stopping, policy-selection kinks, optimizer tolerance, discretization, seed streams, empirical rate plots, centering, and corrected limiting variance.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter proves a sample-average benchmark. Simulated likelihood, indirect inference, particle filters, and stochastic optimization require model-specific expansions.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-05/v-03/">V-03 · Minimal Counterexamples with Economic Structure</a></li><li><a href="/resources/volume-02/ii-08/">II-08 · Kinks, Binding Inequalities, and Simulation Inference</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#three-rates">Sampling size and simulation effort enter separately</a>
+            <a href="#limit-law">Bias and variance have separate limits</a>
+            <a href="#rate-example">Three simulation budgets at n=10,000</a>
+            <a href="#simulation-boundaries">Dependence and nonlinearity change the ledger</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-05/v-07/"><span>Previous</span><strong>V-07 · Selection after Symmetry</strong></a><a class="next" href="/resources/volume-05/v-09/"><span>Next</span><strong>V-09 · Determinacy and Persistence in Dynamic Networks</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

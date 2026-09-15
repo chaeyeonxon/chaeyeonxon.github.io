@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Hilbert Target Operators and Distribution States · Chae-Yeon Xon</title>
+  <meta name="description" content="A finite-dimensional perturbation can affect an entire response curve. Mapping the perturbation into a Hilbert space of targets yields an integrated Gram operator whose spectrum ranks policy-relevant directions. When the state itself is a distribution, tangent restrictions and sieve approximations determine which perturbations the calculation represents.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-13/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Hilbert Target Operators and Distribution States · Chae-Yeon Xon">
+  <meta property="og:description" content="A finite-dimensional perturbation can affect an entire response curve. Mapping the perturbation into a Hilbert space of targets yields an integrated Gram operator whose spectrum ranks policy-relevant directions. When the state itself is a distribution, tangent restrictions and sieve approximations determine which perturbations the calculation represents.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-13/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Hilbert Target Operators and Distribution States · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A finite-dimensional perturbation can affect an entire response curve. Mapping the perturbation into a Hilbert space of targets yields an integrated Gram operator whose spectrum ranks policy-relevant directions. When the state itself is a distribution, tangent restrictions and sieve approximations determine which perturbations the calculation represents.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-13</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Function Spaces, Inverse Problems, and Risk Certificates · Chapter III-13</div>
+        <h1>Hilbert Target Operators and Distribution States</h1>
+        <p>A finite-dimensional perturbation can affect an entire response curve. Mapping the perturbation into a Hilbert space of targets yields an integrated Gram operator whose spectrum ranks policy-relevant directions. When the state itself is a distribution, tangent restrictions and sieve approximations determine which perturbations the calculation represents.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-13.01</span><strong>Finite-to-integrated targets</strong></li>
+              <li><span>III-13.02</span><strong>Integrability</strong></li>
+              <li><span>III-13.03</span><strong>Spectra of target operators</strong></li>
+              <li><span>III-13.04</span><strong>Distribution tangents</strong></li>
+              <li><span>III-13.05</span><strong>Sieve approximation</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="hilbert-target-map">
+            <h2>1. A continuum of targets defines one operator</h2>
+            <p class="chapter-lede">When a finite state perturbation changes an entire policy-response curve, the relevant object maps a direction into a function. Its Gram operator summarizes integrated sensitivity across the declared target measure.</p>
+            <p>Let (<span class="math-inline">\(T,\mu\)</span>) be a finite measure space and <span class="math-inline">\(g:T\to \mathbb{R}^{d}\)</span> a measurable response gradient with <span class="math-inline">\(\int\lVert g(t)\rVert^{2}\,d\mu(t)&lt;\infty\)</span>. Define <span class="math-inline">\(B:\mathbb{R}^{d}\to L^{2}(\mu)\)</span> by <span class="math-inline">\((Bv)(t)=g(t)^{\top}v\)</span>. Its target Gram matrix is</p>
+            <div class="equation-block" role="math" aria-label="Integrated target Gram matrix."><span class="equation-tex">\[G=B^{*}B=\int _{T}g(t)g(t)^{\top }d\mu (t).\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Integrated response identity</span><p>The matrix <span class="math-inline">\(G\)</span> is positive semidefinite and</p>
+              <div class="equation-block" role="math" aria-label="Integrated squared response and trace."><span class="equation-tex">\[v^{\top }Gv=\int |g(t)^{\top }v|^{2}d\mu (t), \quad \operatorname{tr}(G)=\int \lVert g(t)\rVert ^{2}d\mu (t).\]</span><span class="equation-number">(2)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Move the finite sum in the quadratic form through the integral to obtain the first identity. Its integrand is nonnegative. Summing the diagonal entries of (1) gives the trace identity. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>2. A response curve on the unit interval</h2>
+            <p>Take <span class="math-inline">\(T\)</span>=[0,1] with uniform measure and <span class="math-inline">\(g(t)=(1,t)^{\top}\)</span>. Then</p>
+            <div class="equation-block" role="math" aria-label="Two by two integrated Gram example."><span class="equation-tex">\[G=\begin{bmatrix}1 &amp; \frac{1}{2} \\ \frac{1}{2} &amp; \frac{1}{3}\end{bmatrix}.\]</span><span class="equation-number">(3)</span></div>
+            <p>The eigenvalues are <span class="math-inline">\((4\pm \sqrt{13})/6\)</span>, approximately 1.26759 and 0.06574. Their sum 4/3 equals <span class="math-inline">\(\int _{0}^{1}(1+t^{2})\,dt\)</span>. The leading eigenvector identifies the state direction with the largest integrated squared response under the chosen uniform weighting. A different target measure changes that economic ranking.</p>
+            <p>Approximating (3) on a grid with positive quadrature weights gives <span class="math-inline">\(G_{K}=\sum _{j}w_{j}g(t_{j})g(t_{j})^{\top}\)</span>. Positivity survives at every grid size because each summand is positive semidefinite.</p>
+          </section>
+
+          <section class="chapter-section" id="distribution-tangents">
+            <h2>3. Distribution states and score directions</h2>
+            <p>Let <span class="math-inline">\(P\)</span> have density <span class="math-inline">\(p\)</span> and let {<span class="math-inline">\(P_{\varepsilon}\)</span>} be a regular dominated submodel whose density is differentiable in <span class="math-inline">\(L^{1}\)</span> at zero with derivative <span class="math-inline">\(p s\)</span>. Then <span class="math-inline">\(E_{P}[s]=0\)</span>; assume also <span class="math-inline">\(s\in L^{2}(P)\)</span>. The score <span class="math-inline">\(s\)</span> is a tangent direction, and the Fisher metric is <span class="math-inline">\(\langle s_{1},s_{2}\rangle=E_{P}[s_{1}s_{2}]\)</span>. For a square-integrable query <span class="math-inline">\(q\)</span>,</p>
+            <div class="equation-block" role="math" aria-label="Pathwise derivative of an expectation."><span class="equation-tex">\[d/d\varepsilon E_{P_{\varepsilon }}[q]|_{\varepsilon =0}=E_{P}[(q-E_{P}q)s].\]</span><span class="equation-number">(4)</span></div>
+            <p>The centered query is the Riesz representer of this derivative on the mean-zero tangent space. Restrictions on admissible scores replace that space by a subspace and project the representer accordingly.</p>
+          </section>
+
+          <section class="chapter-section" id="sieve-stability">
+            <h2>4. Finite-rank approximation and spectral gaps</h2>
+            <p>In a general Hilbert domain, a Hilbert–Schmidt response map <span class="math-inline">\(B\)</span> has a positive trace-class Gram operator <span class="math-inline">\(B^{*}B\)</span>. If finite-rank maps <span class="math-inline">\(B_{K}\)</span> converge in operator norm, then</p>
+            <div class="equation-block" role="math" aria-label="Gram operator perturbation bound."><span class="equation-tex">\[\lVert B_{K}^{*}B_{K}-B^{*}B\rVert \le (\lVert B_{K}\rVert +\lVert B\rVert )\lVert B_{K}-B\rVert .\]</span><span class="equation-number">(5)</span></div>
+            <p>Eigenvalues then converge. Eigenspace stability additionally needs separation between the target eigenvalue cluster and the rest of the spectrum. A small gap makes the reported direction sensitive even when the Gram operator itself is estimated accurately.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Matrix SVD used as an operator theorem</span><p>A finite grid produces a finite matrix and an SVD. Compactness, trace class, operator convergence, and eigenspace stability require integrability and approximation conditions beyond that computation.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Normalize the target measure, use nonnegative quadrature weights, and check the trace identity against the summed gradient norm. Report spectral tails and eigenvalue gaps as the policy grid and state sieve expand.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Derive the exact eigenvalues in (3) and compute normalized eigenvectors.</li>
+              <li>Approximate (3) with midpoint grids of sizes 5, 10, and 100; report operator-norm error and leading-direction error.</li>
+              <li>For a three-point distribution, write the mean-zero score space and calculate the Riesz representer of one event probability.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The characteristic polynomial of (3) is <span class="math-inline">\(\lambda ^{2}-(4/3)\lambda+1/12\)</span>. Its roots are <span class="math-inline">\((4\pm \sqrt{13})/6\)</span>. For either root, a direction proportional to <span class="math-inline">\((1,2(\lambda-1))\)</span> solves the eigenvector equation. <strong>3.</strong> For probabilities <span class="math-inline">\(p_{i}\)</span>, scores satisfy <span class="math-inline">\(\sum p_{i}s_{i}=0\)</span>. The event-<span class="math-inline">\(\{1\}\)</span> derivative has representer <span class="math-inline">\(1\{i=1\}-p_{1}\)</span> under the Fisher inner product.</p></details>
+            <ol class="reference-list">
+              <li>John B. Conway, <em>A Course in Functional Analysis</em>, Chapters II, IX.<small>Compact positive operators and spectral representation.</small></li>
+              <li>Aad van der Vaart, <em>Asymptotic Statistics</em>, Chapter 25.<small>Tangent spaces and pathwise derivatives.</small></li>
+              <li>Tosio Kato, <em>Perturbation Theory for Linear Operators</em>.<small>Spectral perturbation and separated eigenspaces.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>State the target measure, Hilbert spaces, integrability condition, state metric, quadrature rule, trace check, spectral tail, and relevant eigenvalue gaps. Identify which claims are finite-dimensional and which survive the limiting operator.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter develops Hilbert-valued target derivatives, integrated Gram operators, score tangents, and sieve diagnostics. General geometry of probability measures and PDE function spaces lie outside scope.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-10/">III-10 · Function Spaces and Legal Operator Algebra</a></li><li><a href="/resources/volume-03/iii-02/">III-02 · State Spaces, Fibers, Tangent Directions, and Metrics</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#hilbert-target-map">A continuum of targets defines one operator</a>
+            <a href="#worked-example">A response curve on the unit interval</a>
+            <a href="#distribution-tangents">Distribution states and score directions</a>
+            <a href="#sieve-stability">Finite-rank approximation and spectral gaps</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-12/"><span>Previous</span><strong>III-12 · Spectral Projections and Cross-Candidate Identification</strong></a><a class="next" href="/resources/volume-03/iii-14/"><span>Next</span><strong>III-14 · Conditional Generators, Poincare Inequalities, and Graph Certificates</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

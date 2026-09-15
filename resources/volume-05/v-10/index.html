@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Residual-Income Demand across Implementations · Chae-Yeon Xon</title>
+  <meta name="description" content="The case compares an exact residual-income utility with a linear price implementation. The two specifications can agree near a base point while producing different affordability, derivatives, purchaser moments, markups, and welfare away from it. The audit follows that difference through the full computational chain.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-10/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Residual-Income Demand across Implementations · Chae-Yeon Xon">
+  <meta property="og:description" content="The case compares an exact residual-income utility with a linear price implementation. The two specifications can agree near a base point while producing different affordability, derivatives, purchaser moments, markups, and welfare away from it. The audit follows that difference through the full computational chain.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-10/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Residual-Income Demand across Implementations · Chae-Yeon Xon">
+  <meta name="twitter:description" content="The case compares an exact residual-income utility with a linear price implementation. The two specifications can agree near a base point while producing different affordability, derivatives, purchaser moments, markups, and welfare away from it. The audit follows that difference through the full computational chain.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-10</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Six Applied Audit Case Studies · Chapter V-10</div>
+        <h1>Residual-Income Demand across Implementations</h1>
+        <p>The case compares an exact residual-income utility with a linear price implementation. The two specifications can agree near a base point while producing different affordability, derivatives, purchaser moments, markups, and welfare away from it. The audit follows that difference through the full computational chain.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-10.01</span><strong>Exact and approximate operators</strong></li>
+              <li><span>V-10.02</span><strong>A finite demand witness</strong></li>
+              <li><span>V-10.03</span><strong>Transparent reconstruction</strong></li>
+              <li><span>V-10.04</span><strong>Downstream propagation</strong></li>
+              <li><span>V-10.05</span><strong>Reproducibility boundaries</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="two-operators">
+            <h2>1. Exact and linear demand implementations have different domains</h2>
+            <p class="chapter-lede">A first-order price term can match residual-income utility at a base price while changing affordability, derivatives, shares, markups, and welfare away from that point.</p>
+            <p>For income <span class="math-inline">\(y&gt;0\)</span>, quality <span class="math-inline">\(q\)</span>, and price <span class="math-inline">\(p&lt;y\)</span>, define exact utility relative to the outside option as <span class="math-inline">\(u(p)=q+\log[(y-p)/y]\)</span>. Around base price <span class="math-inline">\(p_{0}&lt;y\)</span>, the linear implementation is</p>
+            <div class="equation-block" role="math" aria-label="Residual income utility and first order implementation."><span class="equation-tex">\[u_{L}(p)=q+\operatorname{log}[(y-p_{0})/y]-(p-p_{0})/(y-p_{0}).\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Implementation equivalence on a domain</span><p>Two implementations are equivalent for a target collection over domain <span class="math-inline">\(D\)</span> when every target computed from them agrees for every admissible input in <span class="math-inline">\(D\)</span>. Equality of levels and first derivatives at one base point is only local first-order agreement.</p></div>
+          </section>
+
+          <section class="chapter-section" id="remainder">
+            <h2>2. The remainder is controlled by residual income</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Taylor remainder</span><p>If the closed segment between <span class="math-inline">\(p_{0}\)</span> and <span class="math-inline">\(p\)</span> lies below <span class="math-inline">\(y\)</span>, then for some <span class="math-inline">\(\xi\)</span> on that segment, <span class="math-inline">\(u(p)=u_{L}(p)-(p-p_{0})^{2}/[2(y-\xi)^{2}]\)</span>. Thus the linear implementation weakly overstates exact utility and the error grows as the segment approaches affordability.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> The first derivative of <span class="math-inline">\(\operatorname{log}(y-p)\)</span> is <span class="math-inline">\(-1/(y-p)\)</span> and the second derivative is <span class="math-inline">\(-1/(y-p)^{2}\)</span>. Taylor’s theorem with Lagrange remainder gives the expression. ∎</p></div>
+            <p>A uniform bound follows if <span class="math-inline">\(y-\xi\ge r&gt;0\)</span> throughout the domain: the absolute utility error is at most <span class="math-inline">\((p-p_{0})^{2}/(2r^{2})\)</span>. Without a positive residual-income margin, no finite uniform bound of this form exists.</p>
+          </section>
+
+          <section class="chapter-section" id="finite-witness">
+            <h2>3. A two-income witness propagates downstream</h2>
+            <p>Set <span class="math-inline">\(q=1\)</span>, <span class="math-inline">\(p_{0}=2\)</span>, and <span class="math-inline">\(p=4\)</span>. With a zero-utility outside option and standard logistic shock difference, purchase probability is Λ(<span class="math-inline">\(u\)</span>). At income 10, exact and linear shares are approximately 0.619912 and 0.628750. At income 20, they are 0.685002 and 0.686440.</p>
+            <p>The exact price derivative is <span class="math-inline">\(-1/(y-p)\)</span>, while (1) uses constant derivative <span class="math-inline">\(-1/(y-p_{0})\)</span>. At income 10 and price four these are <span class="math-inline">\(-1/6\)</span> and <span class="math-inline">\(-1/8\)</span>. Multiplying by <span class="math-inline">\(\Lambda(u)[1-\Lambda(u)]\)</span> gives different demand slopes. Those slopes enter markup inversion; share differences alter purchaser composition; utility differences alter compensating variation. Agreement at <span class="math-inline">\(p_{0}\)</span> does not reconcile these downstream objects.</p>
+          </section>
+
+          <section class="chapter-section" id="demand-boundaries">
+            <h2>4. Affordability is an economic support restriction</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Linear utility evaluated beyond income</span><p>Equation (1) returns a finite number when <span class="math-inline">\(p\ge y\)</span>, while the residual-income model is undefined there. Carrying that linear probability into welfare or markups silently changes the choice set.</p></div>
+            <p>As <span class="math-inline">\(p\)</span> approaches <span class="math-inline">\(y\)</span> from below, exact utility tends to <span class="math-inline">\(-\infty\)</span> and purchase probability tends to zero. At <span class="math-inline">\(p=y\)</span>, the logarithm is undefined; a model can define the alternative as unavailable by a separate boundary rule. Income support must be checked household by household. Zero purchase shares make conditional purchaser moments undefined. A singular multi-product demand Jacobian blocks unconstrained markup inversion. Numerical log evaluation should use stable log1p transformations when price-income ratios are small.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Locate every price-utility function, record units and affordability checks, and test exact and approximate values at the base, interior, and near-boundary points. Propagate both implementations through shares, demographic moments, derivatives, supply first-order conditions, and welfare. Report the maximum domain-specific discrepancy and identify which results rely on the approximation.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce all four shares in Section 3.</li><li>Compute the exact and linear share derivatives at income 10.</li><li>Find a price at which the linear model gives positive demand while exact residual-income utility is unavailable.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Insert each utility into Λ(<span class="math-inline">\(u\)</span>)=1/(1+<span class="math-inline">\(e^{-u}\)</span>). <strong>2.</strong> Multiply each utility derivative by its own <span class="math-inline">\(s(1-s)\)</span>. <strong>3.</strong> Any <span class="math-inline">\(p\ge y\)</span> works algebraically for (1), while the exact alternative requires a separate unavailability rule.</p></details>
+            <ol class="reference-list"><li>Jerry A. Hausman and David A. Wise (1978), “A Conditional Probit Model for Qualitative Choice: Discrete Decisions Recognizing Interdependence and Heterogeneous Preferences,” <em>Econometrica</em> 46, 403–426.<small>Observed heterogeneity in discrete choice.</small></li><li>Kenneth Train, <em>Discrete Choice Methods with Simulation</em>.<small>Choice probabilities and aggregation.</small></li><li>Kenneth A. Small and Harvey S. Rosen (1981), “Applied Welfare Economics with Discrete Choice Models,” <em>Econometrica</em> 49, 105–130.<small>Welfare propagation from utility.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Income and price units, base price, exact domain, household affordability, outside-option rule, Taylor segment, residual-income margin, remainder bound, utility and share levels, derivative formulas, demographic aggregation, zero-share condition, demand Jacobian, ownership matrix, welfare definition, stable logs, and downstream discrepancy report.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter audits one-product residual-income demand and its downstream interfaces. Estimation of general income-effect systems and equilibrium existence with endogenous affordability require further analysis.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-05/v-05/">V-05 · Trace an Equation Through Code</a></li><li><a href="/resources/volume-04/iv-05/">IV-05 · Consumer Welfare and Compensating Variation</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#two-operators">Exact and linear demand implementations have different domains</a>
+            <a href="#remainder">The remainder is controlled by residual income</a>
+            <a href="#finite-witness">A two-income witness propagates downstream</a>
+            <a href="#demand-boundaries">Affordability is an economic support restriction</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-05/v-09/"><span>Previous</span><strong>V-09 · Determinacy and Persistence in Dynamic Networks</strong></a><a class="next" href="/resources/volume-05/v-11/"><span>Next</span><strong>V-11 · Set-Valued Demand and Coherent Counterfactuals</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

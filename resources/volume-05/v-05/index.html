@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Trace an Equation Through Code · Chae-Yeon Xon</title>
+  <meta name="description" content="A printed equation becomes a computational result through a chain of data transformations, functions, branches, and parameters. The audit follows that lineage from economic primitives to final output and checks whether normalizations, support restrictions, derivative formulas, and approximation choices remain invariant along the path.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-05/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Trace an Equation Through Code · Chae-Yeon Xon">
+  <meta property="og:description" content="A printed equation becomes a computational result through a chain of data transformations, functions, branches, and parameters. The audit follows that lineage from economic primitives to final output and checks whether normalizations, support restrictions, derivative formulas, and approximation choices remain invariant along the path.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-05/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Trace an Equation Through Code · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A printed equation becomes a computational result through a chain of data transformations, functions, branches, and parameters. The audit follows that lineage from economic primitives to final output and checks whether normalizations, support restrictions, derivative formulas, and approximation choices remain invariant along the path.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-05</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Audit Methods and Reproducibility · Chapter V-05</div>
+        <h1>Trace an Equation Through Code</h1>
+        <p>A printed equation becomes a computational result through a chain of data transformations, functions, branches, and parameters. The audit follows that lineage from economic primitives to final output and checks whether normalizations, support restrictions, derivative formulas, and approximation choices remain invariant along the path.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-05.01</span><strong>Computational lineage</strong></li>
+              <li><span>V-05.02</span><strong>Reading model code</strong></li>
+              <li><span>V-05.03</span><strong>Economic invariants</strong></li>
+              <li><span>V-05.04</span><strong>Derivative and approximation checks</strong></li>
+              <li><span>V-05.05</span><strong>Missing inputs</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="lineage">
+            <h2>1. A printed equation has a computational lineage</h2>
+            <p class="chapter-lede">The audit follows variables from source fields through transformations, branches, solver calls, and aggregations to the released number.</p>
+            <p>For each output, record a directed lineage: raw field and unit, cleaning rule, model primitive, parameter normalization, numerical function, aggregation weight, and display transformation. Configuration files and default arguments are inputs. A hard-coded fallback is an input whenever its branch can execute.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Computational invariant</span><p>An invariant is a mathematical property that should hold at a named program boundary: probabilities sum to one, quantities remain in support, a residual is below tolerance, an objective decreases, or a transformation preserves declared units. The test states its numerical tolerance and norm.</p></div>
+          </section>
+
+          <section class="chapter-section" id="softmax">
+            <h2>2. Stable code can preserve an exact model identity</h2>
+            <p>For utilities <span class="math-inline">\(v\in \mathbb{R}^{J}\)</span> and scale <span class="math-inline">\(\sigma&gt;0\)</span>, multinomial-logit shares are</p>
+            <div class="equation-block" role="math" aria-label="Stable multinomial logit softmax."><span class="equation-tex">\[s_{j}=\operatorname{exp}[(v_{j}-m)/\sigma ] / \sum _{k}\operatorname{exp}[(v_{k}-m)/\sigma ], \quad m=\operatorname{max}_{k}v_{k}.\]</span><span class="equation-number">(1)</span></div>
+            <p>Subtracting <span class="math-inline">\(m\)</span> prevents overflow and leaves the mathematical shares unchanged. For utilities (1000,1001,1002) at <span class="math-inline">\(\sigma=1\)</span>, direct exponentiation overflows in ordinary double precision, while (1) yields approximately (0.090031,0.244728,0.665241) and sums to one.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Shift invariance and derivative</span><p>For any scalar <span class="math-inline">\(c\)</span>, <span class="math-inline">\(s(v+c1)=s(v)\)</span>. Its Jacobian is <span class="math-inline">\(\partial s_{j}/\partial v_{k}=s_{j}(1\{j=k\}-s_{k})/\sigma\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> A common shift multiplies every exponential numerator and the denominator by <span class="math-inline">\(\operatorname{exp}(c/\sigma)\)</span>, which cancels. Differentiating the normalized exponential gives the diagonal numerator derivative and the denominator derivative; collecting terms yields the stated Jacobian. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="derivative-test">
+            <h2>3. Derivative tests need scale-aware steps</h2>
+            <p>At <span class="math-inline">\(v\)</span>=(0,1,2), the analytic Jacobian has row sums and column sums equal to zero, reflecting probability normalization and shift invariance. A centered finite difference with step <span class="math-inline">\(h\)</span> compares <span class="math-inline">\([s(v+he_{k})-s(v-he_{k})]/(2h)\)</span> with the analytic column.</p>
+            <p>Truncation error falls like <span class="math-inline">\(h^{2}\)</span> for smooth shares, while roundoff grows as <span class="math-inline">\(h\)</span> becomes extremely small. Testing several steps and reporting the minimum and local slope is stronger than accepting one arbitrary tolerance. Automatic differentiation checks the implemented computational graph and can reproduce an implementation error shared with the level function.</p>
+          </section>
+
+          <section class="chapter-section" id="lineage-boundaries">
+            <h2>4. Equivalent formulas can have different domains and errors</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Stabilization applied after exponentiation</span><p>Computing <span class="math-inline">\(\operatorname{exp}(v)\)</span> and then dividing by <span class="math-inline">\(\operatorname{exp}(\operatorname{max} v)\)</span> has already overflowed. The subtraction must occur before the exponential.</p></div>
+            <p>At <span class="math-inline">\(\sigma=0\)</span> the smooth formula is undefined; a limit becomes an argmax rule with a tie convention. Empty choice sets make the denominator zero. Missing alternatives change the normalization. Integer division, silent unit conversion, clipping, and NaN replacement can violate the printed equation. Random-number seeds do not control nondeterministic kernels or unrecorded data ordering. A code audit checks executed branches with coverage evidence and verifies that the displayed rounding occurs after model calculation.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Start from one released cell and trace backward to source records. Annotate shapes, units, support, and parameter origins. Add assertions at function boundaries, compare analytic and numerical derivatives, test invariances by metamorphic inputs, and exercise every economically meaningful branch. Retain the exact command and configuration producing the artifact.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the stable shares for (1000,1001,1002).</li><li>Verify every row and column sum of the analytic Jacobian is zero.</li><li>Construct a test detecting whether a price measured in cents was passed to a coefficient estimated per dollar.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Subtract 1002 and evaluate exponentials of <span class="math-inline">\(-2\)</span>, <span class="math-inline">\(-1\)</span>, and zero. <strong>2.</strong> Summing across <span class="math-inline">\(k\)</span> uses <span class="math-inline">\(\sum s_{k}=1\)</span>; summing across <span class="math-inline">\(j\)</span> uses the same identity. <strong>3.</strong> Compare outputs after multiplying price by 100 and dividing the coefficient by 100; a unit-consistent implementation is invariant.</p></details>
+            <ol class="reference-list"><li>Nicholas J. Higham, <em>Accuracy and Stability of Numerical Algorithms</em>.<small>Stable evaluation and rounding error.</small></li><li>Kenneth Train, <em>Discrete Choice Methods with Simulation</em>, Chapters 2–3.<small>Logit probabilities and normalization.</small></li><li>Greg Wilson et al. (2014), “Best Practices for Scientific Computing,” <em>PLoS Biology</em> 12, e1001745.<small>Executable tests and computational traceability.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Released cell, raw source, units, shapes, cleaning rule, configuration, defaults, executed branches, support assertions, normalization, stable formula, <span class="math-inline">\(\sigma\)</span> boundary, empty sets, missing alternatives, analytic derivative, step sweep, norm and tolerance, automatic-differentiation scope, clipping, NaN handling, random-state control, display rounding, and exact execution command.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers equation-to-code lineage and deterministic numerical tests. Whole-program verification, compiler correctness, and hardware fault tolerance require other methods.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-05/v-01/">V-01 · Version, Evidence, and Claim Ledgers</a></li><li><a href="/resources/volume-04/iv-01/">IV-01 · Random Utility, Choice Sets, and Normalization</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#lineage">A printed equation has a computational lineage</a>
+            <a href="#softmax">Stable code can preserve an exact model identity</a>
+            <a href="#derivative-test">Derivative tests need scale-aware steps</a>
+            <a href="#lineage-boundaries">Equivalent formulas can have different domains and errors</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-05/v-04/"><span>Previous</span><strong>V-04 · Numerical Illustration versus Mathematical Certificate</strong></a><a class="next" href="/resources/volume-05/v-06/"><span>Next</span><strong>V-06 · Publishing a Reproducible Computational Book</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Minimal Counterexamples with Economic Structure · Chae-Yeon Xon</title>
+  <meta name="description" content="A useful counterexample preserves the disputed assumptions and changes only enough structure to reverse the claimed conclusion. Small state spaces, discrete shocks, or low-dimensional operators expose the mechanism. An economic implementation then shows that the mathematical witness belongs to the model class rather than to an unrelated abstraction.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-03/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Minimal Counterexamples with Economic Structure · Chae-Yeon Xon">
+  <meta property="og:description" content="A useful counterexample preserves the disputed assumptions and changes only enough structure to reverse the claimed conclusion. Small state spaces, discrete shocks, or low-dimensional operators expose the mechanism. An economic implementation then shows that the mathematical witness belongs to the model class rather than to an unrelated abstraction.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-03/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Minimal Counterexamples with Economic Structure · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A useful counterexample preserves the disputed assumptions and changes only enough structure to reverse the claimed conclusion. Small state spaces, discrete shocks, or low-dimensional operators expose the mechanism. An economic implementation then shows that the mathematical witness belongs to the model class rather than to an unrelated abstraction.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-03</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Audit Methods and Reproducibility · Chapter V-03</div>
+        <h1>Minimal Counterexamples with Economic Structure</h1>
+        <p>A useful counterexample preserves the disputed assumptions and changes only enough structure to reverse the claimed conclusion. Small state spaces, discrete shocks, or low-dimensional operators expose the mechanism. An economic implementation then shows that the mathematical witness belongs to the model class rather than to an unrelated abstraction.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-03.01</span><strong>Dimension reduction</strong></li>
+              <li><span>V-03.02</span><strong>Preserving assumptions</strong></li>
+              <li><span>V-03.03</span><strong>Economic implementation</strong></li>
+              <li><span>V-03.04</span><strong>Strict slack</strong></li>
+              <li><span>V-03.05</span><strong>Minimal repairs</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="counterexample-contract">
+            <h2>1. A counterexample targets a quantified claim</h2>
+            <p class="chapter-lede">To refute a universal implication, construct one admissible model satisfying every premise and violating the conclusion. Small witnesses make the failed mechanism visible.</p>
+            <p>Write the target as “for every model <span class="math-inline">\(m\)</span> in class <span class="math-inline">\(\mathcal{M}\)</span>, assumptions <span class="math-inline">\(A(m)\)</span> imply conclusion <span class="math-inline">\(C(m)\)</span>.” An audit witness must establish membership in <span class="math-inline">\(\mathcal{M}\)</span>, verify every component of <span class="math-inline">\(A\)</span>, and compute the negation of <span class="math-inline">\(C\)</span>. A nearby example that also violates a premise has no logical force against the stated theorem.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Logical sufficiency of one witness</span><p>If there exists <span class="math-inline">\(m^{*}\in \mathcal{M}\)</span> with <span class="math-inline">\(A(m^{*})\)</span> true and <span class="math-inline">\(C(m^{*})\)</span> false, then the universal implication is false.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> A universal implication requires <span class="math-inline">\(A(m)\Rightarrow C(m)\)</span> for every member. At <span class="math-inline">\(m^{*}\)</span>, the implication has a true antecedent and false consequent, so it is false. Therefore its universal quantification is false. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="dependence-witness">
+            <h2>2. Two binary shocks isolate a missing dependence restriction</h2>
+            <p>Let <span class="math-inline">\(X,Y\)</span> each take <span class="math-inline">\(-1\)</span> and 1 with equal marginal probability. Model <span class="math-inline">\(P^{+}\)</span> assigns probability one half to (1,1) and one half to (<span class="math-inline">\(-1,-1\)</span>). Model <span class="math-inline">\(P^{-}\)</span> assigns probability one half to (1,<span class="math-inline">\(-1\)</span>) and one half to (<span class="math-inline">\(-1\)</span>,1). Both models have E[<span class="math-inline">\(X\)</span>]=E[<span class="math-inline">\(Y\)</span>]=0 and <span class="math-inline">\(\operatorname{Var}(X)=\operatorname{Var}(Y)=1\)</span>. Their covariances are 1 and <span class="math-inline">\(-1\)</span>, so</p>
+            <div class="equation-block" role="math" aria-label="Variance of aggregate shocks under two dependence structures."><span class="equation-tex">\[\operatorname{Var}(X+Y)=2+2\operatorname{Cov}(X,Y)\in \{4,0\}.\]</span><span class="equation-number">(1)</span></div>
+            <p>Thus symmetric marginals and their first two moments do not determine aggregate risk. Economically, <span class="math-inline">\(X\)</span> and <span class="math-inline">\(Y\)</span> can be sectoral cash-flow shocks. The same sector-level summaries support either a volatile aggregate payoff or a perfectly hedged one.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Assumption-preserving minimality</span><p>A witness is minimal relative to an audit question when removing a state, parameter, or dependence feature makes it impossible to preserve the disputed premises while reversing the conclusion.</p></div>
+          </section>
+
+          <section class="chapter-section" id="strict-slack">
+            <h2>3. Perturb away from boundary probabilities</h2>
+            <p>Perfect correlation can be dismissed when a theorem separately assumes full joint support. Mix each witness with an independent uniform distribution on the four sign pairs. With mixture weight <span class="math-inline">\(\varepsilon \in(0,1)\)</span>, every cell has positive probability. The marginals remain symmetric, while the covariances become <span class="math-inline">\(1-\varepsilon\)</span> and <span class="math-inline">\(-(1-\varepsilon)\)</span>. Aggregate variances are <span class="math-inline">\(4-2\varepsilon\)</span> and <span class="math-inline">\(2\varepsilon\)</span>, which remain distinct for every <span class="math-inline">\(\varepsilon&lt;1\)</span>.</p>
+            <p>This perturbation identifies the operative missing condition as dependence rather than zero-probability cells. Similar strict-slack constructions move inequality constraints away from equality, separate eigenvalues, or add small noise while preserving the reversal by continuity. The perturbation must be checked against every premise; added noise can destroy exact moment restrictions or economic feasibility.</p>
+          </section>
+
+          <section class="chapter-section" id="repair-boundaries">
+            <h2>4. A witness suggests a repair but does not prove it</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Independence announced after a covariance counterexample</span><p>Independence would fix this particular witness. A repaired theorem still needs a proof that independence is sufficient for its full conclusion and compatible with the intended model.</p></div>
+            <p>Possible repairs include stating covariance, specifying a copula, bounding dependence, or weakening point identification to an identified interval. With only the binary symmetric marginals above, covariance lies in [<span class="math-inline">\(-1\)</span>,1] and aggregate variance lies in [0,4]; both endpoints are attainable, so the interval is sharp. If probabilities must be bounded below by <span class="math-inline">\(\delta&gt;0\)</span> in every cell, the endpoints contract. At <span class="math-inline">\(\delta=1/4\)</span> only the independent distribution remains. Empty model classes make implications vacuously true and must be ruled out by an existence witness.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Begin with the conclusion and list the smallest objects it uses. Search low-dimensional finite supports, exact rational parameters, and matrices with explicit spectra. Verify premises in a machine-readable checklist, calculate the failed conclusion exactly, then embed the object in the economic primitives. Add a continuity perturbation when the witness lies on an irrelevant boundary.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Compute every cell probability, covariance, and aggregate variance for both strict-slack mixtures.</li><li>Derive the sharp aggregate-variance interval from the Fréchet bounds.</li><li>Construct two <span class="math-inline">\(2\times2\)</span> transition matrices with the same stationary marginal and different persistence.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The favored diagonal or off-diagonal cells receive <span class="math-inline">\((1-\varepsilon)/2+\varepsilon/4\)</span>; the other cells receive <span class="math-inline">\(\varepsilon/4\)</span>. <strong>2.</strong> For symmetric binary marginals, E[<span class="math-inline">\(XY\)</span>] ranges from <span class="math-inline">\(-1\)</span> to 1, and (1) maps this interval to [0,4]. <strong>3.</strong> Symmetric two-state matrices with stay probabilities <span class="math-inline">\(p\)</span> and <span class="math-inline">\(q\)</span> both have uniform stationary distributions, while their second eigenvalues <span class="math-inline">\(2p-1\)</span> and <span class="math-inline">\(2q-1\)</span> differ.</p></details>
+            <ol class="reference-list"><li>Jordan M. Stoyanov, <em>Counterexamples in Probability</em>.<small>Finite probability witnesses and failed implications.</small></li><li>Roger B. Nelsen, <em>An Introduction to Copulas</em>, sections on Fréchet–Hoeffding bounds.<small>Dependence variation at fixed marginals.</small></li><li>Charles F. Manski, <em>Identification Problems in the Social Sciences</em>.<small>Partial conclusions under incomplete restrictions.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Exact quantified claim, model-class membership, every premise, computed negation, support size, parameter domain, economic implementation, probability normalization, strict slack, equality boundaries, continuity of the reversal, nonempty repaired class, sharpness witnesses, and proof obligation for the proposed repair.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers finite and low-dimensional counterexample design. Automated satisfiability search and computer-assisted infinite-dimensional counterexamples require additional machinery.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-05/v-02/">V-02 · Auditing the Arrows in a Proof</a></li><li><a href="/resources/volume-02/ii-01/">II-01 · Conditional Probability and a Model&#x27;s Information Structure</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#counterexample-contract">A counterexample targets a quantified claim</a>
+            <a href="#dependence-witness">Two binary shocks isolate a missing dependence restriction</a>
+            <a href="#strict-slack">Perturb away from boundary probabilities</a>
+            <a href="#repair-boundaries">A witness suggests a repair but does not prove it</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-05/v-02/"><span>Previous</span><strong>V-02 · Auditing the Arrows in a Proof</strong></a><a class="next" href="/resources/volume-05/v-04/"><span>Next</span><strong>V-04 · Numerical Illustration versus Mathematical Certificate</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

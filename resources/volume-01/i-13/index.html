@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Information Budgets, Decision Loss, and Record Allocation · Chae-Yeon Xon</title>
+  <meta name="description" content="Information design allocates scarce retention and acquisition resources against target-specific decision loss. Local quadratic regret defines the objective, semidefinite constraints describe feasible information, and alternative release schemes carry different likelihoods and cost measures.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-13/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Information Budgets, Decision Loss, and Record Allocation · Chae-Yeon Xon">
+  <meta property="og:description" content="Information design allocates scarce retention and acquisition resources against target-specific decision loss. Local quadratic regret defines the objective, semidefinite constraints describe feasible information, and alternative release schemes carry different likelihoods and cost measures.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-13/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Information Budgets, Decision Loss, and Record Allocation · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Information design allocates scarce retention and acquisition resources against target-specific decision loss. Local quadratic regret defines the objective, semidefinite constraints describe feasible information, and alternative release schemes carry different likelihoods and cost measures.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-13</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Information Transmission and Learning · Chapter I-13</div>
+        <h1>Information Budgets, Decision Loss, and Record Allocation</h1>
+        <p>Information design allocates scarce retention and acquisition resources against target-specific decision loss. Local quadratic regret defines the objective, semidefinite constraints describe feasible information, and alternative release schemes carry different likelihoods and cost measures.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-13.01</span><strong>Information and decision loss</strong></li>
+              <li><span>I-13.02</span><strong>Retention and acquisition</strong></li>
+              <li><span>I-13.03</span><strong>Retention semidefinite programs</strong></li>
+              <li><span>I-13.04</span><strong>Rounded rate releases</strong></li>
+              <li><span>I-13.05</span><strong>Exact decision samples</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="decision-objective">
+            <h2>1. Information is valued through a declared decision loss</h2>
+            <p class="chapter-lede">A retention budget has no target-free optimum. The target derivative, loss curvature, baseline information, release likelihood, and acquisition cost jointly define the allocation problem.</p>
+            <p>Let <span class="math-inline">\(\theta \in \mathbb{R}^{p}\)</span>, let the local target derivative be <span class="math-inline">\(C\in \mathbb{R}^{q\times p}\)</span>, and let <span class="math-inline">\(W\succeq0\)</span> weight target errors. Baseline Fisher information is <span class="math-inline">\(I_{0}\succeq0\)</span>. Candidate source <span class="math-inline">\(j\)</span> contributes information <span class="math-inline">\(J_{j}\succeq0\)</span> at retention intensity <span class="math-inline">\(x_{j}\in[0,1]\)</span>, with cost <span class="math-inline">\(c_{j}x_{j}\)</span>. For a regular efficient estimator, local quadratic risk is summarized by <span class="math-inline">\(\operatorname{tr}[WCI(x)^{+}C^{\top}]\)</span>, where <span class="math-inline">\(I(x)=I_{0}+\sum x_{j}J_{j}\)</span> and <span class="math-inline">\(\operatorname{range}(C^{\top})\subseteq\operatorname{range}(I(x))\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Semidefinite epigraph</span><p>For fixed <span class="math-inline">\(x\)</span>, the generalized Schur complement gives</p>
+              <div class="equation-block" role="math" aria-label="Semidefinite epigraph for target covariance."><span class="equation-tex">\[\begin{bmatrix}I(x) &amp; C^{\top} \\ C &amp; V\end{bmatrix}\succeq0\quad\Longleftrightarrow\quad \operatorname{range}(C^{\top})\subseteq\operatorname{range}(I(x))\ \text{and}\ V\succeq CI(x)^{+}C^{\top}.\]</span><span class="equation-number">(1)</span></div>
+              <p>Minimizing <span class="math-inline">\(\operatorname{tr}(WV)\)</span> subject to (1), <span class="math-inline">\(0\le x_{j}\le1\)</span>, and <span class="math-inline">\(\sum c_{j}x_{j}\le B\)</span> therefore represents the target-risk allocation problem.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Apply the generalized Schur-complement theorem to the positive-semidefinite upper-left block. The range condition is part of that theorem and also states target estimability. Since <span class="math-inline">\(W\)</span> is positive semidefinite, the minimum over <span class="math-inline">\(V\)</span> occurs at the covariance lower boundary on every weighted target direction. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="allocation-example">
+            <h2>2. An allocation changes regime at the budget boundary</h2>
+            <p>Take <span class="math-inline">\(I_{0}=I_{2}\)</span>, two continuously scalable coordinate sources, unit costs, and target weights one and four. With <span class="math-inline">\(x_{1},x_{2}\ge0\)</span> and <span class="math-inline">\(x_{1}+x_{2}\le B\)</span>, the risk is</p>
+            <div class="equation-block" role="math" aria-label="Two-direction information allocation objective."><span class="equation-tex">\[R(x)=1/(1+x_{1})+4/(1+x_{2}).\]</span><span class="equation-number">(2)</span></div>
+            <p>Ignoring upper intensity limits, the KKT solution is <span class="math-inline">\(x_{1}=0\)</span>, <span class="math-inline">\(x_{2}=B\)</span> for <span class="math-inline">\(0\le B\le1\)</span>. For <span class="math-inline">\(B\ge1\)</span>, the interior formulas are <span class="math-inline">\(x_{1}=(B-1)/3\)</span> and <span class="math-inline">\(x_{2}=(2B+1)/3\)</span>. At <span class="math-inline">\(B=2\)</span> they give (1/3,5/3) and risk 2.25. If physical retention imposes <span class="math-inline">\(x_{j}\le1\)</span>, source two binds at one for <span class="math-inline">\(1\le B\le2\)</span> and source one receives <span class="math-inline">\(B-1\)</span>; both sources bind for <span class="math-inline">\(B\ge2\)</span>, leaving any additional budget unused. The feasible-set boundary must therefore match the operational meaning of intensity.</p>
+          </section>
+
+          <section class="chapter-section" id="release-likelihoods">
+            <h2>3. Two release mechanisms have different likelihoods and costs</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 2 · Expected reads for a fixed-decision release</span><p>Suppose independent records produce a decision indicator with probability <span class="math-inline">\(\pi\in(0,1]\)</span>. If records are read until <span class="math-inline">\(r\)</span> decisions occur, the number <span class="math-inline">\(N\)</span> read has a negative-binomial law and <span class="math-inline">\(\mathbb{E}[N]=r/\pi\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Write <span class="math-inline">\(N\)</span> as the sum of <span class="math-inline">\(r\)</span> independent geometric waiting times with success probability <span class="math-inline">\(\pi\)</span>. Each has mean 1/<span class="math-inline">\(\pi\)</span>. ∎</p></div>
+            <p>At <span class="math-inline">\(r=40\)</span> and <span class="math-inline">\(\pi=0.5\)</span>, expected records read equal 80. At <span class="math-inline">\(\pi=0\)</span>, the stopping time is infinite almost surely. A finite archive cap changes the experiment by introducing a probability of failing to reach <span class="math-inline">\(r\)</span>; both that mass and the resulting release rule belong in the likelihood.</p>
+            <p>For a different mechanism, let <span class="math-inline">\(\bar{y}_{n}\)</span> be a sample proportion released after rounding to grid width <span class="math-inline">\(\Delta _{n}\)</span>. The rounding error is at most <span class="math-inline">\(\Delta _{n}/2\)</span>. It is negligible on the root-<span class="math-inline">\(n\)</span> scale when <span class="math-inline">\(\sqrt{n}\Delta _{n}\to0\)</span>. A fixed grid or a grid with a positive root-<span class="math-inline">\(n\)</span> limit changes the limiting experiment. At probabilities zero or one, the usual interior binomial normal approximation degenerates.</p>
+          </section>
+
+          <section class="chapter-section" id="mechanism-failure">
+            <h2>4. Release labels cannot substitute for experiment definitions</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Rounded rates analyzed as fixed-decision samples</span><p>A fixed-size binomial sample, a stopping-time sample with a fixed number of decisions, and a rounded conditional rate assign different probabilities to observed releases. Reusing one likelihood for another mechanism changes information, expected cost, and boundary behavior.</p></div>
+            <p>Sampling without replacement adds a finite-population correction. Dependence across records invalidates the independent geometric decomposition. Privacy noise adds a further convolution. These features enter before comparing designs through a common target loss.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Store one contract per release: sampling frame, stopping rule, cap, rounding grid, added noise, record cost, and likelihood. In the allocation solver, verify PSD symmetry, block-matrix feasibility, target range inclusion, budget slackness, bound multipliers, and primal-dual residuals. Recompute risk directly from a factorization at the returned solution.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Derive both regimes of (2) and add the constraints <span class="math-inline">\(x_{j}\le1\)</span>.</li><li>Compute the variance and cap-failure probability of a fixed-decision release for specified (<span class="math-inline">\(r,\pi,N_{\operatorname{max}}\)</span>).</li><li>Compare root-<span class="math-inline">\(n\)</span> rounding error under <span class="math-inline">\(\Delta _{n}=n^{-1}\)</span> and <span class="math-inline">\(\Delta _{n}=n^{-1/2}\)</span>.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Equality of interior marginal gains gives <span class="math-inline">\(1/(1+x_{1})=2/(1+x_{2})\)</span>. Nonnegativity binds below <span class="math-inline">\(B=1\)</span>; source-two capacity binds when its unconstrained allocation exceeds one. <strong>2.</strong> Without a cap, <span class="math-inline">\(\operatorname{Var}(N)=r(1-\pi)/\pi ^{2}\)</span>. The cap-failure probability is <span class="math-inline">\(P[\operatorname{Binomial}(N_{\max},\pi)&lt;r]\)</span>. <strong>3.</strong> The scaled grid widths converge to zero and one.</p></details>
+            <ol class="reference-list"><li>Stephen Boyd and Lieven Vandenberghe, <em>Convex Optimization</em>, Appendix A.5.5 and Chapter 5.<small>Generalized Schur complements and KKT conditions.</small></li><li>George Casella and Roger L. Berger, <em>Statistical Inference</em>, sections on negative-binomial sampling.<small>Stopping-time likelihood and moments.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/almost-a-policy/">“Almost a Policy: Transmission through Administrative Handoffs.”</a><small>Related comparison of conditional release mechanisms.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the target loss, baseline and candidate information, range condition, budget and intensity bounds, release likelihood, stopping and cap rules, zero-probability behavior, finite-population design, rounding rate, privacy noise, KKT regime, and numerical feasibility residuals.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers local quadratic information allocation and two elementary release mechanisms. Strategic reporting, general optimal design, and privacy accounting require additional theory.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-12/">I-12 · Target Fisher Information: Identification and Precision</a></li><li><a href="/resources/volume-03/iii-17/">III-17 · Matrix Optimization and Information Allocation</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#decision-objective">Information is valued through a declared decision loss</a>
+            <a href="#allocation-example">An allocation changes regime at the budget boundary</a>
+            <a href="#release-likelihoods">Two release mechanisms have different likelihoods and costs</a>
+            <a href="#mechanism-failure">Release labels cannot substitute for experiment definitions</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-12/"><span>Previous</span><strong>I-12 · Target Fisher Information: Identification and Precision</strong></a><a class="next" href="/resources/volume-01/i-14/"><span>Next</span><strong>I-14 · Bayesian Archives and Accumulated Information</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

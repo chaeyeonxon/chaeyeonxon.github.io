@@ -1,0 +1,144 @@
+{
+  "id": "V",
+  "number": 5,
+  "title": "Research Auditing: Proofs, Models, Code, and Counterexamples",
+  "purpose": "This book presents a reproducible method for checking the chain from assumptions to claims, proofs, computations, and public artifacts. Six self-contained case studies show how the method works across selection, simulation, dynamics, demand, set-valued choice, and inverse problems.",
+  "parts": [
+    "Audit Methods and Reproducibility",
+    "Six Applied Audit Case Studies"
+  ],
+  "chapters": [
+    {
+      "id": "V-01",
+      "part": "Audit Methods and Reproducibility",
+      "title": "Version, Evidence, and Claim Ledgers",
+      "overview": "A research audit begins by fixing the object under review. Titles, filenames, and repository labels can survive substantive revisions, so each source needs a version record. A claim ledger then connects quoted propositions to assumptions, proof locations, code paths, data inputs, and the auditor's residual conclusion.",
+      "topics": ["Source hierarchy", "Version records", "Claim units", "Assumption tables", "Residual conclusions"],
+      "method": "Create one row per claim with a stable source identifier, exact version, location, formal statement, assumptions, evidence type, and audit disposition. Use file hashes and a manifest to establish which artifacts were examined, while treating those hashes only as identity records.",
+      "exercise": "Build a ledger for one theorem and one computational table. Trace each assumption and input to a source, then change one source file and record which conclusions require revalidation.",
+      "checkpoint": "A matching title, author list, filename, or file size does not identify a version. Record a date, edition or commit where available, and a content hash for local artifacts.",
+      "scope": "The ledger documents evidence and reasoning. It does not measure author ability, originality, reputation, or the value of an entire research program."
+    },
+    {
+      "id": "V-02",
+      "part": "Audit Methods and Reproducibility",
+      "title": "Auditing the Arrows in a Proof",
+      "overview": "A proof is a sequence of typed implications. Every arrow has a domain, quantifiers, fixed and varying objects, and a conclusion. Auditing the arrows often reveals that a result combines a valid component with an unsupported extension, allowing the conclusion to be narrowed without discarding the surrounding argument.",
+      "topics": ["Legality of an implication", "Fixed and random objects", "Changing ranges", "Decomposed conclusions", "Proof validity and claim truth"],
+      "method": "Rewrite the proof as a claim graph. For each edge, list its inputs, theorem invoked, domain and codomain, quantifiers, and regularity conditions. Test whether selected statistics, candidate-dependent ranges, or limiting sequences change between the premise and conclusion.",
+      "exercise": "Convert a short identification proof into an edge worksheet. Mark every conditioning set and operator domain, then repair one invalid edge by strengthening an assumption or weakening the conclusion.",
+      "checkpoint": "A domain error invalidates the affected inference. It does not establish that every empirical result, model component, or nearby theorem is false.",
+      "scope": "The chapter provides a practical proof-audit grammar. It does not certify general proficiency in formal methods or replace subject-specific theorem knowledge."
+    },
+    {
+      "id": "V-03",
+      "part": "Audit Methods and Reproducibility",
+      "title": "Minimal Counterexamples with Economic Structure",
+      "overview": "A useful counterexample preserves the disputed assumptions and changes only enough structure to reverse the claimed conclusion. Small state spaces, discrete shocks, or low-dimensional operators expose the mechanism. An economic implementation then shows that the mathematical witness belongs to the model class rather than to an unrelated abstraction.",
+      "topics": ["Dimension reduction", "Preserving assumptions", "Economic implementation", "Strict slack", "Minimal repairs"],
+      "method": "List the assumptions as executable predicates, search the smallest state space that satisfies them, and compute the target exactly. Add strict slack where possible so the witness survives perturbation, then identify the weakest added condition that blocks the construction.",
+      "exercise": "Construct a three-agent selection example in which a symmetric shock vector is paired with a shock-dependent selected order statistic. Verify each assumption, calculate the moment exactly, and perturb the probabilities.",
+      "checkpoint": "An example that violates a maintained assumption is an illustration, not a counterexample to the stated theorem. Verify the full assumption ledger before using it.",
+      "scope": "The chapter develops finite witnesses and local repairs. A numerical search can guide discovery but does not replace an existence proof or a verified exact construction."
+    },
+    {
+      "id": "V-04",
+      "part": "Audit Methods and Reproducibility",
+      "title": "Numerical Illustration versus Mathematical Certificate",
+      "overview": "Computation can reveal a mechanism, refute a universal statement through an exact witness, or support a bounded certificate. These roles require different evidence. Floating-point roots, ranks, and optimizer statuses are diagnostics unless error bounds, exact arithmetic, intervals, or primal-dual arguments turn them into guarantees.",
+      "topics": ["Exact arithmetic", "Verified intervals", "Rank and subspace checks", "Limits of finite approximation", "Optimization certificates"],
+      "method": "Separate each output into a computed value and a guaranteed statement. Use rational arithmetic for small polynomials, interval enclosures for isolated roots, singular-value perturbation bounds for ranks, and primal-dual residuals plus objective gaps for convex programs.",
+      "exercise": "Prepare one root report, one rank report, and one optimization report. For each, state precision, residuals, separation margins, and the exact proposition the output certifies.",
+      "checkpoint": "More printed digits do not create rigor. The certificate must connect numerical error to the mathematical claim under stated assumptions.",
+      "scope": "The chapter covers certificates for roots, ranks, and convex programs. It is an entry point to computer-assisted proof rather than a survey of that field."
+    },
+    {
+      "id": "V-05",
+      "part": "Audit Methods and Reproducibility",
+      "title": "Trace an Equation Through Code",
+      "overview": "A printed equation becomes a computational result through a chain of data transformations, functions, branches, and parameters. The audit follows that lineage from economic primitives to final output and checks whether normalizations, support restrictions, derivative formulas, and approximation choices remain invariant along the path.",
+      "topics": ["Computational lineage", "Reading model code", "Economic invariants", "Derivative and approximation checks", "Missing inputs"],
+      "method": "Trace one object such as utility through choice probabilities, aggregate demand, derivatives, equilibrium pricing, and welfare. For every function call, record the formula, units, parameter source, option set, and active branch; compare analytic derivatives with controlled finite differences.",
+      "exercise": "Implement exact and approximate demand branches behind one interface. Write tests for shared shocks, choice sets, affordability, derivatives, and welfare, then deliberately change one branch to observe which tests detect it.",
+      "checkpoint": "A matching line of code is insufficient without its call path, inputs, normalization, and execution context. Confirm the object actually used to generate the reported output.",
+      "scope": "The chapter presents economic code tracing across common languages. General software engineering and language-specific mastery lie outside its boundary."
+    },
+    {
+      "id": "V-06",
+      "part": "Audit Methods and Reproducibility",
+      "title": "Publishing a Reproducible Computational Book",
+      "overview": "A computational chapter should tell readers what it proves, what it illustrates, which inputs it uses, and how to rerun it. Environment locks, source manifests, deterministic seeds, tests, and clean execution turn a collection of files into a reproducible artifact. Web display and executable computation remain distinct delivery modes.",
+      "topics": ["Chapter contracts", "Environment records", "Sources and permissions", "Tests", "Web display and execution"],
+      "method": "Define a chapter contract linking concepts, derivation, code, expected outputs, diagnostics, and limitations. Freeze dependencies, record input hashes and licenses, reset state before execution, and run a smoke test that rebuilds outputs from declared inputs.",
+      "exercise": "Package a small notebook or script with a lockfile, manifest, tests, and a reproduction command. Run it in a clean environment and compare produced hashes or numerical tolerances with the declared expectations.",
+      "checkpoint": "Displayed code or output on a web page is not automatically executable in the browser. State the runtime, dependencies, and reproduction boundary explicitly.",
+      "scope": "The chapter defines a publication contract for computational teaching material. It does not claim full replication when data, code, permissions, or execution evidence are unavailable."
+    },
+    {
+      "id": "V-07",
+      "part": "Six Applied Audit Case Studies",
+      "title": "Selection after Symmetry",
+      "overview": "A symmetric vector of shocks can have zero mean coordinate by coordinate while a statistic selected using those shocks has a nonzero expectation. The distinction between a fixed order statistic and a shock-dependent selected statistic is the central audit object in boundary moment inequalities and other post-selection arguments.",
+      "topics": ["The target claim", "Fixed and selected statistics", "An economic counterexample", "Possible repairs", "Evidence boundaries"],
+      "method": "Use a three-agent discrete model with a jointly symmetric shock distribution and an endogenous selector. Condition on each shock realization and calculate the selected moment, obtaining the finite expectation directly; then identify which independence or joint-reflection condition would restore the disputed step.",
+      "exercise": "Reproduce an exact selected-moment value of minus one sixteenth in a normalized construction. Compare assumptions on marginal symmetry, joint symmetry, and selector invariance using exact enumeration and Monte Carlo.",
+      "checkpoint": "Identify the precise expectation affected by selection and keep conclusions about identification, estimation, and applications separate.",
+      "scope": "The case study establishes a reusable selection diagnostic. Extensions to large games and alternative information structures require their own assumptions."
+    },
+    {
+      "id": "V-08",
+      "part": "Six Applied Audit Case Studies",
+      "title": "Root-n Simulation Error",
+      "overview": "Simulation-based dynamic estimators involve the sample size, the number of simulated alternatives or paths, and the number of draws per object. Root-n inference depends on their joint rates. A simulated first stage can add variance or bias to the score even when the population target remains unchanged.",
+      "topics": ["Condition ledgers", "A small dynamic model", "Competing sequences", "Corrected limiting variance", "Unresolved boundaries"],
+      "method": "Write the centered estimating score as a data component plus simulation error and a generated-first-stage term. Derive its variance under a triangular sequence and display which rate conditions make each additional term negligible or first order.",
+      "exercise": "Simulate a bounded dynamic-choice example while varying sample size and simulation counts. Compare analytic score variance, batched simulation variance, and confidence-interval coverage.",
+      "checkpoint": "A simulation issue can leave a population identification target intact while changing the valid standard error or limiting distribution. State which component is affected.",
+      "scope": "The case study provides a high-level corrected expansion under declared regularity. Other dynamic estimators and simulation schemes require separate rate calculations."
+    },
+    {
+      "id": "V-09",
+      "part": "Six Applied Audit Case Studies",
+      "title": "Determinacy and Persistence in Dynamic Networks",
+      "overview": "Signed interactions, exact root counts, and observable modes address different questions in dynamic networks. Replacing a signed system by absolute coefficients can yield a useful sufficient contraction condition, yet it may discard cancellations. Repeated roots further require a generalized-mode calculation, with transfer-function cancellation checked separately.",
+      "topics": ["Original dynamic structure", "Signed witnesses", "Root-count repair", "Repeated-pole witnesses", "Observable representations"],
+      "method": "Derive the exact characteristic polynomial for a small signed network and certify the relevant root count with rational arithmetic. Construct a repeated pole, calculate its polynomial-times-exponential response, and test whether the input-output numerator cancels it.",
+      "exercise": "Implement the network using exact fractions, a Routh-style count, and a Jordan-chain calculation. Compare with floating roots and a simulation of the observable response.",
+      "checkpoint": "Separate equilibrium determinacy, a sufficient contraction bound, characteristic-root multiplicity, and the modal representation of the measured output.",
+      "scope": "The case study isolates the algebraic links between signed networks, determinacy, and observable persistence. Nonlinear network models and model-specific equilibrium selection need additional analysis."
+    },
+    {
+      "id": "V-10",
+      "part": "Six Applied Audit Case Studies",
+      "title": "Residual-Income Demand across Implementations",
+      "overview": "The case compares an exact residual-income utility with a linear price implementation. The two specifications can agree near a base point while producing different affordability, derivatives, purchaser moments, markups, and welfare away from it. The audit follows that difference through the full computational chain.",
+      "topics": ["Exact and approximate operators", "A finite demand witness", "Transparent reconstruction", "Downstream propagation", "Reproducibility boundaries"],
+      "method": "Derive the derivative of log(y-p) and its first-order linear approximation. Aggregate choice probabilities for a finite income distribution, derive the conditional purchaser mean, and propagate each branch through the demand Jacobian and compensating-variation calculation.",
+      "exercise": "Implement exact and linear branches with common products, shocks, and draws. Compare shares, micro moments, elasticities, markups, and welfare as price-income ratios change.",
+      "checkpoint": "Maintain one declared utility, derivative, support rule, and choice set through every downstream calculation. A local reconstruction is not a full empirical re-estimation.",
+      "scope": "The case teaches specification and code-lineage checks on a finite model. Full empirical re-estimation requires the original data, instruments, simulation design, and estimation code."
+    },
+    {
+      "id": "V-11",
+      "part": "Six Applied Audit Case Studies",
+      "title": "Set-Valued Demand and Coherent Counterfactuals",
+      "overview": "Channel bundles can be valued by solving a viewing-time problem for each set. Replacing those set values with increments calculated at a reference bundle is exact only under modularity or a corresponding structural restriction. Bargaining and welfare then require the same set-value function and consumer shock law used for demand.",
+      "topics": ["Printed set values", "Reference calculations", "The modularity condition", "Choice-kernel variation", "Coherent repairs"],
+      "method": "Solve a two-channel viewing-time KKT system, substitute the optimal allocation into W(S), and compute its Mobius interaction. Show that reference increments are set-invariant when the interaction vanishes, then carry the exact choice kernel into a small bargaining problem.",
+      "exercise": "Enumerate channel sets, calculate exact and reference values, and solve carriage bargaining under both. Vary the consumer shock law only in a labeled alternative specification.",
+      "checkpoint": "Use one coherent set-value function and shock law across demand, disagreement payoffs, bargaining, and welfare. Record any branch as a distinct model.",
+      "scope": "The case study demonstrates internal consistency on a small bundle model. Large-market estimation requires additional data, heterogeneity, supply, and computation."
+    },
+    {
+      "id": "V-12",
+      "part": "Six Applied Audit Case Studies",
+      "title": "Operator Domains in Latent Measurement Models",
+      "overview": "Nonclassical measurement models use conditional operators to connect latent variables and repeated measurements. Candidate-specific invertibility does not automatically permit similarity transforms across candidates, shared spectral projections, or inverse action on reconstructed probabilities. A wrapped-Gaussian witness makes the range and stability problems visible in Fourier coordinates.",
+      "topics": ["Latent measurement structure", "A wrapped-Gaussian witness", "Three operator-domain failures", "Stronger repairs and their cost", "Conclusion boundaries"],
+      "method": "Represent wrapped-Gaussian convolution by Fourier multipliers that decay with frequency. Construct normalized high-frequency functions whose images vanish while inverse norms diverge. Check the domains required by candidate-to-candidate similarity, band projections, and probability reconstruction, then state stronger common-range alternatives.",
+      "exercise": "Compare a finite latent-state model with increasing truncations of the smoothing example. Demonstrate finite-dimensional inversion numerically and prove the limiting inverse-domain statement analytically.",
+      "checkpoint": "A failed proof route leaves the proposed identification conclusion unresolved unless a separate counterexample reaches that conclusion under all maintained assumptions.",
+      "scope": "The case teaches domain and stability checks for latent measurement models. Model-specific identification may still follow from a different proof or stronger observables."
+    }
+  ]
+}

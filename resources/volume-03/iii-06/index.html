@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Dynamic Quotients and Additive-State Realization · Chae-Yeon Xon</title>
+  <meta name="description" content="A static report may fail because future targets depend on states reached after transitions or policy lifts. Dynamic sufficiency therefore closes the target span under transport through the model. Finite-state systems permit an explicit closure algorithm, while an additive state representation requires further structure on how individual states combine.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-06/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Dynamic Quotients and Additive-State Realization · Chae-Yeon Xon">
+  <meta property="og:description" content="A static report may fail because future targets depend on states reached after transitions or policy lifts. Dynamic sufficiency therefore closes the target span under transport through the model. Finite-state systems permit an explicit closure algorithm, while an additive state representation requires further structure on how individual states combine.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-06/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Dynamic Quotients and Additive-State Realization · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A static report may fail because future targets depend on states reached after transitions or policy lifts. Dynamic sufficiency therefore closes the target span under transport through the model. Finite-state systems permit an explicit closure algorithm, while an additive state representation requires further structure on how individual states combine.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-06</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Local Geometry and Policy Paths · Chapter III-06</div>
+        <h1>Dynamic Quotients and Additive-State Realization</h1>
+        <p>A static report may fail because future targets depend on states reached after transitions or policy lifts. Dynamic sufficiency therefore closes the target span under transport through the model. Finite-state systems permit an explicit closure algorithm, while an additive state representation requires further structure on how individual states combine.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-06.01</span><strong>Accessible states</strong></li>
+              <li><span>III-06.02</span><strong>Transported target spans</strong></li>
+              <li><span>III-06.03</span><strong>Finite closure algorithms</strong></li>
+              <li><span>III-06.04</span><strong>Additive frames</strong></li>
+              <li><span>III-06.05</span><strong>The Gorman connection</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="setup-and-notation">
+            <h2>1. Future responses define the state quotient</h2>
+            <p class="chapter-lede">A report can preserve a current target and lose a future target reached after admissible transitions. Dynamic sufficiency closes the target rows under every transition sequence that the policy experiment permits.</p>
+            <p>Let <span class="math-inline">\(x_{t+1}=A_{u_{t}}x_{t}\)</span> for controls <span class="math-inline">\(u_{t}\)</span> in a finite menu <span class="math-inline">\(U\)</span>, and let the terminal target be <span class="math-inline">\(Cx_{H}\)</span>. For a word <span class="math-inline">\(w=(u_{0},\ldots,u_{h-1})\)</span>, write <span class="math-inline">\(A_{w}=A_{u_{h-1}}\cdots A_{u_{0}}\)</span>. The response row space through horizon <span class="math-inline">\(H\)</span> is</p>
+            <div class="equation-block" role="math" aria-label="Dynamic response row space."><span class="equation-tex">\[S_{H}=\operatorname{span}\{\operatorname{row}(CA_{w}): |w|\le H\}.\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Dynamic response equivalence</span><p>States <span class="math-inline">\(x\)</span> and <span class="math-inline">\(x^{\prime}\)</span> are equivalent through horizon <span class="math-inline">\(H\)</span> when <span class="math-inline">\(r(x-x^{\prime})=0\)</span> for every row <span class="math-inline">\(r\in S_{H}\)</span>. The quotient removes exactly the joint kernel of all tested future responses.</p></div>
+          </section>
+
+          <section class="chapter-section" id="closure-result">
+            <h2>2. Finite closure algorithm</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Minimal linear response state</span><p>Initialize <span class="math-inline">\(S_{0}=\operatorname{row}(C)\)</span> and iterate</p>
+              <div class="equation-block" role="math" aria-label="Response row span recursion."><span class="equation-tex">\[S_{j+1}=S_{j}+\operatorname{span}\{rA_{u}: r\in S_{j}, u\in U\}.\]</span><span class="equation-number">(2)</span></div>
+              <p>The sequence stabilizes after at most <span class="math-inline">\(n\)</span> strict dimension increases. If <span class="math-inline">\(R\)</span> is a full-row-rank matrix whose rows span the stable space, <span class="math-inline">\(z=Rx\)</span> reconstructs every target <span class="math-inline">\(CA_{w}x\)</span>. Every linear representation with that property has dimension at least <span class="math-inline">\(\operatorname{rank}(R)\)</span>.</p>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> The spaces form a nested sequence of subspaces of <span class="math-inline">\(\mathbb{R}^{n}\)</span>. A strict inclusion raises dimension, so closure occurs after at most <span class="math-inline">\(n\)</span> increases. Each tested response row belongs to the stable span and therefore factors through <span class="math-inline">\(R\)</span>. If a representation <span class="math-inline">\(Bx\)</span> reconstructs all responses, <span class="math-inline">\(\operatorname{ker}(B)\)</span> lies in the joint kernel of <span class="math-inline">\(S\)</span>; hence <span class="math-inline">\(\operatorname{row}(R)\)</span> lies in <span class="math-inline">\(\operatorname{row}(B)\)</span> and <span class="math-inline">\(\operatorname{rank}(B)\ge \operatorname{rank}(R)\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>3. A three-state closure calculation</h2>
+            <p>Take one transition matrix and one terminal row:</p>
+            <div class="equation-block" role="math" aria-label="Upper triangular transition matrix and first coordinate target."><span class="equation-tex">\[A=\begin{bmatrix}1 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 1\end{bmatrix}, \quad C=\begin{bmatrix}1 &amp; 0 &amp; 0\end{bmatrix}.\]</span><span class="equation-number">(3)</span></div>
+            <p>The first three response rows are <span class="math-inline">\(C\)</span>=[1,0,0], <span class="math-inline">\(CA\)</span>=[1,1,0], and <span class="math-inline">\(CA^{2}\)</span>=[1,2,1]. They are linearly independent, so the dynamic response state has dimension three. The current target <span class="math-inline">\(x_{1}\)</span> is one-dimensional; two additional coordinates become relevant as hidden components propagate forward.</p>
+            <p>Changing the target to <span class="math-inline">\(C\)</span>=[0,0,1] gives <span class="math-inline">\(CA=C\)</span>, so the closure dimension is one. The transition law alone does not determine the needed state; the target row enters the construction.</p>
+          </section>
+
+          <section class="chapter-section" id="additive-realization">
+            <h2>4. Additive realization is a separate condition</h2>
+            <p>Suppose the aggregate state is built from micro states <span class="math-inline">\(x^{i}\)</span>. The quotient coordinate <span class="math-inline">\(R\sum _{i}x^{i}\)</span> is additive when the underlying state itself aggregates linearly and the transition and target maps respect that aggregation. A low-dimensional response quotient for one aggregate system does not establish a representative-agent interpretation or behavioral aggregation across heterogeneous agents.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Dimension without aggregation</span><p>A nonlinear coordinate can separate all response-equivalence classes while failing <span class="math-inline">\(z(x^{1}+x^{2})=z(x^{1})+z(x^{2})\)</span>. The quotient dimension then describes information compression, while additive implementation remains unresolved.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Store an orthonormal row basis for <span class="math-inline">\(S_{j}\)</span>. At each iteration multiply the current basis by every transition matrix, append the candidate rows, and use a rank-revealing QR or SVD with a declared tolerance. Stop when the numerical rank stabilizes and verify the residual of every discarded row.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Verify that the three rows following (3) are independent and that the next row adds no dimension.</li>
+              <li>Add a second switching matrix and compute the stable span by hand.</li>
+              <li>Construct a two-agent model with a two-dimensional response quotient that lacks an additive realization.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Stacking <span class="math-inline">\(C\)</span>, <span class="math-inline">\(CA\)</span>, and <span class="math-inline">\(CA^{2}\)</span> gives an upper-triangular row matrix with determinant one. The next row [1,3,3] cannot raise rank beyond the state dimension and is a linear combination of the first three. <strong>3.</strong> A nonlinear one-to-one reparameterization of a two-dimensional quotient preserves response information and generally breaks additivity across agents, supplying the requested separation.</p></details>
+            <ol class="reference-list">
+              <li>R. E. Kalman (1960), “On the General Theory of Control Systems,” Proceedings of the First IFAC Congress.<small>Reachability and observability subspaces.</small></li>
+              <li>Thomas Kailath, <em>Linear Systems</em>, Chapters 6–7.<small>Minimal realizations and invariant subspaces.</small></li>
+              <li>William Gorman (1953), “Community Preference Fields,” <em>Econometrica</em> 21, 63–80.<small>Additive aggregation restrictions.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>State the control menu, horizon, transition ordering, target rows, closure tolerance, stable dimension, decoder, and aggregation operation. A finite response quotient and an additive economic state are distinct conclusions.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter covers finite-dimensional linear switching systems and exact row-space closure. Nonlinear accessibility, infinite-dimensional realization, and full aggregation theory require additional results.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-04/">III-04 · Curvature, Transport, and Holonomy</a></li><li><a href="/resources/volume-03/iii-07/">III-07 · Linear Dynamics: Stability and Response Spaces</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#setup-and-notation">Future responses define the state quotient</a>
+            <a href="#closure-result">Finite closure algorithm</a>
+            <a href="#worked-example">A three-state closure calculation</a>
+            <a href="#additive-realization">Additive realization is a separate condition</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-05/"><span>Previous</span><strong>III-05 · Small-Loop Error Rates and Experimental Design</strong></a><a class="next" href="/resources/volume-03/iii-07/"><span>Next</span><strong>III-07 · Linear Dynamics: Stability and Response Spaces</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

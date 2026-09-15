@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Numerical Illustration versus Mathematical Certificate · Chae-Yeon Xon</title>
+  <meta name="description" content="Computation can reveal a mechanism, refute a universal statement through an exact witness, or support a bounded certificate. These roles require different evidence. Floating-point roots, ranks, and optimizer statuses are diagnostics unless error bounds, exact arithmetic, intervals, or primal-dual arguments turn them into guarantees.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-04/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Numerical Illustration versus Mathematical Certificate · Chae-Yeon Xon">
+  <meta property="og:description" content="Computation can reveal a mechanism, refute a universal statement through an exact witness, or support a bounded certificate. These roles require different evidence. Floating-point roots, ranks, and optimizer statuses are diagnostics unless error bounds, exact arithmetic, intervals, or primal-dual arguments turn them into guarantees.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-04/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Numerical Illustration versus Mathematical Certificate · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Computation can reveal a mechanism, refute a universal statement through an exact witness, or support a bounded certificate. These roles require different evidence. Floating-point roots, ranks, and optimizer statuses are diagnostics unless error bounds, exact arithmetic, intervals, or primal-dual arguments turn them into guarantees.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-04</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Audit Methods and Reproducibility · Chapter V-04</div>
+        <h1>Numerical Illustration versus Mathematical Certificate</h1>
+        <p>Computation can reveal a mechanism, refute a universal statement through an exact witness, or support a bounded certificate. These roles require different evidence. Floating-point roots, ranks, and optimizer statuses are diagnostics unless error bounds, exact arithmetic, intervals, or primal-dual arguments turn them into guarantees.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-04.01</span><strong>Exact arithmetic</strong></li>
+              <li><span>V-04.02</span><strong>Verified intervals</strong></li>
+              <li><span>V-04.03</span><strong>Rank and subspace checks</strong></li>
+              <li><span>V-04.04</span><strong>Limits of finite approximation</strong></li>
+              <li><span>V-04.05</span><strong>Optimization certificates</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="evidence-levels">
+            <h2>1. Computations have different logical roles</h2>
+            <p class="chapter-lede">A numerical output can illustrate behavior, refute a universal claim, or certify a bounded statement. The role depends on arithmetic and error control.</p>
+            <p>A floating-point example illustrates a mechanism when its result is stable to precision and implementation choices. An exact rational or symbolic witness can refute a universal statement after all premises are verified. A positive certificate establishes a claim over a set only when interval enclosures, analytical error bounds, exhaustive finite search, or primal-dual inequalities cover that set.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Verified enclosure</span><p>An interval <span class="math-inline">\(I\)</span> is a verified enclosure for real quantity <span class="math-inline">\(q\)</span> when the arithmetic procedure proves <span class="math-inline">\(q\in I\)</span>, including rounding error and input uncertainty under the stated model. Printing many digits is not an enclosure.</p></div>
+          </section>
+
+          <section class="chapter-section" id="rank-example">
+            <h2>2. Exact rank and numerical rank answer different questions</h2>
+            <p>For rational <span class="math-inline">\(\varepsilon\)</span>, consider</p>
+            <div class="equation-block" role="math" aria-label="Nearly singular two by two matrix."><span class="equation-tex">\[A_{\varepsilon }=\begin{bmatrix}1 &amp; 1 \\ 1 &amp; 1+\varepsilon \end{bmatrix}, \quad \operatorname{det}(A_{\varepsilon })=\varepsilon .\]</span><span class="equation-number">(1)</span></div>
+            <p>At <span class="math-inline">\(\varepsilon=10^{-12}\)</span>, exact arithmetic certifies rank two. A numerical routine using a singular-value threshold above roughly <span class="math-inline">\(5\times 10^{-13}\)</span> can report numerical rank one because the smaller singular value is of that order. Both statements can be correct under their declared definitions. The audit records scaling, norm, precision, threshold, and singular values.</p>
+            <p>An interval determinant contained entirely in (0,<span class="math-inline">\(\infty\)</span>) certifies nonsingularity. An interval containing zero leaves the sign unresolved; it does not certify singularity. Increasing precision or deriving a sharper enclosure may resolve the case.</p>
+          </section>
+
+          <section class="chapter-section" id="duality-certificate">
+            <h2>3. Primal and dual witnesses bound optimization error</h2>
+            <p>Consider the linear program min <span class="math-inline">\(x_{1}+x_{2}\)</span> subject to <span class="math-inline">\(x_{1}+2x_{2}\ge1\)</span> and <span class="math-inline">\(x\ge0\)</span>. Its dual is max <span class="math-inline">\(\lambda\)</span> subject to <span class="math-inline">\(0\le \lambda \le1\)</span> and <span class="math-inline">\(2\lambda \le1\)</span>. The primal point (0,1/2) and dual point <span class="math-inline">\(\lambda=1/2\)</span> are feasible and have equal value 1/2.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Feasible primal-dual gap certificate</span><p>For any minimization linear program and its dual maximization problem, a primal-feasible point with value <span class="math-inline">\(p\)</span> and dual-feasible point with value <span class="math-inline">\(d\)</span> satisfy <span class="math-inline">\(d\le v^{*}\le p\)</span>. Hence <span class="math-inline">\(p-d\)</span> bounds the primal objective error; equality certifies optimality.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Weak duality gives every dual-feasible value as a lower bound for every primal-feasible value. Taking the infimum over primal-feasible points and the supremum over dual-feasible points yields the two inequalities. If one feasible pair has equal values, both equal the optimum. ∎</p></div>
+            <p>Solver status without feasibility residuals provides weaker evidence. For approximate witnesses, residual bounds and objective-coefficient norms must translate numerical feasibility into rigorous bounds.</p>
+          </section>
+
+          <section class="chapter-section" id="certificate-boundaries">
+            <h2>4. Finite grids do not certify unsearched continua</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · No violation found on a dense grid</span><p>A narrow violation can lie between grid points. A grid certifies the continuum only when a modulus of continuity or interval method bounds behavior inside every cell.</p></div>
+            <p>Root-finding needs a bracket and continuity for an existence certificate; Newton convergence from one start is a local diagnostic. Rank changes discontinuously at zero singular values. Eigenvectors become unstable as a spectral gap closes, even when eigenvalue sets remain stable. Optimization duality can fail under malformed signs or unsupported solver transformations. Exact rational arithmetic can become expensive, and decimal input must be mapped to exact rationals or input intervals deliberately. Overflow, underflow, cancellation, and nondeterministic parallel reductions are part of the error model.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Classify each computation as illustration, counterexample, or certificate. Use exact arithmetic for small rational witnesses, intervals for bounded real calculations, and primal-dual residuals for convex programs. Print precision, tolerance, norm, condition estimate, feasibility residuals, and solver termination. Recompute sensitive quantities with an independent method.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Compute the determinant and exact rank of (1) for <span class="math-inline">\(\varepsilon=0\)</span> and <span class="math-inline">\(\varepsilon=10^{-12}\)</span>.</li><li>Verify the primal and dual witnesses and derive their objectives.</li><li>Give a Lipschitz condition under which a grid bounds the maximum error between nodes.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Rank is one at zero and two for every nonzero rational <span class="math-inline">\(\varepsilon\)</span>. <strong>2.</strong> The primal constraint binds and the dual upper constraint <span class="math-inline">\(2\lambda \le1\)</span> binds; both objectives equal one half. <strong>3.</strong> If <span class="math-inline">\(\lvert f(x)-f(y)\rvert \le L\lvert x-y\rvert\)</span> and mesh width is <span class="math-inline">\(h\)</span>, every point lies within <span class="math-inline">\(h/2\)</span> of a node in one dimension, giving an <span class="math-inline">\(Lh/2\)</span> envelope.</p></details>
+            <ol class="reference-list"><li>Nicholas J. Higham, <em>Accuracy and Stability of Numerical Algorithms</em>.<small>Floating-point error and conditioning.</small></li><li>Ramon E. Moore, R. Baker Kearfott, and Michael J. Cloud, <em>Introduction to Interval Analysis</em>.<small>Verified enclosures.</small></li><li>Stephen Boyd and Lieven Vandenberghe, <em>Convex Optimization</em>, Chapter 5.<small>Duality and residual certificates.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Logical role, exact versus floating input, precision, rounding mode, interval inclusion, determinant enclosure, singular values, numerical-rank threshold, norm, scaling, spectral gap, grid modulus, root bracket, primal and dual feasibility, complementarity, objective gap, solver transformations, overflow, cancellation, and independent recomputation.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers small exact witnesses, interval logic, and linear-program certificates. Formal verification of large nonlinear solvers and certified global optimization require specialized software.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-05/v-03/">V-03 · Minimal Counterexamples with Economic Structure</a></li><li><a href="/resources/volume-01/i-05/">I-05 · Representation Budgets, Singular Values, and Approximation Loss</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#evidence-levels">Computations have different logical roles</a>
+            <a href="#rank-example">Exact rank and numerical rank answer different questions</a>
+            <a href="#duality-certificate">Primal and dual witnesses bound optimization error</a>
+            <a href="#certificate-boundaries">Finite grids do not certify unsearched continua</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-05/v-03/"><span>Previous</span><strong>V-03 · Minimal Counterexamples with Economic Structure</strong></a><a class="next" href="/resources/volume-05/v-05/"><span>Next</span><strong>V-05 · Trace an Equation Through Code</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

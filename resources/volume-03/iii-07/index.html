@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Linear Dynamics: Stability and Response Spaces · Chae-Yeon Xon</title>
+  <meta name="description" content="For x_{t+1}=Ax_t+Bu_t and y_t=Cx_t, the transition matrix governs persistence, while B and C govern which shocks enter and which consequences are seen. Reachability and observability organize the resulting response space. Stability alone says little about the span or value of feasible policy responses.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-07/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Linear Dynamics: Stability and Response Spaces · Chae-Yeon Xon">
+  <meta property="og:description" content="For x_{t+1}=Ax_t+Bu_t and y_t=Cx_t, the transition matrix governs persistence, while B and C govern which shocks enter and which consequences are seen. Reachability and observability organize the resulting response space. Stability alone says little about the span or value of feasible policy responses.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-07/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Linear Dynamics: Stability and Response Spaces · Chae-Yeon Xon">
+  <meta name="twitter:description" content="For x_{t+1}=Ax_t+Bu_t and y_t=Cx_t, the transition matrix governs persistence, while B and C govern which shocks enter and which consequences are seen. Reachability and observability organize the resulting response space. Stability alone says little about the span or value of feasible policy responses.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-07</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Linear Dynamics and Modes · Chapter III-07</div>
+        <h1>Linear Dynamics: Stability and Response Spaces</h1>
+        <p>For x_{t+1}=Ax_t+Bu_t and y_t=Cx_t, the transition matrix governs persistence, while B and C govern which shocks enter and which consequences are seen. Reachability and observability organize the resulting response space. Stability alone says little about the span or value of feasible policy responses.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-07.01</span><strong>Linear state equations</strong></li>
+              <li><span>III-07.02</span><strong>Stability</strong></li>
+              <li><span>III-07.03</span><strong>Impulse-response maps</strong></li>
+              <li><span>III-07.04</span><strong>Reachability and observability</strong></li>
+              <li><span>III-07.05</span><strong>Compression criteria</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="setup-and-notation">
+            <h2>1. A response system has three maps</h2>
+            <p class="chapter-lede">Stability describes what the transition law does to an existing state. Policy analysis also needs a map from interventions into the state and a map from the state into measured targets.</p>
+            <p>Consider the discrete-time linear system</p>
+            <div class="equation-block" role="math" aria-label="Linear state and observation equations."><span class="equation-tex">\[x_{t+1}=Ax_{t}+Bu_{t}, \quad y_{t}=Cx_{t}.\]</span><span class="equation-number">(1)</span></div>
+            <p>Here <span class="math-inline">\(A\in \mathbb{R}^{n\times n}\)</span>, <span class="math-inline">\(B\in \mathbb{R}^{n\times m}\)</span>, and <span class="math-inline">\(C\in \mathbb{R}^{p\times n}\)</span>. The system is asymptotically stable when the spectral radius <span class="math-inline">\(\rho(A)\)</span> is below one. The finite-horizon response operator for a one-time input is</p>
+            <div class="equation-block" role="math" aria-label="Finite horizon response operator."><span class="equation-tex">\[K_{H}=[(CB)^{\top },(CAB)^{\top },\ldots , (CA^{H-1}B)^{\top }]^{\top }.\]</span><span class="equation-number">(2)</span></div>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Response space</span><p>The horizon-<span class="math-inline">\(H\)</span> response space is <span class="math-inline">\(\operatorname{range}(K_{H})\)</span>. Its dimension is <span class="math-inline">\(\operatorname{rank}(K_{H})\)</span>. With Euclidean input and output metrics, the squared singular values of <span class="math-inline">\(K_{H}\)</span> are the eigenvalues of its input Gram matrix <span class="math-inline">\(K_{H}^{\top}K_{H}\)</span>.</p></div>
+          </section>
+
+          <section class="chapter-section" id="reachability-observability">
+            <h2>2. Reachability, observability, and compression</h2>
+            <p>The reachable subspace through horizon <span class="math-inline">\(H\)</span> is the column span of <span class="math-inline">\([B,AB,\ldots,A^{H-1}B]\)</span>. The unobservable subspace through the same horizon is the kernel of the stacked matrix <span class="math-inline">\([C^{\top},(CA)^{\top},\ldots,(CA^{H-1})^{\top}]^{\top}\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Response-null state directions</span><p>A state displacement <span class="math-inline">\(d\)</span> has zero measured consequence at all dates <span class="math-inline">\(h=0,\ldots,H-1\)</span> exactly when <span class="math-inline">\(d\)</span> lies in</p>
+              <div class="equation-block" role="math" aria-label="Joint response kernel."><span class="equation-tex">\[N_{H}=\bigcap _{h=0}^{H-1} \operatorname{ker}(CA^{h}).\]</span><span class="equation-number">(3)</span></div>
+              <p>The quotient <span class="math-inline">\(\mathbb{R}^{n}/N_{H}\)</span> is the smallest linear state that reconstructs every tested future output.</p>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> The stacked observability matrix sends <span class="math-inline">\(d\)</span> to the vector of future output displacements. Its kernel is (3). Any linear state representation that reconstructs those outputs must identify no pair separated by a direction outside this kernel, so its row space must contain the row space of the stacked matrix. The quotient therefore has minimal dimension equal to the stacked matrix rank. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>3. One stable transition, three response spaces</h2>
+            <p>Set <span class="math-inline">\(A=\operatorname{diag}(0.8,0.4,0.2)\)</span> and <span class="math-inline">\(H=3\)</span>. All three modes are stable. First take <span class="math-inline">\(B=I\)</span> and <span class="math-inline">\(C=I\)</span>. The response operator has rank three and singular values 1.43164, 1.08885, and 1.02059.</p>
+            <p>Keep <span class="math-inline">\(B=I\)</span> and replace the target by <span class="math-inline">\(C\)</span>=[1,1,0]. The three response rows are [1,1,0], [0.8,0.4,0], and [0.64,0.16,0]. Their stack has rank two and singular values 1.76186 and 0.36200. With <span class="math-inline">\(C\)</span>=[1,0,0], the rank falls to one and the sole positive singular value is 1.43164.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Stability used as a compression certificate</span><p>The same matrix <span class="math-inline">\(A\)</span> produces response dimensions three, two, and one. Its spectral radius and unconditional decay rate are unchanged. A stability calculation therefore cannot determine how many intervention directions enter the measured target.</p></div>
+          </section>
+
+          <section class="chapter-section" id="weighted-response">
+            <h2>4. Horizon and economic weights</h2>
+            <p>For positive-semidefinite date weights <span class="math-inline">\(W_{h}\)</span>, replace the Euclidean Gram matrix by</p>
+            <div class="equation-block" role="math" aria-label="Weighted response Gram matrix."><span class="equation-tex">\[G_{H}=\sum _{h=0}^{H-1}B^{\top }(A^{h})^{\top }C^{\top }W_{h}CA^{h}B.\]</span><span class="equation-number">(4)</span></div>
+            <p>A direction <span class="math-inline">\(v\)</span> has total weighted response <span class="math-inline">\(v^{\top}G_{H}v\)</span>. Discounting, outcome units, and intervention units enter this matrix. Comparisons across models require the same horizon and metrics.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Build response blocks by repeated multiplication, stack them, and compute a rank-revealing SVD. Report the scale used for the rank tolerance. For a long horizon, update the Gram matrix recursively and monitor its smallest retained eigenvalue rather than constructing a large dense stack.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Reproduce the three ranks and singular-value lists in the example.</li>
+              <li>For <span class="math-inline">\(C\)</span>=[1,1,0], find a basis for the response-null state directions at horizons one, two, and three.</li>
+              <li>Choose a stable nondiagonal <span class="math-inline">\(A\)</span> with one slowly decaying hidden mode and construct <span class="math-inline">\(B\)</span>, <span class="math-inline">\(C\)</span> that expose or suppress it.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> For <span class="math-inline">\(B=C=I\)</span>, each column norm is <span class="math-inline">\(\sqrt{1+\lambda ^{2}+\lambda ^{4}}\)</span>. With <span class="math-inline">\(C\)</span>=[1,1,0], diagonalize the <span class="math-inline">\(2\times2\)</span> Gram matrix <span class="math-inline">\(\begin{bmatrix}2.0496 &amp; 1.4224 \\ 1.4224 &amp; 1.1856\end{bmatrix}\)</span>. <strong>2.</strong> At horizon one the kernel is span{(1,<span class="math-inline">\(-1\)</span>,0),(0,0,1)}. At horizons two and three it is span{(0,0,1)} because the first two response rows are independent.</p></details>
+            <ol class="reference-list">
+              <li>R. E. Kalman (1960), “On the General Theory of Control Systems,” <em>Proceedings of the First IFAC Congress</em>.<small>Reachability and observability.</small></li>
+              <li>Thomas Kailath, <em>Linear Systems</em>, Chapters 2, 6.<small>Response operators and minimal realization.</small></li>
+              <li>Chi-Tsong Chen, <em>Linear System Theory and Design</em>, Chapters 5–6.<small>Discrete-time stability and Gramians.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>Report <span class="math-inline">\(A\)</span>, <span class="math-inline">\(B\)</span>, <span class="math-inline">\(C\)</span>, the horizon, input and output metrics, response rank, singular values, and numerical tolerance. Separate transition stability from reachability, observability, and response compression.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter covers finite-dimensional linear time-invariant systems and finite-horizon response spaces. Nonlinear controllability, robust control, and stochastic realization require further structure.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-02/">I-02 · Linear Maps, Kernels, Quotients, and Information Dimension</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#setup-and-notation">A response system has three maps</a>
+            <a href="#reachability-observability">Reachability, observability, and compression</a>
+            <a href="#worked-example">One stable transition, three response spaces</a>
+            <a href="#weighted-response">Horizon and economic weights</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-06/"><span>Previous</span><strong>III-06 · Dynamic Quotients and Additive-State Realization</strong></a><a class="next" href="/resources/volume-03/iii-08/"><span>Next</span><strong>III-08 · Exact Root Counts and Equilibrium Determinacy</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

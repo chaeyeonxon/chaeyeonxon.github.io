@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Constrained Policy Motion and Lifts · Chae-Yeon Xon</title>
+  <meta name="description" content="A desired path in reported aggregates generally leaves many compatible paths in the underlying state. A lift chooses one state velocity that implements the report velocity. The choice depends on feasibility, an implementation metric, and any drift already present in the state, so a lift is an economic specification rather than a neutral inverse.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-03/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Constrained Policy Motion and Lifts · Chae-Yeon Xon">
+  <meta property="og:description" content="A desired path in reported aggregates generally leaves many compatible paths in the underlying state. A lift chooses one state velocity that implements the report velocity. The choice depends on feasibility, an implementation metric, and any drift already present in the state, so a lift is an economic specification rather than a neutral inverse.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-03/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Constrained Policy Motion and Lifts · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A desired path in reported aggregates generally leaves many compatible paths in the underlying state. A lift chooses one state velocity that implements the report velocity. The choice depends on feasibility, an implementation metric, and any drift already present in the state, so a lift is an economic specification rather than a neutral inverse.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-03</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Local Geometry and Policy Paths · Chapter III-03</div>
+        <h1>Constrained Policy Motion and Lifts</h1>
+        <p>A desired path in reported aggregates generally leaves many compatible paths in the underlying state. A lift chooses one state velocity that implements the report velocity. The choice depends on feasibility, an implementation metric, and any drift already present in the state, so a lift is an economic specification rather than a neutral inverse.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-03.01</span><strong>Report and state motion</strong></li>
+              <li><span>III-03.02</span><strong>Implementation metrics</strong></li>
+              <li><span>III-03.03</span><strong>Pseudoinverse lifts</strong></li>
+              <li><span>III-03.04</span><strong>Drift and feasibility</strong></li>
+              <li><span>III-03.05</span><strong>Minimal connection language</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="setup-and-notation">
+            <h2>1. Report motion and state motion</h2>
+            <p class="chapter-lede">A desired movement in reported aggregates generally permits many movements in the latent state. A lift selects one feasible state velocity by combining the report constraint with an implementation metric and any autonomous state drift.</p>
+            <p>Let <span class="math-inline">\(x\in\mathbb{R}^{n}\)</span> be the state, <span class="math-inline">\(y=h(x)\in\mathbb{R}^{k}\)</span> the report, and <span class="math-inline">\(f(x)\)</span> the drift that occurs without the policy correction. At a fixed state, write <span class="math-inline">\(C=Dh_{x}\)</span>. A requested report velocity <span class="math-inline">\(u\)</span> requires a correction <span class="math-inline">\(z\)</span> satisfying</p>
+            <div class="equation-block" role="math" aria-label="The report constraint C z equals u minus C f."><span class="equation-tex">\[Cz = u - Cf(x) \equiv r.\]</span><span class="equation-number">(1)</span></div>
+            <p>Let <span class="math-inline">\(G\)</span> be a positive-definite implementation-cost matrix. The minimum-cost lift solves <span class="math-inline">\(\operatorname{min}_{z}\)</span> <span class="math-inline">\(\frac{1}{2}z^{\top}Gz\)</span> subject to (1). The total state velocity is <span class="math-inline">\(\dot{x}=f(x)+z\)</span>.</p>
+          </section>
+
+          <section class="chapter-section" id="minimum-cost-lift">
+            <h2>2. Minimum-cost lift</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Weighted lift</span><p>Suppose <span class="math-inline">\(C\)</span> has full row rank and <span class="math-inline">\(G\)</span> is positive definite. The constrained problem has the unique solution</p>
+              <div class="equation-block" role="math" aria-label="Weighted minimum cost lift formula."><span class="equation-tex">\[z^{*} = G^{-1}C^{\top }(CG^{-1}C^{\top })^{-1}r.\]</span><span class="equation-number">(2)</span></div>
+              <p>Every other feasible correction equals <span class="math-inline">\(z^{*}+v\)</span> for some <span class="math-inline">\(v\in \operatorname{ker}(C)\)</span>, and its cost exceeds the minimum by <span class="math-inline">\(\frac{1}{2}v^{\top}Gv\)</span>.</p>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> The Lagrangian is <span class="math-inline">\(\frac{1}{2}z^{\top}Gz-\lambda^{\top}(Cz-r)\)</span>. Stationarity gives <span class="math-inline">\(z=G^{-1}C^{\top}\lambda\)</span>. Substitution into the constraint gives <span class="math-inline">\((CG^{-1}C^{\top})\lambda=r\)</span>. Full row rank makes this matrix positive definite. For any feasible displacement <span class="math-inline">\(v\)</span>, the cross term <span class="math-inline">\(v^{\top}Gz^{*}=v^{\top}C^{\top}\lambda=0\)</span>, which gives the cost decomposition. ∎</p></div>
+            <p>Formula (2) is a weighted right inverse of the report derivative. The metric states which latent movements are costly. The drift determines how much correction the policy must supply. These are economic primitives of the implementation rule.</p>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>3. Worked two-state lift</h2>
+            <p>Let the report be <span class="math-inline">\(h(x)=x_{1}+x_{2}\)</span>, take zero drift, and request <span class="math-inline">\(u=1\)</span>. Then <span class="math-inline">\(C\)</span>=[1,1]. Under the Euclidean metric, (2) gives <span class="math-inline">\(z^{*}\)</span>=(1/2,1/2). Both latent coordinates carry equal cost.</p>
+            <p>Now set <span class="math-inline">\(G=\operatorname{diag}(1,4)\)</span>. A unit displacement in the second coordinate contributes four times as much quadratic cost as the same displacement in the first. Since <span class="math-inline">\(G^{-1}=\operatorname{diag}(1,1/4)\)</span> and <span class="math-inline">\(CG^{-1}C^{\top}=5/4\)</span>,</p>
+            <div class="equation-block" role="math" aria-label="The weighted lift equals point eight point two."><span class="equation-tex">\[z^{*} = (\frac{4}{5}, \frac{1}{5}), \quad \frac{1}{2}z^{*\top }Gz^{*} = \frac{2}{5}.\]</span><span class="equation-number">(3)</span></div>
+            <p>The Euclidean lift has cost 5/8 when evaluated under the second metric. The report path is identical in both cases; the hidden state path differs. With drift <span class="math-inline">\(f\)</span>=(0.3,<span class="math-inline">\(-0.1\)</span>), the uncontrolled report velocity is 0.2, so the correction uses <span class="math-inline">\(r=0.8\)</span> and becomes (0.64,0.16).</p>
+          </section>
+
+          <section class="chapter-section" id="path-and-feasibility">
+            <h2>4. Paths, rank changes, and feasibility</h2>
+            <p>Along a report path <span class="math-inline">\(y(t)\)</span>, the lifted state solves an ordinary differential equation with <span class="math-inline">\(u=\dot{y}\)</span>. Local existence follows from standard ODE conditions when the matrices in (2) vary smoothly and retain rank. State constraints require the vector field to remain in the tangent cone at a boundary.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · An unattainable report velocity</span><p>If <span class="math-inline">\(C\)</span> loses row rank, a requested residual <span class="math-inline">\(r\)</span> may lie outside <span class="math-inline">\(\operatorname{range}(C)\)</span>. Then equation (1) has no solution. A pseudoinverse returns the least-squares projection of <span class="math-inline">\(r\)</span> onto the attainable range; that calculation changes the report path. The projected path and its residual must be reported explicitly.</p></div>
+            <p>A second failure arises when (2) points outside a constrained state set. Algebraic feasibility of the linearized report equation does not guarantee viability of the nonlinear state path.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation and exercises</h2>
+            <ol>
+              <li>Compute the drift-adjusted report residual <span class="math-inline">\(r\)</span>.</li>
+              <li>Check the rank of <span class="math-inline">\(C\)</span> and the smallest eigenvalue of <span class="math-inline">\(G\)</span>.</li>
+              <li>Solve <span class="math-inline">\(GZ=C^{\top}\)</span>, then solve <span class="math-inline">\((CZ)\lambda=r\)</span>; set <span class="math-inline">\(z=Z\lambda\)</span>.</li>
+              <li>Check <span class="math-inline">\(\lVert Cz-r\rVert\)</span> and all state constraints before advancing the ODE.</li>
+            </ol>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Prove the cost decomposition in Proposition 1 for a general feasible <span class="math-inline">\(z\)</span>.</li>
+              <li>Replace <span class="math-inline">\(G\)</span> in the example by a matrix with off-diagonal cost and compute the lift.</li>
+              <li>Construct a rank-deficient <span class="math-inline">\(C\)</span> and separate attainable from unattainable report velocities.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Write a feasible correction as <span class="math-inline">\(z^{*}+v\)</span>, where <span class="math-inline">\(Cv=0\)</span>. The cross term is <span class="math-inline">\(v^{\top}Gz^{*}=v^{\top}C^{\top}\lambda=0\)</span>, leaving the nonnegative quadratic increment. <strong>3.</strong> With <span class="math-inline">\(C=\begin{bmatrix}1 &amp; 0 \\ 2 &amp; 0\end{bmatrix}\)</span>, its range is span{(1,2)}. A request such as (1,0) is unattainable; projection changes the intended report velocity.</p></details>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>Record the report map, drift, metric, state constraints, rank condition, requested velocity, achieved velocity, and integration error. These objects determine the lift and its economic interpretation.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope and sources</h2>
+            <p>The chapter treats smooth equality constraints and quadratic local implementation cost. Chapter III-04 studies the order dependence generated by varying lifts.</p>
+            <ol class="reference-list">
+              <li>Roger Penrose (1955), “A Generalized Inverse for Matrices,” <em>Proceedings of the Cambridge Philosophical Society</em> 51, 406–413.<small>Generalized inverses and minimum-norm solutions.</small></li>
+              <li>Stephen Boyd and Lieven Vandenberghe, <em>Convex Optimization</em>, §§5.5 and A.5.5.<small>Equality-constrained quadratic minimization and Schur complements.</small></li>
+              <li>Jean-Pierre Aubin, <em>Viability Theory</em>, Chapters 2–4.<small>Tangent conditions for state-constrained dynamics.</small></li>
+            </ol>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-02/">III-02 · State Spaces, Fibers, Tangent Directions, and Metrics</a></li><li><a href="/resources/volume-03/iii-16/">III-16 · KKT Conditions, Linear Duality, and Sharpness</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#setup-and-notation">Report motion and state motion</a>
+            <a href="#minimum-cost-lift">Minimum-cost lift</a>
+            <a href="#worked-example">Worked two-state lift</a>
+            <a href="#path-and-feasibility">Paths, rank changes, and feasibility</a>
+            <a href="#implementation">Implementation and exercises</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope and sources</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-02/"><span>Previous</span><strong>III-02 · State Spaces, Fibers, Tangent Directions, and Metrics</strong></a><a class="next" href="/resources/volume-03/iii-04/"><span>Next</span><strong>III-04 · Curvature, Transport, and Holonomy</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

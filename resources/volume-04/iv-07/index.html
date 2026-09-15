@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Bargaining, Disagreement States, and Choice-Law Consistency · Chae-Yeon Xon</title>
+  <meta name="description" content="A bargaining calculation requires a feasible agreement set, disagreement payoffs, bargaining weights, and a rule linking fees to consumer choices and firm profits. Target-specific substitutions in the choice kernel can change both surplus and disagreement values. Coherent counterfactuals therefore propagate one declared choice law through demand, bargaining, and welfare.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-07/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Bargaining, Disagreement States, and Choice-Law Consistency · Chae-Yeon Xon">
+  <meta property="og:description" content="A bargaining calculation requires a feasible agreement set, disagreement payoffs, bargaining weights, and a rule linking fees to consumer choices and firm profits. Target-specific substitutions in the choice kernel can change both surplus and disagreement values. Coherent counterfactuals therefore propagate one declared choice law through demand, bargaining, and welfare.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-07/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Bargaining, Disagreement States, and Choice-Law Consistency · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A bargaining calculation requires a feasible agreement set, disagreement payoffs, bargaining weights, and a rule linking fees to consumer choices and firm profits. Target-specific substitutions in the choice kernel can change both surplus and disagreement values. Coherent counterfactuals therefore propagate one declared choice law through demand, bargaining, and welfare.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-07</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Demand, Supply, Bundles, and Welfare · Chapter IV-07</div>
+        <h1>Bargaining, Disagreement States, and Choice-Law Consistency</h1>
+        <p>A bargaining calculation requires a feasible agreement set, disagreement payoffs, bargaining weights, and a rule linking fees to consumer choices and firm profits. Target-specific substitutions in the choice kernel can change both surplus and disagreement values. Coherent counterfactuals therefore propagate one declared choice law through demand, bargaining, and welfare.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-07.01</span><strong>The bargaining object</strong></li>
+              <li><span>IV-07.02</span><strong>Nash bargaining</strong></li>
+              <li><span>IV-07.03</span><strong>Choice kernels</strong></li>
+              <li><span>IV-07.04</span><strong>Target-specific computation</strong></li>
+              <li><span>IV-07.05</span><strong>Welfare consistency</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="nash-bargaining">
+            <h2>1. Bargaining starts from agreement and disagreement surpluses</h2>
+            <p class="chapter-lede">A Nash formula becomes an economic model only after the feasible agreement set, disagreement payoffs, bargaining weights, transfers, and demand responses are fixed.</p>
+            <p>Let a distributor have pre-transfer agreement surplus <span class="math-inline">\(A&gt;0\)</span> and a channel have surplus <span class="math-inline">\(B&gt;0\)</span> relative to disagreement. A fee <span class="math-inline">\(f\)</span> paid by the distributor to the channel gives surpluses <span class="math-inline">\(A-f\)</span> and <span class="math-inline">\(B+f\)</span>. With distributor bargaining weight <span class="math-inline">\(\beta \in(0,1)\)</span>, the weighted Nash solution maximizes <span class="math-inline">\((A-f)^{\beta}(B+f)^{1-\beta}\)</span> over <span class="math-inline">\(-B&lt;f&lt;A\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Transfer under fixed total surplus</span><p>The unique interior solution is</p>
+              <div class="equation-block" role="math" aria-label="Weighted Nash bargaining fee."><span class="equation-tex">\[f^{*}=(1-\beta )A-\beta B.\]</span><span class="equation-number">(1)</span></div>
+              <p>Distributor and channel surpluses are <span class="math-inline">\(\beta(A+B)\)</span> and <span class="math-inline">\((1-\beta)(A+B)\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Differentiate <span class="math-inline">\(\beta\)</span> <span class="math-inline">\(\operatorname{log}(A-f)+(1-\beta)\operatorname{log}(B+f)\)</span>. The first-order condition is <span class="math-inline">\(-\beta/(A-f)+(1-\beta)/(B+f)=0\)</span>. Strict concavity gives uniqueness. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="fee-example">
+            <h2>2. A fixed-surplus numerical solution</h2>
+            <p>Let <span class="math-inline">\(A=8\)</span>, <span class="math-inline">\(B=2\)</span>, and <span class="math-inline">\(\beta=0.6\)</span>. Equation (1) gives fee two, distributor surplus six, and channel surplus four. The two agreement surpluses sum to ten, the fixed total surplus.</p>
+            <p>A nonnegative-fee restriction would bind if (1) were negative. Fee caps, limited liability, and discrete carriage terms similarly replace the interior equality with KKT or finite-choice conditions.</p>
+          </section>
+
+          <section class="chapter-section" id="endogenous-demand">
+            <h2>3. Demand can make total surplus fee dependent</h2>
+            <p>If the negotiated fee changes retail price, carriage quality, promotion, or channel investment, <span class="math-inline">\(A\)</span> and <span class="math-inline">\(B\)</span> become functions of <span class="math-inline">\(f\)</span>. The derivative of the Nash objective then contains <span class="math-inline">\(A^{\prime}(f)\)</span> and <span class="math-inline">\(B^{\prime}(f)\)</span> computed through the same consumer choice probabilities used in agreement and disagreement states. Formula (1) no longer applies as a closed form.</p>
+            <p>The disagreement calculation removes carriage or changes the bundle according to a declared fallback. Consumer substitution, distributor profit, channel advertising value, and welfare must all use that same choice law.</p>
+          </section>
+
+          <section class="chapter-section" id="coherence-boundary">
+            <h2>4. Target-specific kernels create incompatible models</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · One choice law for fees and another for welfare</span><p>A bargaining surplus computed with additive item values and a welfare change computed with set-valued viewing demand do not share an agreement or disagreement economy. Equal Nash weights cannot repair the mismatch.</p></div>
+            <p>Zero total agreement surplus places the Nash product at its participation boundary. Negative surplus means agreement is infeasible under individual rationality. Multiple fee roots can arise with endogenous demand; global objective comparison and participation constraints must accompany stationarity.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Build agreement and disagreement states with one demand routine, calculate each party's surplus and derivative, enforce participation and fee bounds, and solve the log Nash objective. Report the fee, surplus split, objective, derivative residual, active constraints, and alternative roots.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce the fee and surplus split in Section 2.</li><li>Find the <span class="math-inline">\(\beta\)</span> values for which a nonnegative fee binds when <span class="math-inline">\(A=2\)</span> and <span class="math-inline">\(B=8\)</span>.</li><li>Let retail demand be linear in a fee pass-through price and derive the additional first-order terms.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Compute <span class="math-inline">\(0.4\cdot 8-0.6\cdot 2=2\)</span>. <strong>2.</strong> The unconstrained fee is <span class="math-inline">\(2-10\beta\)</span>, so the lower bound binds for <span class="math-inline">\(\beta \ge0.2\)</span>. <strong>3.</strong> Differentiate each agreement surplus through quantity as well as through the transfer.</p></details>
+            <ol class="reference-list"><li>John F. Nash (1950), “The Bargaining Problem,” <em>Econometrica</em> 18, 155–162.<small>Axiomatic bargaining solution.</small></li><li>Martin J. Osborne and Ariel Rubinstein (1990), <em>Bargaining and Markets</em>.<small>Agreement, disagreement, and strategic bargaining foundations.</small></li><li>Gregory S. Crawford, Robin S. Lee, Michael D. Whinston, and Ali Yurukoglu (2018), “The Welfare Effects of Vertical Integration in Multichannel Television Markets,” <em>Econometrica</em> 86, 891–954.<small>Demand, carriage, and affiliate-fee bargaining.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State parties, agreement and disagreement states, choice law, surplus definitions, fee direction, bargaining weights, participation and fee bounds, demand feedback, derivative terms, root search, active constraints, and welfare routine.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers bilateral transferable-surplus bargaining and coherent demand feedback. Bargaining networks and endogenous network formation require separate models.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-04/iv-06/">IV-06 · Viewing-Time Optimization and Set-Valued Demand</a></li><li><a href="/resources/volume-04/iv-05/">IV-05 · Consumer Welfare and Compensating Variation</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#nash-bargaining">Bargaining starts from agreement and disagreement surpluses</a>
+            <a href="#fee-example">A fixed-surplus numerical solution</a>
+            <a href="#endogenous-demand">Demand can make total surplus fee dependent</a>
+            <a href="#coherence-boundary">Target-specific kernels create incompatible models</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-06/"><span>Previous</span><strong>IV-06 · Viewing-Time Optimization and Set-Valued Demand</strong></a><a class="next" href="/resources/volume-04/iv-08/"><span>Next</span><strong>IV-08 · Dynamic Choice and Forward Simulation</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

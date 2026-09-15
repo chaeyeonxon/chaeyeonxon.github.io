@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Curvature, Transport, and Holonomy · Chae-Yeon Xon</title>
+  <meta name="description" content="When two policy directions are lifted to the state space, applying them in different orders can produce different latent outcomes. Their commutator is the leading local measure of this order effect. Transport also changes target covectors, so a closed path in reported variables may alter both the hidden state and the response assigned to the next policy.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-04/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Curvature, Transport, and Holonomy · Chae-Yeon Xon">
+  <meta property="og:description" content="When two policy directions are lifted to the state space, applying them in different orders can produce different latent outcomes. Their commutator is the leading local measure of this order effect. Transport also changes target covectors, so a closed path in reported variables may alter both the hidden state and the response assigned to the next policy.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-04/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Curvature, Transport, and Holonomy · Chae-Yeon Xon">
+  <meta name="twitter:description" content="When two policy directions are lifted to the state space, applying them in different orders can produce different latent outcomes. Their commutator is the leading local measure of this order effect. Transport also changes target covectors, so a closed path in reported variables may alter both the hidden state and the response assigned to the next policy.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-04</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Local Geometry and Policy Paths · Chapter III-04</div>
+        <h1>Curvature, Transport, and Holonomy</h1>
+        <p>When two policy directions are lifted to the state space, applying them in different orders can produce different latent outcomes. Their commutator is the leading local measure of this order effect. Transport also changes target covectors, so a closed path in reported variables may alter both the hidden state and the response assigned to the next policy.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-04.01</span><strong>Vector fields and order</strong></li>
+              <li><span>III-04.02</span><strong>Curvature of a lift</strong></li>
+              <li><span>III-04.03</span><strong>Target changes along paths</strong></li>
+              <li><span>III-04.04</span><strong>Covector transport</strong></li>
+              <li><span>III-04.05</span><strong>Levels of closure</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="setup-and-notation">
+            <h2>1. Lifted policy directions</h2>
+            <p class="chapter-lede">Two policies can generate the same closed path in reported variables and leave different latent states because their lifted state motions fail to commute. The leading discrepancy is a Lie bracket evaluated at the starting state.</p>
+            <p>Let <span class="math-inline">\(h\)</span>: <span class="math-inline">\(M\to \mathbb{R}^{2}\)</span> be a report map and let <span class="math-inline">\(X\)</span>, <span class="math-inline">\(Y\)</span> be smooth vector fields satisfying <span class="math-inline">\(Dh X=e_{1}\)</span> and <span class="math-inline">\(Dh Y=e_{2}\)</span>. Their flows are denoted <span class="math-inline">\(\Phi ^{t}_{X}\)</span> and <span class="math-inline">\(\Phi ^{t}_{Y}\)</span>. Fix the bracket convention <span class="math-inline">\([X,Y]=DY\cdot X-DX\cdot Y\)</span>.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Small policy loop</span><p>Starting from <span class="math-inline">\(x\)</span>, apply <span class="math-inline">\(X\)</span>, then <span class="math-inline">\(Y\)</span>, then their reversals for duration <span class="math-inline">\(\varepsilon\)</span>. The loop map is <span class="math-inline">\(L_{\varepsilon}=\Phi ^{-\varepsilon}_{Y}\circ\Phi ^{-\varepsilon}_{X}\circ\Phi ^{\varepsilon}_{Y}\circ\Phi ^{\varepsilon}_{X}\)</span>. Its report returns to the starting value through order <span class="math-inline">\(\varepsilon ^{2}\)</span> when the two report directions are constant.</p></div>
+          </section>
+
+          <section class="chapter-section" id="bracket-result">
+            <h2>2. The commutator expansion</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Leading loop displacement</span><p>If <span class="math-inline">\(X\)</span> and <span class="math-inline">\(Y\)</span> are three times continuously differentiable near <span class="math-inline">\(x\)</span>, then</p>
+              <div class="equation-block" role="math" aria-label="The small loop displacement equals epsilon squared times the Lie bracket plus an order epsilon cubed remainder."><span class="equation-tex">\[L_{\varepsilon }(x)-x = \varepsilon ^{2}[X,Y](x)+O(\varepsilon ^{3}).\]</span><span class="equation-number">(1)</span></div>
+              <p>If <span class="math-inline">\(Dh X\)</span> and <span class="math-inline">\(Dh Y\)</span> are constant coordinate directions, <span class="math-inline">\(Dh[X,Y]=0\)</span>. The leading displacement is vertical and remains hidden from the report.</p>
+            </div>
+            <div class="proof"><p><strong>Derivation.</strong> Expand each flow as <span class="math-inline">\(\Phi ^{\varepsilon}_{X}(x)=x+\varepsilon X(x)+\frac{1}{2}\varepsilon ^{2}DX(x)X(x)+O(\varepsilon ^{3})\)</span> and compose the four expansions. First-order terms cancel. The remaining cross terms are <span class="math-inline">\(DY\cdot X-DX\cdot Y\)</span>. Applying <span class="math-inline">\(Dh\)</span> and differentiating the constant identities <span class="math-inline">\(Dh X=e_{1}\)</span>, <span class="math-inline">\(Dh Y=e_{2}\)</span> gives the verticality statement. ∎</p></div>
+            <p>For a scalar target <span class="math-inline">\(\tau\)</span>, the leading target change is <span class="math-inline">\(\varepsilon ^{2}D\tau_{x}[X,Y]\)</span>. This is a target-specific curvature statistic. A state displacement can be economically silent for one target and active for another.</p>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>3. A loop with an exact vertical residue</h2>
+            <p>Use state coordinates (<span class="math-inline">\(r_{1},r_{2},z\)</span>) and report <span class="math-inline">\(h(r_{1},r_{2},z)=(r_{1},r_{2})\)</span>. Let</p>
+            <div class="equation-block" role="math" aria-label="Two lifted vector fields."><span class="equation-tex">\[X=(1,0,0), \quad Y=(0,1,r_{1}).\]</span><span class="equation-number">(2)</span></div>
+            <p>The bracket is <span class="math-inline">\([X,Y]=(0,0,1)\)</span>. Starting at the origin, the four legs give (<span class="math-inline">\(\varepsilon\)</span>,0,0), (<span class="math-inline">\(\varepsilon,\varepsilon,\varepsilon ^{2}\)</span>), (0,<span class="math-inline">\(\varepsilon,\varepsilon ^{2}\)</span>), and finally (0,0,<span class="math-inline">\(\varepsilon ^{2}\)</span>). The report closes exactly while the latent coordinate increases by <span class="math-inline">\(\varepsilon ^{2}\)</span>. Reversing the loop changes the sign.</p>
+            <p>For target <span class="math-inline">\(\tau=z\)</span>, the area-normalized contrast equals one at every <span class="math-inline">\(\varepsilon\)</span> in this example. For target <span class="math-inline">\(\tau=r_{1}+r_{2}\)</span>, it equals zero. The policy loop identifies a directional and target-indexed object.</p>
+          </section>
+
+          <section class="chapter-section" id="transport">
+            <h2>4. Transport of future responses</h2>
+            <p>A future marginal response is a covector <span class="math-inline">\(\alpha_{x}\in T_{x}^{*}M\)</span>. Moving the state changes both its evaluation point and the coordinate representation used to compare responses. Pulling covectors back along the flow places them in the starting cotangent space. The loop difference of pulled-back covectors records response holonomy.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Declaring closure at the wrong level</span><p>A closed report path establishes <span class="math-inline">\(h(L_{\varepsilon}x)=h(x)\)</span> for the chosen loop. It leaves open the latent state, a future response, and the full equilibrium correspondence. Each closure claim needs its own map and tolerance.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <ol>
+              <li>Integrate both loop orientations from the same initial state and solver tolerances.</li>
+              <li>Record report closure, latent displacement, and target displacement separately.</li>
+              <li>Divide the orientation difference by <span class="math-inline">\(2\varepsilon ^{2}\)</span> and compare it with the analytic bracket.</li>
+              <li>Repeat over an <span class="math-inline">\(\varepsilon\)</span> grid to diagnose higher-order and integration errors.</li>
+            </ol>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Compute the bracket in (2) from the Jacobians of the two vector fields.</li>
+              <li>Add a term <span class="math-inline">\(r_{2}^{2}\)</span> to the vertical component of <span class="math-inline">\(X\)</span> and derive the base-point bracket.</li>
+              <li>Construct a target whose first-order loop response vanishes and whose next nonzero term is cubic.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> <span class="math-inline">\(DX=0\)</span>, while the derivative of <span class="math-inline">\(Y\)</span> in the <span class="math-inline">\(r_{1}\)</span> direction is (0,0,1). Hence <span class="math-inline">\(DY\cdot X=(0,0,1)\)</span>. <strong>2.</strong> For <span class="math-inline">\(X\)</span>=(1,0,<span class="math-inline">\(r_{2}^{2}\)</span>), the added derivative <span class="math-inline">\(DX\cdot Y\)</span> has vertical component <span class="math-inline">\(2r_{2}\)</span>; at the origin this term vanishes, so the base-point bracket remains (0,0,1).</p></details>
+            <ol class="reference-list">
+              <li>John M. Lee, <em>Introduction to Smooth Manifolds</em>, 2nd ed., Chapters 8–9.<small>Flows, Lie brackets, and commuting vector fields.</small></li>
+              <li>Velimir Jurdjevic, <em>Geometric Control Theory</em>, Chapter 2.<small>Vector fields, flows, and control-generated directions.</small></li>
+              <li>R. W. Brockett (1972), “System Theory on Group Manifolds and Coset Spaces,” <em>SIAM Journal on Control</em> 10, 265–284.<small>Geometric control interpretation of noncommuting motions.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>State the bracket convention, loop orientation, lifted fields, closure map, target, base point, scale, integration method, and remainder rate. Orientation and convention determine the sign of the reported curvature.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter treats local commutator effects of smooth policy lifts. Global holonomy groups, principal bundles, and Riemannian curvature tensors are beyond the calculation used here.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-03/">III-03 · Constrained Policy Motion and Lifts</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#setup-and-notation">Lifted policy directions</a>
+            <a href="#bracket-result">The commutator expansion</a>
+            <a href="#worked-example">A loop with an exact vertical residue</a>
+            <a href="#transport">Transport of future responses</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-03/"><span>Previous</span><strong>III-03 · Constrained Policy Motion and Lifts</strong></a><a class="next" href="/resources/volume-03/iii-05/"><span>Next</span><strong>III-05 · Small-Loop Error Rates and Experimental Design</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

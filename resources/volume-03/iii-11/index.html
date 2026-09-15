@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Integral, Multiplication, Adjoint, and Smoothing Operators · Chae-Yeon Xon</title>
+  <meta name="description" content="Conditional expectation and measurement systems naturally produce integral and multiplication operators. Their adjoints identify which queries can be represented, while smoothing attenuates high-frequency components and makes inversion unstable. The legal norm depends on the probability space and cannot be transferred casually between L1 and L2 arguments.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-11/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Integral, Multiplication, Adjoint, and Smoothing Operators · Chae-Yeon Xon">
+  <meta property="og:description" content="Conditional expectation and measurement systems naturally produce integral and multiplication operators. Their adjoints identify which queries can be represented, while smoothing attenuates high-frequency components and makes inversion unstable. The legal norm depends on the probability space and cannot be transferred casually between L1 and L2 arguments.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-11/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Integral, Multiplication, Adjoint, and Smoothing Operators · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Conditional expectation and measurement systems naturally produce integral and multiplication operators. Their adjoints identify which queries can be represented, while smoothing attenuates high-frequency components and makes inversion unstable. The legal norm depends on the probability space and cannot be transferred casually between L1 and L2 arguments.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-11</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Function Spaces, Inverse Problems, and Risk Certificates · Chapter III-11</div>
+        <h1>Integral, Multiplication, Adjoint, and Smoothing Operators</h1>
+        <p>Conditional expectation and measurement systems naturally produce integral and multiplication operators. Their adjoints identify which queries can be represented, while smoothing attenuates high-frequency components and makes inversion unstable. The legal norm depends on the probability space and cannot be transferred casually between L1 and L2 arguments.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-11.01</span><strong>Probability integral operators</strong></li>
+              <li><span>III-11.02</span><strong>Multiplication operators</strong></li>
+              <li><span>III-11.03</span><strong>Adjoints</strong></li>
+              <li><span>III-11.04</span><strong>Fourier smoothing</strong></li>
+              <li><span>III-11.05</span><strong>Inverse domains</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="integral-operators">
+            <h2>1. Integral kernels define maps between measured spaces</h2>
+            <p class="chapter-lede">Conditional expectation and measurement error produce integral operators. Their norm and adjoint depend on the source and target measures carried by the two function spaces.</p>
+            <p>Let (<span class="math-inline">\(X,\mu\)</span>) and (<span class="math-inline">\(Y,\nu\)</span>) be <span class="math-inline">\(\sigma\)</span>-finite measure spaces. For a measurable kernel <span class="math-inline">\(k:Y\times X\to\mathbb{C}\)</span>, define</p>
+            <div class="equation-block" role="math" aria-label="Integral operator definition."><span class="equation-tex">\[(Kf)(y)=\int _{X}k(y,x)f(x)d\mu (x).\]</span><span class="equation-number">(1)</span></div>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Hilbert–Schmidt bound and adjoint</span><p>If <span class="math-inline">\(k\in L^{2}(\nu\otimes\mu)\)</span>, then <span class="math-inline">\(K:L^{2}(\mu)\to L^{2}(\nu)\)</span> is bounded and compact, with <span class="math-inline">\(\lVert K\rVert \le \lVert k\rVert_{L^{2}}\)</span>. Its adjoint is</p>
+              <div class="equation-block" role="math" aria-label="Adjoint of an integral operator."><span class="equation-tex">\[(K^{*}g)(x)=\int _{Y} \operatorname{conj}(k(y,x))g(y)d\nu (y).\]</span><span class="equation-number">(2)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Cauchy–Schwarz in <span class="math-inline">\(x\)</span> bounds <span class="math-inline">\(|Kf(y)|^{2}\)</span> by <span class="math-inline">\(\int|k(y,x)|^{2}\,d\mu\cdot\lVert f\rVert^{2}\)</span>. Integrating in <span class="math-inline">\(y\)</span> gives the norm bound. Fubini's theorem applied to the integrable product <span class="math-inline">\(\overline{g(y)}k(y,x)f(x)\)</span> yields (2). Approximation of <span class="math-inline">\(k\)</span> in <span class="math-inline">\(L^{2}\)</span> by finite sums of product functions gives compactness. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="multiplication">
+            <h2>2. Multiplication and conditional weighting</h2>
+            <p>For a measurable function <span class="math-inline">\(m\)</span>, the multiplication operator <span class="math-inline">\(M_{m}f=mf\)</span> is bounded from <span class="math-inline">\(L^{2}(\mu)\)</span> to itself exactly when <span class="math-inline">\(m\in L^{\infty}(\mu)\)</span>, and its norm is the essential supremum of <span class="math-inline">\(\lvert m\rvert\)</span>. If <span class="math-inline">\(m\)</span> approaches zero, the inverse multiplication operator has domain {<span class="math-inline">\(g\)</span>: <span class="math-inline">\(g/m\in L^{2}\)</span>} and can be unbounded.</p>
+            <p>Changing from <span class="math-inline">\(L^{2}\)</span> to <span class="math-inline">\(L^{1}\)</span> changes the available adjoint and compactness arguments. A probability density or likelihood ratio can act as a bounded multiplier in one space and fail the required bound in another.</p>
+          </section>
+
+          <section class="chapter-section" id="fourier-smoothing">
+            <h2>3. Gaussian smoothing in a Fourier basis</h2>
+            <p>On the unit circle equipped with normalized measure <span class="math-inline">\(dx/(2\pi)\)</span>, let <span class="math-inline">\(e_{j}(x)=\operatorname{exp}(ijx)\)</span> be the orthonormal Fourier basis. A periodic heat-kernel convolution with scale <span class="math-inline">\(\tau&gt;0\)</span> satisfies</p>
+            <div class="equation-block" role="math" aria-label="Fourier multiplier for heat smoothing."><span class="equation-tex">\[Ke_{j}=\operatorname{exp}(-\tau j^{2})e_{j}.\]</span><span class="equation-number">(3)</span></div>
+            <p>At <span class="math-inline">\(\tau=0.02\)</span>, frequency 10 is multiplied by <span class="math-inline">\(\operatorname{exp}(-2)=0.135335\)</span>, while frequency 20 is multiplied by <span class="math-inline">\(\operatorname{exp}(-8)=0.00033546\)</span>. Exact inversion amplifies the corresponding coefficients by 7.389 and 2,980.96. Noise of size <span class="math-inline">\(10^{-4}\)</span> in frequency 20 becomes an inverted error of about 0.298.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Injectivity read as stable identification</span><p>Every Fourier multiplier in (3) is positive, so the operator is injective. The multipliers converge to zero, which makes the inverse unbounded on the range and exposes high-frequency queries to arbitrarily large noise amplification.</p></div>
+          </section>
+
+          <section class="chapter-section" id="regularized-inversion">
+            <h2>4. Truncation and Tikhonov filters</h2>
+            <p>A spectral cutoff at <span class="math-inline">\(\lvert j\rvert \le J\)</span> uses inverse multiplier <span class="math-inline">\(\operatorname{exp}(\tau j^{2})\)</span> on retained frequencies and zero elsewhere. Tikhonov regularization with parameter <span class="math-inline">\(\alpha&gt;0\)</span> replaces 1/<span class="math-inline">\(\sigma _{j}\)</span> by <span class="math-inline">\(\sigma _{j}/(\sigma _{j}^{2}+\alpha)\)</span>. Both procedures trade approximation bias against noise amplification.</p>
+            <p>The estimand matters. A linear query <span class="math-inline">\(\langle q,f\rangle\)</span> is stably representable from <span class="math-inline">\(Kf\)</span> when <span class="math-inline">\(q\)</span> lies in <span class="math-inline">\(\operatorname{range}(K^{*})\)</span> with a controlled representing norm. Full recovery of <span class="math-inline">\(f\)</span> imposes a stronger requirement than recovery of one smooth query.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Record the measures and basis normalization, compute the forward multipliers before inversion, and plot retained signal and amplified noise separately. Numerical underflow in <span class="math-inline">\(\operatorname{exp}(-\tau j^{2})\)</span> should be treated as a resolution limit and reported with the cutoff rule.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Verify the adjoint identity in (2) for a finite-rank kernel <span class="math-inline">\(k(y,x)=\sum _{r}a_{r}(y)\overline{b_{r}(x)}\)</span>.</li>
+              <li>Reproduce the attenuation and amplification values following (3).</li>
+              <li>For coefficients <span class="math-inline">\(\lvert f_{j}\rvert \le C|j|^{-s}\)</span>, derive a cutoff error bound containing a tail-bias term and an amplified-noise term.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Substitute the finite kernel sum in (1), move the finite summation through the integral, and use the defining inner products to identify <span class="math-inline">\(K^{*}g=\sum b_{r}\langle a_{r},g\rangle\)</span>. <strong>2.</strong> Insert <span class="math-inline">\(\tau=0.02\)</span> and <span class="math-inline">\(j=10\)</span>,20 into <span class="math-inline">\(\operatorname{exp}(-\tau j^{2})\)</span>; invert the two values and multiply the second by <span class="math-inline">\(10^{-4}\)</span>.</p></details>
+            <ol class="reference-list">
+              <li>John B. Conway, <em>A Course in Functional Analysis</em>, Chapter II.<small>Hilbert-space adjoints and compact operators.</small></li>
+              <li>Rainer Kress, <em>Linear Integral Equations</em>, Chapters 2–4.<small>Integral operators and ill-posed equations.</small></li>
+              <li>Heinz W. Engl, Martin Hanke, and Andreas Neubauer, <em>Regularization of Inverse Problems</em>, Chapters 2–4.<small>Spectral regularization filters.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>State source and target measures, function spaces, kernel integrability, adjoint convention, singular multipliers, inverse domain, regularization rule, and the estimand-specific representing norm.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter covers Hilbert–Schmidt integral operators, multiplication operators, adjoints, and Fourier smoothing witnesses. General harmonic analysis and minimax inverse-problem rates require separate treatment.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-10/">III-10 · Function Spaces and Legal Operator Algebra</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#integral-operators">Integral kernels define maps between measured spaces</a>
+            <a href="#multiplication">Multiplication and conditional weighting</a>
+            <a href="#fourier-smoothing">Gaussian smoothing in a Fourier basis</a>
+            <a href="#regularized-inversion">Truncation and Tikhonov filters</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-10/"><span>Previous</span><strong>III-10 · Function Spaces and Legal Operator Algebra</strong></a><a class="next" href="/resources/volume-03/iii-12/"><span>Next</span><strong>III-12 · Spectral Projections and Cross-Candidate Identification</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

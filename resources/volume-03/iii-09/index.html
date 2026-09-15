@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Poles, Cancellation, and Generalized Modes · Chae-Yeon Xon</title>
+  <meta name="description" content="Repeated characteristic roots can generate polynomial-times-exponential responses, and input-output maps can cancel internal modes. A determinant records algebraic roots; an observable transfer function records poles after cancellation. Generalized eigenvectors or Jordan chains are needed when a repeated observable pole remains.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-03/iii-09/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Poles, Cancellation, and Generalized Modes · Chae-Yeon Xon">
+  <meta property="og:description" content="Repeated characteristic roots can generate polynomial-times-exponential responses, and input-output maps can cancel internal modes. A determinant records algebraic roots; an observable transfer function records poles after cancellation. Generalized eigenvectors or Jordan chains are needed when a repeated observable pole remains.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-03/iii-09/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Poles, Cancellation, and Generalized Modes · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Repeated characteristic roots can generate polynomial-times-exponential responses, and input-output maps can cancel internal modes. A determinant records algebraic roots; an observable transfer function records poles after cancellation. Generalized eigenvectors or Jordan chains are needed when a repeated observable pole remains.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-3">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-03/">Geometry, Dynamics, and Operators for Economic Models</a><span>/</span><strong>III-09</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Linear Dynamics and Modes · Chapter III-09</div>
+        <h1>Poles, Cancellation, and Generalized Modes</h1>
+        <p>Repeated characteristic roots can generate polynomial-times-exponential responses, and input-output maps can cancel internal modes. A determinant records algebraic roots; an observable transfer function records poles after cancellation. Generalized eigenvectors or Jordan chains are needed when a repeated observable pole remains.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>III-09.01</span><strong>Transfer functions</strong></li>
+              <li><span>III-09.02</span><strong>Cancellations and multiplicity</strong></li>
+              <li><span>III-09.03</span><strong>Generalized modes</strong></li>
+              <li><span>III-09.04</span><strong>Jordan and realization views</strong></li>
+              <li><span>III-09.05</span><strong>Nearly repeated roots</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="setup-and-notation">
+            <h2>1. Roots, poles, and measured modes</h2>
+            <p class="chapter-lede">A root of a state-transition determinant becomes an observed mode only when the input excites it and the output loads on it. Repetition also matters: an observable Jordan chain generates a polynomial multiplying the usual exponential response.</p>
+            <p>For <span class="math-inline">\(x_{t+1}=Ax_{t}+Bu_{t}\)</span> and <span class="math-inline">\(y_{t}=Cx_{t}\)</span>, the lag-generating transfer matrix is</p>
+            <div class="equation-block" role="math" aria-label="Discrete transfer function."><span class="equation-tex">\[H(q)=C(I-qA)^{-1}B.\]</span><span class="equation-number">(1)</span></div>
+            <p>The denominator <span class="math-inline">\(\operatorname{det}(I-qA)\)</span> lists internal characteristic roots. Common factors in the numerator and denominator cancel from a particular input-output channel.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Observable pole order</span><p>A scalar channel has a pole of order <span class="math-inline">\(r\)</span> at <span class="math-inline">\(q=1/\lambda\)</span> when its reduced transfer function contains <span class="math-inline">\((1-\lambda q)^{-r}\)</span> with nonzero coefficient. Pole order is defined after cancellation.</p></div>
+          </section>
+
+          <section class="chapter-section" id="repeated-poles">
+            <h2>2. Repeated poles produce polynomial factors</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Coefficients of a repeated pole</span><p>For an integer <span class="math-inline">\(r\ge1\)</span>,</p>
+              <div class="equation-block" role="math" aria-label="Power series for repeated pole."><span class="equation-tex">\[(1-\lambda q)^{-r}=\sum _{t=0}^{\infty } \binom{t+r-1}{r-1}\lambda ^{t}q^{t}, \quad |\lambda q|&lt;1.\]</span><span class="equation-number">(2)</span></div>
+              <p>The impulse coefficient is a degree-<span class="math-inline">\(r-1\)</span> polynomial in <span class="math-inline">\(t\)</span> times <span class="math-inline">\(\lambda ^{t}\)</span>.</p>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> The geometric series gives <span class="math-inline">\((1-x)^{-1}=\sum x^{t}\)</span>. Differentiating <span class="math-inline">\(r-1\)</span> times and dividing by (<span class="math-inline">\(r-1\)</span>)! yields the binomial coefficient in (2). ∎</p></div>
+            <p>For the Jordan block <span class="math-inline">\(J=\begin{bmatrix}\lambda &amp; 1 \\ 0 &amp; \lambda\end{bmatrix}\)</span>, one has <span class="math-inline">\(J^{t}=\begin{bmatrix}\lambda ^{t} &amp; t\lambda ^{t-1} \\ 0 &amp; \lambda ^{t}\end{bmatrix}\)</span>. With <span class="math-inline">\(B=e_{2}\)</span> and <span class="math-inline">\(C=e_{1}^{\top}\)</span>, the measured impulse response is <span class="math-inline">\(t\lambda ^{t-1}\)</span>, the coefficient sequence of <span class="math-inline">\(q/(1-\lambda q)^{2}\)</span>.</p>
+          </section>
+
+          <section class="chapter-section" id="coalescing-example">
+            <h2>3. Two simple poles approaching one double pole</h2>
+            <p>Let</p>
+            <div class="equation-block" role="math" aria-label="Transfer function with two simple poles."><span class="equation-tex">\[H_{a,b}(q)=q/[(1-aq)(1-bq)].\]</span><span class="equation-number">(3)</span></div>
+            <p>Its coefficient at date <span class="math-inline">\(t\ge1\)</span> is <span class="math-inline">\((a^{t}-b^{t})/(a-b)\)</span>. As <span class="math-inline">\(b\)</span> approaches <span class="math-inline">\(a=\lambda\)</span>, this divided difference converges to <span class="math-inline">\(t\lambda ^{t-1}\)</span>. For <span class="math-inline">\(\lambda=0.8\)</span> and <span class="math-inline">\(t=5\)</span>, the repeated-pole response is <span class="math-inline">\(5(0.8)^{4}=2.048\)</span>. Setting (<span class="math-inline">\(a,b\)</span>)=(0.81,0.79) gives 2.04864.</p>
+            <p>The partial-fraction coefficients <span class="math-inline">\(1/(a-b)\)</span> and <span class="math-inline">\(-1/(a-b)\)</span> diverge as the poles coalesce even though their combined impulse response has a finite limit. Modal estimation can therefore be ill-conditioned near multiplicity.</p>
+          </section>
+
+          <section class="chapter-section" id="cancellation">
+            <h2>4. Cancellation removes an internal mode</h2>
+            <p>The rational expression</p>
+            <div class="equation-block" role="math" aria-label="Pole-zero cancellation."><span class="equation-tex">\[(1-\lambda q)/(1-\lambda q)^{2}=1/(1-\lambda q)\]</span><span class="equation-number">(4)</span></div>
+            <p>has an internal denominator with algebraic multiplicity two and a measured pole of order one. In state-space language, a two-dimensional realization can contain an unreachable or unobservable generalized direction. A minimal realization removes it.</p>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Determinant multiplicity reported as response multiplicity</span><p><span class="math-inline">\(\operatorname{det}(zI-A)\)</span> alone does not identify the pole order of <span class="math-inline">\(C(zI-A)^{-1}B\)</span>. The input and output maps must be included and exact or approximate cancellation must be assessed.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Compute transfer numerators and denominators in exact arithmetic when coefficients permit. Reduce common factors before assigning modes. For estimated systems, inspect controllability and observability singular values and treat near-cancellation as a sensitivity range rather than a binary algebraic event.</p>
+            <a class="chapter-download" href="/assets/code/volume-03/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list">
+              <li>Derive <span class="math-inline">\(J^{t}\)</span> by induction and recover the transfer channel following (2).</li>
+              <li>Verify the date-five values for <span class="math-inline">\(\lambda=0.8\)</span> and (<span class="math-inline">\(a,b\)</span>)=(0.81,0.79). Repeat as the gap falls from <span class="math-inline">\(10^{-2}\)</span> to <span class="math-inline">\(10^{-8}\)</span>.</li>
+              <li>Construct a two-state realization of (4) and identify the uncontrollable or unobservable direction.</li>
+            </ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Write <span class="math-inline">\(J=\lambda I+N\)</span> with <span class="math-inline">\(N^{2}=0\)</span>. The binomial theorem gives <span class="math-inline">\(J^{t}=\lambda ^{t}I+t\lambda ^{t-1}N\)</span>. <strong>2.</strong> The close-pole response is the divided difference of <span class="math-inline">\(x^{5}\)</span>; continuity of the derivative gives its limit <span class="math-inline">\(5(0.8)^{4}\)</span>. Partial-fraction coefficients grow as the inverse pole gap, so calculate their combined response before interpreting numerical instability.</p></details>
+            <ol class="reference-list">
+              <li>Thomas Kailath, <em>Linear Systems</em>, Chapters 6–7.<small>Minimal realizations and cancellation.</small></li>
+              <li>Peter Lancaster and Miron Tismenetsky, <em>The Theory of Matrices</em>, Chapter 6.<small>Jordan chains and matrix functions.</small></li>
+              <li>Gene H. Golub and Charles F. Van Loan, <em>Matrix Computations</em>, Chapter 7.<small>Eigenvalue sensitivity and invariant subspaces.</small></li>
+            </ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint">
+            <h2>6. Audit checkpoint</h2>
+            <p>State the realization, input, output, transfer convention, reduced numerator and denominator, pole multiplicities, and cancellation tolerance. Distinguish an internal characteristic root from a pole of the measured response.</p>
+          </section>
+
+          <section class="chapter-section chapter-scope" id="scope-boundary">
+            <h2>7. Scope boundary</h2>
+            <p>The chapter covers finite-dimensional discrete-time modal representations, repeated poles, and input-output cancellation. Statistical system identification and a full minimal-realization algorithm are outside scope.</p>
+          </section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-08/">III-08 · Exact Root Counts and Equilibrium Determinacy</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Geometry, Dynamics, and Operators for Economic Models</strong>
+            <a href="/resources/volume-03/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#setup-and-notation">Roots, poles, and measured modes</a>
+            <a href="#repeated-poles">Repeated poles produce polynomial factors</a>
+            <a href="#coalescing-example">Two simple poles approaching one double pole</a>
+            <a href="#cancellation">Cancellation removes an internal mode</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-03/iii-08/"><span>Previous</span><strong>III-08 · Exact Root Counts and Equilibrium Determinacy</strong></a><a class="next" href="/resources/volume-03/iii-10/"><span>Next</span><strong>III-10 · Function Spaces and Legal Operator Algebra</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

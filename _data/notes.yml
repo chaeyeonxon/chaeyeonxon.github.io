@@ -1,0 +1,249 @@
+- public: true
+  slug: symmetry-selection-boundary-moment-inequalities
+  title: 'Symmetry and Selection in Boundary Moment Inequalities: A Comment on Pakes, Porter, Ho, and Ishii (2015)'
+  year: 2026
+  display_date: September 2026
+  publication_date: '2026'
+  target_authors: Pakes, Porter, Ho, and Ishii
+  target_year: 2015
+  target_title: Moment Inequalities and Their Application
+  target_venue: Econometrica
+  target_url: https://doi.org/10.3982/ECTA6865
+  abstract: >-
+    Pakes, Porter, Ho, and Ishii (2015) use symmetry of bank-specific cost shocks to construct boundary moment inequalities. The construction evaluates a sign-reversing order-statistic map at the realized number of positive choices. That count can depend on the same shocks, leaving the selected statistic's expectation unrestricted under marginal iid symmetry. A three-agent ordered-choice model satisfies the maintained choice, counterfactual, information, and symmetry conditions and yields a negative population moment at the true parameter. Joint reflection of shocks and the selected count restores finite-sample validity; a convergent selected share yields a separate large-market result. In the ATM application, the lower estimate remains 24,452 dollars; the upper estimates of 26,444 and 26,644 dollars require a repaired condition. The correction applies to the boundary sufficient-condition argument and specifications using it. The general moment inequality continues to hold when Assumptions 1–3 are imposed directly.
+  technical_point: Marginal iid symmetry of bank-specific cost shocks does not by itself sign the selected boundary moment when the realized positive-choice count depends on those shocks.
+  summary: A selected boundary statistic can lose the symmetry of each fixed-count statistic when the realized choice count depends on the same latent cost shocks.
+  scope_affected: The boundary sufficient-condition argument and specifications using the selected-count symmetry correction without an additional joint-reflection or large-market condition.
+  scope_intact: The general moment inequality continues to hold when Assumptions 1–3 are imposed directly.
+  jel_codes: C12, C14, C57, L13
+  keywords:
+  - moment inequalities
+  - partial identification
+  - boundary choices
+  - order statistics
+  - endogenous selection
+  status: Preliminary technical note · September 2026. Comments or corrections are welcome.
+  landing_url: /comments/symmetry-selection-boundary-moment-inequalities/
+  note_url: /comments/symmetry-selection-boundary-moment-inequalities/symmetry-selection-boundary-moment-inequalities.pdf
+  pages: 11
+  file_size: 293 KB
+  replication_url: ''
+  resources: []
+- public: true
+  slug: simulation-error-dynamic-inequality-inference
+  title: 'Simulation Error and Root-n Inference in Dynamic Inequality Estimation: A Comment on Bajari, Benkard, and Levin (2007)'
+  year: 2026
+  display_date: September 2026
+  publication_date: '2026'
+  target_authors: Bajari, Benkard, and Levin
+  target_year: 2007
+  target_title: Estimating Dynamic Models of Imperfect Competition
+  target_venue: Econometrica
+  target_url: https://doi.org/10.1111/j.1468-0262.2007.00796.x
+  abstract: >-
+    Bajari, Benkard, and Levin (2007) derive a root-n distribution for a simulated minimum-distance estimator based on equilibrium inequalities. Their published growth condition permits the number of sampled inequalities to increase too slowly to remove centered forward-simulation error. A bounded one-player dynamic model satisfies S1 and every displayed part of S2. Along n = m^4, n_I = m, and n_s = m^3, its simulation score contributes an N(0,2) term while the published covariance is zero. This Comment derives a replacement limit indexed by κ = lim n/(n_I n_s). The published covariance applies at κ = 0; finite positive κ adds simulation covariance; divergent κ changes the convergence rate. Binding inequalities can also generate a root-n mean shift governed by n/n_s. The stronger rates in the paper's working-paper version cover both channels. Under the stated uniformity conditions, the correction leaves the equilibrium inequalities, forward simulator, and point target unchanged.
+  technical_point: The published growth condition can leave centered forward-simulation noise in the root-n limit, requiring an added simulation covariance term or stronger simulation rates.
+  summary: Forward-simulation error can remain first order in root-n inference even when the published simulation-rate condition holds.
+  scope_affected: The published root-n covariance formula under growth sequences where forward-simulation error remains first order, together with mean corrections at binding inequalities when simulation bias survives.
+  scope_intact: Under the stated uniformity conditions, the equilibrium inequalities, forward simulator, and point target remain unchanged.
+  jel_codes: C13, C15, C57, L13
+  keywords:
+  - dynamic games
+  - simulation error
+  - moment inequalities
+  - minimum distance
+  - asymptotic distribution
+  status: Preliminary technical note · September 2026. Comments or corrections are welcome.
+  landing_url: /comments/simulation-error-dynamic-inequality-inference/
+  note_url: /comments/simulation-error-dynamic-inequality-inference/simulation-error-dynamic-inequality-inference.pdf
+  pages: 8
+  file_size: 288 KB
+  replication_url: ''
+  resources: []
+- public: true
+  slug: myopia-anchoring-dynamic-networks
+  title: 'Myopia and Anchoring in Dynamic Networks: Determinacy and Persistence'
+  year: 2026
+  display_date: September 2026
+  publication_date: '2026'
+  target_authors: Angeletos and Huo
+  target_year: 2021
+  target_title: Myopia and Anchoring
+  target_venue: American Economic Review
+  target_url: https://doi.org/10.1257/aer.20191436
+  abstract: >-
+    Angeletos and Huo (2021) derive equilibrium and an n-mode representation for dynamic networks. Under their printed spectral condition, a signed three-node economy has a one-dimensional family of stationary equilibria and four persistence modes. Absolute small gain restores the 2n/n root count. A nonnegative feed-forward economy satisfies this condition and has a unique equilibrium, while its transfers contain poles of orders three, two, and one. Generalized modes give the replacement representation. Under nearby distinct roots, simple-mode coefficients diverge at rate ε^-2 while canceling to the repeated-pole limit. The observable-representation argument also requires a state-space realization and a separate determinacy premise.
+  technical_point: The printed spectral condition does not by itself deliver the stated determinacy/root-count conclusion, and repeated roots require generalized rather than simple persistence modes.
+  summary: Signed interactions and repeated roots separate determinacy, root counting, and modal representation in the dynamic-network result.
+  scope_affected: The signed-network determinacy and root-count claim, the simple n-mode representation at repeated roots, and the diagonal modal route used in Proposition 11.
+  scope_intact: The scalar analysis, inflation application, and calibrated HANK illustration lie outside the affected set; the multivariate result can be repaired with absolute small gain, multiplicity-aware cancellation, generalized modes, and a separate determinacy condition.
+  jel_codes: C32, C62, D83, D85, E32
+  keywords:
+  - dispersed information
+  - dynamic networks
+  - equilibrium determinacy
+  - repeated roots
+  - generalized modes
+  status: Preliminary technical note · September 2026. Comments or corrections are welcome.
+  landing_url: /comments/myopia-anchoring-dynamic-networks/
+  note_url: /comments/myopia-anchoring-dynamic-networks/myopia-anchoring-dynamic-networks.pdf
+  pages: 11
+  file_size: 316 KB
+  replication_url: ''
+  resources: []
+- public: true
+  slug: residual-income-demand-new-products
+  title: 'Quantifying the Benefits of New Products with Residual-Income Demand: A Comment on Petrin (2002)'
+  year: 2026
+  display_date: September 2026
+  publication_date: '2026'
+  target_authors: Petrin
+  target_year: 2002
+  target_title: 'Quantifying the Benefits of New Products: The Case of the Minivan'
+  target_venue: Journal of Political Economy
+  target_url: https://doi.org/10.1086/340779
+  abstract: >-
+    Petrin (2002) specifies automobile demand with logarithmic residual income, α_i log(y_i - p_j), while the author-distributed estimation and markup programs use its first-order price term, -α_g p_j/y_i. This Comment traces the two operators through choice probabilities, price derivatives, markups, and welfare. A finite economy gives different rankings, choice probabilities, and compensating variation under a common shock law. In a public reconstruction, the linear operator reproduces the reported mean income of minivan purchasers, 36.091 thousand dollars, with a value of 36.051. Replacing the operator by the printed affordable-set model and recontracting every product share gives 45.349; a matched seven-parameter profile gives 40.456. The demand-moment comparison changes direction relative to the CEX value. A Taylor bound measures the approximation error. Three implementations using a common utility, derivative, and support show which welfare calculations the available archive can reproduce.
+  technical_point: The printed logarithmic residual-income utility and the distributed first-order price term can generate different rankings, choice probabilities, derivatives, markups, and welfare calculations.
+  summary: The article's logarithmic residual-income demand and the author-distributed linearized implementation define different demand and welfare operators.
+  scope_affected: Calculations that treat the printed residual-income demand operator and the author-distributed linearized implementation as the same demand system.
+  scope_intact: The demographic micro-moment and new-product welfare framework remains usable when utility, derivatives, support, and welfare are implemented under one declared operator.
+  jel_codes: C35, C51, D12, L62
+  keywords:
+  - discrete choice
+  - income effects
+  - micro moments
+  - new products
+  - compensating variation
+  status: Preliminary technical note · September 2026. Comments or corrections are welcome.
+  landing_url: /comments/residual-income-demand-new-products/
+  note_url: /comments/residual-income-demand-new-products/residual-income-demand-new-products.pdf
+  pages: 8
+  file_size: 269 KB
+  replication_url: ''
+  resources: []
+- public: true
+  slug: set-valued-channel-demand-unbundling
+  title: 'Set-Valued Channel Demand in Unbundling Counterfactuals: A Comment on Crawford and Yurukoglu (2012)'
+  year: 2026
+  display_date: September 2026
+  publication_date: '2026'
+  target_authors: Crawford and Yurukoglu
+  target_year: 2012
+  target_title: The Welfare Effects of Bundling in Multichannel Television Markets
+  target_venue: American Economic Review
+  target_url: https://doi.org/10.1257/aer.102.2.643
+  abstract: >-
+    Crawford and Yurukoglu (2012) value a channel set by optimizing viewing time. Their programs use proportional viewing and sum channel increments evaluated at one reference bundle. The printed Kuhn–Tucker allocation has corners, and the reference formula represents every selected set exactly under modularity. A two-channel economy changes purchases and surplus. The full à la carte programs also vary the household choice kernel across bargains and use different smoothing scales for demand and welfare. A replacement uses one set-value and one shock law throughout bargaining, demand, and welfare. The released tables reproduce the channel count; computing national welfare requires the fitted household and equilibrium state.
+  technical_point: The released programs combine proportional viewing, fixed-reference additive channel values, and choice kernels that need not coincide with the set-valued demand object defined by the printed model.
+  summary: The printed set-value problem and the distributed proportional-viewing/reference-bundle implementation need not generate the same unbundling counterfactuals.
+  scope_affected: The mapping from the printed channel-allocation model into estimation and full à la carte calculations when proportional viewing, fixed-reference values, or bargain-specific choice laws are used interchangeably.
+  scope_intact: The time-allocation preference, distributor bundle choice, affiliate-cost moment inequalities, and Nash bargaining architecture continue to apply under one coherent household set-value and shock law.
+  jel_codes: D12, L13, L82
+  keywords:
+  - bundling
+  - viewing time
+  - set utility
+  - counterfactuals
+  - bargaining
+  - consumer surplus
+  status: Preliminary technical note · September 2026. Comments or corrections are welcome.
+  landing_url: /comments/set-valued-channel-demand-unbundling/
+  note_url: /comments/set-valued-channel-demand-unbundling/set-valued-channel-demand-unbundling.pdf
+  pages: 8
+  file_size: 285 KB
+  replication_url: ''
+  resources: []
+- public: true
+  slug: operator-domains-nonclassical-measurement-error
+  title: 'Operator Domains in Nonclassical Measurement Error: A Comment on Hu and Schennach (2008)'
+  year: 2026
+  display_date: September 2026
+  publication_date: '2026'
+  target_authors: Hu and Schennach
+  target_year: 2008
+  target_title: Instrumental Variable Treatment of Nonclassical Measurement Error Models
+  target_venue: Econometrica
+  target_url: https://doi.org/10.1111/j.0012-9682.2008.00823.x
+  abstract: >-
+    Hu and Schennach (2008) identify a model with nonclassical measurement error through similarities of observable integral operators and latent multiplication operators. Their proof treats the similarities and spectral projections as bounded on the ambient L1 space. A wrapped Gaussian model satisfies Assumptions 1–5 while the observable similarity and displayed projections are unbounded; the density columns also lie outside the inverse operator's domain. Conjugated latent-band projections extend to a bounded spectral measure exactly under a uniform band-stability inequality. Combined with outcome separation and dense range, full band stability makes the measurement operator bounded below, which conflicts with smoothing by bounded densities on a nonatomic support. Equipping each candidate range with its transported graph norm restores the operator algebra. Reconstruction can then proceed under common-resolution or cyclic-orbit conditions. The factorization conclusion under Assumptions 1–5 remains an identification question.
+  technical_point: A model satisfying Assumptions 1–5 can still produce an unbounded observable similarity, unbounded conjugated spectral projections, and density columns outside the inverse operator's domain.
+  summary: The published spectral proof uses similarity, projection, and inverse-domain steps that require more operator control than the printed assumptions supply.
+  scope_affected: The ambient-L1 spectral proof route when boundedness, inverse-domain membership, and candidate-independent stability conditions are not imposed.
+  scope_intact: The factorization conclusion under Assumptions 1–5 remains an identification question; the operator algebra can be recovered on transported graph norms or under stronger common-resolution or cyclic-orbit conditions.
+  jel_codes: C14, C26, C31
+  keywords:
+  - measurement error
+  - spectral identification
+  - integral operators
+  - operator domains
+  - latent variables
+  status: Preliminary technical note · September 2026. Comments or corrections are welcome.
+  landing_url: /comments/operator-domains-nonclassical-measurement-error/
+  note_url: /comments/operator-domains-nonclassical-measurement-error/operator-domains-nonclassical-measurement-error.pdf
+  pages: 9
+  file_size: 322 KB
+  replication_url: ''
+  resources: []
+- public: true
+  slug: learning-from-reviews-information-bounds
+  title: 'Learning From Reviews: Endogenous Histories and Information Bounds'
+  year: 2026
+  display_date: September 2026
+  publication_date: '2026'
+  target_authors: Acemoglu, Makhdoumi, Malekian, and Ozdaglar
+  target_year: 2022
+  target_title: 'Learning From Reviews: The Selection Effect and the Speed of Learning'
+  target_venue: Econometrica
+  target_url: https://doi.org/10.3982/ECTA15847
+  abstract: >-
+    Acemoglu, Makhdoumi, Malekian, and Ozdaglar (2022) characterize the learning rate from a terminal review summary by a Kullback–Leibler divergence that evaluates the true state at its limiting belief and the alternative state at the opposite limiting belief. A terminal summary is a function of the review history generated under the same summary-based policy. Data processing yields a finite-horizon information bound, and any constant almost-sure learning exponent is bounded by the information in that history. The history's asymptotic rate evaluates both states at the same limiting belief. Uniform primitives satisfying the paper's assumptions make the stated formulas equal 0.2176 and 0.2662, while the corresponding information bounds are 0.0288 and 0.1181. The example has positive selection, so it also contradicts the strict speed comparison in Proposition 2(2). Terminal-event likelihoods admit an exact finite-horizon relative-entropy representation. A model-specific large-deviation contraction of this representation supplies the corresponding asymptotic rate problem.
+  technical_point: A terminal-summary learning rate must compare the two state laws along the same endogenous history and belief path; the cross-boundary Kullback–Leibler divergences in Theorem 4 can exceed the information available in that history.
+  summary: Endogenous review histories impose same-path information bounds that the published cross-boundary summary-learning rates can violate.
+  scope_affected: The two summary-statistic rate formulas in Theorem 4, the strict summary-over-full-history comparison in Proposition 2(2), and extensions that import the same cross-boundary rate.
+  scope_intact: Theorem 3 continues to deliver complete learning under strict separation, and Theorem 2 continues to characterize learning from the full history; Proposition 2(1) remains for separate derivation.
+  jel_codes: C11, C44, D83, L15
+  keywords:
+  - Bayesian learning
+  - endogenous selection
+  - information bounds
+  - online reviews
+  - summary statistics
+  status: Preliminary technical note · September 2026. Comments or corrections are welcome.
+  landing_url: /comments/learning-from-reviews-information-bounds/
+  note_url: /comments/learning-from-reviews-information-bounds/learning-from-reviews-information-bounds.pdf
+  pages: 9
+  file_size: 291 KB
+  replication_url: ''
+  resources: []
+- public: true
+  slug: online-misinformation-homophily-reachability
+  title: 'A Model of Online Misinformation: Homophily and Reachability'
+  year: 2026
+  display_date: September 2026
+  publication_date: '2026'
+  target_authors: Acemoglu, Ozdaglar, and Siderius
+  target_year: 2024
+  target_title: A Model of Online Misinformation
+  target_venue: Review of Economic Studies
+  target_url: https://doi.org/10.1093/restud/rdad111
+  abstract: >-
+    Acemoglu, Ozdaglar, and Siderius (2024) show that greater homophily lowers engagement for sufficiently reliable content when each agent's expected degree is held fixed. In their high-reliability branch, every reached agent shares, so engagement equals expected network reach. A four-agent island network reverses the stated comparison. Under the expected-degree expression used in the proof, raising the within-island link probability from 9/10 to 99/100 and lowering the cross-island probability from 7/10 to 61/100 raises engagement from 0.983116 to 0.9864366. The reversal holds along a continuous fixed-degree family. The proof compares links between islands while the degree-preserving change also alters reach within each island. A replacement condition compares the pivotal reach of the two edge classes. At the reliability-one endpoint, full connectivity attains maximal engagement.
+  technical_point: Holding expected degree fixed does not sign the effect of homophily on reach; higher within-island connectivity can outweigh fewer cross-island links in the high-reliability all-share branch.
+  summary: Expected degree leaves the within-island and cross-island contributions to network reach unrestricted, permitting engagement to rise with homophily.
+  scope_affected: Theorem 2(b)'s high-reliability engagement comparison and the circulation interpretation attached to it.
+  scope_intact: Theorem 2(a) and the remaining range of Theorem 3(ii) lie outside the counterexample; at reliability one, a fully connected network still maximizes engagement.
+  jel_codes: D83, D85, L86
+  keywords:
+  - homophily
+  - information diffusion
+  - online misinformation
+  - random networks
+  - reachability
+  status: Preliminary technical note · September 2026. Comments or corrections are welcome.
+  landing_url: /comments/online-misinformation-homophily-reachability/
+  note_url: /comments/online-misinformation-homophily-reachability/online-misinformation-homophily-reachability.pdf
+  pages: 7
+  file_size: 291 KB
+  replication_url: ''
+  resources: []

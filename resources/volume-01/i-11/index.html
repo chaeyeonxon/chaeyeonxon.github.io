@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Administrative Handoffs as Statistical Experiments · Chae-Yeon Xon</title>
+  <meta name="description" content="Policies pass through channels that transform an upstream experiment and may generate new information downstream. Score projection describes information contraction under a Markov handoff. Delay, arrival, measurement, and causal mediation remain separate objects in the resulting stage ledger.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-11/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Administrative Handoffs as Statistical Experiments · Chae-Yeon Xon">
+  <meta property="og:description" content="Policies pass through channels that transform an upstream experiment and may generate new information downstream. Score projection describes information contraction under a Markov handoff. Delay, arrival, measurement, and causal mediation remain separate objects in the resulting stage ledger.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-11/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Administrative Handoffs as Statistical Experiments · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Policies pass through channels that transform an upstream experiment and may generate new information downstream. Score projection describes information contraction under a Markov handoff. Delay, arrival, measurement, and causal mediation remain separate objects in the resulting stage ledger.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-11</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Information Transmission and Learning · Chapter I-11</div>
+        <h1>Administrative Handoffs as Statistical Experiments</h1>
+        <p>Policies pass through channels that transform an upstream experiment and may generate new information downstream. Score projection describes information contraction under a Markov handoff. Delay, arrival, measurement, and causal mediation remain separate objects in the resulting stage ledger.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-11.01</span><strong>Models of administrative handoffs</strong></li>
+              <li><span>I-11.02</span><strong>Score projection</strong></li>
+              <li><span>I-11.03</span><strong>Information loss and acquisition</strong></li>
+              <li><span>I-11.04</span><strong>Delay and arrival rates</strong></li>
+              <li><span>I-11.05</span><strong>Policy pathways</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="score-projection">
+            <h2>1. A parameter-free handoff projects the score</h2>
+            <p class="chapter-lede">An administrative stage is a statistical channel only after its conditional law is specified. A parameter-free channel contracts Fisher information through conditional expectation.</p>
+            <p>Let <span class="math-inline">\(X\)</span> have dominated density <span class="math-inline">\(p_{\theta}(x)\)</span> and score <span class="math-inline">\(s_{X}(x)=\partial _{\theta}\log p_{\theta}(x)\in \mathbb{R}^{p}\)</span>. A handoff draws <span class="math-inline">\(Y\)</span> from a Markov kernel <span class="math-inline">\(Q(dy\mid x)\)</span> that is independent of <span class="math-inline">\(\theta\)</span>. Assume differentiation can pass under the integral and the scores are square-integrable.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Score projection and information contraction</span><p>For almost every downstream outcome,</p>
+              <div class="equation-block" role="math" aria-label="Score projection and Fisher information contraction."><span class="equation-tex">\[s_{Y}(Y)=E_{\theta }[s_{X}(X)|Y], \quad I_{Y}\preceq I_{X}.\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Differentiate <span class="math-inline">\(p_{\theta}^{Y}(y)=\int Q(dy\mid x)p_{\theta}(x)\)</span> and divide by the downstream density to obtain the conditional expectation. For every vector <span class="math-inline">\(a\)</span>, conditional Jensen gives <span class="math-inline">\(\mathbb{E}[(a^{\top}\mathbb{E}[s_{X}\mid Y])^{2}]\le\mathbb{E}[(a^{\top}s_{X})^{2}]\)</span>, which is the Loewner inequality. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="binary-handoff">
+            <h2>2. A binary handoff calculation</h2>
+            <p>Let <span class="math-inline">\(X\sim\operatorname{Bernoulli}(p)\)</span> with <span class="math-inline">\(p\in(0,1)\)</span>, and let a parameter-free channel flip its input with probability <span class="math-inline">\(\varepsilon\in(0,1/2)\)</span>. Then <span class="math-inline">\(q=P(Y=1)=\varepsilon+(1-2\varepsilon)p\)</span>. The upstream and downstream Fisher informations for <span class="math-inline">\(p\)</span> are</p>
+            <div class="equation-block" role="math" aria-label="Fisher information through a binary symmetric channel."><span class="equation-tex">\[I_{X}=1/[p(1-p)], \quad I_{Y}=(1-2\varepsilon )^{2}/[q(1-q)].\]</span><span class="equation-number">(2)</span></div>
+            <p>At <span class="math-inline">\(p=0.4\)</span> and <span class="math-inline">\(\varepsilon=0.2\)</span>, <span class="math-inline">\(q=0.44\)</span>, <span class="math-inline">\(I_{X}=4.16667\)</span>, and <span class="math-inline">\(I_{Y}=1.46104\)</span>. For <span class="math-inline">\(Y=1\)</span>, the downstream score is <span class="math-inline">\(0.6(1-0.44)/(0.44\cdot0.56)=1.36364\)</span>. Direct conditioning gives the same value from upstream scores 2.5 and <span class="math-inline">\(-1.66667\)</span> with posterior weights 0.32/0.44 and 0.12/0.44.</p>
+          </section>
+
+          <section class="chapter-section" id="loss-acquisition">
+            <h2>3. Loss and acquisition occupy separate ledger entries</h2>
+            <p>Let <span class="math-inline">\(\theta=(p,r)\)</span>. The upstream observation <span class="math-inline">\(X\)</span> depends only on <span class="math-inline">\(p\)</span>, so its information matrix has a zero <span class="math-inline">\(r\)</span> direction. Passing <span class="math-inline">\(X\)</span> through the binary channel contracts the <span class="math-inline">\(p\)</span> entry. If the downstream office additionally collects <span class="math-inline">\(Z\sim\)</span>Bernoulli(<span class="math-inline">\(r\)</span>) independently conditional on <span class="math-inline">\(\theta\)</span>, the joint downstream information is</p>
+            <div class="equation-block" role="math" aria-label="Information loss and new downstream acquisition."><span class="equation-tex">\[I_{(Y,Z)}=\operatorname{diag}((1-2\varepsilon )^{2}/[q(1-q)], 1/[r(1-r)]).\]</span><span class="equation-number">(3)</span></div>
+            <p>The first entry records transmitted upstream information; the second comes from a new measurement. Comparing only the total trace would conceal those origins. Arrival, elapsed time, recording error, and causal effects of passage through the office are additional random objects with their own likelihoods or identification assumptions.</p>
+          </section>
+
+          <section class="chapter-section" id="channel-boundary">
+            <h2>4. Parameter dependence changes the score identity</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · A parameter-dependent stage treated as pure post-processing</span><p>If the handoff kernel is <span class="math-inline">\(Q_{\theta}\)</span>, differentiating the downstream density produces a conditional expectation of the sum of the upstream score and the channel score <span class="math-inline">\(\partial _{\theta}\)</span>log <span class="math-inline">\(q_{\theta}(Y|X)\)</span>. Inequality (1) against <span class="math-inline">\(I_{X}\)</span> alone then has no general basis. The stage can encode a new parameter-sensitive measurement or selection mechanism.</p></div>
+            <p>Conditioning on post-handoff arrival can also change the experiment through selection. A reported arrival rate identifies a marginal probability under its sampling design; it does not by itself identify the causal effect of an administrative stage.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Enumerate the upstream law and transition matrix, verify that each transition column or row follows the declared convention, compute scores from normalized probabilities, and check their means are numerically zero. Compare information matrices through eigenvalues of <span class="math-inline">\(I_{X}-I_{Y}\)</span>. Add acquired measurements as separate likelihood factors.</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce every probability, score, and information value in Section 2.</li><li>Take <span class="math-inline">\(\varepsilon=1/2\)</span> and explain the downstream score and information.</li><li>Construct two two-parameter channels with the same final arrival probability and different Fisher-information ranks.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Joint masses for (<span class="math-inline">\(X,Y\)</span>) are 0.48, 0.12, 0.08, and 0.32 under a consistent ordering; summing by <span class="math-inline">\(Y\)</span> gives 0.56 and 0.44. <strong>2.</strong> At <span class="math-inline">\(\varepsilon=1/2\)</span>, <span class="math-inline">\(q=1/2\)</span> for every <span class="math-inline">\(p\)</span>, so the downstream score and Fisher information for <span class="math-inline">\(p\)</span> are zero.</p></details>
+            <ol class="reference-list"><li>A. W. van der Vaart, <em>Asymptotic Statistics</em>, Chapter 7.<small>Scores, differentiability, and Fisher information.</small></li><li>Erik Torgersen, <em>Comparison of Statistical Experiments</em>.<small>Markov transformations of experiments.</small></li><li>David Blackwell (1951), “Comparison of Experiments,” <em>Proceedings of the Second Berkeley Symposium</em>, 93–102.<small>Experiment comparison through randomization.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/almost-a-policy/">“Almost a Policy: Transmission through Administrative Handoffs.”</a><small>Related administrative-handoff application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the parameter, upstream likelihood, channel orientation, parameter dependence, downstream likelihood, score regularity, information matrices, contraction residual, acquired measurements, arrival and delay variables, and the separate assumptions behind any causal claim.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter treats regular dominated experiments and finite administrative channels. Communication capacity, strategic administration, and causal mediation need separate models.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-01/">II-01 · Conditional Probability and a Model&#x27;s Information Structure</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#score-projection">A parameter-free handoff projects the score</a>
+            <a href="#binary-handoff">A binary handoff calculation</a>
+            <a href="#loss-acquisition">Loss and acquisition occupy separate ledger entries</a>
+            <a href="#channel-boundary">Parameter dependence changes the score identity</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-10/"><span>Previous</span><strong>I-10 · Adjoint Bridges Under Clock Uncertainty</strong></a><a class="next" href="/resources/volume-01/i-12/"><span>Next</span><strong>I-12 · Target Fisher Information: Identification and Precision</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

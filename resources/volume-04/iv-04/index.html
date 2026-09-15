@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>From Demand Derivatives to Markups and Prices · Chae-Yeon Xon</title>
+  <meta name="description" content="Supply-side counterfactuals inherit the entire demand derivative. Multi-product ownership maps the share Jacobian into markups through firms&#x27; first-order conditions. Two demand systems that match baseline shares can therefore imply different elasticities, markups, merger effects, and equilibrium prices.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-04/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="From Demand Derivatives to Markups and Prices · Chae-Yeon Xon">
+  <meta property="og:description" content="Supply-side counterfactuals inherit the entire demand derivative. Multi-product ownership maps the share Jacobian into markups through firms&#x27; first-order conditions. Two demand systems that match baseline shares can therefore imply different elasticities, markups, merger effects, and equilibrium prices.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-04/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="From Demand Derivatives to Markups and Prices · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Supply-side counterfactuals inherit the entire demand derivative. Multi-product ownership maps the share Jacobian into markups through firms&#x27; first-order conditions. Two demand systems that match baseline shares can therefore imply different elasticities, markups, merger effects, and equilibrium prices.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-04</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Demand, Supply, Bundles, and Welfare · Chapter IV-04</div>
+        <h1>From Demand Derivatives to Markups and Prices</h1>
+        <p>Supply-side counterfactuals inherit the entire demand derivative. Multi-product ownership maps the share Jacobian into markups through firms&#x27; first-order conditions. Two demand systems that match baseline shares can therefore imply different elasticities, markups, merger effects, and equilibrium prices.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-04.01</span><strong>Individual demand derivatives</strong></li>
+              <li><span>IV-04.02</span><strong>Aggregate share Jacobians</strong></li>
+              <li><span>IV-04.03</span><strong>Ownership matrices</strong></li>
+              <li><span>IV-04.04</span><strong>Markup equations</strong></li>
+              <li><span>IV-04.05</span><strong>Price counterfactuals</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="pricing-foc">
+            <h2>1. Ownership selects demand derivatives in the pricing system</h2>
+            <p class="chapter-lede">Baseline shares enter pricing through their full price Jacobian. Matching shares while changing derivatives changes markups and counterfactual equilibrium.</p>
+            <p>Let <span class="math-inline">\(s(p)\in \mathbb{R}^{J}\)</span> be differentiable shares, <span class="math-inline">\(c\)</span> marginal costs, and <span class="math-inline">\(\Omega\)</span> the ownership matrix with <span class="math-inline">\(\Omega _{jk}=1\)</span> when products <span class="math-inline">\(j\)</span> and <span class="math-inline">\(k\)</span> share a profit-maximizing owner. Write <span class="math-inline">\(\Delta _{jk}=\partial s_{j}/\partial p_{k}\)</span>.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Multi-product first-order conditions</span><p>At an interior Bertrand–Nash price vector with constant marginal costs,</p>
+              <div class="equation-block" role="math" aria-label="Multi-product pricing first order condition."><span class="equation-tex">\[s(p)+(\Omega \odot \Delta (p))^{\top }(p-c)=0.\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Differentiate each firm's sum of product profits <span class="math-inline">\((p_{j}-c_{j})s_{j}\)</span> with respect to each price it controls. Ownership deletes derivatives of products outside that firm. Stack the conditions. ∎</p></div>
+            <p>If the transposed ownership-weighted Jacobian is nonsingular, markups equal <span class="math-inline">\(-[(\Omega \odot \Delta )^{\top}]^{-1}s\)</span>. Computation should solve the linear system rather than form an inverse.</p>
+          </section>
+
+          <section class="chapter-section" id="logit-markups">
+            <h2>2. Two products show the ownership effect</h2>
+            <p>Take simple logit with price coefficient <span class="math-inline">\(\alpha=1\)</span>, outside share 0.5, and inside shares <span class="math-inline">\(s_{1}=0.3\)</span>, <span class="math-inline">\(s_{2}=0.2\)</span>. The price Jacobian is</p>
+            <div class="equation-block" role="math" aria-label="Two product logit price Jacobian."><span class="equation-tex">\[\Delta =\begin{bmatrix}-0.21 &amp; 0.06 \\ 0.06 &amp; -0.16\end{bmatrix}.\]</span><span class="equation-number">(2)</span></div>
+            <p>Under separate ownership, cross derivatives are removed and markups are 0.3/0.21=10/<span class="math-inline">\(7\approx1.42857\)</span> and 0.2/0.16=1.25. Under joint ownership, solving the full system gives markup two for each product. The common joint markup equals 1/(<span class="math-inline">\(\alpha s_{0}\)</span>) in this homogeneous-logit example.</p>
+          </section>
+
+          <section class="chapter-section" id="equilibrium-prices">
+            <h2>3. Counterfactual prices require a new equilibrium root</h2>
+            <p>Changing ownership, costs, products, or demand parameters changes both shares and <span class="math-inline">\(\Delta\)</span> at the counterfactual price. Holding the baseline Jacobian fixed gives a local approximation. A structural price counterfactual solves (1) jointly with demand at the new price and checks the returned root, second-order incentives or global profit comparisons, and economic price bounds.</p>
+            <p>Multiple roots can arise in richer demand systems. Initialization and solver convergence select a computed root, while uniqueness needs a separate economic or mathematical condition.</p>
+          </section>
+
+          <section class="chapter-section" id="derivative-boundaries">
+            <h2>4. Singular derivatives and corner products</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Equal shares used as equal markup evidence</span><p>Two demand systems can match <span class="math-inline">\(s\)</span> and have different <span class="math-inline">\(\Delta\)</span>. Equation (1) then produces different markups under identical ownership and costs.</p></div>
+            <p>A zero-share product creates a boundary at which its percentage elasticities and markup equation can be unstable. A singular ownership-weighted Jacobian leaves the linear markup system unidentified or inconsistent. Capacity constraints, price caps, and product exit replace selected equalities in (1) with complementarity conditions.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Calculate <span class="math-inline">\(\Delta\)</span> analytically and by finite differences at identical prices, verify its sign pattern and adding-up implications, construct <span class="math-inline">\(\Omega\)</span> from firm identifiers, solve for markups with a factorization, and report condition numbers and FOC residuals. Re-solve demand and supply for every counterfactual.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce (2) and both markup vectors.</li><li>Change outside share while preserving the ratio of inside shares and compute joint markups.</li><li>Add a price cap and write complementarity conditions for the constrained product.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Logit derivatives are <span class="math-inline">\(-s_{j}(1-s_{j})\)</span> on the diagonal and <span class="math-inline">\(s_{j}s_{k}\)</span> off diagonal. <strong>2.</strong> Under joint ownership the common markup is the reciprocal of <span class="math-inline">\(\alpha\)</span> times the outside share. <strong>3.</strong> Add a nonnegative multiplier to the FOC, cap slack, and their zero product.</p></details>
+            <ol class="reference-list"><li>Steven Berry, James Levinsohn, and Ariel Pakes (1995), “Automobile Prices in Market Equilibrium,” <em>Econometrica</em> 63, 841–890.<small>Demand derivatives and multi-product supply.</small></li><li>Aviv Nevo (2000), “A Practitioner's Guide to Estimation of Random-Coefficients Logit Models of Demand,” <em>Journal of Economics &amp; Management Strategy</em> 9, 513–548.<small>Demand and markup implementation.</small></li><li>Simon P. Anderson, André de Palma, and Jacques-François Thisse, <em>Discrete Choice Theory of Product Differentiation</em>.<small>Pricing with discrete-choice demand.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State demand, price units, derivative orientation, ownership, costs, interior or constrained pricing conditions, Jacobian rank and condition, baseline and counterfactual roots, initialization, FOC residual, and root multiplicity checks.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers static differentiated-product Bertrand pricing with constant marginal cost. Dynamic pricing, capacity games, and entry require separate models.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-04/iv-03/">IV-03 · Market Shares, Inversion, and Demographic Micro Moments</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#pricing-foc">Ownership selects demand derivatives in the pricing system</a>
+            <a href="#logit-markups">Two products show the ownership effect</a>
+            <a href="#equilibrium-prices">Counterfactual prices require a new equilibrium root</a>
+            <a href="#derivative-boundaries">Singular derivatives and corner products</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-03/"><span>Previous</span><strong>IV-03 · Market Shares, Inversion, and Demographic Micro Moments</strong></a><a class="next" href="/resources/volume-04/iv-05/"><span>Next</span><strong>IV-05 · Consumer Welfare and Compensating Variation</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Linear Maps, Kernels, Quotients, and Information Dimension · Chae-Yeon Xon</title>
+  <meta name="description" content="Linear algebra supplies the first exact language for lost information. Observation and target maps are compared through kernels, quotient spaces, projections, singular values, and weighted inner products. The rank of the target restricted to discarded directions measures the number of missing local coordinates.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-01/i-02/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Linear Maps, Kernels, Quotients, and Information Dimension · Chae-Yeon Xon">
+  <meta property="og:description" content="Linear algebra supplies the first exact language for lost information. Observation and target maps are compared through kernels, quotient spaces, projections, singular values, and weighted inner products. The rank of the target restricted to discarded directions measures the number of missing local coordinates.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-01/i-02/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Linear Maps, Kernels, Quotients, and Information Dimension · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Linear algebra supplies the first exact language for lost information. Observation and target maps are compared through kernels, quotient spaces, projections, singular values, and weighted inner products. The rank of the target restricted to discarded directions measures the number of missing local coordinates.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-1">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-01/">Identification, Measurement, and Counterfactual Reasoning</a><span>/</span><strong>I-02</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Observation, Representation, and Sufficiency · Chapter I-02</div>
+        <h1>Linear Maps, Kernels, Quotients, and Information Dimension</h1>
+        <p>Linear algebra supplies the first exact language for lost information. Observation and target maps are compared through kernels, quotient spaces, projections, singular values, and weighted inner products. The rank of the target restricted to discarded directions measures the number of missing local coordinates.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>I-02.01</span><strong>Linear information maps</strong></li>
+              <li><span>I-02.02</span><strong>Quotients and factorization</strong></li>
+              <li><span>I-02.03</span><strong>Matrix tools for computation</strong></li>
+              <li><span>I-02.04</span><strong>Weighted geometry</strong></li>
+              <li><span>I-02.05</span><strong>Hidden directions and repair</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="linear-contract">
+            <h2>1. Observation and target as linear maps</h2>
+            <p class="chapter-lede">In a linear state model, every exact information claim can be expressed through a kernel inclusion, a row-space inclusion, or a factorization. These are three forms of the same statement.</p>
+            <p>Let <span class="math-inline">\(V\)</span>, <span class="math-inline">\(Y\)</span>, and <span class="math-inline">\(T\)</span> be finite-dimensional real vector spaces. The report is <span class="math-inline">\(A:V\to Y\)</span> and the target is <span class="math-inline">\(B:V\to T\)</span>. A direction <span class="math-inline">\(v\in \operatorname{ker}(A)\)</span> is hidden by the report. It remains target-relevant when <span class="math-inline">\(Bv\ne0\)</span>.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Missing target dimension</span><p>The linear information deficit is</p>
+              <div class="equation-block" role="math" aria-label="Rank of target restricted to observation kernel."><span class="equation-tex">\[d(B|A)=\operatorname{rank}(B|_{\operatorname{ker}(A)})=\operatorname{dim} B(\operatorname{ker}(A)).\]</span><span class="equation-number">(1)</span></div>
+            </div>
+          </section>
+
+          <section class="chapter-section" id="factorization-theorem">
+            <h2>2. Kernel, row space, and factorization</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Linear sufficiency theorem</span><p>The following are equivalent:</p>
+              <ol><li><span class="math-inline">\(\operatorname{ker}(A)\subseteq \operatorname{ker}(B)\)</span>;</li><li>a unique linear map <span class="math-inline">\(C:\operatorname{range}(A)\to T\)</span> satisfies <span class="math-inline">\(B=CA\)</span>;</li><li>after choosing bases, <span class="math-inline">\(\operatorname{row}(B)\subseteq \operatorname{row}(A)\)</span>.</li></ol>
+            </div>
+            <div class="proof"><p><strong>Proof.</strong> Under the kernel inclusion, define <span class="math-inline">\(C(Av)=Bv\)</span>. If <span class="math-inline">\(Av=Aw\)</span>, then <span class="math-inline">\(v-w\)</span> lies in <span class="math-inline">\(\operatorname{ker}(A)\)</span> and <span class="math-inline">\(Bv=Bw\)</span>, so <span class="math-inline">\(C\)</span> is well defined. Linearity and uniqueness on <span class="math-inline">\(\operatorname{range}(A)\)</span> follow directly. A factorization gives the kernel inclusion. In coordinates, <span class="math-inline">\(B=CA\)</span> makes each row of <span class="math-inline">\(B\)</span> a row combination of <span class="math-inline">\(A\)</span>; row inclusion conversely supplies such a matrix <span class="math-inline">\(C\)</span>. ∎</p></div>
+            <p>An extension of <span class="math-inline">\(C\)</span> from <span class="math-inline">\(\operatorname{range}(A)\)</span> to all of <span class="math-inline">\(Y\)</span> is available in finite dimensions and is generally nonunique. Predictions at unattained reports depend on that extension.</p>
+          </section>
+
+          <section class="chapter-section" id="repair-bound">
+            <h2>3. Sharp dimension of an unrestricted linear repair</h2>
+            <div class="formal-block"><span class="formal-label">Proposition 2 · Missing-rank lower bound</span><p>Let <span class="math-inline">\(R:V\to \mathbb{R}^{\ell}\)</span> be an added linear record. If the augmented report (<span class="math-inline">\(A,R\)</span>) is sufficient for <span class="math-inline">\(B\)</span>, then <span class="math-inline">\(\ell \ge d(B|A)\)</span>. An unrestricted linear record with <span class="math-inline">\(\ell=d(B|A)\)</span> exists.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Sufficiency means <span class="math-inline">\(\operatorname{ker}(A)\cap \operatorname{ker}(R)\subseteq \operatorname{ker}(B)\)</span>. Restrict <span class="math-inline">\(R\)</span> to <span class="math-inline">\(\operatorname{ker}(A)\)</span>. Its kernel lies inside <span class="math-inline">\(\operatorname{ker}(B|\operatorname{\operatorname{ker}}(A))\)</span>, so the induced map must separate a quotient of dimension <span class="math-inline">\(d\)</span>. Hence <span class="math-inline">\(\operatorname{rank}(R|\operatorname{\operatorname{ker}}(A))\ge d\)</span> and <span class="math-inline">\(\ell \ge d\)</span>. For attainment, choose a linear coordinate map on <span class="math-inline">\(\operatorname{ker}(A)\)</span> whose kernel equals <span class="math-inline">\(\operatorname{ker}(A)\cap \operatorname{ker}(B)\)</span> and extend it linearly to <span class="math-inline">\(V\)</span>. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="worked-example">
+            <h2>4. Three latent coordinates and two targets</h2>
+            <p>Let <span class="math-inline">\(V=\mathbb{R}^{3}\)</span>,</p>
+            <div class="equation-block" role="math" aria-label="Observation and target matrices for linear example."><span class="equation-tex">\[A=[1,1,0], \quad B=\begin{bmatrix}1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 1\end{bmatrix}.\]</span><span class="equation-number">(2)</span></div>
+            <p>A basis of <span class="math-inline">\(\operatorname{ker}(A)\)</span> is <span class="math-inline">\(v_{1}\)</span>=(1,<span class="math-inline">\(-1\)</span>,0) and <span class="math-inline">\(v_{2}\)</span>=(0,0,1). Their target images are (1,<span class="math-inline">\(-1\)</span>) and (1,1), which are independent. Thus the missing dimension is two.</p>
+            <p>Record <span class="math-inline">\(r_{1}=x_{1}-x_{2}\)</span> and <span class="math-inline">\(r_{2}=x_{3}\)</span>. From report <span class="math-inline">\(s=x_{1}+x_{2}\)</span>, the decoder is</p>
+            <div class="equation-block" role="math" aria-label="Decoder for two target coordinates."><span class="equation-tex">\[Bx=((s+r_{1})/2+r_{2}, (s-r_{1})/2+r_{2})^{\top }.\]</span><span class="equation-number">(3)</span></div>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Rank of the report used as information dimension</span><p><span class="math-inline">\(\operatorname{rank}(A)=1\)</span> and <span class="math-inline">\(\operatorname{rank}(B)=2\)</span>. The relevant repair number is the rank of <span class="math-inline">\(B\)</span> on <span class="math-inline">\(\operatorname{ker}(A)\)</span>, which is two here and can differ from either marginal rank in other systems.</p></div>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Compute an orthonormal basis <span class="math-inline">\(N\)</span> for <span class="math-inline">\(\operatorname{ker}(A)\)</span> and take the numerical rank of <span class="math-inline">\(BN\)</span> under a declared singular-value tolerance. Verify any proposed repair by checking the null space or row span of the stacked matrix [<span class="math-inline">\(A;R\)</span>].</p>
+            <a class="chapter-download" href="/assets/code/volume-01/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3>
+            <ol class="exercise-list"><li>Verify all three equivalent conditions in Proposition 1 for one sufficient and one insufficient target.</li><li>Reproduce the missing dimension and decoder in (2)–(3).</li><li>Prove that <span class="math-inline">\(d(B|A)=\operatorname{rank}([A;B])-\operatorname{rank}(A)\)</span>.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>2.</strong> The <span class="math-inline">\(2\times2\)</span> matrix with columns <span class="math-inline">\(Bv_{1}\)</span> and <span class="math-inline">\(Bv_{2}\)</span> has determinant two, so the restricted rank is two. Substitution of <span class="math-inline">\(x_{1}=(s+r_{1})/2\)</span> and <span class="math-inline">\(x_{2}=(s-r_{1})/2\)</span> gives (3). <strong>3.</strong> Restrict the quotient map from <span class="math-inline">\(\operatorname{row}([A;B])\)</span> onto its quotient by <span class="math-inline">\(\operatorname{row}(A)\)</span>; its dimension equals the new independent target rows and also <span class="math-inline">\(\operatorname{rank}(B|\operatorname{\operatorname{ker}}(A))\)</span>.</p></details>
+            <ol class="reference-list"><li>Sheldon Axler, <em>Linear Algebra Done Right</em>, sections on quotients, annihilators, and rank-nullity.<small>Kernel factorization and quotient dimension.</small></li><li>Roger Horn and Charles Johnson, <em>Matrix Analysis</em>, sections on generalized inverses and subspaces.<small>Row-space and null-space tests.</small></li><li>Gene H. Golub and Charles F. Van Loan, <em>Matrix Computations</em>, §5.5.<small>Rank-revealing factorizations and numerical null spaces.</small></li></ol>
+          </section>
+
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State all spaces and dimensions, compute <span class="math-inline">\(\operatorname{ker}(A)\)</span>, evaluate <span class="math-inline">\(B\)</span> on that kernel, report the rank tolerance, construct the decoder on the attained image, and verify the augmented kernel after repair.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter treats exact finite-dimensional linear factorization and unrestricted linear repair. Feasible record dictionaries and nonlinear local factorization appear in I-04 and I-03.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-01/i-01/">I-01 · Define the Research Object as a Contract</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Identification, Measurement, and Counterfactual Reasoning</strong>
+            <a href="/resources/volume-01/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#linear-contract">Observation and target as linear maps</a>
+            <a href="#factorization-theorem">Kernel, row space, and factorization</a>
+            <a href="#repair-bound">Sharp dimension of an unrestricted linear repair</a>
+            <a href="#worked-example">Three latent coordinates and two targets</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-01/i-01/"><span>Previous</span><strong>I-01 · Define the Research Object as a Contract</strong></a><a class="next" href="/resources/volume-01/i-03/"><span>Next</span><strong>I-03 · The Boundary Between Exact and Local Sufficiency</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

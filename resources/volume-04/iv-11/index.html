@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Stable Baselines and Policy Response Capacity · Chae-Yeon Xon</title>
+  <meta name="description" content="A stable baseline describes what happens under the prevailing transition law. Policy capacity describes the set of response paths reachable through available interventions. These objects depend on different matrices and constraints, so a quiet system can contain substantial unused response directions while a volatile system can offer few controllable directions.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-04/iv-11/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Stable Baselines and Policy Response Capacity · Chae-Yeon Xon">
+  <meta property="og:description" content="A stable baseline describes what happens under the prevailing transition law. Policy capacity describes the set of response paths reachable through available interventions. These objects depend on different matrices and constraints, so a quiet system can contain substantial unused response directions while a volatile system can offer few controllable directions.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-04/iv-11/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Stable Baselines and Policy Response Capacity · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A stable baseline describes what happens under the prevailing transition law. Policy capacity describes the set of response paths reachable through available interventions. These objects depend on different matrices and constraints, so a quiet system can contain substantial unused response directions while a volatile system can offer few controllable directions.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-4">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-04/">Structural Models and Economic Computation</a><span>/</span><strong>IV-11</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Dynamic Choice, Aggregation, and Policy Capacity · Chapter IV-11</div>
+        <h1>Stable Baselines and Policy Response Capacity</h1>
+        <p>A stable baseline describes what happens under the prevailing transition law. Policy capacity describes the set of response paths reachable through available interventions. These objects depend on different matrices and constraints, so a quiet system can contain substantial unused response directions while a volatile system can offer few controllable directions.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>IV-11.01</span><strong>Response matrices</strong></li>
+              <li><span>IV-11.02</span><strong>Transition accounting</strong></li>
+              <li><span>IV-11.03</span><strong>Action menus</strong></li>
+              <li><span>IV-11.04</span><strong>Mechanism separation</strong></li>
+              <li><span>IV-11.05</span><strong>Value of instruments</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="response-capacity">
+            <h2>1. Baseline stability and intervention capacity use different matrices</h2>
+            <p class="chapter-lede">The baseline transition determines persistence. The intervention map determines which response directions policy can reach over a declared horizon.</p>
+            <p>Consider <span class="math-inline">\(x_{t+1}=Ax_{t}+Bu_{t}\)</span> and target <span class="math-inline">\(y_{t}=Cx_{t}\)</span>. Baseline stability in discrete time requires spectral radius <span class="math-inline">\(\rho(A)&lt;1\)</span>. Starting from a fixed state, the finite-horizon derivative of stacked future targets with respect to an intervention sequence is formed from <span class="math-inline">\(CB,CAB,\ldots,CA^{H-1}B\)</span>.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Linear response span</span><p>The algebraic response capacity through horizon <span class="math-inline">\(H\)</span> is the column space of the corresponding finite-horizon response matrix. Its dimension is the matrix rank.</p></div>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Finite-horizon reachability from zero</span><p>For the state recursion above with <span class="math-inline">\(x_{0}=0\)</span>, the states reachable at date <span class="math-inline">\(H\)</span> by unrestricted signed inputs form the column space of <span class="math-inline">\([A^{H-1}B,\ldots,AB,B]\)</span>. Applying <span class="math-inline">\(C\)</span> gives the corresponding target-response span.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Repeated substitution gives <span class="math-inline">\(x_{H}=\sum _{j=0}^{H-1}A^{H-1-j}Bu_{j}\)</span>. Stacking the input vectors turns this sum into the stated matrix times the stacked intervention vector. Its image is exactly its column space. Left multiplication by <span class="math-inline">\(C\)</span> yields the target image. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="capacity-example">
+            <h2>2. One input can generate two temporal directions</h2>
+            <p>Let <span class="math-inline">\(A=\operatorname{diag}(0.5,0.2)\)</span>, <span class="math-inline">\(C=I_{2}\)</span>, and one intervention loading <span class="math-inline">\(B=(1,1)^{\top}\)</span>. The two-date state-response matrix is</p>
+            <div class="equation-block" role="math" aria-label="Two-period controllability response matrix."><span class="equation-tex">\[[B,AB]=\begin{bmatrix}1 &amp; 0.5 \\ 1 &amp; 0.2\end{bmatrix},\]</span><span class="equation-number">(1)</span></div>
+            <p>whose determinant is <span class="math-inline">\(-0.3\)</span> and rank is two. With signed interventions at two dates, the algebraic span covers <span class="math-inline">\(\mathbb{R}^{2}\)</span>. If interventions must be nonnegative with a total budget, attainable responses form a bounded convex hull or cone slice rather than the full span.</p>
+          </section>
+
+          <section class="chapter-section" id="same-baseline">
+            <h2>3. The same stable baseline can have different capacity</h2>
+            <p>Holding <span class="math-inline">\(A\)</span> fixed while replacing <span class="math-inline">\(B\)</span> by zero removes all policy response without changing baseline dynamics. Replacing it by <span class="math-inline">\(e_{1}\)</span> confines every response to the first coordinate. A stable or quiet observed path therefore supplies no capacity conclusion without the intervention map and action support.</p>
+            <p>Randomized mixtures generate convex combinations of arm-specific mean responses. They do not automatically create arbitrary signed linear combinations. Assignment probabilities, ethical exclusions, delivery failures, and dose limits determine the feasible set.</p>
+          </section>
+
+          <section class="chapter-section" id="capacity-boundaries">
+            <h2>4. Horizon, stability, and feasibility boundaries</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Response rank reported as implementable policy set</span><p>Rank ignores sign, magnitude, budget, assignment, and delivery constraints. The rank-two matrix in (1) can coexist with a small one-sided feasible region.</p></div>
+            <p>At <span class="math-inline">\(H=0\)</span> no future response block is present. At eigenvalues on the unit circle, baseline asymptotic stability fails even though a finite-horizon response remains defined. Nonlinear systems use derivatives only locally; finite interventions need remainder bounds and state-constraint checks.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Fix timing conventions, build the horizon response matrix, compute rank under a declared metric and threshold, and separately propagate the feasible action set. Report stability eigenvalues, intervention support, delivery mapping, budget, hull or cone representation, and target values.</p>
+            <a class="chapter-download" href="/assets/code/volume-04/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify the determinant and rank in (1).</li><li>Characterize responses when two intervention dates satisfy <span class="math-inline">\(u_{0},u_{1}\ge0\)</span> and their sum is at most one.</li><li>Compare <span class="math-inline">\(B=0\)</span>, <span class="math-inline">\(e_{1}\)</span>, and <span class="math-inline">\((1,1)^{\top}\)</span> under the same <span class="math-inline">\(A\)</span>.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The columns are linearly independent because <span class="math-inline">\(0.2-0.5=-0.3\)</span>. <strong>2.</strong> The response set is the convex hull of zero and the two columns in (1). <strong>3.</strong> Their two-date response ranks are zero, one, and two.</p></details>
+            <ol class="reference-list"><li>Thomas Kailath, <em>Linear Systems</em>, chapters on controllability and stability.<small>Finite-horizon response spaces.</small></li><li>Roger A. Horn and Charles R. Johnson, <em>Matrix Analysis</em>.<small>Spectral stability and rank.</small></li><li>Chae-Yeon Xon (2026), <a href="/papers/perfectly-still/">“Perfectly Still: Stability and Policy Response Capacity.”</a><small>Related policy-history application.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State transition timing, stability region, initial state, target, intervention loading, horizon, action signs and bounds, budget, assignment and delivery constraints, response metric, rank threshold, feasible hull, and nonlinear remainder domain.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers finite-horizon linear response capacity and feasible action images. General controllability design and nonlinear control require additional theory.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-03/iii-07/">III-07 · Linear Dynamics: Stability and Response Spaces</a></li><li><a href="/resources/volume-02/ii-03/">II-03 · Random Assignment and Dynamic Policy Contrasts</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Structural Models and Economic Computation</strong>
+            <a href="/resources/volume-04/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#response-capacity">Baseline stability and intervention capacity use different matrices</a>
+            <a href="#capacity-example">One input can generate two temporal directions</a>
+            <a href="#same-baseline">The same stable baseline can have different capacity</a>
+            <a href="#capacity-boundaries">Horizon, stability, and feasibility boundaries</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-04/iv-10/"><span>Previous</span><strong>IV-10 · Heterogeneous States, Transition Economies, and Additive Summaries</strong></a><a class="next" href="/resources/volume-04/iv-12/"><span>Next</span><strong>IV-12 · Complementary Inputs, Option Production, and Supply Incentives</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

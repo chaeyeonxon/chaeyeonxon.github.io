@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Publishing a Reproducible Computational Book · Chae-Yeon Xon</title>
+  <meta name="description" content="A computational chapter should tell readers what it proves, what it illustrates, which inputs it uses, and how to rerun it. Environment locks, source manifests, deterministic seeds, tests, and clean execution turn a collection of files into a reproducible artifact. Web display and executable computation remain distinct delivery modes.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-06/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Publishing a Reproducible Computational Book · Chae-Yeon Xon">
+  <meta property="og:description" content="A computational chapter should tell readers what it proves, what it illustrates, which inputs it uses, and how to rerun it. Environment locks, source manifests, deterministic seeds, tests, and clean execution turn a collection of files into a reproducible artifact. Web display and executable computation remain distinct delivery modes.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-06/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Publishing a Reproducible Computational Book · Chae-Yeon Xon">
+  <meta name="twitter:description" content="A computational chapter should tell readers what it proves, what it illustrates, which inputs it uses, and how to rerun it. Environment locks, source manifests, deterministic seeds, tests, and clean execution turn a collection of files into a reproducible artifact. Web display and executable computation remain distinct delivery modes.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-06</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Audit Methods and Reproducibility · Chapter V-06</div>
+        <h1>Publishing a Reproducible Computational Book</h1>
+        <p>A computational chapter should tell readers what it proves, what it illustrates, which inputs it uses, and how to rerun it. Environment locks, source manifests, deterministic seeds, tests, and clean execution turn a collection of files into a reproducible artifact. Web display and executable computation remain distinct delivery modes.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-06.01</span><strong>Chapter contracts</strong></li>
+              <li><span>V-06.02</span><strong>Environment records</strong></li>
+              <li><span>V-06.03</span><strong>Sources and permissions</strong></li>
+              <li><span>V-06.04</span><strong>Tests</strong></li>
+              <li><span>V-06.05</span><strong>Web display and execution</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="chapter-contract">
+            <h2>1. A chapter contract separates claims from demonstrations</h2>
+            <p class="chapter-lede">A reproducible computational chapter tells readers which statements are proved, which are computed for fixed inputs, and which remain empirical or numerical evidence.</p>
+            <p>The contract lists required data, generated artifacts, commands, environment, expected runtime, memory, random-state policy, and acceptance tests. Each figure and table has one generating target. Hand-edited numbers break the dependency graph unless the manual operation is itself recorded as a source transformation.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Clean execution</span><p>A clean execution starts from a documented source tree and declared external inputs in a new environment, creates generated files only through listed commands, and passes machine-checkable acceptance tests without relying on undeclared caches or user-specific state.</p></div>
+          </section>
+
+          <section class="chapter-section" id="manifest">
+            <h2>2. A manifest certifies byte identity</h2>
+            <p>For every released file, store path, media type, size, cryptographic digest, role, and generating target. The byte string “theta=0.5” followed by a newline has SHA-256 digest 6c2a607e45bdea99821f70a9ea6cff27280c82249e87e1fb380f8b41f008630c. A verifier recomputes the digest after extraction and rejects a mismatch before executing code.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Conditional byte-identity certificate</span><p>Fix a hash function <span class="math-inline">\(H\)</span> and assume it is collision-free over the compared files. If manifest entry <span class="math-inline">\(H(a)\)</span> equals the recomputed <span class="math-inline">\(H(b)\)</span>, then <span class="math-inline">\(a\)</span> and <span class="math-inline">\(b\)</span> have identical bytes.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> If the bytes differed, the equal digests would form a collision. The maintained collision-free assumption rules this out. ∎</p></div>
+            <p>The certificate says nothing about scientific correctness, licensing, completeness, or safe execution. A manifest can faithfully preserve a flawed program. Provenance, tests, and substantive review supply those separate gates.</p>
+          </section>
+
+          <section class="chapter-section" id="environment">
+            <h2>3. Environments and randomness are inputs</h2>
+            <p>Record interpreter and library versions, operating-system dependencies, locale, time zone, numerical libraries, hardware-sensitive settings, and environment variables actually read. Lockfiles must be resolved and tested; a package name without a version range does not freeze behavior. Containers improve isolation but their base images and build arguments also need immutable identifiers.</p>
+            <p>A fixed pseudorandom seed reproduces a deterministic generator stream only when algorithm, library, parallel scheduling, and draw order are controlled. Statistical conclusions should remain valid across admissible seeds. Release tests can include a fixed-seed snapshot and a multi-seed stability envelope.</p>
+          </section>
+
+          <section class="chapter-section" id="release-boundaries">
+            <h2>4. Web display and executable release are different artifacts</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Browser page treated as the computation</span><p>A rendered page can display stale output after source code changes. The release needs a build dependency from source and data to the displayed artifact, plus a freshness check.</p></div>
+            <p>Relative paths, case sensitivity, file permissions, archive timestamps, line endings, and locale-dependent sorting often separate local success from clean execution. Restricted data require synthetic or derived public inputs and a documented protected-data route. Network downloads need versioned URLs, digests, licenses, and an offline failure mode. Empty datasets, unavailable GPUs, zero-length simulations, interrupted builds, and partial outputs must fail clearly. Accessibility and responsive display are publication tests, while numerical equivalence belongs to the computational gate.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Organize source, data manifests, environment locks, generated artifacts, and tests in separate directories. Provide a single top-level validation command. Run it from a clean temporary directory, verify input and output digests, scan logs for warnings, and compare generated pages with their source fragments. Publish only after the archive, extracted archive, and served copy agree on the release manifest.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Recompute the digest in Section 2 and test one-byte modification.</li><li>Design acceptance tests for a stochastic table.</li><li>List the extra records needed when a chapter downloads a mutable public dataset.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> Include the newline exactly; changing 0.5 to 0.6 changes the digest. <strong>2.</strong> Use a fixed-seed checksum for pipeline integrity and distributional tolerances across several seeds for numerical stability. <strong>3.</strong> Record provider, retrieval time, query, response headers when useful, license, raw digest, schema, and a local immutable copy or reconstruction procedure.</p></details>
+            <ol class="reference-list"><li>Greg Wilson et al. (2014), “Best Practices for Scientific Computing,” <em>PLoS Biology</em> 12, e1001745.<small>Testing, automation, and source management.</small></li><li>Mark D. Wilkinson et al. (2016), “The FAIR Guiding Principles for Scientific Data Management and Stewardship,” <em>Scientific Data</em> 3, 160018.<small>Findable and reusable research objects.</small></li><li>Adam Rule et al. (2019), “Ten Simple Rules for Writing and Sharing Computational Analyses in Jupyter Notebooks,” <em>PLoS Computational Biology</em> 15, e1007007.<small>Executable narrative and clean reruns.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Claim type, source-generated split, one target per artifact, data manifest, environment lock, base-image digest, locale and time zone, random generator, seed and parallel order, clean directory, undeclared caches, restricted-data route, network digests, licenses, archive metadata, relative paths, case sensitivity, failure behavior, output hashes, page freshness, responsive display, accessibility, and served-release identity.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers reproducible packaging and clean execution. Long-term digital preservation, software supply-chain security, and confidential-computing environments require dedicated controls.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-05/v-01/">V-01 · Version, Evidence, and Claim Ledgers</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#chapter-contract">A chapter contract separates claims from demonstrations</a>
+            <a href="#manifest">A manifest certifies byte identity</a>
+            <a href="#environment">Environments and randomness are inputs</a>
+            <a href="#release-boundaries">Web display and executable release are different artifacts</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-05/v-05/"><span>Previous</span><strong>V-05 · Trace an Equation Through Code</strong></a><a class="next" href="/resources/volume-05/v-07/"><span>Next</span><strong>V-07 · Selection after Symmetry</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

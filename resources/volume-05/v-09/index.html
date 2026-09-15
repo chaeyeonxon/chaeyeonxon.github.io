@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Determinacy and Persistence in Dynamic Networks · Chae-Yeon Xon</title>
+  <meta name="description" content="Signed interactions, exact root counts, and observable modes address different questions in dynamic networks. Replacing a signed system by absolute coefficients can yield a useful sufficient contraction condition, yet it may discard cancellations. Repeated roots further require a generalized-mode calculation, with transfer-function cancellation checked separately.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-05/v-09/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Determinacy and Persistence in Dynamic Networks · Chae-Yeon Xon">
+  <meta property="og:description" content="Signed interactions, exact root counts, and observable modes address different questions in dynamic networks. Replacing a signed system by absolute coefficients can yield a useful sufficient contraction condition, yet it may discard cancellations. Repeated roots further require a generalized-mode calculation, with transfer-function cancellation checked separately.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-05/v-09/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Determinacy and Persistence in Dynamic Networks · Chae-Yeon Xon">
+  <meta name="twitter:description" content="Signed interactions, exact root counts, and observable modes address different questions in dynamic networks. Replacing a signed system by absolute coefficients can yield a useful sufficient contraction condition, yet it may discard cancellations. Repeated roots further require a generalized-mode calculation, with transfer-function cancellation checked separately.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-5">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-05/">Research Auditing: Proofs, Models, Code, and Counterexamples</a><span>/</span><strong>V-09</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Six Applied Audit Case Studies · Chapter V-09</div>
+        <h1>Determinacy and Persistence in Dynamic Networks</h1>
+        <p>Signed interactions, exact root counts, and observable modes address different questions in dynamic networks. Replacing a signed system by absolute coefficients can yield a useful sufficient contraction condition, yet it may discard cancellations. Repeated roots further require a generalized-mode calculation, with transfer-function cancellation checked separately.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>V-09.01</span><strong>Original dynamic structure</strong></li>
+              <li><span>V-09.02</span><strong>Signed witnesses</strong></li>
+              <li><span>V-09.03</span><strong>Root-count repair</strong></li>
+              <li><span>V-09.04</span><strong>Repeated-pole witnesses</strong></li>
+              <li><span>V-09.05</span><strong>Observable representations</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="signed-dynamics">
+            <h2>1. Signed dynamics and comparison bounds answer different questions</h2>
+            <p class="chapter-lede">Absolute-coefficient systems can certify a sufficient contraction bound, while the signed system determines actual eigenvalues, cancellations, and responses.</p>
+            <p>For <span class="math-inline">\(x_{t+1}=Ax_{t}\)</span>, asymptotic stability in finite dimensions is equivalent to spectral radius <span class="math-inline">\(\rho(A)&lt;1\)</span>. Let</p>
+            <div class="equation-block" role="math" aria-label="Stable signed network with unstable absolute comparison matrix."><span class="equation-tex">\[A=\begin{bmatrix}0.6 &amp; 0.6 \\ -0.6 &amp; 0.6\end{bmatrix}.\]</span><span class="equation-number">(1)</span></div>
+            <p>Its eigenvalues are <span class="math-inline">\(0.6\pm 0.6i\)</span>, with modulus <span class="math-inline">\(\sqrt{0.72}\approx0.848528\)</span>, so the system is stable. The entrywise absolute matrix has eigenvalues 1.2 and 0, hence spectral radius 1.2. The absolute comparison fails to certify this stable signed system because it discards rotational cancellation.</p>
+            <div class="formal-block definition"><span class="formal-label">Definition 1 · Determinacy audit</span><p>For a linear rational-expectations system, the audit records the regular matrix pencil, generalized roots relative to the unit circle, predetermined and forward-looking dimensions, expectational-error restrictions, and boundary roots. A stability calculation for a backward recursion is not a determinacy proof for a forward-looking model.</p></div>
+          </section>
+
+          <section class="chapter-section" id="root-count">
+            <h2>2. Root counts require the original system</h2>
+            <p>Under the regularity conditions of the standard linear rational-expectations solution, uniqueness requires the number of roots assigned to unstable directions to match the number of forward-looking variables, together with the relevant rank conditions. Too few unstable roots produce indeterminacy; too many generally prevent a bounded solution for arbitrary predetermined states.</p>
+            <p>Absolute values can provide comparison inequalities such as <span class="math-inline">\(\lvert A x\rvert \le \lvert A\rvert \lvert x\rvert\)</span> componentwise. They do not preserve generalized eigenvalues or the count used by a determinacy theorem. Singular pencils, roots exactly on the unit circle, and coincident roots need separate arguments.</p>
+          </section>
+
+          <section class="chapter-section" id="repeated-pole">
+            <h2>3. Repeated roots add polynomial persistence</h2>
+            <p>Let <span class="math-inline">\(J=rI+N\)</span>, where <span class="math-inline">\(N=\begin{bmatrix}0 &amp; 1 \\ 0 &amp; 0\end{bmatrix}\)</span> and <span class="math-inline">\(N^{2}=0\)</span>. Repeated multiplication yields a generalized mode.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Power of a size-two Jordan block</span><p>For integer <span class="math-inline">\(t\ge1\)</span> and scalar <span class="math-inline">\(r\)</span>, <span class="math-inline">\(J^{t}=r^{t}I+t r^{t-1}N\)</span>. At <span class="math-inline">\(r=0\)</span>, the coefficient of <span class="math-inline">\(N\)</span> is one when <span class="math-inline">\(t=1\)</span> and zero when <span class="math-inline">\(t\ge2\)</span>.</p></div>
+            <div class="proof"><p><strong>Proof.</strong> Expand <span class="math-inline">\((rI+N)^{t}\)</span> by the binomial theorem. Every term containing <span class="math-inline">\(N^{k}\)</span> for <span class="math-inline">\(k\ge2\)</span> vanishes, leaving the <span class="math-inline">\(k=0\)</span> and <span class="math-inline">\(k=1\)</span> terms. ∎</p></div>
+            <p>At <span class="math-inline">\(r=0.8\)</span> and <span class="math-inline">\(t=5\)</span>, the diagonal factor is <span class="math-inline">\(0.8^{5}=0.32768\)</span> and the generalized off-diagonal factor is <span class="math-inline">\(5\times 0.8^{4}=2.048\)</span>. The system still converges when <span class="math-inline">\(\lvert r\rvert&lt;1\)</span>, while finite-horizon persistence can be much larger than <span class="math-inline">\(r^{t}\)</span>.</p>
+          </section>
+
+          <section class="chapter-section" id="observable-boundaries">
+            <h2>4. State roots need not appear in an observable response</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · State eigenvalue labeled an observed pole</span><p>For transfer <span class="math-inline">\(C(zI-A)^{-1}B\)</span>, a mode absent from the input or killed by the output can cancel. Minimality must be checked before interpreting state roots as observed persistence.</p></div>
+            <p>A repeated eigenvalue can be diagonalizable, in which case the polynomial factor is absent. At <span class="math-inline">\(\lvert r\rvert=1\)</span>, the Jordan factor grows linearly and stability fails. At <span class="math-inline">\(r=0\)</span>, powers vanish after the nilpotent index. Finite horizons can conceal slow modes, and numerical root counts need a declared unit-circle tolerance. Network sparsity does not guarantee observability or controllability.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2>
+            <p>Construct the signed transition or matrix pencil from model equations, retain variable timing and predetermined status, and compute generalized roots with balancing and residual checks. Separate sufficient comparison bounds from exact roots. Inspect Jordan or Schur structure near repeated roots, then test controllability, observability, and pole cancellation for each reported response.</p>
+            <a class="chapter-download" href="/assets/code/volume-05/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Verify both spectral radii in (1).</li><li>Compute the size-two Jordan power at <span class="math-inline">\(t=5\)</span>.</li><li>Give <span class="math-inline">\(B\)</span> and <span class="math-inline">\(C\)</span> that make one state mode absent from the transfer function.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The signed characteristic roots have squared modulus <span class="math-inline">\(0.6^{2}+0.6^{2}\)</span>; the absolute matrix has equal rows. <strong>2.</strong> Substitute into the proposition to obtain diagonal 0.32768 and upper-right 2.048. <strong>3.</strong> For diagonal <span class="math-inline">\(A\)</span>, choose <span class="math-inline">\(B\)</span> or <span class="math-inline">\(C\)</span> orthogonal to an eigenvector; that pole then has zero residue.</p></details>
+            <ol class="reference-list"><li>Olivier Jean Blanchard and Charles M. Kahn (1980), “The Solution of Linear Difference Models under Rational Expectations,” <em>Econometrica</em> 48, 1305–1311.<small>Root counts and determinacy.</small></li><li>Roger A. Horn and Charles R. Johnson, <em>Matrix Analysis</em>.<small>Spectral radius and Jordan powers.</small></li><li>Thomas Kailath, <em>Linear Systems</em>.<small>Minimal realizations and pole cancellation.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>Signed equations, entrywise comparison, state timing, regular pencil, generalized roots, unit-circle tolerance, predetermined and jump dimensions, rank conditions, singular and coincident roots, Jordan size, finite horizon, initial state, stability versus determinacy, input loading, output map, controllability, observability, minimality, pole cancellation, and root residuals.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter audits finite-dimensional linear dynamics. Nonlinear determinacy, time-varying networks, and infinite-dimensional evolution equations require additional theory.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-05/v-03/">V-03 · Minimal Counterexamples with Economic Structure</a></li><li><a href="/resources/volume-03/iii-09/">III-09 · Poles, Cancellation, and Generalized Modes</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Research Auditing: Proofs, Models, Code, and Counterexamples</strong>
+            <a href="/resources/volume-05/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#signed-dynamics">Signed dynamics and comparison bounds answer different questions</a>
+            <a href="#root-count">Root counts require the original system</a>
+            <a href="#repeated-pole">Repeated roots add polynomial persistence</a>
+            <a href="#observable-boundaries">State roots need not appear in an observable response</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-05/v-08/"><span>Previous</span><strong>V-08 · Root-n Simulation Error</strong></a><a class="next" href="/resources/volume-05/v-10/"><span>Next</span><strong>V-10 · Residual-Income Demand across Implementations</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

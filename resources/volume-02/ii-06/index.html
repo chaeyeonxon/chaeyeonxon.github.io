@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <title>Extremum Estimators and Uniform Local Expansions · Chae-Yeon Xon</title>
+  <meta name="description" content="An optimization result, statistical consistency, and an asymptotic linear representation answer different questions. Extremum estimation requires a population criterion, uniform approximation, local curvature, controlled generated objects, and numerical tolerances that vanish on the correct scale.">
+  <link rel="canonical" href="https://chaeyeonxon.github.io/resources/volume-02/ii-06/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Chae-Yeon Xon">
+  <meta property="og:title" content="Extremum Estimators and Uniform Local Expansions · Chae-Yeon Xon">
+  <meta property="og:description" content="An optimization result, statistical consistency, and an asymptotic linear representation answer different questions. Extremum estimation requires a population criterion, uniform approximation, local curvature, controlled generated objects, and numerical tolerances that vanish on the correct scale.">
+  <meta property="og:url" content="https://chaeyeonxon.github.io/resources/volume-02/ii-06/">
+  <meta property="og:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:secure_url" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="Yonsei University emblem">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Extremum Estimators and Uniform Local Expansions · Chae-Yeon Xon">
+  <meta name="twitter:description" content="An optimization result, statistical consistency, and an asymptotic linear representation answer different questions. Extremum estimation requires a population criterion, uniform approximation, local curvature, controlled generated objects, and numerical tolerances that vanish on the correct scale.">
+  <meta name="twitter:image" content="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="image_src" href="https://chaeyeonxon.github.io/assets/yonsei-symbol.png">
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/yonsei-symbol.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <script defer src="/assets/js/math-render.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="identity">
+        <img class="header-avatar" src="/assets/yonsei-symbol.png" alt="Yonsei University">
+        <div class="identity-text">
+          <a class="name" href="/">Chae-Yeon Xon</a>
+          <div class="affiliation">Yonsei University, School of Economics</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="/#research">Research</a>
+        <a href="/#about">About</a>
+        <a href="/#contact">Contact</a>
+        <a href="/assets/Xon_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </div>
+  </header>
+  <main class="resource-page chapter-page chapter-expanded volume-2">
+    <div class="container">
+      <div class="resource-breadcrumb"><a href="/">Home</a><span>/</span><a href="/#resources">Resources</a><span>/</span><a href="/resources/volume-02/">Inference, Selection, and Simulation</a><span>/</span><strong>II-06</strong></div>
+      <header class="resource-chapter-header">
+        <div class="chapter-label">Asymptotics and Simulation · Chapter II-06</div>
+        <h1>Extremum Estimators and Uniform Local Expansions</h1>
+        <p>An optimization result, statistical consistency, and an asymptotic linear representation answer different questions. Extremum estimation requires a population criterion, uniform approximation, local curvature, controlled generated objects, and numerical tolerances that vanish on the correct scale.</p>
+      </header>
+      <div class="chapter-layout">
+        <article class="chapter-article">
+          <section class="chapter-section" id="conceptual-map">
+            <h2>Conceptual map</h2>
+            <ol class="chapter-topic-grid">
+              <li><span>II-06.01</span><strong>Population and sample criteria</strong></li>
+              <li><span>II-06.02</span><strong>Consistency</strong></li>
+              <li><span>II-06.03</span><strong>Scores and Hessians</strong></li>
+              <li><span>II-06.04</span><strong>Generated first stages</strong></li>
+              <li><span>II-06.05</span><strong>The role of high-level conditions</strong></li>
+            </ol>
+          </section>
+
+<section class="chapter-section" id="extremum-setup">
+            <h2>1. A sample optimizer needs a population reference</h2>
+            <p class="chapter-lede">Numerical stationarity concerns the sample criterion. Consistency and asymptotic linearity require population identification, uniform approximation, local differentiability, and a tolerance small on the estimator's scale.</p>
+            <p>Let <span class="math-inline">\(\theta \in \Theta \subseteq \mathbb{R}^{p}\)</span> and nuisance <span class="math-inline">\(\eta \in \mathbb{R}^{q}\)</span>. Let <span class="math-inline">\(Q(\theta,\eta)\)</span> have unique interior minimizer <span class="math-inline">\(\theta _{0}\)</span> at <span class="math-inline">\(\eta _{0}\)</span>, and define score <span class="math-inline">\(\Psi=\partial _{\theta}Q\)</span>. Suppose <span class="math-inline">\(H=\partial _{\theta}\Psi(\theta _{0},\eta _{0})\)</span> is nonsingular and <span class="math-inline">\(G=\partial _{\eta}\Psi(\theta _{0},\eta _{0})\)</span> is finite.</p>
+            <div class="formal-block"><span class="formal-label">Proposition 1 · Smooth two-step expansion</span><p>Assume <span class="math-inline">\(\hat{\theta}\to_{p}\theta _{0}\)</span>, <span class="math-inline">\(\sqrt{n}(\hat{\eta}-\eta _{0})=O_{p}(1)\)</span>, a uniform first-order expansion of the sample score whose joint Taylor remainder is <span class="math-inline">\(o_{p}(n^{-1/2})\)</span> along <span class="math-inline">\((\hat{\theta},\hat{\eta})\)</span>, <span class="math-inline">\(\sqrt{n}\,\Psi_{n}(\theta _{0},\eta _{0})=n^{-1/2}\sum _{i=1}^{n}\psi _{i}+o_{p}(1)\)</span>, and <span class="math-inline">\(\lVert\Psi_{n}(\hat{\theta},\hat{\eta})\rVert=o_{p}(n^{-1/2})\)</span>. Then</p>
+              <div class="equation-block" role="math" aria-label="Asymptotic linear expansion of a two-step estimator."><span class="equation-tex">\[\sqrt{n}(\hat{\theta }-\theta _{0})=-H^{-1}[n^{\frac{-1}{2}}\sum \psi _{i}+G\sqrt{n}(\hat{\eta }-\eta _{0})]+o_{p}(1).\]</span><span class="equation-number">(1)</span></div>
+            </div>
+            <div class="proof"><p><strong>Proof sketch.</strong> Expand the sample score at (<span class="math-inline">\(\theta _{0},\eta _{0}\)</span>) uniformly along the random segment to <span class="math-inline">\((\hat{\theta},\hat{\eta})\)</span>. Move the approximate-stationarity remainder to the right, multiply by <span class="math-inline">\(\sqrt{n}\)</span>, and use convergence of the derivative matrices to <span class="math-inline">\(H\)</span> and <span class="math-inline">\(G\)</span>. Nonsingularity permits inversion of <span class="math-inline">\(H\)</span> with probability approaching one. ∎</p></div>
+          </section>
+
+          <section class="chapter-section" id="quadratic-example">
+            <h2>2. A scalar criterion exposes every component</h2>
+            <p>Let <span class="math-inline">\(Q_{n}(\theta,\eta)=1/2(\theta -\bar{X}-\eta )^{2}\)</span>, with population values <span class="math-inline">\(\mathbb{E}[X]=1\)</span>, <span class="math-inline">\(\eta _{0}=2\)</span>, and <span class="math-inline">\(\theta _{0}=3\)</span>. Here <span class="math-inline">\(H=1\)</span> and <span class="math-inline">\(G=-1\)</span>. If <span class="math-inline">\(\bar{X}=1.05\)</span> and <span class="math-inline">\(\hat{\eta}=2.02\)</span>, the exact optimizer is <span class="math-inline">\(\hat{\theta}=3.07\)</span>:</p>
+            <div class="equation-block" role="math" aria-label="Sampling and first-stage decomposition in a quadratic criterion."><span class="equation-tex">\[\hat{\theta }-\theta _{0}=(1.05-1)+(2.02-2)=0.05+0.02=0.07.\]</span><span class="equation-number">(2)</span></div>
+            <p>If a solver returns score residual <span class="math-inline">\(r_{n}\)</span>, its solution is <span class="math-inline">\(\bar{X}+\hat{\eta}+r_{n}\)</span> in this sign convention. Root-<span class="math-inline">\(n\)</span> inference requires <span class="math-inline">\(\sqrt{n}\,r_{n}\to_{p}0\)</span>.</p>
+          </section>
+
+          <section class="chapter-section" id="uniformity-curvature">
+            <h2>3. Pointwise convergence does not control a random optimizer</h2>
+            <p>Consistency usually follows from uniform convergence of <span class="math-inline">\(Q_{n}\)</span> to a population criterion plus separation of its minimizer. A pointwise statement at each fixed <span class="math-inline">\(\theta\)</span> permits sample-dependent spikes or valleys that attract the optimizer. Local expansion then requires derivative control on a shrinking random neighborhood.</p>
+            <p>Generated regressors, simulated values, and estimated operators enter through <span class="math-inline">\(\hat{\eta}\)</span> and the derivative <span class="math-inline">\(G\)</span>. Their rate can be slower than root <span class="math-inline">\(n\)</span>; orthogonality corresponds to <span class="math-inline">\(G=0\)</span> for the relevant nuisance directions and changes the required remainder rate.</p>
+          </section>
+
+          <section class="chapter-section" id="boundary-failures">
+            <h2>4. Singular curvature and parameter boundaries change the limit</h2>
+            <div class="formal-block warning"><span class="formal-label">Failure case · Solver convergence used as a statistical theorem</span><p>A small sample gradient establishes approximate stationarity of the computed criterion. It supplies neither uniqueness of the population target nor uniform convergence of the sample problem.</p></div>
+            <p>If <span class="math-inline">\(H\)</span> is singular, equation (1) cannot be formed and higher-order curvature or partial identification may determine the rate. If <span class="math-inline">\(\theta _{0}\)</span> lies on a constraint boundary, the local solution is generally a projection onto a tangent cone; its limit can contain point masses or truncated Gaussian components. Multiple local minima require a global or basin-specific algorithmic statement.</p>
+          </section>
+
+          <section class="chapter-section" id="implementation">
+            <h2>5. Implementation, exercises, and sources</h2><p>Store the population target definition, parameter constraints, initialization, objective and gradient scales, first-stage sample, Hessian eigenvalues, stationarity residual, and termination rule. Tighten solver tolerances across sample sizes and compare <span class="math-inline">\(\sqrt{n}\)</span> times the residual with the sampling and first-stage components.</p>
+            <a class="chapter-download" href="/assets/code/volume-02/verify_examples.py">Download the volume verification script →</a>
+            <h3>Exercises</h3><ol class="exercise-list"><li>Reproduce (2) and add score residuals <span class="math-inline">\(\pm0.01\)</span>.</li><li>Replace the quadratic curvature by <span class="math-inline">\(h(\theta -\theta _{0})^{2}/2\)</span> and trace the effect of <span class="math-inline">\(h\to0\)</span>.</li><li>Constrain <span class="math-inline">\(\theta \ge0\)</span> with <span class="math-inline">\(\theta _{0}=0\)</span> and derive the projection of an unconstrained Gaussian local estimator.</li></ol>
+            <details class="solution-sketch"><summary>Partial solutions</summary><p><strong>1.</strong> The returned estimates become 3.08 and 3.06 under the stated residual convention. <strong>2.</strong> Sampling and first-stage score errors are multiplied by 1/<span class="math-inline">\(h\)</span>; the expansion loses stability as curvature vanishes. <strong>3.</strong> The local constrained estimate is the positive part of the unconstrained one.</p></details>
+            <ol class="reference-list"><li>Whitney K. Newey and Daniel McFadden (1994), “Large Sample Estimation and Hypothesis Testing,” in <em>Handbook of Econometrics</em>, Volume IV.<small>Extremum consistency and asymptotic expansion.</small></li><li>A. W. van der Vaart, <em>Asymptotic Statistics</em>, Chapter 5.<small>M- and Z-estimators.</small></li><li>Donald W. K. Andrews (1999), “Estimation When a Parameter Is on a Boundary,” <em>Econometrica</em> 67, 1341–1383.<small>Boundary asymptotics.</small></li></ol>
+          </section>
+          <section class="chapter-section chapter-checkpoint" id="audit-checkpoint"><h2>6. Audit checkpoint</h2><p>State the population criterion, identification set, parameter boundary, consistency argument, uniform neighborhood, score dimensions, Hessian spectrum, nuisance expansion, orthogonality, solver residual and scale, initialization, and local versus global optimum claim.</p></section>
+          <section class="chapter-section chapter-scope" id="scope-boundary"><h2>7. Scope boundary</h2><p>The chapter covers smooth finite-dimensional two-step extremum expansions. General empirical-process conditions and nonsmooth criteria appear only through their required interfaces.</p></section>
+
+<section class="chapter-section chapter-prerequisites">
+          <h2>Prerequisites</h2>
+          <ul><li><a href="/resources/volume-02/ii-05/">II-05 · Stochastic Orders and Competing Sample Sizes</a></li><li><a href="/resources/volume-03/iii-01/">III-01 · Differentiating Implicit Models</a></li></ul>
+        </section>
+        </article>
+        <aside class="chapter-sidebar">
+          <div class="chapter-sidebar-card">
+            <strong>Inference, Selection, and Simulation</strong>
+            <a href="/resources/volume-02/">View table of contents</a>
+          </div>
+          <nav class="chapter-mini-toc" aria-label="Chapter contents">
+            <strong>In this chapter</strong>
+            <a href="#conceptual-map">Conceptual map</a>
+            <a href="#extremum-setup">A sample optimizer needs a population reference</a>
+            <a href="#quadratic-example">A scalar criterion exposes every component</a>
+            <a href="#uniformity-curvature">Pointwise convergence does not control a random optimizer</a>
+            <a href="#boundary-failures">Singular curvature and parameter boundaries change the limit</a>
+            <a href="#implementation">Implementation, exercises, and sources</a>
+            <a href="#audit-checkpoint">Audit checkpoint</a>
+            <a href="#scope-boundary">Scope boundary</a>
+          </nav>
+        </aside>
+      </div>
+      <nav class="chapter-pagination" aria-label="Chapter navigation"><a href="/resources/volume-02/ii-05/"><span>Previous</span><strong>II-05 · Stochastic Orders and Competing Sample Sizes</strong></a><a class="next" href="/resources/volume-02/ii-07/"><span>Next</span><strong>II-07 · An Error Ledger for Monte Carlo and Forward Simulation</strong></a></nav>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <span>Chae-Yeon Xon</span>
+      <div class="footer-meta">
+        <span>Yonsei University, School of Economics</span>
+        <span>B.A. Student · Yonsei University · Expected 2027</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
