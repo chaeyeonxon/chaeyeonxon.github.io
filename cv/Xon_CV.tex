@@ -1,0 +1,133 @@
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[letterpaper,left=1.20in,right=1.20in,top=0.98in,bottom=0.66in]{geometry}
+\usepackage[default]{sourceserifpro}
+\usepackage[scale=0.82]{sourcecodepro}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage[hidelinks,pdftitle={Chae-Yeon Xon's CV},pdfauthor={Chae-Yeon Xon}]{hyperref}
+
+\definecolor{cvgray}{HTML}{858585}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1em}
+\AtBeginDocument{\fontsize{10.4}{12.6}\selectfont}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[L]{\textcolor{cvgray}{\footnotesize\ttfamily chaeyeonxon.github.io}}
+\fancyfoot[C]{\textcolor{cvgray}{\footnotesize\ttfamily eunixon@yonsei.ac.kr}}
+\fancyfoot[R]{\textcolor{cvgray}{\footnotesize\ttfamily 2026}}
+\setlength{\footskip}{0.36in}
+
+\newcommand{\cvsection}[1]{%
+  \par\vspace{0.24in}%
+  {\color{cvgray}\hrule height 0.45pt}
+  \vspace{0.16in}%
+  {\color{cvgray}\fontsize{9.2}{11}\selectfont\bfseries\MakeUppercase{#1}}%
+  \par\vspace{0.11in}%
+}
+\newcommand{\firstcvsection}[1]{%
+  \par\vspace{0.11in}%
+  {\color{cvgray}\hrule height 0.45pt}
+  \vspace{0.16in}%
+  {\color{cvgray}\fontsize{9.2}{11}\selectfont\bfseries\MakeUppercase{#1}}%
+  \par\vspace{0.09in}%
+}
+\newenvironment{cvitems}{%
+  \begin{itemize}[label={\textcolor{cvgray}{--}},leftmargin=0.28in,labelsep=0.09in,itemsep=0.105in,topsep=0pt,parsep=0pt,partopsep=0pt]
+}{\end{itemize}}
+\newenvironment{cvtightitems}{%
+  \begin{itemize}[label={\textcolor{cvgray}{--}},leftmargin=0.28in,labelsep=0.09in,itemsep=0.110in,topsep=0pt,parsep=0pt,partopsep=0pt]
+}{\end{itemize}}
+
+\begin{document}
+\thispagestyle{fancy}
+
+\begin{center}
+  {\fontsize{21}{25}\selectfont\fontseries{sb}\selectfont CHAE-YEON XON}
+\end{center}
+\vspace{0.04in}
+
+\firstcvsection{Education}
+\begin{cvitems}
+  \item Yonsei University, School of Economics \textbullet{} B.A. in Economics \textbullet{} Expected 2027
+\end{cvitems}
+
+\cvsection{Research Interests}
+\begin{cvitems}
+  \item Econometrics, Identification, and Counterfactuals
+\end{cvitems}
+
+\cvsection{Working Papers}
+\begin{cvtightitems}
+  \item On Cofactuals \textbullet{} 2026
+  \item Too Big to Aggregate: \textit{Corporate Control and Policy-Invariant Aggregation} \textbullet{} 2026
+  \item The Polar Express: \textit{Dynamic Aggregation under Policy Holonomy} \textbullet{} 2026
+  \item Subject to Availability: \textit{Option Production under Complementary Inputs} \textbullet{} 2026
+  \item Perfectly Still: \textit{Stability and Policy Response Capacity} \textbullet{} 2026
+  \item It's a Price! It's a Value!: \textit{Economic Measurement Across Environments} \textbullet{} 2026
+  \item Fuzzy Clock: \textit{Decision-Specific Timing Information} \textbullet{} 2026
+  \item Economica Obscura: \textit{Institutions, Archives, and Policy Learning} \textbullet{} 2026
+  \item Counterfactual Sufficiency: \textit{State Representation and Response Geometry} \textbullet{} 2026
+  \item Between Models: \textit{Counterfactual Frontiers across Causal-Response Experiments} \textbullet{} 2026
+  \item Almost a Policy: \textit{Transmission through Administrative Handoffs} \textbullet{} 2026
+\end{cvtightitems}
+
+\cvsection{Comments \& Technical Notes}
+\begin{cvtightitems}
+  \item Symmetry and Selection in Boundary Moment Inequalities: A Comment on Pakes, Porter, Ho, and Ishii (2015) \textbullet{} 2026
+  \item Simulation Error and Root-$n$ Inference in Dynamic Inequality Estimation: A Comment on Bajari, Benkard, and Levin (2007) \textbullet{} 2026
+  \item Myopia and Anchoring in Dynamic Networks: Determinacy and Persistence \textbullet{} 2026
+  \item Quantifying the Benefits of New Products with Residual-Income Demand: A Comment on Petrin (2002) \textbullet{} 2026
+  \item Set-Valued Channel Demand in Unbundling Counterfactuals: A Comment on Crawford and Yurukoglu (2012) \textbullet{} 2026
+  \item Operator Domains in Nonclassical Measurement Error: A Comment on Hu and Schennach (2008) \textbullet{} 2026
+\end{cvtightitems}
+
+\newpage
+\thispagestyle{fancy}
+
+\vspace*{-0.12in}
+\firstcvsection{Working References}
+\begin{cvitems}
+  \item Identification, Measurement, and Counterfactual Reasoning \textbullet{} 16 chapters
+  \item Inference, Selection, and Simulation \textbullet{} 13 chapters
+  \item Geometry, Dynamics, and Operators for Economic Models \textbullet{} 18 chapters
+  \item Structural Models and Economic Computation \textbullet{} 17 chapters
+  \item Research Auditing: Proofs, Models, Code, and Counterexamples \textbullet{} 12 chapters
+\end{cvitems}
+
+\cvsection{Reading Group Presentations}
+\begin{cvitems}
+  \item \textit{Institution Building without Commitment} \textbullet{} Bassetto, Huo, and R\'{i}os-Rull (2024), \textit{American Economic Review}\\
+  Yonsei Macro-Environment-Finance Reading Group \textbullet{} scheduled Dec. 28, 2026\\
+  Co-presentation with Changmin Lee
+
+  \item \textit{Pass-Through as an Economic Tool: Principles of Incidence under Imperfect Competition} \textbullet{} Weyl and Fabinger (2013), \textit{Journal of Political Economy}\\
+  Yonsei Structural Economics Reading Group (YSERG) \textbullet{} Sept. 18, 2026\\
+  Paper presentation \textbullet{} Discussant: Paul S. Koh
+
+  \item \textit{Robustness Measures for Welfare Analysis} \textbullet{} Kang and Vasserman (2025), \textit{American Economic Review}\\
+  Yonsei Structural Economics Reading Group (YSERG) \textbullet{} May 22, 2026\\
+  Paper presentation \textbullet{} Discussant: Paul S. Koh
+\end{cvitems}
+
+\cvsection{Honors \& Awards}
+\begin{cvitems}
+  \item 16th DB Insurance \& Finance Contest \textbullet{} Award (Selected Entry) \textbullet{} Team award \textbullet{} May 22, 2026
+\end{cvitems}
+
+\cvsection{Technical Skills}
+\begin{cvitems}
+  \item Programming \& statistical computing \textbullet{} Python, R, Stata, Julia, MATLAB
+  \item Modeling \& simulation \textbullet{} Dynare, NetLogo
+  \item Formal methods \textbullet{} Rocq
+  \item Software modeling \& analysis \textbullet{} UML; object-oriented analysis (OOA)
+  \item Scientific writing \textbullet{} LaTeX
+\end{cvitems}
+
+\end{document}
