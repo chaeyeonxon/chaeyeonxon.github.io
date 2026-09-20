@@ -101,6 +101,7 @@
             </a>
           </div>
 
+          {% if paper.data_sources.size > 0 %}
           <div class="paper-resource-panel" aria-label="Data and resources">
             <div class="paper-resource-panel-head">
               <span>Data &amp; resources</span>
@@ -119,6 +120,7 @@
               {% endfor %}
             {% endif %}
           </div>
+          {% endif %}
 
           <section class="paper-readme">
             <div class="paper-readme-head">

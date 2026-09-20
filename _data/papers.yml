@@ -17,16 +17,16 @@
     measurement: 10
     institutions_policy: 0
   publication_date: '2026'
-  display_date: August 2026
+  display_date: September 2026
   abstract: >-
-    National accounts record where economic activity takes place, while corporate control governs which activities adjust together. The question is which information a supplied macroeconomic state preserves for a declared policy response. Variation along the state directions omitted from that representation gives the minimum dimension of a local repair. Manifold-width geometry then measures the approximation cost of retaining fewer coordinates, with curvature bounds that extend the calculation to finite policy experiments. In euro-area manufacturing, ECB monetary responses vary across lagged corporate-control indices. The fitted sign pair appears in the policy-release window when release and conference shocks enter jointly and remains under an extended rate basis and conditioning on yield-curve, sovereign-spread, and pre-announcement-news components. For an admissible monetary decomposition and a quarter-unit index radius, omitting both measured corporate coordinates gives a fitted worst-case employment error of 0.1125 log percentage points across four horizons, with a simultaneous 95 percent interval of [0.0312, 0.1939]. Retaining one coordinate lowers the point error to 0.0165. At a benchmark of one million workers, these errors correspond to 1,125 and 165 local employment equivalents. The frontier varies with the outcome family, state metric, and policy scale. The empirical exercise concerns heterogeneity in monetary responses across measured corporate states.
+    National accounts locate economic activity, while corporate control links the decisions through which it responds to policy. I ask which control information must accompany a supplied national state to preserve a declared policy response. The rank of the response along omitted state directions gives the minimum local augmentation. Its singular values measure the first-order cost of a smaller augmentation, with curvature bounds for finite experiments. In euro-area manufacturing, ECB monetary responses vary with lagged corporate-control indices. For a quarter-unit index radius and a one-standard-deviation monetary innovation, omitting both measured coordinates gives a fitted worst-case employment error of 0.1125 log percentage points across four horizons, with a simultaneous 95 percent interval of [0.0312,0.1939]. One coordinate lowers the point error to 0.0165. The value of the second coordinate increases when credit and investment enter the target. These estimates measure response heterogeneity across corporate states; identifying the effect of changing control requires separate variation.
   keywords: aggregation, corporate control, multinational firms, policy counterfactuals, state sufficiency
   jel_codes: C61, C63, E17, E32, F23, L13
   landing_url: /papers/too-big-to-aggregate/
   paper_pages: 21
   appendix_pages: 38
-  paper_size: 403 KB
-  appendix_size: 610 KB
+  paper_size: 397 KB
+  appendix_size: 601 KB
   citation_title: 'Too Big to Aggregate: Corporate Control and Policy-Invariant Aggregation'
   data_sources:
   - name: ECB Monetary Policy Database
@@ -57,7 +57,7 @@
   - monetary policy transmission
   - response heterogeneity
   - national accounts
-  jel_display: C43, D23, E01, E52, F23
+  jel_display: C61, C63, E17, E32, F23, L13
 - title: The Polar Express
   subtitle: Dynamic Aggregation under Policy Holonomy
   slug: the-polar-express
@@ -80,14 +80,14 @@
   publication_date: '2026'
   display_date: September 2026
   abstract: >-
-    A low-dimensional organizational report can lose sufficiency for future responses after a feasible policy cycle. Policy technology, equilibrium drift, and an implementation metric determine how motion in the report transports the latent state. A report can therefore return to its starting point while the internal state finishes elsewhere. A common future probe measures the resulting target holonomy. Rectangles traversed in opposite directions identify target curvature, while mirrored loops remove the cubic term. The row space of this curvature determines which target defects can be closed through loop design. Pulling target covectors back through the loop library gives the local state information that must accompany the report. A phase-conditional Gorman form attains this dimension when the transported span has an additive differential frame. The construction is studied in a 72-state transition economy and in public LaDe delivery records. In the transition economy, a closed output–consumption loop changes a future consumption response by up to 6.04 percent of its ordinary value. In 4,514,658 package records, six additive parcel, courier, and delivery-area moments reduce next-day backlog RMSE by 6.13 percent after conditioning on report history and accepted flow. The LaDe exercise measures predictive closure under observed operations. Assigned report loops and terminal probes would identify response holonomy.
+    A policy cycle can restore an aggregate report while changing the response to a later intervention. This paper studies that failure of dynamic aggregation. A feasible report path is lifted through a specified policy technology; the terminal change in a common future probe is target holonomy. Opposite loop orientations identify its local curvature, and the resulting response map describes which hidden directions require additional measurements. A phase-conditional Gorman representation gives local closure under an additive differential-frame condition. A 72-state transition economy illustrates the mechanism: a closed output–consumption loop changes a subsequent consumption response by up to 0.00714 percentage point, or 6.04 percent of its ordinary value. Public delivery records provide a separate predictive-closure exercise. Randomized loops and common terminal probes are the observation design for identifying the holonomy contrast.
   keywords: dynamic aggregation, holonomy, policy experiments, inverse design, Gorman aggregation, heterogeneous agents, Express operations
   jel_codes: C14, C32, C61, C93, D12, E47, L91
   landing_url: /papers/the-polar-express/
-  paper_pages: 37
-  appendix_pages: 32
-  paper_size: 650 KB
-  appendix_size: 487 KB
+  paper_pages: 30
+  appendix_pages: 39
+  paper_size: 605 KB
+  appendix_size: 564 KB
   citation_title: 'The Polar Express: Dynamic Aggregation under Policy Holonomy'
   data_sources:
   - name: LaDe Dataset
@@ -100,7 +100,7 @@
   - policy experiments
   - inverse design
   - delivery operations
-  jel_display: C43, C61, C93, L87
+  jel_display: C14, C32, C61, C93, D12, E47, L91
 - title: Subject to Availability
   subtitle: Option Production under Complementary Inputs
   slug: subject-to-availability
@@ -120,16 +120,16 @@
     measurement: 0
     institutions_policy: 25
   publication_date: '2026'
-  display_date: August 2026
+  display_date: September 2026
   abstract: >-
     Policies create options by supplying complementary inputs. Each option can be described by the minimal input paths that make it actionable. A package surface has a path representation exactly when it is monotone; nonnegative Möbius coefficients characterize the case with one exact repair set per option and recover the mass attached to every set. Incomplete package support yields sharp linear-program bounds. A minimum-enablement dual prices the supplied inputs and assigns expenditure across providers. Childcare and work provide the application. In the 2024 ACS, model-assisted job-compatibility mass rises from 0.83 percent under an 8 a.m.–noon window to 23.74 percent under a 7:30 a.m.–5:30 p.m. package, and 93.1 percent of repaired mass requires at least two timing blocks. A randomized childcare–cash factorial bounds short-term response mass attributable to either supply route between 3.17 and 5.15 percentage points. A cross-fitted transport design links the trial to the 2019–2020 Uganda National Panel Survey. The childcare-factor effect on full-day use is 0.442 in the trial and 0.429 in the supported nine-district target at short term; the corresponding long-term effects are 0.313 and 0.204. Direct set measurements, randomized outcomes, population transport, and provider accounts distinguish option production, use, and resource provision.
   keywords: actionable sets; policy packages; partial identification; childcare; labor supply; option value
   jel_codes: C14, C61, D11, D61, J13, J22
   landing_url: /papers/subject-to-availability/
-  paper_pages: 40
-  appendix_pages: 26
-  paper_size: 436 KB
-  appendix_size: 379 KB
+  paper_pages: 34
+  appendix_pages: 22
+  paper_size: 441 KB
+  appendix_size: 391 KB
   citation_title: 'Subject to Availability: Option Production under Complementary Inputs'
   data_sources:
   - name: 2024 ACS Microdata
@@ -151,7 +151,7 @@
   - Möbius inversion
   - childcare
   - work compatibility
-  jel_display: C61, C93, D01, J13, J22
+  jel_display: C14, C61, D11, D61, J13, J22
 - title: Perfectly Still
   subtitle: Stability and Policy Response Capacity
   slug: perfectly-still
@@ -171,16 +171,16 @@
     measurement: 0
     institutions_policy: 0
   publication_date: '2026'
-  display_date: August 2026
+  display_date: September 2026
   abstract: >-
-    Policy responses depend on the units, histories, contracts, and configurations through which an intervention changes behavior. I define policy response capacity as a finite-horizon policy-to-target derivative for continuous instruments and as a finite contrast for discrete interventions. Systems sharing a stable baseline law can have response ranks from zero to full row rank, and attraction to a zero-response state supplies a time bound for entering any stated capacity region. In 186,893 active-phase decision points from the myBPmyLife micro-randomized trial, moving assigned notification history from its 10th to its 90th percentile over 14 days reduces the current diet-notification response by 1.75 percentage points. Across four exploratory engagement targets and two notification types, the standardized response-change operators at seven and 14 days have leading singular values 0.142 and 0.136; simultaneous five-window lower endpoints are 0.023 and 0.017. The 14-day lower-rank-uniform tests reject rank zero and retain rank at most one. A separate 1,933-person factorial experiment shows that randomized app limits change the use response to a temporary bonus during its payment window. These history and configuration effects enter response transitions and a planner's finite assigned actions.
+    Earlier interventions can change the response to a later policy. This paper studies that response as a state-dependent map from current instruments to future targets. Its evolution reflects entry, exit, and changes among units already reached. Adoption and effective-cap models provide mechanisms through which policy history changes the map. Sequential randomization and factorial assignment identify distinct history and configuration contrasts under their stated designs. In the myBPmyLife trial, the fitted current diet-notification response is 1.75 percentage points lower at the 90th than at the 10th percentile of fourteen-day assigned history, conditional on the recorded pre-state and time controls. A separate factorial experiment shows how an app-limit assignment changes the response to a temporary use-reduction bonus. Rank and finite-action calculations describe the directions available for the targets and horizons represented in each experiment.
   keywords: policy response capacity, randomized policy history, response matrix, finite policy actions, factorial experiment
   jel_codes: C23, C61, D12, I15, I18
   landing_url: /papers/perfectly-still/
-  paper_pages: 31
-  appendix_pages: 17
-  paper_size: 391 KB
-  appendix_size: 367 KB
+  paper_pages: 26
+  appendix_pages: 19
+  paper_size: 374 KB
+  appendix_size: 376 KB
   citation_title: 'Perfectly Still: Stability and Policy Response Capacity'
   data_sources:
   - name: myBPmyLife MRT Repository
@@ -202,7 +202,7 @@
   - micro-randomized trials
   - factorial experiments
   - treatment effect heterogeneity
-  jel_display: C22, C93, D04, I12
+  jel_display: C23, C61, D12, I15, I18
 - title: It’s a Price! It’s a Value!
   subtitle: Economic Measurement Across Environments
   slug: its-a-price-its-a-value
@@ -222,16 +222,16 @@
     measurement: 50
     institutions_policy: 0
   publication_date: '2026'
-  display_date: August 2026
+  display_date: September 2026
   abstract: >-
-    Revaluing the same economic object across environments requires a measurement profile. Under stable mixed object–environment kernels, the local relational coordinates have dimension equal to the mixed interaction rank, and a reference valuation supplies the remaining level information. Retained source values then define a residual target map. In a bilinear system, the rank of this map gives the minimum number of linear certificates needed for exact recovery. Its covariance spectrum gives prediction loss and the marginal value of another record. The F-MAP application treats source price environments and basket-composition certificates as alternative fields that can be retained. With four source records, the implemented greedy target-directed rule reduces held-out MSE by 71.7 percent relative to dispersed selection. One-exchange refinement raises the reduction to 77.7 percent; its fixed-policy loss effect has a simultaneous 95-percent interval of [0.0367, 0.0927]. Across 499 public-unit-value re-extractions crossed with ten held-out node perturbations, the four-record exchange rule has a 75.9-percent median reduction and a central range of [44.2, 90.1] percent. Two composition records complete the two residual dimensions and recover 57,600 held-out basket–target valuations to numerical precision. Treasury cash flows provide a second application using duration, convexity, and key-rate exposure records.
+    A retained price records one valuation of an object. Revaluation asks which further fields preserve its value in other environments. I study this choice through the target image of a source-record fiber. Stable mixed-derivative kernels give local common interaction coordinates, with a reference valuation carrying level information. In bilinear systems, the residual target map gives exact completion counts, an affine-prediction loss frontier, and the value of an additional field. Feasible environment and composition menus turn these benchmarks into record choices. A food-basket exercise compares those choices on a fixed accounting array; two composition indices complete four source valuations on its six-dimensional centered support. Treasury cash flows illustrate how calibration-optimal records perform in later environments. The analysis distinguishes common-state dimension, target-specific recovery, and evaluation of a selected rule. Fixed-rule intervals and loading-reselection ranges retain their respective uncertainty interpretations.
   keywords: economic measurement, representation, comparability, transportability, information sufficiency, dimension reduction, measurement design
   jel_codes: C18, C43, C51, D11, D61, E01, G12
   landing_url: /papers/its-a-price-its-a-value/
-  paper_pages: 25
-  appendix_pages: 24
-  paper_size: 434 KB
-  appendix_size: 410 KB
+  paper_pages: 28
+  appendix_pages: 26
+  paper_size: 446 KB
+  appendix_size: 406 KB
   citation_title: 'It’s a Price! It’s a Value!: Economic Measurement Across Environments'
   data_sources:
   - name: USDA ERS Food-at-Home Monthly Area Prices
@@ -250,7 +250,7 @@
   - measurement profiles
   - price measurement
   - fixed-income valuation
-  jel_display: C43, C44, D46, G12
+  jel_display: C18, C43, C51, D11, D61, E01, G12
 - title: Fuzzy Clock
   subtitle: Decision-Specific Timing Information
   slug: fuzzy-clock
@@ -271,16 +271,16 @@
     measurement: 40
     institutions_policy: 0
   publication_date: '2026'
-  display_date: August 2026
+  display_date: September 2026
   abstract: >-
-    Economic responses indexed by recorded dates require event-time validation tailored to the specified decision. Let latent event time G be recorded as W = G + U, and let m denote a response indexed by W. For a finite linear action set, common adjoint bridges for pairwise payoff contrasts identify the action ordering within a clock-summary cell. For a nonnegative polynomial timing loss of even degree d, the recorded response and clock moments through d recover the scheduled-loss function. An adjacent-moment construction preserves m and clock moments through d − 1 and changes minimum scheduled loss and the policy choice over an interval of flexibility costs. With quadratic loss, mean displacement shifts the verified-origin scheduled date, and displacement variance determines the gap between recorded-origin and verified-origin scheduled loss. An application to European gas disruptions estimates a three-week network response around the June 2022 Nord Stream reduction, combines it with regulator and physical timing records, and maps the available clock information into scheduling and storage-option benchmarks.
+    How much timing information does a policy decision require? I study an additive recording clock under a common-mean response restriction. Recorded-response moments and clock moments recover latent-response moments recursively. Within the raw-moment hierarchy, observationally equivalent environments can share every lower-order clock moment and differ at the next response moment. For polynomial timing loss, this difference preserves scheduled-date rankings and changes the minimum loss, allowing the preferred provision mode to reverse. Quadratic loss separates the mean displacement used to choose a date from the variance used to value flexibility. I describe which validation inputs support these queries, how response-dependent recording changes the required moments, and how sampling uncertainty enters the cost comparison. Gas-disruption calculations illustrate the distinctions among an estimated response, a maintained clock, and an executable delivery rule.
   keywords: event time, event study, treatment timing, inverse problem, counterfactual identification, partial identification, natural gas
   jel_codes: C14, C18, C21, C32, F51, Q41
   landing_url: /papers/fuzzy-clock/
-  paper_pages: 21
-  appendix_pages: 33
-  paper_size: 372 KB
-  appendix_size: 490 KB
+  paper_pages: 27
+  appendix_pages: 39
+  paper_size: 401 KB
+  appendix_size: 498 KB
   citation_title: 'Fuzzy Clock: Decision-Specific Timing Information'
   data_sources:
   - name: ENTSOG Transparency Platform
@@ -296,7 +296,7 @@
   - scheduling
   - measurement error
   - natural gas networks
-  jel_display: C22, C41, C44, L95
+  jel_display: C14, C18, C21, C32, F51, Q41
 - title: Economica Obscura
   subtitle: Institutions, Archives, and Policy Learning
   slug: economica-obscura
@@ -316,16 +316,16 @@
     measurement: 30
     institutions_policy: 40
   publication_date: '2026'
-  display_date: August 2026
+  display_date: September 2026
   abstract: >-
-    Institutions adapt installed reporting systems to current priorities and leave the resulting records to later users. The model combines operating and adjustment costs, rank-one reports, and policy loss from inherited precision. Under a fixed priority, reporting directions specialize geometrically. Precision orthogonal to the limiting direction remains finite, and a planner who values later use chooses slower specialization. State persistence governs how inherited precision depreciates. The archive also changes subsequent measurement: directional precision can rotate later reports, jointly chosen reports can straddle the operating priority, and report content updates beliefs about coefficients and future target regimes. The empirical application uses U.S. Call Reports. A sequential acquisition score ranks intermediate reports from prior-year information before their contents are observed. At a 25 percent report budget, the score reduces the equal-weight squared forecast loss across ridge, persistence, and gradient boosting by 25.05 percent, compared with 10.86 percent under uniform allocation. Its gains over uniform allocation have positive simultaneous lower endpoints across 10, 25, and 50 percent budgets and remain positive after deleting each target quarter. Innovation scale yields comparable allocations, delimiting the incremental role of the richer archive state.
+    Reporting institutions bear current collection and adjustment costs, while later users benefit from the records they leave. This paper models that information externality. Reporting directions adapt to operating priorities and generate an archive of state information. In a Gaussian benchmark, specialization can leave finite precision in a neglected direction even as precision grows in the favored direction. A planner values future policy losses as well as institutional costs; inherited precision determines when redirecting the next report is worthwhile. An archive-value payment implements the planner comparison under the stated commitment and target assumptions. A U.S. Call Report exercise evaluates the predictive contribution of an intermediate report before its contents are supplied. Prior-year acquisition scores improve loss over uniform selection, while innovation scale explains much of the gain. Forecast-loss evidence, whole-form burden measures, and the unmeasured monetary value of information enter distinct parts of the institutional interpretation.
   keywords: identification, information production, institutional adjustment, policy learning, experimental design
   jel_codes: C11, C13, C18, D83, E61
   landing_url: /papers/economica-obscura/
-  paper_pages: 35
-  appendix_pages: 30
-  paper_size: 893 KB
-  appendix_size: 462 KB
+  paper_pages: 39
+  appendix_pages: 29
+  paper_size: 572 KB
+  appendix_size: 555 KB
   citation_title: 'Economica Obscura: Institutions, Archives, and Policy Learning'
   data_sources:
   - name: FFIEC CDR Bulk Data
@@ -350,7 +350,7 @@
   - policy learning
   - information acquisition
   - Call Reports
-  jel_display: C81, D02, D73, D83, G21
+  jel_display: C11, C13, C18, D83, E61
 - title: Counterfactual Sufficiency
   subtitle: State Representation and Response Geometry
   slug: counterfactual-sufficiency
@@ -371,16 +371,16 @@
     measurement: 20
     institutions_policy: 0
   publication_date: '2026'
-  display_date: August 2026
+  display_date: September 2026
   abstract: >-
-    Structural counterfactuals depend on the distinctions preserved by a state representation. A supplied map q and target family T induce exact and loss-relevant quotients. On a smooth fiber of q, weighted target derivatives form an operator whose rank gives the local coordinate count and whose spectral tail gives decoder loss in a shrinking neighborhood. A conditional generator bounds population decoder risk over a declared coordinate class. A finite-graph analogue covers discrete structural states, and cross-fitted coordinate selection satisfies an oracle bound. Across 20 fixed core-state splits of two KW97 parameterizations, minimum out-of-fold training risk selects the held-out oracle in all 80 three-coordinate comparisons. The median target-RMSE gain over the local spectrum is 4.29 percent, and every split has a positive four-comparison mean gain. A heterogeneous-agent transition economy illustrates the distribution-state construction.
+    Which additional state coordinates preserve a specified policy calculation? I study this question relative to a supplied representation, target loss, and admissible feature class. Restricted response derivatives give a local benchmark: discarded eigenvalues determine leading decoder risk under shrinking perturbations. Global coordinate choice also depends on the variation left within feature level sets. A conditional-generator certificate bounds this risk, and its spectral slack enters the comparison between estimated certificate minimization and a risk-optimal coordinate map. The bound separates that slack from score estimation, sampling, and optimization error. A finite-graph counterpart evaluates fitted-decoder residuals. Occupational-choice and heterogeneous-agent exercises illustrate the consequences for model-generated policy responses. The analysis keeps representation loss, fitted prediction error, and identification of the underlying response map distinct.
   keywords: counterfactual sufficiency, state representation, response geometry, dimension reduction, active subspaces, structural models
   jel_codes: C14, C52, C61, C63, D81
   landing_url: /papers/counterfactual-sufficiency/
-  paper_pages: 38
-  appendix_pages: 19
-  paper_size: 505 KB
-  appendix_size: 405 KB
+  paper_pages: 29
+  appendix_pages: 38
+  paper_size: 422 KB
+  appendix_size: 531 KB
   citation_title: 'Counterfactual Sufficiency: State Representation and Response Geometry'
   data_sources:
   - name: Keane & Wolpin (1997) model and data · respy
@@ -396,7 +396,7 @@
   - target-directed dimension reduction
   - decoder risk
   - heterogeneous agents
-  jel_display: C25, C44, C52, C54, J24
+  jel_display: C14, C52, C61, C63, D81
 - title: Between Models
   subtitle: Counterfactual Frontiers across Causal-Response Experiments
   slug: between-models
@@ -417,16 +417,16 @@
     measurement: 0
     institutions_policy: 0
   publication_date: '2026'
-  display_date: August 2026
+  display_date: September 2026
   abstract: >-
-    Counterfactual conclusions across structural model families depend on the declared causal-response experiment. A family-entry radius and a sign-reversal radius summarize each experiment. Their gap measures the response-space separation between covering every family and reaching a policy-sign reversal. In a monetary application, the baseline four-family experiment gives a gap of 0.8509, and local parameter neighborhoods preserve all 136 delayed-target signs inside the testing-risk benchmark. Re-estimating causal responses by local projections and refitting structural parameters and shock paths gives gaps of -3.2435, -3.3159, and -6.1391 under HAC bandwidths 8, 16, and 28. On a common parameter support, shock profiling changes the HAC-28 gap from 6.2580 to -6.1391; covariance replacement accounts for most of the remaining fixed-response movement. Positive LP targets remain below 0.001 in discounted cumulative units. A 1,999-draw calendar bootstrap that re-estimates responses and reprofiles every shock path gives a 95-percent gap interval of [-10.2187, 2.2214] and a 6.35-percent positive-gap frequency. The analysis links experiment-specific response geometry, empirical fibers, and generated-response inference.
+    When do several structural models support the same policy conclusion? I compare the response distance needed to represent every declared family with the distance to the first policy-sign reversal. A positive gap gives a range in which family coverage and sign agreement coexist. The framework separates agreement on response fibers, the effect of additional evidence, and uncertainty in estimated responses. In a monetary application, the baseline four-family support has a positive gap. A lag-augmented local-projection refit gives negative gaps under three covariance specifications. Common-support comparisons trace the roles of response weighting and shock-path profiling. The positive target crossings are small, and a calendar re-estimation exercise produces gap values on both sides of zero. Each comparison is conditional on its response protocol, evaluated structural domain, and policy target.
   keywords: structural counterfactuals, partial identification, factorization, weak identification, generated responses, monetary policy
   jel_codes: C12, C13, C32, C52, E52
   landing_url: /papers/between-models/
-  paper_pages: 44
-  appendix_pages: 16
-  paper_size: 518 KB
-  appendix_size: 365 KB
+  paper_pages: 35
+  appendix_pages: 26
+  paper_size: 468 KB
+  appendix_size: 416 KB
   citation_title: 'Between Models: Counterfactual Frontiers across Causal-Response Experiments'
   data_sources:
   - name: FRED Series A939RX0Q048SBEA
@@ -451,7 +451,7 @@
   - local projections
   - generated-response inference
   - monetary policy
-  jel_display: C12, C22, C52, C54, E52
+  jel_display: C12, C13, C32, C52, E52
 - title: Almost a Policy
   subtitle: Transmission through Administrative Handoffs
   slug: almost-a-policy
@@ -471,16 +471,16 @@
     measurement: 0
     institutions_policy: 30
   publication_date: '2026'
-  display_date: August 2026
+  display_date: September 2026
   abstract: >-
-    A policy reaches a recipient through administrative handoffs that transmit and measure an intervention. Each handoff is represented as a Markov transformation of an upstream experiment followed by information produced at the receiving stage. For a vector counterfactual, loss and acquisition ranks form a stage ledger. The loss rank equals the minimum score rank of an upstream channel that restores local identification. Restoring full-information precision requires rank L^(1/2)(I+L)^(-1)C′, and a semidefinite program allocates retained information between the identification and precision thresholds. A fixed-grid conditional rate attains the adjudication experiment in the local limit. A fixed-decision release separates adjudication from application in finite samples and measures cost by the number of records read. The application follows Oregon Medicaid lottery invitations through receipt, submission, eligibility decisions, and enrollment. A four-outcome lottery-assignment response vector gives a 24.7 percentage-point effect on documented receipt and a 25.6 point effect on enrollment; household-score simultaneous 95 percent intervals are 24.0–25.5 and 24.7–26.4. The reporting handoff has loss rank zero for the lottery effect on enrollment, one for population approval following an invitation, and four for approval probabilities across four reception groups; the confidence set for the last rank is {4}. The rank lower bound remains four after simultaneous sampling uncertainty and one-percent stage-record contamination. With 25 percent auditable-link capacity, target allocation gives 1.04 times the full-linkage covariance bound for the four-group audit, compared with 1.83 under uniform retention, and beats uniform retention in all 40 prespecified train–evaluation rotations.
+    Which records should an agency preserve for a given evaluation question? This paper follows target information through administrative handoffs and studies retention under a record budget. A local ledger distinguishes identification from precision and gives the score dimensions required for repair. An Oregon Medicaid lottery exercise evaluates a constructed release. In its Gaussian summary model, approval following invitation loses one direction in the aggregate and four across groups. Under independent-person information, a 25-percent link budget gives an equal-weight group covariance criterion 1.04 times full linkage with targeted retention, compared with 1.83 under uniform retention.
   keywords: administrative handoffs, partial identification, information retention, audit design, Oregon Health Insurance Experiment, policy transmission
   jel_codes: C14, C31, C44, H51, I13, I18
   landing_url: /papers/almost-a-policy/
-  paper_pages: 27
-  appendix_pages: 9
-  paper_size: 426 KB
-  appendix_size: 269 KB
+  paper_pages: 24
+  appendix_pages: 14
+  paper_size: 354 KB
+  appendix_size: 322 KB
   citation_title: 'Almost a Policy: Transmission through Administrative Handoffs'
   data_sources:
   - name: NBER Oregon Health Insurance Experiment Data
@@ -493,4 +493,43 @@
   - local identification
   - selective information retention
   - Oregon Medicaid lottery
-  jel_display: C44, C93, D73, D83, I13
+  jel_display: C14, C31, C44, H51, I13, I18
+- title: On Cofactuals
+  subtitle: ''
+  slug: on-cofactuals
+  year: 2026
+  question: When can policy-regime marginals determine how outcomes are paired across worlds, and therefore the distribution of policy gains?
+  plain_summary: Marginal outcome distributions determine policy-gain distributions only after the cross-world coupling is disciplined; cofactual components provide one such structure and observable restrictions.
+  technical_summary: Möbius-transformed cumulant-generating functions characterize compatibility with an independent shared-component model and recover the joint law within that class. Paired and state-adjusted covariance moments provide specification checks under their declared observation schemes.
+  paper_url: /papers/on-cofactuals/on-cofactuals.pdf
+  appendix_url: /papers/on-cofactuals/on-cofactuals-appendix.pdf
+  code_url: ''
+  pinned: false
+  mix:
+    econometrics: 55
+    structural: 30
+    micro: 0
+    macro: 0
+    measurement: 15
+    institutions_policy: 0
+  publication_date: '2026'
+  display_date: September 2026
+  abstract: >-
+    The distribution of policy gains depends on how outcomes are paired across regimes. I study a shared-component model in which policy labels fix the loadings of independent interaction terms. Under local exponential integrability, the marginal laws admit this model if and only if their Möbius-transformed cumulant generating functions are admissible. The same transforms then recover the component laws and the joint law within the class, including every policy-gain distribution. A modular Bellman model gives an economic foundation, with reoptimization illustrating its scope. Moment versions give marginal variance inequalities and paired covariance equalities. The observation scheme determines which restrictions can be assessed: the sampling results cover selected paired and state-adjusted covariance moments. A component-covariance bound and analytical examples connect departures from orthogonality to gain dispersion. Simulations examine the calibration of the paired tests.
+  keywords: counterfactuals, policy-gain distributions, structural econometrics, Möbius inversion, specification testing
+  jel_codes: C10, C18, C61
+  landing_url: /papers/on-cofactuals/
+  paper_pages: 26
+  appendix_pages: 31
+  paper_size: 416 KB
+  appendix_size: 398 KB
+  citation_title: 'On Cofactuals'
+  data_sources: []
+  topics:
+  - cofactual components
+  - policy-gain distributions
+  - cross-world dependence
+  - Möbius inversion
+  - specification testing
+  - structural econometrics
+  jel_display: C10, C18, C61
