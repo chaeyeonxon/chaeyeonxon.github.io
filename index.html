@@ -64,6 +64,7 @@ title: Chae-Yeon Xon
           <div class="featured-links">
             <a href="{{ paper.paper_url | relative_url }}" target="_blank" rel="noopener">Draft</a>
             <a href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">Appendix</a>
+            {% if paper.slides_url != "" %}<a href="{{ paper.slides_url | relative_url }}" target="_blank" rel="noopener">Slides</a>{% endif %}
           </div>
         </div>
       </article>
@@ -125,6 +126,7 @@ title: Chae-Yeon Xon
           <div class="paper-links">
             <a href="{{ paper.paper_url | relative_url }}" target="_blank" rel="noopener">Draft</a>
             <a href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">Appendix</a>
+            {% if paper.slides_url != "" %}<a href="{{ paper.slides_url | relative_url }}" target="_blank" rel="noopener">Slides</a>{% endif %}
             {% if paper.code_url != "" %}<a href="{{ paper.code_url }}" target="_blank" rel="noopener">Code</a>{% endif %}
           </div>
         </div>

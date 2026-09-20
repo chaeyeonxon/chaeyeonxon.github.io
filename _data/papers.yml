@@ -7,6 +7,7 @@
   technical_summary: The rank and singular spectrum of the hidden-response operator characterize the minimum corporate-control information needed to preserve a chosen policy response. In the calibrated exercise, retaining one corporate coordinate cuts fitted worst-case employment-response error from 0.1125 to 0.0165 log percentage points.
   paper_url: /papers/too-big-to-aggregate/too-big-to-aggregate.pdf
   appendix_url: /papers/too-big-to-aggregate/too-big-to-aggregate-appendix.pdf
+  slides_url: /papers/too-big-to-aggregate/too-big-to-aggregate-slides.pdf
   code_url: ''
   pinned: false
   mix:
@@ -27,6 +28,8 @@
   appendix_pages: 38
   paper_size: 397 KB
   appendix_size: 601 KB
+  slides_pages: 25
+  slides_size: 254 KB
   citation_title: 'Too Big to Aggregate: Corporate Control and Policy-Invariant Aggregation'
   data_sources:
   - name: ECB Monetary Policy Database
@@ -67,6 +70,7 @@
   technical_summary: Policy holonomy links closed report paths to latent state motion, while direction-reversed and mirrored loops identify target curvature and the additive state needed for dynamic aggregation. In LaDe data, six internal-state moments reduce next-day backlog RMSE by 6.13% beyond report history and accepted flow.
   paper_url: /papers/the-polar-express/the-polar-express.pdf
   appendix_url: /papers/the-polar-express/the-polar-express-appendix.pdf
+  slides_url: /papers/the-polar-express/the-polar-express-slides.pdf
   code_url: ''
   pinned: true
   pin_order: 1
@@ -88,6 +92,8 @@
   appendix_pages: 39
   paper_size: 605 KB
   appendix_size: 564 KB
+  slides_pages: 25
+  slides_size: 258 KB
   citation_title: 'The Polar Express: Dynamic Aggregation under Policy Holonomy'
   data_sources:
   - name: LaDe Dataset
@@ -110,6 +116,7 @@
   technical_summary: Minimal enabling input paths represent options, Möbius coefficients and linear programs recover or bound package-specific option mass, and a dual prices supplied inputs. In the childcare and work applications, the expanded timing package raises model-assisted job-compatibility mass from 0.83% to 23.74%, with 93.1% of repaired mass requiring at least two timing blocks.
   paper_url: /papers/subject-to-availability/subject-to-availability.pdf
   appendix_url: /papers/subject-to-availability/subject-to-availability-appendix.pdf
+  slides_url: /papers/subject-to-availability/subject-to-availability-slides.pdf
   code_url: ''
   pinned: false
   mix:
@@ -130,6 +137,8 @@
   appendix_pages: 22
   paper_size: 441 KB
   appendix_size: 391 KB
+  slides_pages: 24
+  slides_size: 244 KB
   citation_title: 'Subject to Availability: Option Production under Complementary Inputs'
   data_sources:
   - name: 2024 ACS Microdata
@@ -161,6 +170,7 @@
   technical_summary: Policy response capacity is a finite-horizon derivative or contrast, and identical baselines can support different response ranks. In the applications, prior notification history changes a current app-use response by 1.75 percentage points, while randomized app limits change a bonus response by 11.4 minutes per day.
   paper_url: /papers/perfectly-still/perfectly-still.pdf
   appendix_url: /papers/perfectly-still/perfectly-still-appendix.pdf
+  slides_url: /papers/perfectly-still/perfectly-still-slides.pdf
   code_url: ''
   pinned: false
   mix:
@@ -181,6 +191,8 @@
   appendix_pages: 19
   paper_size: 374 KB
   appendix_size: 376 KB
+  slides_pages: 25
+  slides_size: 241 KB
   citation_title: 'Perfectly Still: Stability and Policy Response Capacity'
   data_sources:
   - name: myBPmyLife MRT Repository
@@ -212,6 +224,7 @@
   technical_summary: The rank and spectrum of a residual valuation map characterize the minimum target-directed record set. In F-MAP, four selected records cut held-out MSE by 71.7%, and two composition records recover 57,600 held-out valuations to numerical precision.
   paper_url: /papers/its-a-price-its-a-value/its-a-price-its-a-value.pdf
   appendix_url: /papers/its-a-price-its-a-value/its-a-price-its-a-value-appendix.pdf
+  slides_url: /papers/its-a-price-its-a-value/its-a-price-its-a-value-slides.pdf
   code_url: ''
   pinned: false
   mix:
@@ -232,6 +245,8 @@
   appendix_pages: 26
   paper_size: 446 KB
   appendix_size: 406 KB
+  slides_pages: 24
+  slides_size: 232 KB
   citation_title: 'It’s a Price! It’s a Value!: Economic Measurement Across Environments'
   data_sources:
   - name: USDA ERS Food-at-Home Monthly Area Prices
@@ -260,6 +275,7 @@
   technical_summary: For polynomial timing loss of degree d, moments through d recover the scheduled-loss function. Under quadratic loss, mean displacement determines the schedule shift while variance determines flexibility and execution-loss gaps, illustrated with the June 2022 European gas network response.
   paper_url: /papers/fuzzy-clock/fuzzy-clock.pdf
   appendix_url: /papers/fuzzy-clock/fuzzy-clock-appendix.pdf
+  slides_url: /papers/fuzzy-clock/fuzzy-clock-slides.pdf
   code_url: ''
   pinned: true
   pin_order: 2
@@ -281,6 +297,8 @@
   appendix_pages: 39
   paper_size: 401 KB
   appendix_size: 498 KB
+  slides_pages: 25
+  slides_size: 251 KB
   citation_title: 'Fuzzy Clock: Decision-Specific Timing Information'
   data_sources:
   - name: ENTSOG Transparency Platform
@@ -306,6 +324,7 @@
   technical_summary: Reporting specialization creates an archive externality, and valuing future use slows specialization. In U.S. Call Reports, a common acquisition score reduces mortgage-composition MSE by 21.43–25.90% while matching forecast-specific report choices at least 95.58% of the time.
   paper_url: /papers/economica-obscura/economica-obscura.pdf
   appendix_url: /papers/economica-obscura/economica-obscura-appendix.pdf
+  slides_url: /papers/economica-obscura/economica-obscura-slides.pdf
   code_url: ''
   pinned: false
   mix:
@@ -326,6 +345,8 @@
   appendix_pages: 29
   paper_size: 572 KB
   appendix_size: 555 KB
+  slides_pages: 24
+  slides_size: 241 KB
   citation_title: 'Economica Obscura: Institutions, Archives, and Policy Learning'
   data_sources:
   - name: FFIEC CDR Bulk Data
@@ -360,6 +381,7 @@
   technical_summary: Target-derivative rank, spectral tails, and a conditional-generator certificate separate exact sufficiency, local repair, and global decoder risk. In the KW97 exercise, the graph certificate lowers held-out target RMSE by 1.8–8.2% at the same three-coordinate budget.
   paper_url: /papers/counterfactual-sufficiency/counterfactual-sufficiency.pdf
   appendix_url: /papers/counterfactual-sufficiency/counterfactual-sufficiency-appendix.pdf
+  slides_url: /papers/counterfactual-sufficiency/counterfactual-sufficiency-slides.pdf
   code_url: ''
   pinned: true
   pin_order: 3
@@ -381,6 +403,8 @@
   appendix_pages: 38
   paper_size: 422 KB
   appendix_size: 531 KB
+  slides_pages: 25
+  slides_size: 255 KB
   citation_title: 'Counterfactual Sufficiency: State Representation and Response Geometry'
   data_sources:
   - name: Keane & Wolpin (1997) model and data · respy
@@ -406,6 +430,7 @@
   technical_summary: Comparing each structural family’s entry radius with the first sign-reversal radius makes cross-model agreement experiment-specific. In the archived four-family exercise the gap is 0.8509, while re-estimation and structural profiling can make it negative.
   paper_url: /papers/between-models/between-models.pdf
   appendix_url: /papers/between-models/between-models-appendix.pdf
+  slides_url: /papers/between-models/between-models-slides.pdf
   code_url: ''
   pinned: true
   pin_order: 4
@@ -427,6 +452,8 @@
   appendix_pages: 26
   paper_size: 468 KB
   appendix_size: 416 KB
+  slides_pages: 25
+  slides_size: 230 KB
   citation_title: 'Between Models: Counterfactual Frontiers across Causal-Response Experiments'
   data_sources:
   - name: FRED Series A939RX0Q048SBEA
@@ -461,6 +488,7 @@
   technical_summary: Each handoff is represented as a Markov transformation plus conditional information, which yields target-specific loss and acquisition ranks. In the Oregon Medicaid lottery, the loss rank ranges from 0 to 4 across targets, while a fixed-decision release reads 40–49% of invitation records in expectation.
   paper_url: /papers/almost-a-policy/almost-a-policy.pdf
   appendix_url: /papers/almost-a-policy/almost-a-policy-appendix.pdf
+  slides_url: /papers/almost-a-policy/almost-a-policy-slides.pdf
   code_url: ''
   pinned: false
   mix:
@@ -481,6 +509,8 @@
   appendix_pages: 14
   paper_size: 354 KB
   appendix_size: 322 KB
+  slides_pages: 24
+  slides_size: 237 KB
   citation_title: 'Almost a Policy: Transmission through Administrative Handoffs'
   data_sources:
   - name: NBER Oregon Health Insurance Experiment Data
@@ -503,6 +533,7 @@
   technical_summary: Möbius-transformed cumulant-generating functions characterize compatibility with an independent shared-component model and recover the joint law within that class. Paired and state-adjusted covariance moments provide specification checks under their declared observation schemes.
   paper_url: /papers/on-cofactuals/on-cofactuals.pdf
   appendix_url: /papers/on-cofactuals/on-cofactuals-appendix.pdf
+  slides_url: /papers/on-cofactuals/on-cofactuals-slides.pdf
   code_url: ''
   pinned: false
   mix:
@@ -523,6 +554,8 @@
   appendix_pages: 31
   paper_size: 416 KB
   appendix_size: 398 KB
+  slides_pages: 25
+  slides_size: 266 KB
   citation_title: 'On Cofactuals'
   data_sources: []
   topics:
