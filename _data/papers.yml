@@ -530,7 +530,7 @@
   year: 2026
   question: When can policy-regime marginals determine how outcomes are paired across worlds, and therefore the distribution of policy gains?
   plain_summary: Marginal outcome distributions determine policy-gain distributions only after the cross-world coupling is disciplined; cofactual components provide one such structure and observable restrictions.
-  technical_summary: Möbius-transformed cumulant-generating functions characterize compatibility with an independent shared-component model and recover the joint law within that class. Paired and state-adjusted covariance moments provide specification checks under their declared observation schemes.
+  technical_summary: Möbius-transformed cumulant-generating functions characterize and construct the independent shared-component class. Intersection closure gives the target-directed regime bundle, positive-semidefinite hierarchies support specification testing, and paired-world defects and positive-definiteness characterize departures and global gain-law sensitivity.
   paper_url: /papers/on-cofactuals/on-cofactuals.pdf
   appendix_url: /papers/on-cofactuals/on-cofactuals-appendix.pdf
   slides_url: /papers/on-cofactuals/on-cofactuals-slides.pdf
@@ -546,16 +546,16 @@
   publication_date: '2026'
   display_date: September 2026
   abstract: >-
-    The distribution of policy gains depends on how outcomes are paired across regimes. I study a shared-component model in which policy labels fix the loadings of independent interaction terms. Under local exponential integrability, the marginal laws admit this model if and only if their Möbius-transformed cumulant generating functions are admissible. The same transforms then recover the component laws and the joint law within the class, including every policy-gain distribution. A modular Bellman model gives an economic foundation, with reoptimization illustrating its scope. Moment versions give marginal variance inequalities and paired covariance equalities. The observation scheme determines which restrictions can be assessed: the sampling results cover selected paired and state-adjusted covariance moments. A component-covariance bound and analytical examples connect departures from orthogonality to gain dispersion. Simulations examine the calibration of the paired tests.
+    The distribution of policy gains depends on how outcomes are paired across regimes. I study a shared-component model in which policy labels fix the loadings of independent interaction terms. Under local exponential integrability, the marginal laws admit this model if and only if their Möbius-transformed cumulant generating functions are admissible; the same transforms construct the joint law within the class. A declared collection of k regimes requires only its intersection closure, containing at most 2^k-1 worlds. For two regimes, their two marginals and intersection marginal determine the full gain distribution. A row-space condition shows which marginal cumulants identify a declared contrast, and a Poisson construction gives necessity at every order. For several regimes, the endpoints and distinct pairwise intersections form the unique inclusion-minimal bundle for all pairwise odd and even gain cumulants, including under heterogeneous positive costs. Transform admissibility is equivalent to a hierarchy of positive-semidefinite matrices, yielding a consistent sieve and finite-sample size control under bounded or exponentially integrable unbounded outcomes. With paired observations, a joint-CGF defect records the complete departure of the gain law from its shared-component reference and bounds every cumulant error. A global positive-definiteness criterion gives the attained set of gain laws within a declared sensitivity band. In a discounted decision model, an action-gap condition preserves the optimal policy under reward and transition perturbations; a common-resolvent bound and a margin condition quantify departures. Paired and state-adjusted moment procedures assess selected restrictions implied by the model.
   keywords: counterfactuals, policy-gain distributions, structural econometrics, Möbius inversion, specification testing
   jel_codes: C10, C18, C61
   landing_url: /papers/on-cofactuals/
-  paper_pages: 26
-  appendix_pages: 31
-  paper_size: 416 KB
-  appendix_size: 398 KB
-  slides_pages: 25
-  slides_size: 266 KB
+  paper_pages: 35
+  appendix_pages: 37
+  paper_size: 475 KB
+  appendix_size: 434 KB
+  slides_pages: 37
+  slides_size: 320 KB
   citation_title: 'On Cofactuals'
   data_sources: []
   topics:
