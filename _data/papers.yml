@@ -26,7 +26,7 @@
   landing_url: /papers/too-big-to-aggregate/
   paper_pages: 21
   appendix_pages: 38
-  paper_size: 397 KB
+  paper_size: 398 KB
   appendix_size: 601 KB
   slides_pages: 25
   slides_size: 254 KB
@@ -85,13 +85,13 @@
   display_date: September 2026
   abstract: >-
     A policy cycle can restore an aggregate report while changing the response to a later intervention. This paper studies that failure of dynamic aggregation. A feasible report path is lifted through a specified policy technology; the terminal change in a common future probe is target holonomy. Opposite loop orientations identify its local curvature, and the resulting response map describes which hidden directions require additional measurements. A phase-conditional Gorman representation gives local closure under an additive differential-frame condition. A 72-state transition economy illustrates the mechanism: a closed output–consumption loop changes a subsequent consumption response by up to 0.00714 percentage point, or 6.04 percent of its ordinary value. Public delivery records provide a separate predictive-closure exercise. Randomized loops and common terminal probes are the observation design for identifying the holonomy contrast.
-  keywords: dynamic aggregation, holonomy, policy experiments, inverse design, Gorman aggregation, heterogeneous agents, Express operations
+  keywords: dynamic aggregation, holonomy, policy experiments, inverse design, Gorman aggregation, heterogeneous agents, delivery operations
   jel_codes: C14, C32, C61, C93, D12, E47, L91
   landing_url: /papers/the-polar-express/
   paper_pages: 30
   appendix_pages: 39
-  paper_size: 605 KB
-  appendix_size: 564 KB
+  paper_size: 606 KB
+  appendix_size: 565 KB
   slides_pages: 25
   slides_size: 258 KB
   citation_title: 'The Polar Express: Dynamic Aggregation under Policy Holonomy'
@@ -135,8 +135,8 @@
   landing_url: /papers/subject-to-availability/
   paper_pages: 34
   appendix_pages: 22
-  paper_size: 441 KB
-  appendix_size: 391 KB
+  paper_size: 442 KB
+  appendix_size: 392 KB
   slides_pages: 24
   slides_size: 244 KB
   citation_title: 'Subject to Availability: Option Production under Complementary Inputs'
@@ -184,13 +184,13 @@
   display_date: September 2026
   abstract: >-
     Earlier interventions can change the response to a later policy. This paper studies that response as a state-dependent map from current instruments to future targets. Its evolution reflects entry, exit, and changes among units already reached. Adoption and effective-cap models provide mechanisms through which policy history changes the map. Sequential randomization and factorial assignment identify distinct history and configuration contrasts under their stated designs. In the myBPmyLife trial, the fitted current diet-notification response is 1.75 percentage points lower at the 90th than at the 10th percentile of fourteen-day assigned history, conditional on the recorded pre-state and time controls. A separate factorial experiment shows how an app-limit assignment changes the response to a temporary use-reduction bonus. Rank and finite-action calculations describe the directions available for the targets and horizons represented in each experiment.
-  keywords: policy response capacity, randomized policy history, response matrix, finite policy actions, factorial experiment
+  keywords: policy response capacity, randomized policy history, response matrix, finite policy actions, factorial experiments
   jel_codes: C23, C61, D12, I15, I18
   landing_url: /papers/perfectly-still/
   paper_pages: 26
   appendix_pages: 19
   paper_size: 374 KB
-  appendix_size: 376 KB
+  appendix_size: 377 KB
   slides_pages: 25
   slides_size: 241 KB
   citation_title: 'Perfectly Still: Stability and Policy Response Capacity'
@@ -243,10 +243,10 @@
   landing_url: /papers/its-a-price-its-a-value/
   paper_pages: 28
   appendix_pages: 26
-  paper_size: 446 KB
-  appendix_size: 406 KB
+  paper_size: 447 KB
+  appendix_size: 407 KB
   slides_pages: 24
-  slides_size: 232 KB
+  slides_size: 231 KB
   citation_title: 'It’s a Price! It’s a Value!: Economic Measurement Across Environments'
   data_sources:
   - name: USDA ERS Food-at-Home Monthly Area Prices
@@ -290,15 +290,15 @@
   display_date: September 2026
   abstract: >-
     How much timing information does a policy decision require? I study an additive recording clock under a common-mean response restriction. Recorded-response moments and clock moments recover latent-response moments recursively. Within the raw-moment hierarchy, observationally equivalent environments can share every lower-order clock moment and differ at the next response moment. For polynomial timing loss, this difference preserves scheduled-date rankings and changes the minimum loss, allowing the preferred provision mode to reverse. Quadratic loss separates the mean displacement used to choose a date from the variance used to value flexibility. I describe which validation inputs support these queries, how response-dependent recording changes the required moments, and how sampling uncertainty enters the cost comparison. Gas-disruption calculations illustrate the distinctions among an estimated response, a maintained clock, and an executable delivery rule.
-  keywords: event time, event study, treatment timing, inverse problem, counterfactual identification, partial identification, natural gas
+  keywords: event time, event study, treatment timing, inverse problems, counterfactual identification, partial identification, natural gas
   jel_codes: C14, C18, C21, C32, F51, Q41
   landing_url: /papers/fuzzy-clock/
   paper_pages: 27
   appendix_pages: 39
-  paper_size: 401 KB
-  appendix_size: 498 KB
+  paper_size: 402 KB
+  appendix_size: 499 KB
   slides_pages: 25
-  slides_size: 251 KB
+  slides_size: 250 KB
   citation_title: 'Fuzzy Clock: Decision-Specific Timing Information'
   data_sources:
   - name: ENTSOG Transparency Platform
@@ -343,8 +343,8 @@
   landing_url: /papers/economica-obscura/
   paper_pages: 39
   appendix_pages: 29
-  paper_size: 572 KB
-  appendix_size: 555 KB
+  paper_size: 573 KB
+  appendix_size: 556 KB
   slides_pages: 24
   slides_size: 241 KB
   citation_title: 'Economica Obscura: Institutions, Archives, and Policy Learning'
@@ -401,10 +401,10 @@
   landing_url: /papers/counterfactual-sufficiency/
   paper_pages: 29
   appendix_pages: 38
-  paper_size: 422 KB
-  appendix_size: 531 KB
+  paper_size: 423 KB
+  appendix_size: 535 KB
   slides_pages: 25
-  slides_size: 255 KB
+  slides_size: 254 KB
   citation_title: 'Counterfactual Sufficiency: State Representation and Response Geometry'
   data_sources:
   - name: Keane & Wolpin (1997) model and data · respy
@@ -451,7 +451,7 @@
   paper_pages: 35
   appendix_pages: 26
   paper_size: 468 KB
-  appendix_size: 416 KB
+  appendix_size: 418 KB
   slides_pages: 25
   slides_size: 230 KB
   citation_title: 'Between Models: Counterfactual Frontiers across Causal-Response Experiments'
@@ -502,15 +502,15 @@
   display_date: September 2026
   abstract: >-
     Which records should an agency preserve for a given evaluation question? This paper follows target information through administrative handoffs and studies retention under a record budget. A local ledger distinguishes identification from precision and gives the score dimensions required for repair. An Oregon Medicaid lottery exercise evaluates a constructed release. In its Gaussian summary model, approval following invitation loses one direction in the aggregate and four across groups. Under independent-person information, a 25-percent link budget gives an equal-weight group covariance criterion 1.04 times full linkage with targeted retention, compared with 1.83 under uniform retention.
-  keywords: administrative handoffs, partial identification, information retention, audit design, Oregon Health Insurance Experiment, policy transmission
+  keywords: administrative handoffs, partial identification, information retention, record design, Oregon Health Insurance Experiment, policy transmission
   jel_codes: C14, C31, C44, H51, I13, I18
   landing_url: /papers/almost-a-policy/
   paper_pages: 24
   appendix_pages: 14
   paper_size: 354 KB
-  appendix_size: 322 KB
+  appendix_size: 324 KB
   slides_pages: 24
-  slides_size: 237 KB
+  slides_size: 236 KB
   citation_title: 'Almost a Policy: Transmission through Administrative Handoffs'
   data_sources:
   - name: NBER Oregon Health Insurance Experiment Data
@@ -566,3 +566,93 @@
   - specification testing
   - structural econometrics
   jel_display: C10, C18, C61
+- title: The Counterfactual Reconstruction Theorem
+  subtitle: When Local Economies Form One Global Economy
+  slug: counterfactual-reconstruction-theorem
+  year: 2026
+  question: When do locally compatible experimental and administrative records arise from one global economic history, and what information repairs the remaining gap?
+  plain_summary: Separate studies can describe compatible pieces of an economy while still failing to form one global history; the missing bridge depends on the counterfactual being asked.
+  technical_summary: A connecting map identifies the obstruction to a global lift, and its target quotient gives sharp identified sets, minimal record counts, and error amplification. In the Oregon Medicaid application, declared targets require zero, one, or four bridge directions.
+  paper_url: /papers/counterfactual-reconstruction-theorem/counterfactual-reconstruction-theorem.pdf
+  appendix_url: ''
+  slides_url: /papers/counterfactual-reconstruction-theorem/counterfactual-reconstruction-theorem-slides.pdf
+  code_url: ''
+  pinned: false
+  mix:
+    econometrics: 45
+    structural: 25
+    micro: 15
+    macro: 0
+    measurement: 15
+    institutions_policy: 0
+  publication_date: '2026'
+  display_date: September 2026
+  abstract: >-
+    Economic counterfactuals are often learned in pieces. Each experiment can yield a minimal state on its own policy domain, and overlaps can make the states locally compatible. A common economic history imposes a further requirement: the compatible pieces must admit one global lift. This paper represents local histories and their declared future responses by a morphism of sheaves. The counterfactual reconstruction theorem identifies the minimal global economy and a connecting map whose image is the complete obstruction to a global lift. Every valid linear specification restriction factors uniquely through this map. Its dimension is the gap between local and global state counts. A baseline archive can reveal part of the obstruction; its kernel determines the remaining bridge problem. A downstream counterfactual selects a canonical target bridge state. Records identify the target precisely when they carry this state, equivalently when they preserve every finite decision problem whose payoff depends on the target. The theorem gives a sharp identified set, a necessary and attainable record count, and the exact amplification of bounded record error. Across several targets, record requirements form a polymatroid whose intersections measure information reuse. The residual target spectrum gives exact frontiers for record counts, normalized measurement noise, and continuous precision budgets. Singular-value brackets and Gaussian projection inference retain coverage across rank changes. An Oregon Medicaid application reconstructs approval rates across separate reports and gives bridge counts zero, one, and four for three declared targets.
+  keywords: counterfactuals, state representation, identification, model combination
+  jel_codes: C10, C13, C14
+  landing_url: /papers/counterfactual-reconstruction-theorem/
+  paper_pages: 28
+  appendix_pages: 0
+  paper_size: 451 KB
+  appendix_size: ''
+  slides_pages: 35
+  slides_size: 322 KB
+  citation_title: 'The Counterfactual Reconstruction Theorem: When Local Economies Form One Global Economy'
+  data_sources:
+  - name: NBER Oregon Health Insurance Experiment Data
+    url: https://www.nber.org/research/data/oregon-health-insurance-experiment-data
+    host: nber.org
+  topics:
+  - counterfactual reconstruction
+  - fragmented evidence
+  - global compatibility
+  - state representation
+  - information acquisition
+  - Oregon Medicaid lottery
+  jel_display: C10, C13, C14
+- title: Minimal Economy over Worlds
+  subtitle: Counterfactuals from Fragmented Evidence
+  slug: minimal-economy-over-worlds
+  year: 2026
+  question: Which lowest-cost collection of theoretical, measurement, and empirical modules resolves a declared counterfactual to the desired precision?
+  plain_summary: A collection of records can leave the complete economy unsettled while still determining the policy conclusion that matters.
+  technical_summary: Target certificates characterize exact recovery, least-cost acquisition, minimum repair, and attained approximation frontiers. In the Federal Reserve's 2025 stress-test disclosures, revenue and loss modules determine the sign of cumulative pre-tax income for 20 of 22 banks, while minimum capital ratios require path information.
+  paper_url: /papers/minimal-economy-over-worlds/minimal-economy-over-worlds.pdf
+  appendix_url: ''
+  slides_url: ''
+  code_url: ''
+  pinned: false
+  mix:
+    econometrics: 45
+    structural: 15
+    micro: 0
+    macro: 10
+    measurement: 20
+    institutions_policy: 10
+  publication_date: '2026'
+  display_date: September 2026
+  abstract: >-
+    Economic theory, measurement rules, and evidence often describe different parts of one economy. Their intersection can contain many complete economies while placing a counterfactual in a short interval or at one value. A minimal economy over admissible worlds is a lowest-cost module collection that reaches a target resolution. At zero tolerance, target certificates compute the counterfactual from retained modules. In linear economies, certificate support solves least-cost acquisition, residual target rank gives minimum repair, covariance weighting selects the least-variable certificate, and certificate residuals trace an attained approximation frontier. Polyhedral modules yield completion and target certificates from one dual system. A joint confidence region provides target coverage after certificate selection. In the Federal Reserve's 2025 stress-test disclosures, revenue and loss modules carry the sign of cumulative pre-tax income for 20 of 22 banks. Minimum capital ratios additionally require quarterly path information, whose completion interval follows from change bounds and checkpoints.
+  keywords: counterfactuals, data combination, identification, value of information
+  jel_codes: C10, C13, C14
+  landing_url: /papers/minimal-economy-over-worlds/
+  paper_pages: 26
+  appendix_pages: 0
+  paper_size: 430 KB
+  appendix_size: ''
+  slides_pages: 0
+  slides_size: ''
+  citation_title: 'Minimal Economy over Worlds: Counterfactuals from Fragmented Evidence'
+  data_sources:
+  - name: Federal Reserve Dodd-Frank Act Stress Tests 2025
+    url: https://www.federalreserve.gov/supervisionreg/dfa-stress-tests-2025.htm
+    host: federalreserve.gov
+  topics:
+  - fragmented evidence
+  - target certificates
+  - data combination
+  - value of information
+  - disclosure design
+  - stress testing
+  jel_display: C10, C13, C14

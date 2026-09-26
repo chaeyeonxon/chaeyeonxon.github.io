@@ -63,7 +63,7 @@ title: Chae-Yeon Xon
           <span class="featured-field"><i class="c-econometrics"></i>Econometrics {{ paper.mix.econometrics }}%</span>
           <div class="featured-links">
             <a href="{{ paper.paper_url | relative_url }}" target="_blank" rel="noopener">Draft</a>
-            <a href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">Appendix</a>
+            {% if paper.appendix_url != "" %}<a href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">Appendix</a>{% endif %}
             {% if paper.slides_url != "" %}<a href="{{ paper.slides_url | relative_url }}" target="_blank" rel="noopener">Slides</a>{% endif %}
           </div>
         </div>
@@ -125,7 +125,7 @@ title: Chae-Yeon Xon
           </div>
           <div class="paper-links">
             <a href="{{ paper.paper_url | relative_url }}" target="_blank" rel="noopener">Draft</a>
-            <a href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">Appendix</a>
+            {% if paper.appendix_url != "" %}<a href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">Appendix</a>{% endif %}
             {% if paper.slides_url != "" %}<a href="{{ paper.slides_url | relative_url }}" target="_blank" rel="noopener">Slides</a>{% endif %}
             {% if paper.code_url != "" %}<a href="{{ paper.code_url }}" target="_blank" rel="noopener">Code</a>{% endif %}
           </div>

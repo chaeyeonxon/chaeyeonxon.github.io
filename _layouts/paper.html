@@ -80,26 +80,31 @@
             </div>
             <div class="paper-detail-actions">
               <a class="paper-action primary" href="{{ paper.paper_url | relative_url }}" target="_blank" rel="noopener">Draft PDF</a>
-              <a class="paper-action" href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">Online Appendix</a>
+              {% if paper.appendix_url != "" %}<a class="paper-action" href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">Online Appendix</a>{% endif %}
               {% if paper.slides_url != "" %}<a class="paper-action" href="{{ paper.slides_url | relative_url }}" target="_blank" rel="noopener">Slides</a>{% endif %}
             </div>
           </header>
 
+          {% assign document_count = 1 %}
+          {% if paper.appendix_url != "" %}{% assign document_count = document_count | plus: 1 %}{% endif %}
+          {% if paper.slides_url != "" %}{% assign document_count = document_count | plus: 1 %}{% endif %}
           <div class="paper-file-panel" aria-label="Paper files">
             <div class="paper-file-panel-head">
               <span>Documents</span>
-              <span>{% if paper.slides_url != "" %}3{% else %}2{% endif %} files</span>
+              <span>{{ document_count }} file{% if document_count != 1 %}s{% endif %}</span>
             </div>
             <a class="paper-file-row" href="{{ paper.paper_url | relative_url }}" target="_blank" rel="noopener">
               <span class="file-icon" aria-hidden="true"></span>
               <span class="file-name">Draft PDF</span>
               <span class="file-detail">{{ paper.paper_pages }} pages · {{ paper.paper_size }}</span>
             </a>
+            {% if paper.appendix_url != "" %}
             <a class="paper-file-row" href="{{ paper.appendix_url | relative_url }}" target="_blank" rel="noopener">
               <span class="file-icon" aria-hidden="true"></span>
               <span class="file-name">Online Appendix</span>
               <span class="file-detail">{{ paper.appendix_pages }} pages · {{ paper.appendix_size }}</span>
             </a>
+            {% endif %}
             {% if paper.slides_url != "" %}
             <a class="paper-file-row" href="{{ paper.slides_url | relative_url }}" target="_blank" rel="noopener">
               <span class="file-icon" aria-hidden="true"></span>
